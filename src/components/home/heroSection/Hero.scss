@@ -1,0 +1,27 @@
+.hero {
+  height: 100vh;
+  width: 100vw;
+  background-color: #252e7e2b;
+//   background-image: url('./jordan2.mp4');
+//   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-blend-mode: overlay;
+  box-shadow: inset 0px -100px 80px #001319;
+  -webkit-box-shadow: inset 0px -100px 80px #001319;
+  -moz-box-shadow: inset 0px -100px 800px #001319;
+  video{
+    width: 100vw;
+    z-index: -1;
+  }
+  p {
+    width: 800px;
+    font-size: 32px;
+  }
+}
+
+.test {
+  height: 100vh;
+  width: 100vw;
+}
