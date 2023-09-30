@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Hero from './components/home/heroSection/Hero'
 import Restaurants from './components/restaurants/Restaurants'
+import Booking from './components/Booking/Booking3'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
 {/* <Hero/> */}
-<Restaurants/>
+{/* <Restaurants/> */}
+<Booking />
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
