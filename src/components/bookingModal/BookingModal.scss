@@ -1,0 +1,195 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  height: 100%;
+  width: 100%;
+  transition: 1s ease-in-out;
+  z-index: 10000000;
+
+  .containerr {
+    font-family: "Jost", sans-serif;
+    font-family: "Merriweather Sans", sans-serif;
+    font-family: "Noto Serif", serif;
+    font-family: "Poppins", sans-serif;
+    max-width: 900px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    transition: 1s ease-in-out;
+
+    img {
+      width: 400px;
+      object-fit: cover;
+      border-radius: 10px 0px 0px 10px;
+    }
+    .modalRight {
+      color: #191c2a;
+      width: 100%;
+      .closeContain {
+        position: fixed;
+        top: 8px;
+        right: 8px;
+        background-color: black;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        cursor: pointer;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(7.9px);
+        -webkit-backdrop-filter: blur(7.9px);
+        transition: 0.2s ease;
+        &:hover {
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 16px;
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          backdrop-filter: blur(7.9px);
+          -webkit-backdrop-filter: blur(7.9px);
+        }
+      }
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 3rem;
+        padding: 1rem 2rem;
+        gap: 30px;
+        font-weight: 500;
+      }
+      h1 {
+        font-size: 30px;
+      }
+      .inputContain {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 410px;
+        justify-content: space-between;
+      }
+      .usernamelabel {
+        display: block;
+        color: #191c2a;
+        font-size: 14px;
+        padding: 5px 5px;
+        width: 100px;
+      }
+
+      #usernameField {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+        display: block;
+        width: 200px;
+        height: 40px;
+        border-radius: 30px;
+        border: 2px solid #292929;
+        padding: 0px 12px;
+        outline: none;
+        caret-color: #292929;
+        color: #292929;
+        font-size: 12px;
+        transition-duration: 0.2s;
+        font-size: 15px;
+        width: 300px;
+      }
+
+      #usernameField:focus,
+      #usernameField:valid {
+        border: 2px solid #fca41c;
+        transition-duration: 0.2s;
+      }
+
+      button {
+        margin-top: 50px;
+        width: 200px;
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 7px;
+        border: 2px solid #fca41c;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        background: transparent;
+        color: #191c2a;
+        overflow: hidden;
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        cursor: pointer;
+      }
+
+      button:hover {
+        color: white;
+        background: #fca41c;
+        box-shadow: 0 0 30px 5px rgba(#fca41c, 0.815);
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+      }
+
+      button:hover::before {
+        -webkit-animation: sh02 0.5s 0s linear;
+        -moz-animation: sh02 0.5s 0s linear;
+        animation: sh02 0.5s 0s linear;
+      }
+
+      button::before {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 86%;
+        position: absolute;
+        top: 7%;
+        left: 0%;
+        opacity: 0;
+        background: #fff;
+        box-shadow: 0 0 50px 30px #fff;
+        -webkit-transform: skewX(-20deg);
+        -moz-transform: skewX(-20deg);
+        -ms-transform: skewX(-20deg);
+        -o-transform: skewX(-20deg);
+        transform: skewX(-20deg);
+      }
+
+      @keyframes sh02 {
+        from {
+          opacity: 0;
+          left: 0%;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+          left: 100%;
+        }
+      }
+
+      button:active {
+        box-shadow: 0 0 0 0 transparent;
+        -webkit-transition: box-shadow 0.2s ease-in;
+        -moz-transition: box-shadow 0.2s ease-in;
+        transition: box-shadow 0.2s ease-in;
+      }
+    }
+  }
+}
