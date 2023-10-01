@@ -7,12 +7,13 @@ import Services from "./components/home/services/Services";
 import OurChoice from "./components/home/ourChoice/OurChouce";
 import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
 import Restaurants from "./components/restaurants/Restaurants";
-
+import MApp from "./components/map/Map";
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+    <MApp />
       {/* <Services /> */}
       {/* <OurChoice /> */}
       {/* <OurChoice2 /> */}
