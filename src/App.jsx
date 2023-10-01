@@ -10,13 +10,13 @@ import Favorites from "./components/favorites/Favorites";
 function App() {
   return (
     <>
-      <Favorites />
+      {/* <Favorites /> */}
       {/* <Services /> */}
       {/* <OurChoice2 /> */}
       {/* <Hero /> */}
       {/* <Restaurants /> */}
-      <Footer />
       {/* <Booking /> */}
+      <Footer />
     </>
   );
 }
