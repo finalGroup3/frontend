@@ -1,7 +1,21 @@
+/* eslint-disable react/no-unescaped-entities */
 import "./Services.scss";
+// import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <div className="serviceContain">
+
+<h2
+          className="services-heading"
+      
+        >
+          Our services
+        </h2>
+        <p
+          className="services-text" >
+          Our website offers a wide range of services to cater to your leisure and travel needs. Whether you're looking to satisfy your taste buds at a restaurant, find a comfortable and convenient hotel for your stay, or discover exciting entertainment venues, we have you covered
+        </p>
+
       <section className="cards">
         <article className="card card--1">
           <div className="shade"></div>
@@ -16,10 +30,14 @@ const Services = () => {
               Our restaurants in Jordan provide delicious breakfast, brunch,
               lunch, or dinner.
             </h3>
+             <div className="services-bttnnss">
+            <button className="services-bttnn"> see more &#10095;&#10095; </button>
           </div>
+          </div>
+         
         </article>
 
-        <article className="card card--2">
+        <article className="card card--2 carrd22">
           <div className="shade"></div>
           <div className="card__img"></div>
           <a href="#" className="card_link">
@@ -32,6 +50,9 @@ const Services = () => {
               poolside cabanas. set on the shoreline of one of the most
               beautiful places in Jordan. It is absolutely a viper lover’s hotel
             </h3>
+            <div className="services-bttnnss">
+            <button className="services-bttnn"> see more &#10095;&#10095; </button>
+          </div>
           </div>
         </article>
 
@@ -48,10 +69,14 @@ const Services = () => {
               can visit in Jordan. From the truly wonderful world wonder of
               Petra, to the lowest point of earth in Dead sea
             </h3>
+            <div className="services-bttnnss">
+            <button className="services-bttnn"> see more &#10095;&#10095;</button>
+          </div>
           </div>
         </article>
       </section>
     </div>
+
   );
 };
 

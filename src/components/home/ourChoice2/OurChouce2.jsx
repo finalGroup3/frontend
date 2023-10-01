@@ -17,7 +17,8 @@ export default function App() {
 
   return (
     <>
-      <div className="swiperContain">
+    <div className="swiper-box">
+ <div className="swiperContain">
         <Swiper
           direction={"vertical"}
           slidesPerView={1}
@@ -77,6 +78,9 @@ export default function App() {
           </SwiperSlide>
         </Swiper>
       </div>
+
+    </div>
+     
       <BookingModal open={openModal} onClose={() => setOpenModal(false)} />
     </>
   );
