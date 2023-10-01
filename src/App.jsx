@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState } from 'react'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Hero from './components/home/heroSection/Hero'
+import Restaurants from './components/restaurants/Restaurants'
+import Booking from './components/Booking/Booking4'
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import Hero from "./components/home/heroSection/Hero";
 import Services from "./components/home/services/Services";
 import OurChoice from "./components/home/ourChoice/OurChouce";
 import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
-import Restaurants from "./components/restaurants/Restaurants";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+{/* <Hero/> */}
+{/* <Restaurants/> */}
+<Booking />
       {/* <Services /> */}
       {/* <OurChoice /> */}
       {/* <OurChoice2 /> */}
-      {/* <Hero/> */}
-      {/* <Restaurants /> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
