@@ -16,6 +16,7 @@ export default function Restaurants() {
   return (
     <>
       {/* --------------------------------- TOP resturants------------------------------------- */}
+      <div className="bbb">
       <section
         className="section service bg-black-10 text-center"
         aria-label="service"
@@ -355,6 +356,7 @@ export default function Restaurants() {
           </ul>
         </div>
       </section>
+      </div>
     </>
   );
 }
