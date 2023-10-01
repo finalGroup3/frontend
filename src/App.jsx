@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Hero from './components/home/heroSection/Hero'
 import Restaurants from './components/restaurants/Restaurants'
-import Booking from './components/Booking/Booking3'
+import Booking from './components/Booking/Booking4'
 
 function App() {
   const [count, setCount] = useState(0)
