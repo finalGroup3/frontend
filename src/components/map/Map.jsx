@@ -4,8 +4,9 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import RoomIcon from "@mui/icons-material/Room";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
-// import shape1 from "../../assets/shape-1.png";
-import shape2 from "../../assets/car_gold.png";
+import shape1 from "../../assets/stop.png";
+import shape2 from "../../assets/red-left.png";
+// import shape2 from "../../assets/car_red.png";
 import "./Map.css";
 
 import Map, {
@@ -179,15 +180,8 @@ function MApp({ user }) {
 
   return (
     <>
+    
 
-          <img
-            src={shape2}
-            width={343}
-            height={345}
-            loading="lazy"
-            alt="shape"
-            className="shape shape-2 move-anim"
-          />
     <div className="map-container"> {/* New div container */}
     
       {coords && (
