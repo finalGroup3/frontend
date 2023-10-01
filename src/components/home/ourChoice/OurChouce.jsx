@@ -14,7 +14,9 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function OurChoice() {
   return (
     <>
-      <div className="swiperContain">
+
+    <section className="swiper-box">
+<div className="swiperContain">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -73,6 +75,9 @@ export default function OurChoice() {
           </SwiperSlide>
         </Swiper>
       </div>
+
+    </section>
+      
     </>
   );
 }
