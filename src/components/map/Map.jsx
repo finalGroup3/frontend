@@ -8,6 +8,7 @@ import shape1 from "../../assets/stop.png";
 import shape2 from "../../assets/red-left.png";
 // import shape2 from "../../assets/car_red.png";
 import "./Map.css";
+import SideNavBar from "./SideNavBar.jsx"
 
 import Map, {
   NavigationControl,
@@ -180,9 +181,10 @@ function MApp({ user }) {
 
   return (
     <>
-    
-
-    <div className="map-container"> {/* New div container */}
+    <div className="sidenavbar-container"> 
+    <SideNavBar/>
+</div>
+    <div className="map-container"> 
     
       {coords && (
         <Map
