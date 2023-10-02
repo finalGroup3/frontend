@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200&family=Merriweather+Sans:wght@300&family=Noto+Serif:ital@1&family=Poppins:wght@100;300;400;800&display=swap");
+
+.footerContain {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 150px 0px 0px 0px;
+  padding: 50px;
+  // position: fixed;
+  // bottom: 0;
+  gap: 30px;
+  background: linear-gradient(180deg, black, #001319);
+  border-top: 1px solid white;
+  font-family: "Jost", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
+  font-family: "Noto Serif", serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+
+  .copyright {
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    border-top: 1px solid white;
+  }
+  .contentContain {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .logologo {
+        font-family: "Dancing Script", cursive;
+        font-weight: 900;
+        font-size: 50px;
+        background: 50% 100% / 50% 50% no-repeat
+          radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: reveal 3000ms ease-in-out forwards 200ms,
+          glow 2500ms linear infinite 2000ms;
+
+        @keyframes reveal {
+          80% {
+            letter-spacing: 8px;
+          }
+          100% {
+            background-size: 300% 300%;
+          }
+        }
+        @keyframes glow {
+          40% {
+            text-shadow: 0 0 8px #fff;
+          }
+        }
+      }
+      .aboutt {
+        width: 350px;
+        line-height: 25px;
+      }
+    }
+    .office {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .officeoffice {
+        max-width: 59px;
+        border-bottom: 2px solid white;
+        margin-bottom: 30px;
+      }
+      .email {
+        cursor: pointer;
+        border-bottom: 1px solid white;
+        max-width: 205px;
+      }
+      .phone {
+        font-weight: 600;
+      }
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .services,
+      .home,
+      .aboutUs,
+      .features,
+      .contacts {
+        cursor: pointer;
+      }
+      .linkslinks {
+        max-width: 48px;
+        border-bottom: 2px solid white;
+        margin-bottom: 30px;
+      }
+    }
+    .newsletter {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      .newsletternewsletter {
+        max-width: 103px;
+        border-bottom: 2px solid white;
+        margin-bottom: 30px;
+      }
+      .socials {
+        display: flex;
+        gap: 10px;
+      }
+      .form {
+        width: 300px;
+        position: relative;
+        border-bottom: 1px solid white;
+        display: flex;
+        justify-content: end;
+        .input {
+          width: 90%;
+          color: white;
+          background: none;
+          border: none;
+          font-family: "Jost", sans-serif;
+          font-family: "Merriweather Sans", sans-serif;
+          font-family: "Noto Serif", serif;
+          font-family: "Poppins", sans-serif;
+          font-weight: 200;
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+        .input::placeholder {
+          color: white;
+        }
+        .arrowBTN {
+          color: white;
+          font-size: 35px;
+          background: transparent;
+          border: none;
+          position: absolute;
+          top: -15px;
+          right: 0px;
+        }
+        .emailIcon {
+          position: absolute;
+          top: 5px;
+          left: 0px;
+        }
+      }
+    }
+    .officeoffice,
+    .linkslinks,
+    .newsletternewsletter {
+      font-family: "Jost", sans-serif;
+      font-family: "Merriweather Sans", sans-serif;
+      font-family: "Noto Serif", serif;
+      font-family: "Poppins", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .socials {
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        background-color: white;
+      }
+      .icon {
+        font-size: 20px;
+      }
+    }
+  }
+}
