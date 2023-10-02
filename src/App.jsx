@@ -1,6 +1,7 @@
 import "./App.css";
 import Hero from "./components/home/heroSection/Hero";
 import Restaurants from "./components/restaurants/Restaurants";
+import MApp from "./components/map/Map";
 import Header from "./components/header/Header";
 import AboutApp from "./components/home/aboutOurApp/AboutApp";
 import JordanMAp from "./components/home/Jordanmap/JordanMAp";
@@ -15,13 +16,14 @@ import LogIn from "./components/Auth/login/LogIn";
 function App() {
   return (
     <>
-      {/* <Header /> */}
-      {/* <Hero /> */}
-      {/* <AboutApp /> */}
-      {/* <Services /> */}
-      {/* <Numbers/> */}
-      {/* <OurChoice2 /> */}
-      {/* <JordanMAp /> */}
+      <MApp />
+      {/* <Header />
+      <Hero />
+      <AboutApp />
+      <Services />
+      <Numbers/>
+      <OurChoice2 />
+      <JordanMAp /> */}
       {/* <Restaurants/> */}
       {/* <Booking/> */}
       {/* <Favorites/> */}
