@@ -17,8 +17,10 @@ export default function Restaurants() {
     <>
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb">
+        
+      
       <section
-        className="section service bg-black-10 text-center"
+        className="section service bg-black-10 text-center "
         aria-label="service"
       >
         <div className="container-top-three-resturants">

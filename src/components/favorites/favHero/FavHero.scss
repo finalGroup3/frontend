@@ -7,8 +7,8 @@
   font-family: "Noto Serif", serif;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  font-size: 150px;
-  padding: 12px 48px;
+  font-size: 100px;
+  // padding: 12px 48px;
   background: linear-gradient(to right, #ffffff88 0, white 10%, #FCA41C   20%);
   background-position: -300px;
   -webkit-background-clip: text;
@@ -36,7 +36,7 @@
 }
 
 .heroooooo {
-  width: 100vw;
+  // width: 100vw;
   height: 60vh;
   text-align: center;
   color: #ccc;
@@ -45,6 +45,10 @@
   font-family: "Amatic SC", sans-serif;
   letter-spacing: 17.5px;
 
+  .header-sub{
+    font-size: 15px;
+    // font-weight: 100;
+  }
   .hero-one {
     top: 0;
     position: absolute;
