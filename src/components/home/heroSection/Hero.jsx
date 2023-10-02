@@ -6,7 +6,7 @@ import arrowimg from '../../imgs/next.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import petra from './petra2.jpg'
-import mask from './grunge.jpg'
+import mask from './grunge2.jpg'
 import img from './img.png'
 
 

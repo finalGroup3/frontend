@@ -1,0 +1,98 @@
+.header-svgs {
+  width: 100%;
+  height: 130vh;
+  // background-color: aqua;
+//   overflow: hidden;
+
+  img {
+    // object-fit: fill;
+    width: 100%;
+    height: 130vh;
+    position: absolute;
+  }
+
+  .lay1 {
+    z-index: 0;
+  }
+  .lay2 {
+    z-index: 1;
+  }
+  .lay3 {
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      z-index: 2;
+      overflow: hidden;
+      // height: 130%;
+    }
+  }
+  .lay4 {
+    z-index: 3;
+    position: fixed;
+    width: 30%;
+    height: 100vh;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    font-size: 194px !important;
+    font-family: "Dancing Script", cursive;
+    font-weight: 900;
+    color: aliceblue;
+    // z-index: 111;
+  }
+
+  .lay5 {
+ 
+    // overflow: hidden;
+    // position: relative;
+  
+      z-index: 4;
+      width: 40%;
+      height: 100%;
+      position: absolute;
+      // visibility: hidden;
+      bottom: 10px;
+    //   overflow: hidden;
+      right: 66%;
+    
+  }
+  .lay6 {
+  
+      width: 50%;
+      height: 100%;
+    //   visibility: hidden;
+      left: 66%;
+      bottom: 103px;
+      position: absolute;
+      z-index: 5;
+    //   overflow: hidden;
+    
+
+    // overflow: hidden;
+    // position: absolute;
+    // right: 0;
+  }
+  .lay7 {
+    width: 100%;
+    height: 130vh;
+    // position: absolute;
+    // background-color: crimson;
+    position: relative;
+    z-index: 6;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      width: 110%;
+      // height: 120%;
+      left: -80px;
+      bottom: -37px;
+    }
+  }
+}
+
+.ppp {
+  width: 100%;
+  height: 100vh;
+}

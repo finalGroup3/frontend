@@ -25,7 +25,7 @@ const LogIn = () => {
                     <span>Sign Up</span>
                   </h6>
                   <input
-                    className="checkbox"
+                    className="checkboxxx"
                     type="checkbox"
                     id="reg-log"
                     name="reg-log"
