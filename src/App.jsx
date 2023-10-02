@@ -15,18 +15,18 @@ import Favorites from "./components/favorites/Favorites";
 function App() {
   return (
     <>
-    {/* <MApp /> */}
-      <Header />
+    <MApp />
+      {/* <Header />
       <Hero />
       <AboutApp />
       <Services />
       <Numbers/>
       <OurChoice2 />
-      <JordanMAp />
+      <JordanMAp /> */}
       {/* <Restaurants/> */}
       {/* <Booking/> */}
       {/* <Favorites/> */}
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }
