@@ -1,10 +1,13 @@
 import "./Card.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
+import BookingModal from "../../bookingModal/BookingModal";
 // import Heart from "react-animated-heart";
-// import { useState } from "react";
+import { useState } from "react";
 
 const Card = () => {
+  const [openModal, setOpenModal] = useState(false);
+
   // const [isClick, setClick] = useState(false);
 
   // const handleSubmit = async (item) => {
@@ -63,7 +66,7 @@ const Card = () => {
                 Asperiores, blanditiis?
               </p>
               <div className="containBtNn">
-                <button>Book Now!</button>
+                <button onClick={() => setOpenModal(true)}>Book Now!</button>
                 <button className="removeBTnnn">Remove</button>
               </div>
             </div>
@@ -96,7 +99,7 @@ const Card = () => {
                 Asperiores, blanditiis?
               </p>
               <div className="containBtNn">
-                <button>Book Now!</button>
+                <button onClick={() => setOpenModal(true)}>Book Now!</button>
                 <button className="removeBTnnn">Remove</button>
               </div>
             </div>
@@ -129,79 +132,14 @@ const Card = () => {
                 Asperiores, blanditiis?
               </p>
               <div className="containBtNn">
-                <button>Book Now!</button>
+                <button onClick={() => setOpenModal(true)}>Book Now!</button>
                 <button className="removeBTnnn">Remove</button>
               </div>
             </div>
           </div>
         </li>
-        {/* <li className="listttt">
-          <div className="card">
-            <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
-              className="card__image"
-              alt=""
-            />
-            <div className="card__overlay">
-              <div className="card__header">
-                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                  <path />
-                </svg>
-                <FontAwesomeIcon
-                  className="card__thumb"
-                  icon={faUtensils}
-                  style={{ color: "#001319" }}
-                />{" "}
-                <div className="card__header-text">
-                  <h3 className="card__title">Restaurant</h3>
-                  <span className="card__status">⭐⭐⭐⭐⭐</span>
-                </div>
-              </div>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
-              </p>
-              <div className="containBtNn">
-                <button>Book Now!</button>
-                <button className="removeBTnnn">Remove</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li className="listttt">
-          <div className="card">
-            <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
-              className="card__image"
-              alt=""
-            />
-            <div className="card__overlay">
-              <div className="card__header">
-                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                  <path />
-                </svg>
-                <FontAwesomeIcon
-                  className="card__thumb"
-                  icon={faUtensils}
-                  style={{ color: "#001319" }}
-                />{" "}
-                <div className="card__header-text">
-                  <h3 className="card__title">Restaurant</h3>
-                  <span className="card__status">⭐⭐⭐⭐⭐</span>
-                </div>
-              </div>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
-              </p>
-              <div className="containBtNn">
-                <button>Book Now!</button>
-                <button className="removeBTnnn">Remove</button>
-              </div>
-            </div>
-          </div>
-        </li> */}
       </ul>
+      <BookingModal open={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 };

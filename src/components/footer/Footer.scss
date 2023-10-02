@@ -124,6 +124,17 @@
         .input {
           width: 90%;
           color: white;
+          background: none;
+          border: none;
+          font-family: "Jost", sans-serif;
+          font-family: "Merriweather Sans", sans-serif;
+          font-family: "Noto Serif", serif;
+          font-family: "Poppins", sans-serif;
+          font-weight: 200;
+          &:focus {
+            outline: none;
+            border: none;
+          }
         }
         .input::placeholder {
           color: white;
@@ -131,8 +142,10 @@
         .arrowBTN {
           color: white;
           font-size: 35px;
+          background: transparent;
+          border: none;
           position: absolute;
-          top: -8px;
+          top: -15px;
           right: 0px;
         }
         .emailIcon {

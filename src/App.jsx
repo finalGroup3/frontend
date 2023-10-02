@@ -14,18 +14,17 @@ import Favorites from "./components/favorites/Favorites";
 function App() {
   return (
     <>
-    <Header/>
-    <Hero/>
-    <AboutApp/>
-      <Services /> 
+      {/* <Header /> */}
+      {/* <Hero /> */}
+      {/* <AboutApp /> */}
+      {/* <Services /> */}
       {/* <Numbers/> */}
-       <OurChoice2 />
-      <JordanMAp/>
-     {/* <Restaurants/> */}
-     {/* <Booking/> */}
-     {/* <Favorites/> */}
-     <Footer/>
-     
+      {/* <OurChoice2 /> */}
+      {/* <JordanMAp /> */}
+      {/* <Restaurants/> */}
+      {/* <Booking/> */}
+      <Favorites/>
+      <Footer />
     </>
   );
 }
