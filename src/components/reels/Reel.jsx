@@ -92,15 +92,15 @@ export default function Video({ url, user, reelId }) {
 
       <section className="reel-btnns">
           {/* <ReelModal className='commentBTN' user={user} /> */}
-      <CommentIcon
+      {/* <CommentIcon
         style={{
           fontSize: 7 * 9,
           color: "white",
           cursor: "pointer",
         }}
         className='commentBTN'
-        // onClick={() => handleComment()}
-      />
+        onClick={() => handleComment()}
+      /> */}
       </section>
         
       {showComment && (
