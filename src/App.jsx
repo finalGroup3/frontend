@@ -16,7 +16,7 @@ import LogIn from "./components/Auth/login/LogIn";
 function App() {
   return (
     <>
-      <MApp />
+      {/* <MApp /> */}
       {/* <Header />
       <Hero />
       <AboutApp />
