@@ -32,9 +32,9 @@ export default function Header2() {
   
       {/* <img src={shine} alt='' /> */}
     </div>
-    <p className="ppp">
+    {/* <p className="ppp">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eaque necessitatibus, numquam ab pariatur voluptatem, beatae accusantium ea quasi error consectetur earum sequi reprehenderit dicta blanditiis perferendis quod ullam est.
-    </p>
+    </p> */}
     </>
   
   );

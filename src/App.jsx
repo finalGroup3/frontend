@@ -19,20 +19,23 @@ function App() {
   return (
     <>
       {/* <MApp /> */}
-      {/* <Header />
-      <Hero />
-      <AboutApp />
-      <Services />
-      <Numbers/>
-      <OurChoice2 />
-      <JordanMAp /> */}
+      {/* <Header /> */}
+      {/* <Header2/> */}
+      {/* <Hero /> */}
+      {/* <AboutApp /> */}
+      {/* <Services /> */}
+      {/* <Numbers/> */}
+      {/* <OurChoice2 /> */}
+      {/* <JordanMAp /> */}
       {/* <Restaurants/> */}
       {/* <Booking/> */}
       {/* <Favorites/> */}
       {/* <Footer /> */}
       {/* <LogIn /> */}
-      {/* <Reelspage/> */}
-      <Header2/>
+      <Reelspage/>
+      
+      {/* <Hero /> */}
+
     </>
   );
 }
