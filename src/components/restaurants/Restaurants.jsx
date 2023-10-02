@@ -16,16 +16,18 @@ export default function Restaurants() {
   return (
     <>
       {/* --------------------------------- TOP resturants------------------------------------- */}
-      <div className="ccc">
+      <div className="bbb">
+        
+      
       <section
-        className="section service bg-black-10 text-center"
+        className="section service bg-black-10 text-center "
         aria-label="service"
       >
         <div className="container-top-three-resturants">
           <br />
           <p className="section-subtitle2 label-2">Flavors For Royalty</p>
           <h2 className="headline-1 section-title">Top Resturants</h2>
-          <p className= "section-subtitle"></p>
+          <p className="section-subtitle"></p>
           <br />
           <br />
 
@@ -136,7 +138,7 @@ export default function Restaurants() {
       <section className="section event bg-black-10" aria-label="event">
         <div className="container">
           <p className="headline-1 section-title ">Our Resturants</p>
-          <p className= "section-subtitle"></p>
+          <p className="section-subtitle"></p>
           <br />
           <ul className="grid-list">
             <li>
@@ -158,7 +160,9 @@ export default function Restaurants() {
                   </time>
                 </div>
                 <div className="card-content">
-                  <p className="card-subtitle label-2 text-center with-shadow">Mansaf</p>
+                  <p className="card-subtitle label-2 text-center with-shadow">
+                    Mansaf
+                  </p>
                   <h3 className="card-title2  text-center">
                     Flavour so good try to eat with your eyes. Flavour so good
                     try to eat with your eyes.
