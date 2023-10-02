@@ -1,0 +1,160 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourly - Travel agancy</title>
+
+  <!-- 
+      - favicon
+    -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+  <!-- 
+      - custom css link
+    -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- 
+      - google font link
+    -->
+  <!-- <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script> -->
+  <!-- <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script
+    src="https://kit.fontawesome.com/5f9d6d5729.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <link rel="stylesheet" type="text/css" href="dashboard.css" />
+</head>
+
+<body>
+  <div class="main-dashboard">
+    <div class="profile-navbar">
+      <div class="profile-admin">
+        <h1 class="profile--titel-admin">Wanerlust</h1>
+        <img src="./avatar1.jpg" alt="avatar1" class="profile-image" />
+        <h4 class="profile-Name-admin">Amro</h4>
+        <h4 class="profile-Role-admin">Admin</h4>
+      </div>
+      <div class="navigation-admin">
+        <h5>Navigation</h5>
+      </div>
+      <div class="navigation-admin-dashboard">
+        <i class="fa-solid fa-chart-pie"></i>
+        <!-- <FontAwesomeIcon icon="fa-solid fa-chart-pie" /> -->
+        <h3>Dashboard</h3>
+      </div>
+      <div class="apps-admin">
+        <h5>Apps</h5>
+      </div>
+      <div class="admin-chat">
+        <i class="fa-regular fa-envelope"></i>
+        <!-- <FontAwesomeIcon icon="fa-regular fa-envelope" /> -->
+        <h3>chat</h3>
+      </div>
+      <div class="admin-user">
+        <i class="fa-regular fa-address-book"></i>
+        <!-- <FontAwesomeIcon icon="fa-regular fa-address-book" /> -->
+        <h3>users</h3>
+      </div>
+      <div class="admin-restaurants">
+        <i class="fa-solid fa-mug-saucer"></i>
+        <!-- <FontAwesomeIcon icon="fa-solid fa-bell-concierge" /> -->
+        <h3>restaurants</h3>
+      </div>
+      <div class="admin-activitys">
+        <i class="fa-solid fa-person-swimming"></i>
+        <!-- <FontAwesomeIcon icon="fa-solid fa-person-swimming" /> -->
+        <h3>activtys</h3>
+      </div>
+      <div class="admin-hotels">
+        <i class="fa-solid fa-bed"></i>
+        <!-- <FontAwesomeIcon icon="fa-solid fa-bed" /> -->
+        <h3>hotels</h3>
+      </div>
+    </div>
+
+    <div class="chat-container">
+      <div class="chat-navbar">
+        <div class="chat-title">
+          <span>Chat</span>
+        </div>
+        <input class="chat-search-bar" type="text" placeholder="Search..." />
+        <div class="chat-bell">
+          <i class="fa-solid fa-bell"></i>
+          <!-- <FontAwesomeIcon icon="fa-solid fa-bell" /> -->
+        </div>
+        <img src="./avatar1.jpg" alt="avatar1" class="chat-avatar" />
+      </div>
+      <div class="chat-sidebar">
+        <div class="one-peson-chat">
+          <img
+            src="./avatar1.jpg"
+            alt="avatar1"
+            class="chat-avatar-one-person"
+          />
+          <div class="one-Person-name">
+            <span>Margaret Clayton</span>
+          </div>
+          <div class="chat-time-one-person">
+            <span> 05 min </span>
+          </div>
+        </div>
+        <div class="one-peson-chat">
+          <img
+            src="./avatar1.jpg"
+            alt="avatar1"
+            class="chat-avatar-one-person"
+          />
+          <div class="one-Person-name">
+            <span>Margaret Clayton</span>
+          </div>
+          <div class="chat-time-one-person">
+            <span> 05 min </span>
+          </div>
+        </div>
+        <div class="one-peson-chat">
+          <img
+            src="./avatar1.jpg"
+            alt="avatar1"
+            class="chat-avatar-one-person"
+          />
+          <div class="one-Person-name">
+            <span>Margaret Clayton</span>
+          </div>
+          <div class="chat-time-one-person">
+            <span> 05 min </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-body">
+        <div class="chat-body-head">
+          <span> Margaret Clayton </span>
+          <span>Active</span>
+          <!-- <hr>
+          <hr> -->
+        </div>
+        <!-- <hl></hl> -->
+        <div class="chat-body-main-space"></div>
+        <div class="chat-writing-box">
+          <textarea placeholder="Type your message..." class="chat-writing-input"></textarea>
+          <button class="chat-writing-button">Send</button>
+        </div>
+      </div>
+    </div>
+    <div class="render-page-admin"></div>
+  </div>
+</body>
