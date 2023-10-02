@@ -16,7 +16,7 @@ import Hotel from "./components/hotel/Hotel";
 function App() {
   return (
     <>
-    <Hotel/>
+    {/* <Hotel/> */}
     {/* <MApp /> */}
       {/* <Header />
       <Hero />
@@ -25,7 +25,7 @@ function App() {
       <Numbers/>
       <OurChoice2 />
       <JordanMAp /> */}
-      {/* <Restaurants/> */}
+      <Restaurants/>
       {/* <Booking/> */}
       {/* <Favorites/> */}
       {/* <Footer /> */}
