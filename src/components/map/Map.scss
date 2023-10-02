@@ -249,5 +249,46 @@ font-size: 20px;
   margin-left: 1vh;
   border-radius: 40px;
   overflow: hidden;
-  /* Additional styling properties as needed */
+ 
 }
+
+
+// .shape,
+// .shape-1 {
+//   display: block;
+//   position: absolute;
+//   max-width: max-content;
+//   z-index: -1;
+//   height: 27px;
+//   width: 50px;
+// }
+
+// .shape {
+//   bottom: 85%;
+//   left: 0;
+// }
+
+// .shape-1 {
+//   bottom: 85%;
+//   left: 80vw ;
+// }
+
+
+// .move-anim {
+//   animation: move 10s linear infinite;
+// }
+
+// @keyframes move {
+//   0%, 100% {
+//     transform: translateX(0) translateY(0) rotate(0deg);
+//   }
+//   25% {
+//     transform: translateX(calc(80vw - 20px)) translateY(0) rotate(0deg);
+//   }
+//   50% {
+//     transform: translateX(calc(100vw - 20px)) translateY(calc(85vh - 27px)) rotate(90deg);
+//   }
+//   75% {
+//     transform: translateX(0) translateY(calc(85vh - 27px)) rotate(180deg);
+//   }
+// }

@@ -11,11 +11,13 @@ import Services from "./components/home/services/Services";
 import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
+import Hotel from "./components/hotel/Hotel";
 
 function App() {
   return (
     <>
-    <MApp />
+    <Hotel/>
+    {/* <MApp /> */}
       {/* <Header />
       <Hero />
       <AboutApp />

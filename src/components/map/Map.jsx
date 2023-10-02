@@ -5,9 +5,9 @@ import RoomIcon from "@mui/icons-material/Room";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
 import shape1 from "../../assets/stop.png";
-import shape2 from "../../assets/red-left.png";
+import shape2 from "../../assets/right_silver.png";
 // import shape2 from "../../assets/car_red.png";
-import "./Map.css";
+import "./Map.scss";
 import SideNavBar from "./SideNavBar.jsx"
 
 import Map, {
@@ -181,6 +181,22 @@ function MApp({ user }) {
 
   return (
     <>
+    <div className="ssss">
+    {/* <img
+            src={shape2}
+            width={343}
+            height={345}
+            loading="lazy"
+            alt="shape"
+            className="shape shape-2 move-anim"
+          />
+          <img
+          src={shape1}
+          width={22}
+          height={37}
+          className="shape-1"
+        /> */}
+        </div>
     <div className="sidenavbar-container"> 
     <SideNavBar/>
 </div>
@@ -230,7 +246,6 @@ function MApp({ user }) {
                         <label>Rating</label>
                         <div className='stars'>
                           {Array(p.rating).fill(<StarIcon className="star" />)}
-                          {/* {p.rating} */}
                         </div>
                         <label>Information</label>
                         <span className='username'></span>
@@ -320,6 +335,7 @@ function MApp({ user }) {
         </Map>
       )}
       </div>
+      
     </>
   );
 }
