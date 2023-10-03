@@ -20,7 +20,7 @@ function App() {
     <>
       {/* <MApp /> */}
       {/* <Header /> */}
-      {/* <Header2/> */}
+      <Header2/>
       {/* <Hero /> */}
       {/* <AboutApp /> */}
       {/* <Services /> */}
@@ -32,7 +32,7 @@ function App() {
       {/* <Favorites/> */}
       {/* <Footer /> */}
       {/* <LogIn /> */}
-      <Reelspage/>
+      {/* <Reelspage/> */}
       
       {/* <Hero /> */}
 

@@ -1,98 +1,209 @@
-.header-svgs {
-  width: 100%;
-  height: 130vh;
-  // background-color: aqua;
-//   overflow: hidden;
+// .header-svgs {
+//   width: 100%;
+//   height: 130vh;
+//   // background-color: aqua;
+//   //   overflow: hidden;
 
-  img {
-    // object-fit: fill;
-    width: 100%;
-    height: 130vh;
-    position: absolute;
-  }
+//   img {
+//     // object-fit: fill;
+//     width: 100%;
+//     height: 130vh;
+//     position: absolute;
+//   }
 
-  .lay1 {
-    z-index: 0;
-  }
-  .lay2 {
-    z-index: 1;
-  }
-  .lay3 {
-    overflow: hidden;
+//   .lay1 {
+//     z-index: 0;
+//   }
+//   .lay2 {
+//     z-index: 1;
+//   }
+//   .lay3 {
+//     overflow: hidden;
 
-    img {
-      position: absolute;
-      z-index: 2;
-      overflow: hidden;
-      // height: 130%;
-    }
-  }
-  .lay4 {
-    z-index: 3;
-    position: fixed;
-    width: 30%;
-    height: 100vh;
-    position: absolute;
-    left: 30%;
-    top: 30%;
-    font-size: 194px !important;
-    font-family: "Dancing Script", cursive;
-    font-weight: 900;
-    color: aliceblue;
-    // z-index: 111;
-  }
-
-  .lay5 {
- 
-    // overflow: hidden;
-    // position: relative;
-  
-      z-index: 4;
-      width: 40%;
-      height: 100%;
-      position: absolute;
-      // visibility: hidden;
-      bottom: 10px;
-    //   overflow: hidden;
-      right: 66%;
-    
-  }
-  .lay6 {
-  
-      width: 50%;
-      height: 100%;
-    //   visibility: hidden;
-      left: 66%;
-      bottom: 103px;
-      position: absolute;
-      z-index: 5;
-    //   overflow: hidden;
-    
-
-    // overflow: hidden;
-    // position: absolute;
-    // right: 0;
-  }
-  .lay7 {
-    width: 100%;
-    height: 130vh;
-    // position: absolute;
-    // background-color: crimson;
-    position: relative;
-    z-index: 6;
-    overflow: hidden;
-
-    img {
-      position: absolute;
-      width: 110%;
-      // height: 120%;
-      left: -80px;
-      bottom: -37px;
-    }
-  }
-}
-
-.ppp {
-  width: 100%;
+//     img {
+//       position: absolute;
+//       z-index: 2;
+//       overflow: hidden;
+//       // height: 130%;
+//     }
+//   }
+.lay4 {
+  z-index: 3;
+  position: fixed;
+  width: 30%;
   height: 100vh;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  font-size: 194px !important;
+  font-family: "Dancing Script", cursive;
+  font-weight: 900;
+  color: aliceblue;
+  // z-index: 111;
 }
+
+//   .lay5 {
+//     // overflow: hidden;
+//     // position: relative;
+
+//     z-index: 4;
+//     width: 40%;
+//     height: 100%;
+//     position: absolute;
+//     // visibility: hidden;
+//     bottom: 10px;
+//     //   overflow: hidden;
+//     right: 66%;
+//   }
+//   .lay6 {
+//     width: 50%;
+//     height: 100%;
+//     //   visibility: hidden;
+//     left: 66%;
+//     bottom: 103px;
+//     position: absolute;
+//     z-index: 5;
+//     //   overflow: hidden;
+
+//     // overflow: hidden;
+//     // position: absolute;
+//     // right: 0;
+//   }
+//   .lay7 {
+//     width: 100%;
+//     height: 130vh;
+//     // position: absolute;
+//     // background-color: crimson;
+//     position: relative;
+//     z-index: 6;
+//     overflow: hidden;
+
+//     img {
+//       position: absolute;
+//       width: 110%;
+//       // height: 120%;
+//       left: -80px;
+//       bottom: -37px;
+//     }
+//   }
+// }
+
+.notContainerrrrr {
+  .ppp {
+    width: 100%;
+    margin-top: 500px;
+  }
+
+  .header-svgs {
+    height: 130vh;
+    // background-color: red;
+    overflow: hidden;
+    position: relative;
+    .lay1 {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -5px;
+    }
+    .lay2 {
+      z-index: 2;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -200px;
+    }
+    .lay3 {
+      z-index: 3;
+      position: absolute;
+      width: 100%;
+      height: 130%;
+    }
+    .lay4 {
+      z-index: 4;
+    //   position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 31%;
+      top: 250px;
+      font-size: 140px !important;
+      font-family: "Dancing Script", cursive;
+      font-weight: 900;
+      color: aliceblue;
+      animation: glow 2500ms linear infinite 2000ms;
+    }
+    .lay5 {
+      z-index: 5;
+      position: absolute;
+      width: 50%;
+      height: 78%;
+      top: 0;
+      left: -260px;
+    }
+    .lay6 {
+      z-index: 6;
+      position: absolute;
+      width: 40%;
+      height: 71%;
+      top: 0;
+      right: -100px;
+    }
+    .lay7 {
+      z-index: 7;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    .fade-out-element{
+        z-index: 4;
+          position: absolute;
+          width: 80px;
+          height: 30px;
+          left: 49.5%;
+          top: 500px;
+          rotate: 90deg;
+          font-size: 60px !important;
+          font-family: "Dancing Script", cursive;
+          font-weight: 900;
+          color: aliceblue;
+// animation: bounce 1s infinite;
+
+        //   animation: glow 2500ms linear infinite 2000ms;
+    }
+  }
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translatex(0);
+    }
+    50% {
+      transform: translatex(-25px);
+    }
+  }
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes lay1 {
+    0% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+      text-shadow: 0 0 20px rgb(255, 255, 255);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+  }
+  
