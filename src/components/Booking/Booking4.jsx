@@ -11,9 +11,9 @@ export default function Booking() {
     return (
 
         <>
-<div class="overlay">
-<h1>My Booking List</h1>
-		</div>
+            <div class="overlay">
+                <h1>My Booking List</h1>
+            </div>
             <div className='center-container'>
 
 
