@@ -15,13 +15,14 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
 import Header2 from "./components/header2/Header2";
+import LoginContext from "./components/Auth/login/LogInContext";
 
 function App() {
   return (
     <>
       {/* <MApp /> */}
       {/* <Header /> */}
-      <Header2/>
+      {/* <Header2/> */}
       {/* <Hero /> */}
       {/* <AboutApp /> */}
       {/* <Services /> */}

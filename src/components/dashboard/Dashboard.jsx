@@ -1,13 +1,13 @@
-import "./dashboard.css";
+import "./Dashboard.scss";
 // import "./user.css";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
-import { faChartPie } from "@fortawesome/free-solid-svg-icons";
-import { faMugSaucer } from "@fortawesome/free-solid-svg-icons";
-import { faBed } from "@fortawesome/free-solid-svg-icons";
-import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
-import { faMessage } from "@fortawesome/free-solid-svg-icons";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
+// import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
+// import { faChartPie } from "@fortawesome/free-solid-svg-icons";
+// import { faMugSaucer } from "@fortawesome/free-solid-svg-icons";
+// import { faBed } from "@fortawesome/free-solid-svg-icons";
+// import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
+// import { faMessage } from "@fortawesome/free-solid-svg-icons";
+// import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
 
@@ -15,70 +15,59 @@ import image from "./avatar1.jpg";
 import image2 from "./avatar2.png";
 import image3 from "./avatar3.jpg";
 import image4 from "./avatar4.jpg";
-import { Users } from "./DummyData";
-import { Restaurants } from "./DummyData";
-import { Hotels } from "./DummyData";
-import { activities } from "./DummyData";
+// import { Users } from "./DummyData";
+// import { Restaurants } from "./DummyData";
+// import { Hotels } from "./DummyData";
+// import { activities } from "./DummyData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SideNavBar from "./SideNavBar";
 const Dashboard = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
-  const [isUsersOpen, setIsUsersOpen] = useState(false);
-  const [isRestaurantsOpen, setIsRistaurantsOpen] = useState(false);
-  const [isHotelsOpen, setIsHotelsOpen] = useState(false);
-  const [isActivitiesOpen, setIsActivitiesOpen] = useState(false);
+  // const [isChatOpen, setIsChatOpen] = useState(false);
+  const [component, setComponent] = useState('');
+  // const [isUsersOpen, setIsUsersOpen] = useState(false);
+  // const [isRestaurantsOpen, setIsRistaurantsOpen] = useState(false);
+  // const [isHotelsOpen, setIsHotelsOpen] = useState(false);
+  // const [isActivitiesOpen, setIsActivitiesOpen] = useState(false);
 
   // console.log(Users);
-  const openChat = () => {
-    setIsChatOpen(true);
-    setIsUsersOpen(false);
-    setIsRistaurantsOpen(false);
-    setIsHotelsOpen(false);
-    setIsActivitiesOpen(false);
+  const currComponent = (component) => {
+    setComponent(component);
+  
   };
 
-  const openUsers = () => {
-    setIsChatOpen(false);
-    setIsUsersOpen(true);
-    setIsRistaurantsOpen(false);
-    setIsHotelsOpen(false);
-    setIsActivitiesOpen(false);
-  };
+  // const openUsers = () => {
+   
+  //   setIsUsersOpen(true);
+   
+  // };
 
-  const openRestaurantse = () => {
-    setIsChatOpen(false);
-    setIsUsersOpen(false);
-    setIsRistaurantsOpen(true);
-    setIsHotelsOpen(false);
-    setIsActivitiesOpen(false);
-  };
-  const openHotels = () => {
-    setIsChatOpen(false);
-    setIsUsersOpen(false);
-    setIsRistaurantsOpen(false);
-    setIsHotelsOpen(true);
-    setIsActivitiesOpen(false);
-  };
-  const openActivities = () => {
-    setIsChatOpen(false);
-    setIsUsersOpen(false);
-    setIsRistaurantsOpen(false);
-    setIsHotelsOpen(false);
-    setIsActivitiesOpen(true);
-  };
-  const handelDelete = (Id) => {
+  // const openRestaurantse = () => {
+  
+  //   setIsRistaurantsOpen(true);
+   
+  // };
+  // const openHotels = () => {
+  
+  //   setIsHotelsOpen(true);
+  
+  // };
+  // const openActivities = () => {
 
-  }
+  //   setIsActivitiesOpen(true);
+  // };
+  // const handelDelete = (Id) => {
+
+  // }
     return (
     <>
       <div>
         <div className="main-dashboard">
-          <div className="profile-navbar">
+          {/* <div className="profile-navbar">
             <div className="profile-admin">
               <h1 className="profile--titel-admin">Wanerlust</h1>
               <img src={image} alt="avatar1" className="profile-image" />
               <h4 className="profile-Name-admin">Amro</h4>
-              {/* <h4 className="profile-Role-admin">Admin</h4> */}
             </div>
             <div className="navigation-admin-Home">
               <FontAwesomeIcon icon={faHouse} />
@@ -115,9 +104,10 @@ const Dashboard = () => {
               <FontAwesomeIcon icon={faBed} />
               <h3>hotels</h3>
             </div>
-          </div>
+          </div> */}
+          <SideNavBar className='profile-navbar' currComponent ={currComponent} />
 
-          {isChatOpen && (
+          {/* {isChatOpen && (
             <div className="chat-container">
               <div className="chat-navbar">
                 <div className="chat-title">
@@ -336,7 +326,86 @@ const Dashboard = () => {
                 </tbody>
               </table>
             </div>
-          )}
+          )} */}
+
+
+          {component == "HelpCenter"?  <div className="chat-container">
+              <div className="chat-navbar">
+                <div className="chat-title">
+                  <FontAwesomeIcon icon={faEllipsis} />
+                  <span>Chat</span>
+                </div>
+                <input
+                  className="chat-search-bar"
+                  type="text"
+                  placeholder="Search..."
+                />
+                <div className="chat-bell">
+                  <FontAwesomeIcon icon={faBell} />
+                </div>
+                <img src={image} alt="avatar1" className="chat-avatar" />
+              </div>
+              <div className="chat-side-bar-profile">
+                <img src={image} alt="avatar1" className="chat-avatar" />
+                <h4 className="chat-profile-Name-admin">Amro</h4>
+              </div>
+              <div className="chat-sidebar">
+                <div className="one-peson-chat">
+                  <img
+                    src={image2}
+                    alt="avatar4"
+                    className="chat-avatar-one-person"
+                  />
+                  <div className="one-Person-name">
+                    <span>Margaret Clayton</span>
+                  </div>
+                  <div className="chat-time-one-person">
+                    <span> 05 min </span>
+                  </div>
+                </div>
+                <div className="one-peson-chat">
+                  <img
+                    src={image3}
+                    alt="avatar2"
+                    className="chat-avatar-one-person"
+                  />
+                  <div className="one-Person-name">
+                    <span>Margaret Clayton</span>
+                  </div>
+                  <div className="chat-time-one-person">
+                    <span> 05 min </span>
+                  </div>
+                </div>
+                <div className="one-peson-chat">
+                  <img
+                    src={image4}
+                    alt="avatar3"
+                    className="chat-avatar-one-person"
+                  />
+                  <div className="one-Person-name">
+                    <span>Margaret Clayton</span>
+                  </div>
+                  <div className="chat-time-one-person">
+                    <span> 05 min </span>
+                  </div>
+                </div>
+              </div>
+              <div className="chat-body">
+                <div className="chat-body-head">
+                  <span> Margaret Clayton </span>
+                  <span>Active</span>
+                </div>
+                <div className="chat-body-main-space" />
+                <div className="chat-writing-box">
+                  <textarea
+                    placeholder="Type your message..."
+                    className="chat-writing-input"
+                    defaultValue={""}
+                  />
+                  <button className="chat-writing-button">Send</button>
+                </div>
+              </div>
+            </div> : ""}
         </div>
       </div>
     </>
