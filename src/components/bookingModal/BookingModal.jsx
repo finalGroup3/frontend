@@ -4,6 +4,7 @@ import modalImage from "../../assets/modalimage.avif";
 const BookingModal = ({ open, onClose }) => {
   if (!open) return null;
   return (
+    
     <div onClick={onClose} className="modalOverlay">
       <div onClick={(e) => e.stopPropagation()} className="containerr">
         <img src={modalImage} alt="" />

@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 function AboutApp() {
   return (
     <>
-      <div className=''>
+      <div className='dontUseVW'>
         <div className='imgs-section'>
           <svg className="aboutapp-svg"
             xmlns='http://www.w3.org/2000/svg'

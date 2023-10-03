@@ -9,7 +9,7 @@ const FavHero = () => {
         <span className="header-primary">
           <div className="favhero">Favorites</div>
         </span>
-        <span className="header-sub">store what you like most</span>
+        <span className="header-sub">save what you like most</span>
       </h1>
     </div>
   );

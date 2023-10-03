@@ -5,6 +5,7 @@
   position: relative;
 }
 .hero {
+  overflow: hidden;
   position: relative;
   z-index: -2;
   height: 100vh;
@@ -47,7 +48,7 @@
     // opacity: 70%;
   }
   .mask-contain{
-    width: 100vw;
+    // width: 100vw;
   }
 
   .waves-hero{

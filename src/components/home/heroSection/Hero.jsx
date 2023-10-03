@@ -6,7 +6,7 @@ import arrowimg from '../../imgs/next.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import petra from './petra2.jpg'
-import mask from './grunge.jpg'
+import mask from './grunge2.jpg'
 import img from './img.png'
 
 
@@ -49,7 +49,7 @@ export default function Hero() {
         muted
         loop
         autoPlay
-        src='https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/0929(1).mp4?alt=media&token=2fe9c3f7-dd47-491b-897b-7d42e86a0c16&_gl=1*9jgsci*_ga*ODIzOTA1ODU2LjE2OTA0NDYwMDQ.*_ga_CW55HF8NVT*MTY5NjE4OTE3NC4xMy4xLjE2OTYxODkyOTEuMy4wLjA.'
+        src='https://firebasestorage.googleapis.com/v0/b/wanderlust-4473a.appspot.com/o/0929(1).mp4?alt=media&token=2a812d98-5698-47fd-a112-28dc3aea57fd&_gl=1*13zn83n*_ga*MTM0MDk0MTYyMy4xNjk2MjA1NTE5*_ga_CW55HF8NVT*MTY5NjIwNTUxOS4xLjEuMTY5NjIwNTczMC4yLjAuMA..'
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
