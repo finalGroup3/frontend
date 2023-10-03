@@ -1,8 +1,27 @@
 import "./LogIn.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAt, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { LoginContext } from "./LogInContext";
+import { useState, useContext } from "react";
 
 const LogIn = () => {
+  const state = useContext(LoginContext);
+
+  const [user, setUser] = useState({ username: "", password: "", role: "" });
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmitSignIn = (e) => {
+    e.preventDefault();
+    state.login(user.username, user.password);
+  };
+  const handleSubmitSignup = (e) => {
+    e.preventDefault();
+    state.signup(user.username, user.password, user.role);
+  };
+
   return (
     <div className="loginnnnn">
       <a
@@ -13,7 +32,6 @@ const LogIn = () => {
       >
         <div className="wanderLustLoGO">Wanderlust</div>
       </a>
-
       <div className="section">
         <div className="sectionSHADER">
           <div className="container">
@@ -35,16 +53,20 @@ const LogIn = () => {
                     <div className="card-3d-wrapper">
                       <div className="card-front">
                         <div className="center-wrap">
-                          <div className="sectionnN text-center">
+                          <form
+                            className="sectionnN text-center"
+                            onSubmit={handleSubmitSignIn}
+                          >
                             <h4 className="mb-4 pb-3">Log In</h4>
                             <div className="form-group">
                               <input
-                                type="email"
-                                name="logemail"
+                                type="text"
+                                name="username"
                                 className="form-style"
                                 placeholder="Your Email"
                                 id="logemail"
                                 autoComplete="off"
+                                onChange={handleChange}
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-at"
@@ -55,11 +77,12 @@ const LogIn = () => {
                             <div className="form-group mt-2">
                               <input
                                 type="password"
-                                name="logpass"
+                                name="password"
                                 className="form-style"
                                 placeholder="Your Password"
                                 id="logpass"
                                 autoComplete="off"
+                                onChange={handleChange}
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-lock-alt"
@@ -67,29 +90,33 @@ const LogIn = () => {
                                 style={{ color: "#fca41c" }}
                               />
                             </div>
-                            <a href="#" className="btn mt-4">
+                            <button className="btn mt-4" type="submit">
                               submit
-                            </a>
+                            </button>
                             <p className="mb-0 mt-4 text-center">
                               <a href="#0" className="link">
                                 Forgot your password?
                               </a>
                             </p>
-                          </div>
+                          </form>
                         </div>
                       </div>
                       <div className="card-back">
                         <div className="center-wrap">
-                          <div className="sectionnN text-center">
+                          <form
+                            className="sectionnN text-center"
+                            onSubmit={handleSubmitSignup}
+                          >
                             <h4 className="mb-4 pb-3">Sign Up</h4>
                             <div className="form-group">
                               <input
                                 type="text"
-                                name="logname"
+                                name="username"
                                 className="form-style"
                                 placeholder="Your Full Name"
                                 id="logname"
                                 autoComplete="off"
+                                onChange={handleChange}
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-user"
@@ -99,12 +126,13 @@ const LogIn = () => {
                             </div>
                             <div className="form-group mt-2">
                               <input
-                                type="email"
-                                name="logemail"
+                                type="password"
+                                name="password"
                                 className="form-style"
                                 placeholder="Your Email"
                                 id="logemail"
                                 autoComplete="off"
+                                onChange={handleChange}
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-at"
@@ -114,12 +142,13 @@ const LogIn = () => {
                             </div>
                             <div className="form-group mt-2">
                               <input
-                                type="password"
-                                name="logpass"
+                                type="text"
+                                name="role"
                                 className="form-style"
                                 placeholder="Your Password"
                                 id="logpass"
                                 autoComplete="off"
+                                onChange={handleChange}
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-lock-alt"
@@ -127,10 +156,10 @@ const LogIn = () => {
                                 style={{ color: "#fca41c" }}
                               />
                             </div>
-                            <a href="#" className="btn mt-4">
+                            <button className="btn mt-4" type="submit">
                               submit
-                            </a>
-                          </div>
+                            </button>
+                          </form>
                         </div>
                       </div>
                     </div>

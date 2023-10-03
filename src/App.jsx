@@ -14,25 +14,28 @@ import Favorites from "./components/favorites/Favorites";
 import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
 import Header2 from "./components/header2/Header2";
+import LoginContext from "./components/Auth/login/LogInContext";
 
 function App() {
   return (
     <>
-      {/* <MApp /> */}
-      {/* <Header />
+      <LoginContext>
+        {/* <MApp /> */}
+        {/* <Header />
       <Hero />
       <AboutApp />
       <Services />
       <Numbers/>
       <OurChoice2 />
       <JordanMAp /> */}
-      {/* <Restaurants/> */}
-      {/* <Booking/> */}
-      {/* <Favorites/> */}
-      {/* <Footer /> */}
-      {/* <LogIn /> */}
-      {/* <Reelspage/> */}
-      <Header2/>
+        {/* <Restaurants/> */}
+        {/* <Booking/> */}
+        {/* <Favorites/> */}
+        {/* <Footer /> */}
+        <LogIn />
+        {/* <Reelspage/> */}
+        {/* <Header2/> */}
+      </LoginContext>
     </>
   );
 }
