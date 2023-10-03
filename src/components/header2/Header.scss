@@ -95,7 +95,7 @@
   }
 
   .header-svgs {
-    height: 130vh;
+    height: 200vh;
     // background-color: red;
     overflow: hidden;
     position: relative;
@@ -130,7 +130,7 @@
       font-family: "Dancing Script", cursive;
       font-weight: 900;
       color: aliceblue;
-      animation: glow 2500ms linear infinite 2000ms;
+      // animation: glow 2500ms linear infinite 2000ms;
     }
     .lay5 {
       z-index: 5;
