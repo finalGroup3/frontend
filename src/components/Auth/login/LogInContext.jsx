@@ -3,17 +3,18 @@ import cookie from "react-cookies";
 import jwt_decode from "jwt-decode";
 import superagent from "superagent";
 import base64 from "base-64";
+import { useNavigate } from "react-router-dom";
 
 export const LoginContext = React.createContext();
 
 const LoginProvider = (props) => {
+  const navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
   const [token, setToken] = useState("");
   const [user, setUser] = useState({ capabilities: [] });
   const [error, setError] = useState(null);
-  const [showSignup, setShowSignup] = useState(false);
 
-  console.log(loggedIn);
+  console.log(user);
 
   const can = (capability) => {
     return state?.user?.capabilities?.includes(capability);
@@ -27,14 +28,14 @@ const LoginProvider = (props) => {
         `Basic ${base64.encode(`${username}:${password}`)}`
       );
 
-    console.log(data.body);
-
     if (data.body) {
       try {
         validateToken(data.body.token);
+        navigate("/");
       } catch (e) {
         setLoginState(loggedIn, token, user, e);
         console.error(e);
+        alert("amro");
       }
     }
   };
@@ -45,11 +46,10 @@ const LoginProvider = (props) => {
       { username: username, password: password, role: role }
     );
 
-    console.log(data.body);
-
     if (data.body) {
       try {
         validateToken(data.body.token);
+        navigate("/");
       } catch (e) {
         setLoginState(loggedIn, token, user, e);
         console.error(e);
@@ -59,6 +59,7 @@ const LoginProvider = (props) => {
 
   const logout = () => {
     setLoginState(false, null, {});
+    window.location.reload(true);
   };
 
   const validateToken = (token) => {
@@ -78,7 +79,6 @@ const LoginProvider = (props) => {
     setUser(user);
     setError(error || null);
   };
-
   const state = {
     loggedIn: loggedIn,
     can: can,
@@ -88,8 +88,6 @@ const LoginProvider = (props) => {
     user: user,
     token: token,
     error: error,
-    setShowSignup: setShowSignup,
-    showSignup: showSignup,
   };
 
   useEffect(() => {
