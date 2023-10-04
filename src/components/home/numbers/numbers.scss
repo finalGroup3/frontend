@@ -43,11 +43,15 @@ section#counter-stats {
     width: 25%;
     text-align: center;
     gap: 30px;
+    span{
+      font-size: 40px;
+  
+    }
 
 }
 
 .number img{
-    width: 100px;
+    width: 60px;
     
 }
 .nums-container{
@@ -81,7 +85,7 @@ font-family: 'Unna', serif;
 
 }
 .number p{
-    font-size: 48px;
+    font-size: 28px;
     font-weight: 700;
    font-family: 'Unna', serif; 
 
@@ -111,13 +115,17 @@ section#counter-stats {
 .stats .fa {
   color: #008080;
   font-size: 60px;
-}
+}  
+
+
 .counting{
-    font-size: 80px;
+    font-size: 60px;
     font-weight: 600;
     color: #ffffff;
     font-family: 'Unna', serif; 
-   color: #fca41c;
+  //  color: #fca41c;
+  display: inline;
+
 
 
 

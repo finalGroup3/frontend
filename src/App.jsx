@@ -15,7 +15,6 @@ import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
-import Header2 from "./components/header2/Header2";
 import LoginContext from "./components/Auth/login/LogInContext";
 
 function App() {
@@ -24,22 +23,22 @@ function App() {
 
       <LoginContext>
         {/* <MApp /> */}
-        {/* <Header /> */}
-        {/* <Hero /> */}
-        {/* <AboutApp /> */}
-        {/* <Services /> */}
-        {/* <Numbers/> */}
-        {/* <OurChoice2 /> */}
-        {/* <JordanMAp /> */}
+        <Header />
+        <Hero />
+        <AboutApp />
+        <Services />
+        <Numbers/>
+        <OurChoice2 />
+        <JordanMAp />
         {/* <Restaurants/> */}
         {/* <Booking/> */}
         {/* <Favorites/> */}
         {/* <About/> */}
-        {/* <Footer /> */}
+        <Footer />
         {/* <Dashboard /> */}
         {/* <LogIn /> */}
         {/* <Reelspage/> */}
-        <Header2 />
+  
       </LoginContext>
     </>
   );

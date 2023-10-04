@@ -2,12 +2,13 @@
 import './Hero.scss';
 
 import  { useRef,useEffect  } from 'react';
-import arrowimg from '../../imgs/next.png';
+import arrowimg from './fast-forward-double-right-arrows-symbol.png';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import petra from './petra2.jpg'
 import mask from './grunge2.jpg'
-import img from './img.png'
+// import img from './img.png'
+import video from './0929(1).mp4'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +50,7 @@ export default function Hero() {
         muted
         loop
         autoPlay
-        src='https://firebasestorage.googleapis.com/v0/b/wanderlust-4473a.appspot.com/o/0929(1).mp4?alt=media&token=2a812d98-5698-47fd-a112-28dc3aea57fd&_gl=1*13zn83n*_ga*MTM0MDk0MTYyMy4xNjk2MjA1NTE5*_ga_CW55HF8NVT*MTY5NjIwNTUxOS4xLjEuMTY5NjIwNTczMC4yLjAuMA..'
+        src={video}
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
@@ -84,21 +85,44 @@ export default function Hero() {
 
         <section className='hero-text'>
 
+          <p>
+          Welcome To 
+          </p>
+
+        <div id="hero-text-app">
+        <div className="title">
+          <div className="title-inner">
+            <div className="cafe">
+              {/* <div className="cafe-inner">Welcome To </div> */}
+            </div>
+            <div className="mozart">
+              <div className="mozart-inner">Wandetlust</div>
+           
+           
+            
+                   
+                    </div>
+          </div>
+        </div>
+
         <div className='glass-section'>
-          
-           <article className='first-line'>
-                <a><img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=600&size=38&duration=4800&pause=986&color=020031&center=true&vCenter=true&multiline=true&repeat=false&width=400&height=80&lines=Welcome+To+" alt="Typing SVG" /></a>
-                </article>
-                <article className='first-line'>
-                <a><img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=900&size=68&duration=4600&pause=986&color=020031&center=false&vCenter=true&multiline=true&repeat=false&width=800&height=120&lines=Wanderlust" alt="Typing SVG" /></a>
-                </article>
-               
+                         
+                         <article>
+                         <a><img src="https://readme-typing-svg.demolab.com?font=Cinzel&size=30&duration=2500&pause=686&color=020031&center=false&vCenter=true&multiline=true&width=900&height=100&lines=You+Are+in+Good+Hands;Your+Journey+Begins+Here" alt="Typing SVG" /></a>
+                             </article>
+         
+         
+                   </div>
+      </div>
+
+        {/* <div className='glass-section'>
+                         
                 <article>
                 <a><img src="https://readme-typing-svg.demolab.com?font=Cinzel&size=30&duration=4500&pause=986&color=020031&center=false&vCenter=true&multiline=true&width=900&height=100&lines=You+Are+in+Good+Hands;Your+Journey+Begins+Here" alt="Typing SVG" /></a>
                     </article>
 
 
-          </div>
+          </div> */}
           
             <img className='arrowimg' src={arrowimg}alt='img'/>
 
