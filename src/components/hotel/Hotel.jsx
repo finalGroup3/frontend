@@ -20,6 +20,7 @@ const Hotel = () => {
           </div>
         </div>
       </div>
+      <div className='main contoinerr'>
       <div className="parallax-bg cards-section" id="cards-section">
       <article className="custom-card">
   <img
@@ -86,6 +87,7 @@ const Hotel = () => {
 </article>
 
       </div>
+    </div>
     </div>
   );
 };
