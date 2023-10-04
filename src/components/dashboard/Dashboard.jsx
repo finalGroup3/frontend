@@ -21,7 +21,7 @@ import image4 from "./avatar4.jpg";
 // import { activities } from "./DummyData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SideNavBar from "./SideNavBar";
+import SideNavBar from "./SideNavBar2";
 const Dashboard = () => {
   // const [isChatOpen, setIsChatOpen] = useState(false);
   const [component, setComponent] = useState('');

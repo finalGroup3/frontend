@@ -1,13 +1,16 @@
-import lay1 from "./Asset_54x-8.png";
+import lay1 from "./petranight.avif";
 import stars from "./Asset_1.svg";
 import lay3 from "./waterfall.png";
 import backleft from "./backLeft.png";
 import backright from "./backRight.png";
-import front from ".//2nd_layer.png";
+// import front from ".//2nd_layer.png";
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import front from "./cover22.png";
+import cover from './dust-png-33453.png'
+import cover2 from './dust-png-33448.png'
+import cover3 from './smoke-png-13212.png'
 import "./Header.scss";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -33,134 +36,71 @@ export default function Header2() {
   //     }
   //   });
   // }, []);
-  const bounceElement = (element) => {
-    gsap.to(element, {
-      y: 100, // Move down 100 pixels
-      opacity: 0,
-      ease: 'power4.out', // Add a custom easing for fade out
-      duration: 2, // Duration of the fade-out animation
-      onComplete: () => {
-        // Reset element's position and opacity after animation
-        gsap.set(element, { y: 0, opacity: 1 });
-        bounceElement(element); // Call the bounce animation again
-      }
-    });
-  };
+
+
+  // const bounceElement = (element) => {
+  //   gsap.to(element, {
+  //     x: -600, 
+  //     duration:7, 
+  //     onComplete: () => {
+  //       gsap.set(element, { x: 1500});
+  //       bounceElement(element); 
+  //     }
+  //   });
+  // };
+
+  
+
+  // useEffect(() => {
+  //   const element = document.querySelector('.lay5');
+  //   bounceElement(element);
+  // }, []);
 
   useEffect(() => {
-    const element = document.querySelector('.fade-out-element');
-    bounceElement(element);
-  }, []);
 
-  useEffect(() => {
-    // Define the GSAP timeline animation
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".scrollDist",
         start: "top top",
         end: "bottom bottom",
-        scrub: 2.5,
+        scrub: 5,
 
       },
     });
 
-    // Add animations to the timeline
     timeline
       // .fromTo(".lay1", { y: 0 }, { y: -200 }, 0)
       // .fromTo(".lay2", { y: 100 }, { y: -800 }, 0)
-      .fromTo(".lay3", { y: 0, z: 0 }, { y: -250, z: 400 }, 0)
+      // .fromTo(".lay3", { y: 0, z: 0 }, { y: -250, z: 400 }, 0)
       .fromTo(".lay4", { y: -90 }, { y: 650 }, 0)
-      .fromTo(".fade-out-element", { y: -5  }, { y: 600}, 0)
-      .fromTo(".lay5", { x: -10 }, { x: 80 }, 0)
-      .fromTo(".lay6", { x: 35 }, { x: -100 }, 0)
+      // .fromTo(".fade-out-element", { y: -5  }, { y: 600}, 0)
+      .fromTo(".lay5", { x: 800 }, { x: -10 }, 0)
+      .fromTo(".lay6", { x: 900 }, { x: 400 }, 0)
+      .fromTo(".lay8", { x: 1000 }, { x: 100 }, 0)
+      .fromTo(".lay9", { x: 600 }, { x: -20 }, 0)
+      .fromTo(".lay10", { x: 600 }, { x: 30 }, 0)
+      .fromTo(".lay11", { x: -100 }, { x: 900 }, 0)
+      .fromTo(".lay12", { x: 60 }, { x: -20 }, 0)
+      .fromTo(".lay13", { x: 400 }, { x: -70 }, 0)
+      .fromTo(".lay14", { x: -20 }, { x: 920 }, 0)
+      .fromTo(".lay15", { x: 900 }, { x: 100 }, 0)
+      .fromTo(".lay16", { x: -20 }, { x: 300 }, 0)
+      .fromTo(".lay17", { x:-600 }, { x:200 }, 0)
+      .fromTo(".lay18", { x: 200 }, { x: 900 }, 0)
+      .fromTo(".lay19", { x: 900 }, { x: -20 }, 0)
+      .fromTo(".lay20", { x: 100 }, { x: 600 }, 0)
+      .fromTo(".lay1", { x: 35 }, { x: -100 }, 0)
+      // .fromTo(".lay7", { x: 35 }, { x: -100 }, 0)
 
-  //   // Event listeners for mouse enter, mouse leave, and click
-  //   const arrowBtn = document.getElementById("arrowBtn");
-
-  //   arrowBtn.addEventListener("mouseenter", () => {
-  //     gsap.to(".arrow", {
-  //       y: 10,
-  //       z:10,
-  //       duration: 10,
-  //       ease: "back.inOut(7)",
-  //       overwrite: "auto",
-  //     });
     });
   
 
-  //   arrowBtn.addEventListener("mouseleave", () => {
-  //     gsap.to(".arrow", {
-  //       y: 0,
-  //       z:0,
-  //       duration: 10,
-  //       ease: "power3.out",
-  //       overwrite: "auto",
-  //     });
-  //   });
-
-   
-
-  //   arrowBtn.addEventListener("click", () => {
-  //     gsap.to(window, {
-  //       scrollTo: window.innerHeight,
-  //       duration:10,
-  //       ease: "power1.inOut",
-  //     });
-  //   });
-
-  //   // Cleanup event listeners when component unmounts
-  // }, []);
-
-  // useEffect(() => {
-  //   const arrowBtn = document.getElementById("arrowBtn");
-
-  //   const handleMouseEnter = () => {
-  //     gsap.to(".arrow", {
-  //       y: 10,
-  //       z:0,
-  //       duration: 10,
-  //       ease: "back.inOut(3)",
-  //       overwrite: "auto",
-  //     });
-  //   };
-
-
-
-  //   const handleMouseLeave = () => {
-  //     gsap.to(".arrow", {
-  //       y: 0,
-  //       z:0,
-  //       duration: 10,
-  //       ease: "power3.out",
-  //       overwrite: "auto",
-  //     });
-  //   };
-
-  //   const handleClick = () => {
-  //     gsap.to(window, {
-  //       scrollTo: window.innerHeight,
-  //       duration: 10,
-  //       ease: "power1.inOut",
-  //     });
-  //   };
-
-  //   arrowBtn.addEventListener("mouseenter", handleMouseEnter);
-  //   arrowBtn.addEventListener("mouseleave", handleMouseLeave);
-  //   arrowBtn.addEventListener("click", handleClick);
-
-  //   // Cleanup event listeners when component unmounts
-  //   return () => {
-  //     arrowBtn.removeEventListener("mouseenter", handleMouseEnter);
-  //     arrowBtn.removeEventListener("mouseleave", handleMouseLeave);
-  //     arrowBtn.removeEventListener("click", handleClick);
-  //   };
-  // }, []);
   return (
     <div className='notContainerrrrr'>
       <div className='scrollDist'>
         <div className='main'>
           {" "}
-          <div className='header-svgs'>
+          {/* <div className='header-svgs'>
             <img className='lay1' src={lay1} alt='' />
             <img className='lay2' src={stars} alt='' />
             <img className='lay3' src={lay3} alt='' />
@@ -170,16 +110,48 @@ export default function Header2() {
             <img className='lay5' src={backleft} alt='' />
             <img className='lay6' src={backright} alt='' />
             <img className='lay7' src={front} alt='' />
-          </div>
-        </div>
-      </div>
+          </div> */}
+        
+    {/* <div className="notContainerrrrr"> */}
+      <div className="header-svgs">
+        <img className="lay1" src={lay1} alt="" />
+        <div className="shadePetra"></div>
+        {/* <img className="lay2" src={stars} alt="" />
+        <img className="lay3" src={lay3} alt="" /> */}
+        <div className="lay4"> Wanderlust</div>
+        {/* <img className="lay5" src={backleft} alt="" />
+        <img className="lay6" src={backright} alt="" /> */}
+        {/* <img className="lay5" src={cover} alt="" /> */}
+      
 
+        <img className="lay7" src={front} alt="" />
+        {/* <img className="lay5" src={cover} alt="" /> */} 
+        <img className="lay5" src={cover} alt="" />  
+         <img className="lay6" src={cover2} alt="" />
+         <img className="lay8" src={cover2} alt="" />
+         <img className="lay9" src={cover} alt="" />
+         <img className="lay10" src={cover2} alt="" />
+         <img className="lay11" src={cover} alt="" />
+         {/* <img className="lay12" src={cover} alt="" /> */}
+         <img className="lay13" src={cover2} alt="" />
+         {/* <img className="lay14" src={cover} alt="" /> */}
+         <img className="lay15" src={cover2} alt="" />
+         {/* <img className="lay16" src={cover} alt="" /> */}
+         <img className="lay17" src={cover} alt="" />
+         {/* <img className="lay18" src={cover} alt="" /> */}
+         <img className="lay19" src={cover2} alt="" />
+         <img className="lay20" src={cover} alt="" />
+      
+
+      </div>
+</div>
       <p className='ppp'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem eaque
         necessitatibus, numquam ab pariatur voluptatem, beatae accusantium ea
         quasi error consectetur earum sequi reprehenderit dicta blanditiis
         perferendis quod ullam est.
       </p>
+    </div>
     </div>
   );
 }

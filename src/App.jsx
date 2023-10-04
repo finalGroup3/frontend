@@ -20,25 +20,24 @@ import LoginContext from "./components/Auth/login/LogInContext";
 function App() {
   return (
     <>
-      {/* <MApp /> */}
-      {/* <Header /> */}
-      {/* <Header2/> */}
+      <LoginContext>
+        {/* <MApp /> */}
+        {/* <Header /> */}
       {/* <Hero /> */}
       {/* <AboutApp /> */}
       {/* <Services /> */}
       {/* <Numbers/> */}
       {/* <OurChoice2 /> */}
       {/* <JordanMAp /> */}
-      {/* <Restaurants/> */}
-      {/* <Booking/> */}
-      {/* <Favorites/> */}
-      {/* <Footer /> */}
-      <Dashboard />
-      {/* <LogIn /> */}
-      {/* <Reelspage/> */}
-      
-      {/* <Hero /> */}
-
+        {/* <Restaurants/> */}
+        {/* <Booking/> */}
+        {/* <Favorites/> */}
+        {/* <Footer /> */}
+        {/* <Dashboard /> */}
+        {/* <LogIn /> */}
+        {/* <Reelspage/> */}
+        <Header2/>
+      </LoginContext>
     </>
   );
 }
