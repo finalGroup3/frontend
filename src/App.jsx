@@ -39,7 +39,7 @@ function App() {
         {/* <Dashboard /> */}
         {/* <LogIn /> */}
         {/* <Reelspage/> */}
-        <Header2 />
+        {/* <Header2 /> */}
       </LoginContext>
     </>
   );
