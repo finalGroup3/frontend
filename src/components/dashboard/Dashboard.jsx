@@ -15,11 +15,11 @@ import image from "./avatar1.jpg";
 import image2 from "./avatar2.png";
 import image3 from "./avatar3.jpg";
 import image4 from "./avatar4.jpg";
-// import { Users } from "./DummyData";
-// import { Restaurants } from "./DummyData";
-// import { Hotels } from "./DummyData";
-// import { activities } from "./DummyData";
 
+import { Users } from "../Data/DummyData";
+import { Restaurants } from "../Data/DummyData";
+import { Hotels } from "../Data/DummyData";
+import { activities } from "../Data/DummyData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideNavBar from "./SideNavBar2";
 const Dashboard = () => {
