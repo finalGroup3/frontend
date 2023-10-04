@@ -1,0 +1,49 @@
+
+
+
+.nav-admin{
+
+    position: sticky;
+    button {
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    
+        &:hover {
+          color: rgb(21, 141, 143);
+          transform: scale(1.05); 
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        } &:focus{
+                background-color: #D9D9D9;
+            }
+
+        div{
+           
+        }
+
+      }
+aside {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    height: 100dvh;
+    width: 280px;
+    border-radius: 24px;
+    padding: 40px;
+    // background: var(--c-sidebar);
+    
+
+    .reels-logo{
+        font-size: 34px !important;
+        font-family: 'Dancing Script', cursive;
+        font-weight: 900;
+      }
+    nav {
+        display: grid;
+        grid-gap: 50px;
+       
+    }
+}
+
+}    
+

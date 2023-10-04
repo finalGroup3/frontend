@@ -11,30 +11,36 @@ import Services from "./components/home/services/Services";
 import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
+import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
 import Header2 from "./components/header2/Header2";
+import LoginContext from "./components/Auth/login/LogInContext";
 
 function App() {
   return (
     <>
-      {/* <MApp /> */}
-      {/* <Header />
-      <Hero />
-      <AboutApp />
-      <Services />
-      <Numbers/>
-      <OurChoice2 />
-      <JordanMAp /> */}
-      {/* <Restaurants/> */}
-      {/* <Booking/> */}
-      {/* <Favorites/> */}
-      {/* <Footer /> */}
-      <Dashboard />
-      {/* <LogIn /> */}
-      {/* <Reelspage/> */}
-      <Header2/>
+
+      <LoginContext>
+        {/* <MApp /> */}
+        {/* <Header /> */}
+        {/* <Hero /> */}
+        {/* <AboutApp /> */}
+        {/* <Services /> */}
+        {/* <Numbers/> */}
+        {/* <OurChoice2 /> */}
+        {/* <JordanMAp /> */}
+        {/* <Restaurants/> */}
+        {/* <Booking/> */}
+        {/* <Favorites/> */}
+        {/* <About/> */}
+        {/* <Footer /> */}
+        {/* <Dashboard /> */}
+        {/* <LogIn /> */}
+        {/* <Reelspage/> */}
+        <Header2 />
+      </LoginContext>
     </>
   );
 }
