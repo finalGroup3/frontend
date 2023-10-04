@@ -1,6 +1,6 @@
 import "./LogIn.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAt, faLock, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faLock, faUser } from "@fortawesome/free-solid-svg-icons";
 import { LoginContext } from "./LogInContext";
 import { useState, useContext } from "react";
 
@@ -8,9 +8,13 @@ const LogIn = () => {
   const state = useContext(LoginContext);
 
   const [user, setUser] = useState({ username: "", password: "", role: "" });
+  console.log(user);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
+  };
+  const handleRadioChange = (e) => {
+    setUser({ ...user, ["role"]: e.target.id });
   };
 
   const handleSubmitSignIn = (e) => {
@@ -24,14 +28,9 @@ const LogIn = () => {
 
   return (
     <div className="loginnnnn">
-      <a
-        href="https://front.codes/"
-        className="logo"
-        target="_blank"
-        rel="noreferrer"
-      >
+      {/* <Link to="/">
         <div className="wanderLustLoGO">Wanderlust</div>
-      </a>
+      </Link> */}
       <div className="section">
         <div className="sectionSHADER">
           <div className="container">
@@ -63,15 +62,16 @@ const LogIn = () => {
                                 type="text"
                                 name="username"
                                 className="form-style"
-                                placeholder="Your Email"
+                                placeholder="Your Username"
                                 id="logemail"
                                 autoComplete="off"
                                 onChange={handleChange}
+                                required
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-at"
-                                icon={faAt}
-                                style={{ color: "#fca41c" }}
+                                icon={faUser}
+                                style={{ color: "#fff" }}
                               />
                             </div>
                             <div className="form-group mt-2">
@@ -80,18 +80,19 @@ const LogIn = () => {
                                 name="password"
                                 className="form-style"
                                 placeholder="Your Password"
-                                id="logpass"
+                                id="logpasss"
                                 autoComplete="off"
                                 onChange={handleChange}
+                                required
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-lock-alt"
                                 icon={faLock}
-                                style={{ color: "#fca41c" }}
+                                style={{ color: "#fff" }}
                               />
                             </div>
                             <button className="btn mt-4" type="submit">
-                              submit
+                              Sign In
                             </button>
                             <p className="mb-0 mt-4 text-center">
                               <a href="#0" className="link">
@@ -113,15 +114,16 @@ const LogIn = () => {
                                 type="text"
                                 name="username"
                                 className="form-style"
-                                placeholder="Your Full Name"
+                                placeholder="Your Username"
                                 id="logname"
                                 autoComplete="off"
                                 onChange={handleChange}
+                                required
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-user"
                                 icon={faUser}
-                                style={{ color: "#fca41c" }}
+                                style={{ color: "#fff" }}
                               />
                             </div>
                             <div className="form-group mt-2">
@@ -129,35 +131,55 @@ const LogIn = () => {
                                 type="password"
                                 name="password"
                                 className="form-style"
-                                placeholder="Your Email"
+                                placeholder="Your Password"
                                 id="logemail"
                                 autoComplete="off"
                                 onChange={handleChange}
+                                required
                               />
                               <FontAwesomeIcon
                                 className="input-icon uil uil-at"
-                                icon={faAt}
-                                style={{ color: "#fca41c" }}
+                                icon={faLock}
+                                style={{ color: "#fff" }}
                               />
                             </div>
                             <div className="form-group mt-2">
-                              <input
-                                type="text"
-                                name="role"
-                                className="form-style"
-                                placeholder="Your Password"
-                                id="logpass"
-                                autoComplete="off"
-                                onChange={handleChange}
-                              />
-                              <FontAwesomeIcon
+                              <div className="radioContain">
+                                <div className="lllllll">
+                                  <label htmlFor="">User</label>
+                                  <input
+                                    type="radio"
+                                    name="user"
+                                    className="form-style"
+                                    placeholder="Your Role"
+                                    id="user"
+                                    autoComplete="off"
+                                    required
+                                    onChange={handleRadioChange}
+                                  />
+                                </div>
+                                <div className="lllllll">
+                                  <label htmlFor="">Owner</label>
+                                  <input
+                                    type="radio"
+                                    name="user"
+                                    className="form-style"
+                                    placeholder="Your Role"
+                                    id="owner"
+                                    autoComplete="off"
+                                    required
+                                    onChange={handleRadioChange}
+                                  />
+                                </div>
+                              </div>
+                              {/* <FontAwesomeIcon
                                 className="input-icon uil uil-lock-alt"
-                                icon={faLock}
+                                icon={faClipboardUser}
                                 style={{ color: "#fca41c" }}
-                              />
+                              /> */}
                             </div>
                             <button className="btn mt-4" type="submit">
-                              submit
+                              Register
                             </button>
                           </form>
                         </div>
