@@ -1,29 +1,30 @@
+.ssss {
+  overflow: hidden;
 
-  
-  .map  label {
+  .map label {
     width: max-content;
     color: tomato;
     font-size: 13px;
     border-bottom: 0.5px solid tomato;
     margin: 3px 0;
   }
-  
+
   .map .desc {
     font-size: 14px;
   }
-  
+
   .map .star {
     color: gold;
   }
-  
+
   .map .username {
     font-size: 14px;
   }
-  
+
   .map .date {
     font-size: 12px;
   }
-  
+
   .map form {
     width: 250px;
     height: 250px;
@@ -32,29 +33,29 @@
     justify-content: space-between;
     color: rgb(88, 87, 87);
   }
-  
+
   .map input {
     border: none;
     border-bottom: 1px solid gray;
   }
-  
+
   .map input::placeholder,
   textarea::placeholder {
     font-size: 12px;
     color: rgb(185, 184, 184);
   }
-  
-  .map  input:focus,
+
+  .map input:focus,
   textarea:focus,
   select:focus {
     outline: none;
   }
-  
-  .map  textarea {
+
+  .map textarea {
     border: none;
     border-bottom: 1px solid gray;
   }
-  
+
   .map .submitButton {
     border: none;
     padding: 5px;
@@ -63,14 +64,14 @@
     background-color: tomato;
     cursor: pointer;
   }
-  
+
   .map .buttons,
   .logout {
     position: absolute;
     top: 10px;
     right: 10px;
   }
-  
+
   .map .button {
     border: none;
     padding: 5px;
@@ -79,43 +80,41 @@
     font-weight: 500;
     cursor: pointer;
   }
-  
-  .map .button:focus{
+
+  .map .button:focus {
     outline: none;
   }
-  
-  .map .logout{
+
+  .map .logout {
     background-color: tomato;
   }
-  
-  .map .login{
+
+  .map .login {
     background-color: teal;
     margin-right: 10px;
   }
-  
-  .map .register{
+
+  .map .register {
     background-color: slateblue;
   }
 
- 
-
-  .mapboxgl-popup-content{
+  .mapboxgl-popup-content {
     /* width:90vw !important; */
     border-radius: 30px !important;
     /* From https://css.glass */
-/* From https://css.glass */
-background: #001319;
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.443);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(0, 0, 0, 0.495);
-color: aliceblue;
+    /* From https://css.glass */
+    background: #001319;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.443);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.495);
+    color: aliceblue;
   }
-  
+
   .mapcard {
     height: auto;
-min-height: 4vh;
+    min-height: 4vh;
     /* height: 650px; */
     display: flex;
     flex-direction: column;
@@ -125,170 +124,180 @@ min-height: 4vh;
     border-radius: 100px !important;
   }
 
-   .restinfoo{
-    margin: 30px 20px ;
+  .restinfoo {
+    margin: 30px 20px;
     font-size: 30px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-  } 
-
-  .place{
-    font-size: 40px;
-    font-family: 'Lugrasimo', cursive;
-    font-weight: 900;
-
   }
 
- .mapcard img{
+  .place {
+    font-size: 40px;
+    font-family: "Lugrasimo", cursive;
+    font-weight: 900;
+  }
+
+  .mapcard img {
     border-radius: 30px 0 !important;
     /* width: 600px;
      */
-     height: 400px;
-
+    height: 400px;
   }
 
-.mapform{
-  /* height: 100px !important; */
-  height: auto;
-  min-height: 6vh;
-  padding: 75px;
-  width: 600px;
- /* From https://css.glass */
-/* From https://css.glass */
-background: rgba(0, 0, 0, 0.22);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(0, 0, 0, 0.3);
-}
+  .mapform {
+    /* height: 100px !important; */
+    height: auto;
+    min-height: 6vh;
+    padding: 75px;
+    width: 600px;
+    /* From https://css.glass */
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
 
-.mapform form{
-  /* width: 600px; */
- display: flex;
-  flex-direction: column; 
-   /* align-items: center;
+  .mapform form {
+    /* width: 600px; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center;
   justify-content: center; */
-  gap: 20px;
-}
-
-.mapform form label{
-font: 100;
-font-size: 24px;
-font-family: 'Lugrasimo', cursive;
-font-weight: 600;
-color: aliceblue;
-}
-
-.mapform form input{
-  height: 55px;
-  border: 1px 0 0 0;
-  border-radius: 10px;
-  padding: 10px 20px;
-font-size: 20px;
-
-
-}
-
-.mapform form input::placeholder{
-font-size: 20px;
-padding: 10px 20px;
-color: rgb(0, 27, 52);
-
-}
-
-.mapform form textarea::placeholder{
-  font-size: 20px;
-  padding: 10px 20px;
-color: rgb(0, 27, 52);
-
-  
+    gap: 20px;
   }
 
-  .mapform form textarea{
+  .mapform form label {
+    font: 100;
+    font-size: 24px;
+    font-family: "Lugrasimo", cursive;
+    font-weight: 600;
+    color: aliceblue;
+  }
+
+  .mapform form input {
+    height: 55px;
+    border: 1px 0 0 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+
+  .mapform form input::placeholder {
     font-size: 20px;
     padding: 10px 20px;
-  color: rgb(0, 0, 0);
+    color: rgb(0, 27, 52);
   }
 
-.mapform button{
-width: 30%;
-height: 60px;
-/* width: 50px; */
-font-size: 20px;
-border-radius:10px;
-background-color: rgb(0, 29, 58);
-color: rgb(255, 255, 255);
+  .mapform form textarea::placeholder {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: rgb(0, 27, 52);
+  }
+
+  .mapform form textarea {
+    font-size: 20px;
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+  }
+
+  .mapform button {
+    width: 30%;
+    height: 60px;
+    /* width: 50px; */
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(0, 29, 58);
+    color: rgb(255, 255, 255);
+  }
+
+  .mapform form select {
+    height: 55px;
+    border: 1px 0 0 0;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+  }
+  #earth {
+    background-image: url("https://encrypted-tbn3.google.com/images?q=tbn:ANd9GcTQqoB4xBnIkmUg5pxDyYW2h0Q1pRTsbQBOfhg-E-y4iLFicsyi");
+    width: 50px;
+    height: 50px;
+    /* a black shadow from left and white from right */
+    box-shadow: inset 16px 0 40px 3px rgba(0, 0, 0, 0.9),
+      inset -3px 0 5px 2px rgba(255, 255, 255, 0.16);
+    background-size: 190px;
+    margin: 10px auto;
+    border-radius: 50%;
+    position: relative;
+    animation-name: move, scale, rotate;
+    animation-duration: 4s, 4s, 4s;
+    animation-iteration-count: infinite, infinite, infinite;
+    animation-timing-function: ease-in-out, linear, linear;
+    z-index: 2;
+  }
+
+  @keyframes move {
+    0% {
+      left: 50px;
+    }
+    70% {
+      left: -50px;
+    }
+    100% {
+      left: 50px;
+    }
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    32% {
+      transform: scale(0.4);
+      animation-timing-function: ease-in;
+    }
+    70% {
+      transform: scale(1);
+      animation-timing-function: ease-in;
+    }
+    75% {
+      transform: scale(1.2);
+      animation-timing-function: ease-in-out;
+    }
+    //  86% { transform: scale(2);  }
+    //  98% { transform: scale(1.2); }
+    //  100%{ transform: scale(1); }
+  }
+
+  @keyframes rotate {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: 190px;
+    }
+  }
+
+  .map-container {
+    position: relative;
+    width: 74%;
+    height: 82vh;
+    margin-top: 90px;
+    margin-left: 49vh;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidenavbar-container {
+    position: fixed;
+    width: 20vw;
+    margin-top: 90px;
+    margin-left: 1vh;
+    border-radius: 40px;
+    overflow: hidden;
+  }
 }
-
-.mapform form select{
-  height: 55px;
-  border: 1px 0 0 0;
-  border-radius: 10px;
-  padding: 10px 20px;
-font-size: 20px;
-
-}
-
-.map-container {
-  position: relative;
-  width: 74%;
-  height: 90vh;
-  margin-top: 7vh; 
-  margin-left: 49vh;
-  border-radius: 40px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.sidenavbar-container {
-  position: fixed;
-  width: 20vw;
-  margin-top: 1vh; 
-  margin-left: 1vh;
-  border-radius: 40px;
-  overflow: hidden;
- 
-}
-
-
-// .shape,
-// .shape-1 {
-//   display: block;
-//   position: absolute;
-//   max-width: max-content;
-//   z-index: -1;
-//   height: 27px;
-//   width: 50px;
-// }
-
-// .shape {
-//   bottom: 85%;
-//   left: 0;
-// }
-
-// .shape-1 {
-//   bottom: 85%;
-//   left: 80vw ;
-// }
-
-
-// .move-anim {
-//   animation: move 10s linear infinite;
-// }
-
-// @keyframes move {
-//   0%, 100% {
-//     transform: translateX(0) translateY(0) rotate(0deg);
-//   }
-//   25% {
-//     transform: translateX(calc(80vw - 20px)) translateY(0) rotate(0deg);
-//   }
-//   50% {
-//     transform: translateX(calc(100vw - 20px)) translateY(calc(85vh - 27px)) rotate(90deg);
-//   }
-//   75% {
-//     transform: translateX(0) translateY(calc(85vh - 27px)) rotate(180deg);
-//   }
-// }

@@ -12,17 +12,16 @@ import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
 import Hotel from "./components/hotel/Hotel";
-// import Test from "./components/test/test"
 
 
 function App() {
   return (
     <>
-    {/* <Test/> */}
-    <Hotel/>
-    {/* <MApp /> */}
-      {/* <Header />
-      <Hero />
+  
+    {/* <Hotel/> */}
+    <MApp />
+      <Header />
+      {/* <Hero />
       <AboutApp />
       <Services />
       <Numbers/>

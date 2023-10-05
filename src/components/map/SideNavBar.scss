@@ -19,6 +19,7 @@
     
         /* Add more specific styles for each button as needed */
         &.home {
+            
           /* Styles for the home button */
         }
     
@@ -45,14 +46,14 @@
 aside {
     width: 280px;
     border-radius: 24px;
-    padding: 40px;
+    padding: 50px;
     background: var(--c-sidebar);
     .logo {
         display: block;
         width: 28px;
         height: 28px;
         fill: var(--logo-color, var(--c-default));
-        margin-bottom: 36px;
+        // margin-bottom: 5px;
     }
     nav {
         display: grid;
