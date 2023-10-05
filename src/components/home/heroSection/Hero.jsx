@@ -43,8 +43,8 @@ export default function Hero() {
     {/* <video  autoPlay controls loop id="background-video">
   <source src={video} type='video/mp4' />
 </video> */}
-{/* 
-      <video
+
+      {/* <video
 
         ref={videoRef}
         muted

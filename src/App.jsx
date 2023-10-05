@@ -5,7 +5,6 @@ import MApp from "./components/map/Map";
 import Booking from "./components/Booking/Booking4";
 import Favorites from "./components/favorites/Favorites";
 import Hotel from "./components/hotel/Hotel";
-
 import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";

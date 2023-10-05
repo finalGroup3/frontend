@@ -11,7 +11,7 @@ import Footer from "../footer/Footer";
 const Hotel = () => {
   return (
     <>
-    <Header/>
+      <Header />
       <div className="hhhh">
         <div className="hotel-container">
           <section className="hero text-center" aria-label="home" id="home">
@@ -53,16 +53,16 @@ const Hotel = () => {
             />
             <span className="label-2 text-center span">Book A Table</span>
           </a> */}
-          <div>
-      
-    </div>
+          <div></div>
           {/* ------------------------------------ cards ----------------------------------------------- */}
           <div className="header">
-          <div className="parallax-container">
-                <h2 className="headline-1 section-title "><p className="section-subtitle2"></p>Our Hotels<p className="section-subtitle3"></p>  </h2>
-            <p className="section-subtitle"></p>
-            
-          </div>
+            <div className="parallax-container">
+              <h2 className="headline-1 section-title ">
+                <p className="section-subtitle2"></p>Our Hotels
+                <p className="section-subtitle3"></p>{" "}
+              </h2>
+              <p className="section-subtitle"></p>
+            </div>
           </div>
           <br />
           <br />
@@ -109,7 +109,8 @@ const Hotel = () => {
                 <p className="item-meal-type">⭐⭐⭐⭐</p>
                 <h2 className="item-title">Crown plaza</h2>
                 <p className="item-body">
-                Experience unparalleled hospitality with our dedicated staff, committed to delivering personalized.
+                  Experience unparalleled hospitality with our dedicated staff,
+                  committed to delivering personalized.
                 </p>
                 <a href="#" className="btn-text hover-underline label-2">
                   Book now
@@ -125,7 +126,8 @@ const Hotel = () => {
                 <p className="item-meal-type">⭐⭐⭐⭐</p>
                 <h2 className="item-title">Kempiniski</h2>
                 <p className="item-body">
-                Indulge in the plush luxury of our well-appointed rooms, meticulously designed perfectly.
+                  Indulge in the plush luxury of our well-appointed rooms,
+                  meticulously designed perfectly.
                 </p>
                 <a href="#" className="btn-text hover-underline label-2">
                   Book now
@@ -141,7 +143,8 @@ const Hotel = () => {
                 <p className="item-meal-type">⭐⭐⭐</p>
                 <h2 className="item-title">Fairmont </h2>
                 <p className="item-body">
-                From the moment you step into our lobby, you will be greeted by a welcoming atmosphere .
+                  From the moment you step into our lobby, you will be greeted
+                  by a welcoming atmosphere .
                 </p>
                 <a href="#" className="btn-text hover-underline label-2">
                   Book now
@@ -157,7 +160,8 @@ const Hotel = () => {
                 <p className="item-meal-type">⭐⭐⭐</p>
                 <h2 className="item-title">Hilton</h2>
                 <p className="item-body">
-                Elevate your stay with our range of premium services, including concierge assistance, spa facilities.
+                  Elevate your stay with our range of premium services,
+                  including concierge assistance, spa facilities.
                 </p>
                 <a href="#" className="btn-text hover-underline label-2">
                   Book now
@@ -168,7 +172,7 @@ const Hotel = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };

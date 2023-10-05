@@ -1,10 +1,20 @@
 import "./BookingModal.scss";
 import modalImage from "../../assets/modalimage.avif";
+import { LoginContext } from "../Auth/login/LogInContext";
+import { useContext } from "react";
 
 const BookingModal = ({ open, onClose }) => {
+  const state = useContext(LoginContext);
+
   if (!open) return null;
+
+  const notifyBooking = () => {
+    state.socket.emit("sendNotification", {
+      senderName: state.user.username,
+      receiverName: "shihab",
+    });
+  };
   return (
-    
     <div onClick={onClose} className="modalOverlay">
       <div onClick={(e) => e.stopPropagation()} className="containerr">
         <img src={modalImage} alt="" />
@@ -47,7 +57,7 @@ const BookingModal = ({ open, onClose }) => {
                 required="required"
               />
             </div>
-            <button>Book Now!</button>
+            <button onClick={notifyBooking}>Book Now!</button>
           </div>
         </div>
       </div>
