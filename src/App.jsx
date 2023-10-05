@@ -18,19 +18,6 @@ import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
 function App() {
   return (
     <>
-  
-    {/* <Hotel/> */}
-    {/* <MApp /> */}
-      {/* <Hero />
-      <AboutApp />
-      <Services />
-      <Numbers/>
-      <OurChoice2 />
-      <JordanMAp /> */}
-      {/* <Restaurants/> */}
-      {/* <Booking/> */}
-      {/* <Favorites/> */}
-      {/* <Footer /> */}
       <LoginProvider>
         <Routes>
           <Route path="/" element={<Home />} />

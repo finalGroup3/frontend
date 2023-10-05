@@ -1,4 +1,4 @@
-import "./SideNavBar2.scss";
+// import "./SideNavBar2.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 // import jordanmap from "../../assets/jordan1.png";
@@ -15,16 +15,16 @@ const SideNavBar = (props) => {
     <>
     <div className="nav-admin">
 
-       <div className="nnn">
+       <div className="nnn-admin">
    <div>
-  <aside>
-  <span className="reels-logo">Wanderlust</span>
+  <aside className="aside-admin">
+  <span className="admin-logo">Wanderlust</span>
 
       {/* <img className="jordan-map1" src={jordanmap}/> */}
     {/* <svg className="logo" viewBox="0 0 28 28">
     </svg> */}
     <nav>
-      <button className="home" onClick={()=>props.currComponent("Home")}>
+      <button className="homeadmin" onClick={()=>props.currComponent("Home")}>
         <div>
           <div className="icon">
           
@@ -34,7 +34,7 @@ const SideNavBar = (props) => {
           Home
         </div>
       </button>
-      <button className="explore" onClick={()=>props.currComponent("Dashboard")}>
+      <button className="dashboardadmin" onClick={()=>props.currComponent("Dashboard")}>
         <div>
           <div className="icon">
           <FontAwesomeIcon icon={faChartPie} />
@@ -42,7 +42,7 @@ const SideNavBar = (props) => {
           Dashboard
         </div>
       </button>
-      <button className="messages" onClick={()=>props.currComponent("HelpCenter")} >
+      <button className="messagesadmin" onClick={()=>props.currComponent("HelpCenter")} >
         <div>
           <div className="icon">
           
@@ -53,7 +53,7 @@ const SideNavBar = (props) => {
           Help Center
         </div>
       </button>
-      <button className="bookmark"  onClick={()=>props.currComponent("Users")}>
+      <button className="usersadmin"  onClick={()=>props.currComponent("Users")}>
         <div>
           <div className="icon">
           <FontAwesomeIcon icon={faAddressBook} />
@@ -61,7 +61,7 @@ const SideNavBar = (props) => {
           Users
         </div>
       </button>
-      <button className="lists"  onClick={()=>props.currComponent("Restaurants")}>
+      <button className="restaurantsadmin"  onClick={()=>props.currComponent("Restaurants")}>
         <div>
           <div className="icon">
           <FontAwesomeIcon icon={faMugSaucer} />
@@ -69,12 +69,20 @@ const SideNavBar = (props) => {
           Restaurants
         </div>
       </button>
-      <button className="profile"  onClick={()=>props.currComponent("Activties")} >
+      <button className="avtivitieseadmin"  onClick={()=>props.currComponent("Activties")} >
         <div>
           <div className="icon">
           <FontAwesomeIcon icon={faPersonSwimming} />
           </div>
           Activties
+        </div>
+      </button>
+      <button className="hotelseadmin"  onClick={()=>props.currComponent("Activties")} >
+        <div>
+          <div className="icon">
+          <FontAwesomeIcon icon={faPersonSwimming} />
+          </div>
+          Hotels
         </div>
       </button>
     </nav>
