@@ -2,10 +2,10 @@ import "./App.css";
 
 import Restaurants from "./components/restaurants/Restaurants";
 import MApp from "./components/map/Map";
-import Header from "./components/header/Header";
 import Booking from "./components/Booking/Booking4";
-import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
+import Hotel from "./components/hotel/Hotel";
+
 import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
@@ -19,20 +19,20 @@ function App() {
   return (
     <>
       <LoginProvider>
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/bookings" element={<Booking />} />
           <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/hotels" element={<Hotel />} />
+          {/* <Route path="/activities" element={<Activity/>} /> */}
           <Route path="/aboutus" element={<About />} />
           <Route path="/reels" element={<Reelspage />} />
           <Route path="/map" element={<MApp />} />
           <Route path="/dashboard/admin" element={<Dashboard />} />
           <Route path="/dashboard/owner" element={<OwnerDashboard />} />
         </Routes>
-        {/* <Footer /> */}
       </LoginProvider>
     </>
   );

@@ -7,6 +7,7 @@ import "./Header.scss";
 import { useEffect, useState, useContext } from "react";
 import { When } from "react-if";
 import profile from "./laith profile.png";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const state = useContext(LoginContext);
@@ -36,58 +37,87 @@ export default function Header() {
         id={"navbar1"}
         className={isScrolled ? className : ""}
         collapseOnSelect
-        expand="lg"
-        bg="dark"
-        variant="dark"
-      >
+        expand='lg'
+        bg='dark'
+        variant='dark'>
         <Container>
-          <Navbar.Brand className="navbarBrand" href="/">
+          <Navbar.Brand className='navbarBrand' href='/'>
             Wanderlust
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/favorites">Favorites</Nav.Link>
-              <Nav.Link href="/bookings">Bookings</Nav.Link>
-              <Nav.Link href="/reels">Reels</Nav.Link>
-              <Nav.Link href="/map">Map</Nav.Link>
-              <NavDropdown title="Our Services" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/restaurants">
-                  Resturents
+          <Navbar.Toggle aria-controls='responsive-navbar-nav' />
+          <Navbar.Collapse id='responsive-navbar-nav'>
+            <Nav className='me-auto'>
+              <Link className='nav-link' to='/'>
+                Home
+              </Link>
+              <Link className='nav-link' to='/favorites'>
+                Favorites
+              </Link>
+              <Link className='nav-link' to='/bookings'>
+                {" "}
+                Bookings{" "}
+              </Link>
+              {/* <Link to="/bookings">Bookings</Link> */}
+              <Link className='nav-link' to='/reels'>
+                Reels
+              </Link>
+              <Link className='nav-link' to='/map'>
+                Map
+              </Link>
+              <NavDropdown title='Our Services' id='collasible-nav-dropdown'>
+                <NavDropdown.Item>
+                  <Link className='nav-link' to='/bookings'>
+                    {" "}
+                    Resturents{" "}
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item href="/hotels">Hotels</NavDropdown.Item>
-                <NavDropdown.Item href="/activities">
-                  Activities
+                <NavDropdown.Item>
+                  <Link className='nav-link' to='/hotels'>
+                    {" "}
+                    Hotels{" "}
+                  </Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link className='nav-link' to='/activities'>
+                    {" "}
+                    Activities{" "}
+                  </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="/aboutus">About Us</NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link className='nav-link' to='/aboutus'>
+                    {" "}
+                    About Us{" "}
+                  </Link>
+                </NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
           <When condition={!state.loggedIn}>
-            <Nav.Link href="/login" className="logInfo">
+            <Link to='/login' className='logInfo nav-link'>
               Login
-            </Nav.Link>
-            <Nav.Link href="/login" className="logInfo">
+            </Link>
+            <Link to='/login' className='logInfo nav-link'>
               Sign up
-            </Nav.Link>
+            </Link>
           </When>
           <When condition={state.loggedIn}>
             <When condition={state.user.role === "owner"}>
-              <Nav.Link href="/dashboard/owner" className="logInfo">
+              <Link to='/dashboard/owner' className='logInfo nav-link'>
                 Dashboard
-              </Nav.Link>
+              </Link>
             </When>
             <When condition={state.user.role === "admin"}>
-              <Nav.Link href="/dashboard/admin" className="logInfo">
+              <Link to='/dashboard/admin' className='logInfo nav-link'>
                 Dashboard
-              </Nav.Link>
+              </Link>
             </When>
-            <Nav.Link onClick={state.logout}>Signout</Nav.Link>
-            <Nav.Link>
-              <img src={profile} alt="" className="img" />
-            </Nav.Link>
+            <Link className='nav-link' onClick={state.logout}>
+              Signout
+            </Link>
+            <Link className='nav-link'>
+              <img src={profile} alt='' className='img' />
+            </Link>
           </When>
         </Container>
       </Navbar>

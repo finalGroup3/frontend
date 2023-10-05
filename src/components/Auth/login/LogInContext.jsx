@@ -65,7 +65,7 @@ const LoginProvider = (props) => {
 
   const logout = () => {
     setLoginState(false, null, {});
-    window.location.reload(true);
+    // window.location.reload(true);
   };
 
   const validateToken = (token) => {
