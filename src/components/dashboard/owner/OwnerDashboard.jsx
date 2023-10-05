@@ -1,7 +1,7 @@
-import "./OwnerDashboard.scss";
-import { Restaurants,owners ,Hotels,activities} from "../../Data/DummyData";
-import axios from "axios";
-import cookie from "react-cookies";
+// import "./OwnerDashboard.scss";
+// import { Restaurants,owners ,Hotels,activities} from "../../Data/DummyData";
+// import axios from "axios";
+// import cookie from "react-cookies";
 const OwnerDashboard = () => {
 //   const AddToRestaurantsDb = () => {
 //     Restaurants.forEach((item) => {

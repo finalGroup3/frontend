@@ -43,7 +43,7 @@ const Hotel = () => {
           </section>
           <br />
           <br />
-          <a href="#" className="hero-btn has-after">
+          {/* <a href="#" className="hero-btn has-after">
             <img
               className="imgg"
               src="./assets/hero-icon.png"
@@ -52,7 +52,7 @@ const Hotel = () => {
               alt="booking icon"
             />
             <span className="label-2 text-center span">Book A Table</span>
-          </a>
+          </a> */}
           <div>
       
     </div>
@@ -78,9 +78,9 @@ const Hotel = () => {
                   Our hotel is designed to be a haven of comfort, providing a
                   modern amenities and classic elegance.
                 </p>
-                <a href="#" className="btn-text hover-underline label-2">
+                <button href="#" className="btn-text hover-underline label-2">
                   Book now
-                </a>
+                </button>
               </div>
               <div className="item-price">150JD</div>
             </div>

@@ -1,4 +1,4 @@
-import "./Dashboard.scss";
+// import "./Dashboard.scss";
 // import "./user.css";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 // import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
@@ -16,15 +16,20 @@ import image2 from "./avatar2.png";
 import image3 from "./avatar3.jpg";
 import image4 from "./avatar4.jpg";
 
+
+
+
 import { Users } from "../Data/DummyData";
 import { Restaurants } from "../Data/DummyData";
 import { Hotels } from "../Data/DummyData";
 import { activities } from "../Data/DummyData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideNavBar from "./SideNavBar2";
+import Chat from "../chat/Chat";
+import DashboardPage from "./dashboardPage/DashboardPage";
 const Dashboard = () => {
   // const [isChatOpen, setIsChatOpen] = useState(false);
-  const [component, setComponent] = useState('');
+  const [component, setComponent] = useState('Dashboard');
   // const [isUsersOpen, setIsUsersOpen] = useState(false);
   // const [isRestaurantsOpen, setIsRistaurantsOpen] = useState(false);
   // const [isHotelsOpen, setIsHotelsOpen] = useState(false);
@@ -329,83 +334,89 @@ const Dashboard = () => {
           )} */}
 
 
-          {component == "HelpCenter"?  <div className="chat-container">
-              <div className="chat-navbar">
-                <div className="chat-title">
-                  <FontAwesomeIcon icon={faEllipsis} />
-                  <span>Chat</span>
-                </div>
-                <input
-                  className="chat-search-bar"
-                  type="text"
-                  placeholder="Search..."
-                />
-                <div className="chat-bell">
-                  <FontAwesomeIcon icon={faBell} />
-                </div>
-                <img src={image} alt="avatar1" className="chat-avatar" />
-              </div>
-              <div className="chat-side-bar-profile">
-                <img src={image} alt="avatar1" className="chat-avatar" />
-                <h4 className="chat-profile-Name-admin">Amro</h4>
-              </div>
-              <div className="chat-sidebar">
-                <div className="one-peson-chat">
-                  <img
-                    src={image2}
-                    alt="avatar4"
-                    className="chat-avatar-one-person"
-                  />
-                  <div className="one-Person-name">
-                    <span>Margaret Clayton</span>
-                  </div>
-                  <div className="chat-time-one-person">
-                    <span> 05 min </span>
-                  </div>
-                </div>
-                <div className="one-peson-chat">
-                  <img
-                    src={image3}
-                    alt="avatar2"
-                    className="chat-avatar-one-person"
-                  />
-                  <div className="one-Person-name">
-                    <span>Margaret Clayton</span>
-                  </div>
-                  <div className="chat-time-one-person">
-                    <span> 05 min </span>
-                  </div>
-                </div>
-                <div className="one-peson-chat">
-                  <img
-                    src={image4}
-                    alt="avatar3"
-                    className="chat-avatar-one-person"
-                  />
-                  <div className="one-Person-name">
-                    <span>Margaret Clayton</span>
-                  </div>
-                  <div className="chat-time-one-person">
-                    <span> 05 min </span>
-                  </div>
-                </div>
-              </div>
-              <div className="chat-body">
-                <div className="chat-body-head">
-                  <span> Margaret Clayton </span>
-                  <span>Active</span>
-                </div>
-                <div className="chat-body-main-space" />
-                <div className="chat-writing-box">
-                  <textarea
-                    placeholder="Type your message..."
-                    className="chat-writing-input"
-                    defaultValue={""}
-                  />
-                  <button className="chat-writing-button">Send</button>
-                </div>
-              </div>
-            </div> : ""}
+          {component == "HelpCenter"?
+          
+          // <div className="chat-container">
+          //     <div className="chat-navbar">
+          //       <div className="chat-title">
+          //         <FontAwesomeIcon icon={faEllipsis} />
+          //         <span>Chat</span>
+          //       </div>
+          //       <input
+          //         className="chat-search-bar"
+          //         type="text"
+          //         placeholder="Search..."
+          //       />
+          //       <div className="chat-bell">
+          //         <FontAwesomeIcon icon={faBell} />
+          //       </div>
+          //       <img src={image} alt="avatar1" className="chat-avatar" />
+          //     </div>
+          //     <div className="chat-side-bar-profile">
+          //       <img src={image} alt="avatar1" className="chat-avatar" />
+          //       <h4 className="chat-profile-Name-admin">Amro</h4>
+          //     </div>
+          //     <div className="chat-sidebar">
+          //       <div className="one-peson-chat">
+          //         <img
+          //           src={image2}
+          //           alt="avatar4"
+          //           className="chat-avatar-one-person"
+          //         />
+          //         <div className="one-Person-name">
+          //           <span>Margaret Clayton</span>
+          //         </div>
+          //         <div className="chat-time-one-person">
+          //           <span> 05 min </span>
+          //         </div>
+          //       </div>
+          //       <div className="one-peson-chat">
+          //         <img
+          //           src={image3}
+          //           alt="avatar2"
+          //           className="chat-avatar-one-person"
+          //         />
+          //         <div className="one-Person-name">
+          //           <span>Margaret Clayton</span>
+          //         </div>
+          //         <div className="chat-time-one-person">
+          //           <span> 05 min </span>
+          //         </div>
+          //       </div>
+          //       <div className="one-peson-chat">
+          //         <img
+          //           src={image4}
+          //           alt="avatar3"
+          //           className="chat-avatar-one-person"
+          //         />
+          //         <div className="one-Person-name">
+          //           <span>Margaret Clayton</span>
+          //         </div>
+          //         <div className="chat-time-one-person">
+          //           <span> 05 min </span>
+          //         </div>
+          //       </div>
+          //     </div>
+          //     <div className="chat-body">
+          //       <div className="chat-body-head">
+          //         <span> Margaret Clayton </span>
+          //         <span>Active</span>
+          //       </div>
+          //       <div className="chat-body-main-space" />
+          //       <div className="chat-writing-box">
+          //         <textarea
+          //           placeholder="Type your message..."
+          //           className="chat-writing-input"
+          //           defaultValue={""}
+          //         />
+          //         <button className="chat-writing-button">Send</button>
+          //       </div>
+          //     </div>
+          //   </div>
+          <Chat/>
+             : component == "Dashboard"? 
+           
+      <DashboardPage/>:"" }
         </div>
       </div>
     </>
