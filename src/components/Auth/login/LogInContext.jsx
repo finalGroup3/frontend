@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import superagent from "superagent";
 import base64 from "base-64";
 import { useNavigate } from "react-router-dom";
+import { io } from "socket.io-client";
 
 export const LoginContext = React.createContext();
 
@@ -13,14 +14,19 @@ const LoginProvider = (props) => {
   const [token, setToken] = useState("");
   const [user, setUser] = useState({ capabilities: [] });
   const [error, setError] = useState(null);
+  const [socket, setSocket] = useState(null);
 
   console.log(user);
+  console.log(socket);
 
   const can = (capability) => {
     return state?.user?.capabilities?.includes(capability);
   };
 
   const login = async (username, password) => {
+
+    setSocket(io(`${import.meta.env.VITE_DATABASE_URL}`));
+
     const data = await superagent
       .post(`${import.meta.env.VITE_DATABASE_URL}/signin`)
       .set(
@@ -88,6 +94,7 @@ const LoginProvider = (props) => {
     user: user,
     token: token,
     error: error,
+    socket:socket
   };
 
   useEffect(() => {

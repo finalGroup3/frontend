@@ -1,18 +1,23 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState, useContext } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import avatar1 from '../../imgs/user (5).png'
 import avatar2 from '../../imgs/user (2).png'
+import { LoginContext } from "../Auth/login/LogInContext";
 
 
-function Chat({ socket, username, room }) {
+function Chat() {
+
+  const state = useContext(LoginContext);
+
+
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
-        room: room,
-        author: username,
+        room: state.socket,
+        author: state.user.username,
         message: currentMessage,
         time:
           new Date(Date.now()).getHours() +
@@ -20,17 +25,17 @@ function Chat({ socket, username, room }) {
           new Date(Date.now()).getMinutes(),
       };
 
-      await socket.emit("send_message", messageData);
+      await state.socket?.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
       setCurrentMessage("");
     }
   };
 
   useEffect(() => {
-    socket.on("receive_message", (data) => {
+    state.socket?.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
     });
-  }, [socket]);
+  }, [state.socket]);
 
   return (
 
@@ -59,19 +64,19 @@ function Chat({ socket, username, room }) {
       </div>
       <div className="chat-body">
         <ScrollToBottom className="message-container">
-          {messageList.map((messageContent) => {
+          {messageList.map((messageContent , i) => {
             return (
-              <div
+              <div key={i}
                 className="message"
-                id={username === messageContent.author ? "you" : "other"}
+                id={state.user.username === messageContent.author ? "you" : "other"}
               >
                 <div>
                   <div className="message-content">
-                    {username === messageContent.author ? <><img className="ava" src={avatar1}/> <p>{messageContent.message}</p></> : <> <p>{messageContent.message}</p><img className="ava" src={avatar2}/></> }
+                    {state.user.username === messageContent.author ? <><img className="ava" src={avatar1}/> <p>{messageContent.message}</p></> : <> <p>{messageContent.message}</p><img className="ava" src={avatar2}/></> }
 
                   </div>
                   <div className="message-meta">
-                  {username === messageContent.author ? <><p id="author">{messageContent.author}</p>    <p id="time">{messageContent.time}</p></> : <>    <p id="time">{messageContent.time}</p><p id="author">{messageContent.author}</p></> }
+                  {state.user.username === messageContent.author ? <><p id="author">{messageContent.author}</p>    <p id="time">{messageContent.time}</p></> : <>    <p id="time">{messageContent.time}</p><p id="author">{messageContent.author}</p></> }
 
                     {/* <p id="time">{messageContent.time}</p>
                     <p id="author">{messageContent.author}</p> */}

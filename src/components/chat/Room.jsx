@@ -1,33 +1,32 @@
 import "./Room.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Chat from "./Chat";
+import { LoginContext } from "../Auth/login/LogInContext";
 
-
-function Room({ socket, user }) {
+function Room() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
 
-
+  const state = useContext(LoginContext);
   const joinRoom = () => {
-    socket?.emit("send_roomId", room);
+    state.socket?.emit("send_roomId", room);
     if (username !== "" && room !== "") {
       setShowChat(true);
     }
   };
   useEffect(() => {
 
-    if (user.user?.role === 'user') {
+    if (state.user?.role === 'user') {
       setShowChat(true)
-    } else {
-    }
+    } 
   }, [showChat]);
 
   return (
     <div className="ChatApp">
       {
-        user?.user?.role === 'user' ?
-          (<Chat socket={socket} username={user.user.username} room={`${user.user.id}`} />) :
+        state?.user?.role === 'user' ?
+          (<Chat socket={state.socket} username={state.user.username} room={`${state.user.id}`} />) :
           !showChat
             ? (
               <div className="joinChatContainer">
@@ -49,7 +48,7 @@ function Room({ socket, user }) {
                 <button onClick={joinRoom}>Join Room</button>
               </div>
             ) : (
-              <Chat socket={socket} username={username} room={room} />
+              <Chat  />
             )}
     </div>
   );
