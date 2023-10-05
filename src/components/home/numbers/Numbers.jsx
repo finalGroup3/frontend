@@ -1,6 +1,9 @@
 import React from 'react'
 import {useEffect } from "react";
 import './numbers.scss'
+import restaurant from './restaurant (2).png'
+import hotel from './hotel (1).png'
+import activity from './map-and-location.png'
 export default function Numbers() {
     useEffect(() => {
         const countingElements = document.querySelectorAll('.counting');
@@ -66,26 +69,28 @@ export default function Numbers() {
               <section className="rowNums">
                 <section className="number">
                   <div className="col-lg-3 stats">
-                    {/* <img src={img1} alt="icon" /> */}
+                    <img src={hotel} alt="icon" />
                
                   </div>
                 
                   <section>
-                     <div className="counting" data-count="132">0</div>
-    
+                    <span> ✧ </span>
+                     <div className="counting" data-count="132">0 </div>
+                     <span> ✧ </span>
                   <p>Hotel</p>
                   </section>
                 </section>
     
                 <section className="number">
                   <div className="col-lg-3 stats">
-                    {/* <img src={img2} alt="icon" /> */}
+                    <img src={restaurant} alt="icon" />
                     
                   </div>
                  
                   <section>
+                  <span> ✧ </span>
                      <div className="counting" data-count="99">0</div>
-    
+                     <span> ✧ </span>
                   <p>Restaurant</p>
                   </section>
                 </section>
@@ -93,12 +98,13 @@ export default function Numbers() {
                 <section className="number">
                   <div className="col-lg-3 stats">
                     
-                    {/* <img src={img3} alt="icon" /> */}
+                    <img src={activity} alt="icon" />
                   </div>
     
                   <section>
+                  <span> ✧ </span>
                      <div className="counting" data-count="114">0</div>
-    
+                     <span> ✧ </span>
                   <p>Activity</p>
                   </section>
                  
