@@ -6,10 +6,12 @@ import hotel3 from "../../assets/crown-hotel.webp";
 import hotel4 from "../../assets/hotel5.jpg";
 import hotel5 from "../../assets/hotel6.jpg";
 import hilton from "../../assets/hilton.webp";
-
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 const Hotel = () => {
   return (
     <>
+    <Header/>
       <div className="hhhh">
         <div className="hotel-container">
           <section className="hero text-center" aria-label="home" id="home">
@@ -166,6 +168,7 @@ const Hotel = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
