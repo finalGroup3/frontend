@@ -2,9 +2,7 @@ import "./App.css";
 
 import Restaurants from "./components/restaurants/Restaurants";
 import MApp from "./components/map/Map";
-import Header from "./components/header/Header";
 import Booking from "./components/Booking/Booking4";
-import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
 import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
@@ -19,7 +17,6 @@ function App() {
   return (
     <>
       <LoginProvider>
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
@@ -32,7 +29,6 @@ function App() {
           <Route path="/dashboard/admin" element={<Dashboard />} />
           <Route path="/dashboard/owner" element={<OwnerDashboard />} />
         </Routes>
-        <Footer />
       </LoginProvider>
     </>
   );
