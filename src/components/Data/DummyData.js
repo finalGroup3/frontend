@@ -69,7 +69,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "150",
-    ownerId: 21,
+    ownerId: 2,
   },
   {
     name: "DoubleTree by Hilton ",
@@ -79,7 +79,7 @@ export const Hotels = [
     location: "Aqaba",
     rating: 5.0,
     price: "$$$",
-    ownerId: 22,
+    ownerId: 2,
   },
   {
     name: "Lavanda Boutique Suites Tala Bay",
@@ -89,7 +89,7 @@ export const Hotels = [
     location: "Petra",
     rating: 5.0,
     price: "100$",
-    ownerId: 23,
+    ownerId: 3,
   },
   {
     name: "Holiday Inn Resort Dead Sea",
@@ -99,7 +99,7 @@ export const Hotels = [
     location: "Dead Sea",
     rating: 5.0,
     price: "147$",
-    ownerId: 24,
+    ownerId: 4,
   },
   {
     name: "WADi RUM ALi CAMP",
@@ -109,7 +109,7 @@ export const Hotels = [
     location: "Wadi Rum",
     rating: 5.0,
     price: "25$",
-    ownerId: 25,
+    ownerId: 5,
   },
   {
     name: "The St. Regis Amman",
@@ -119,7 +119,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "$$$",
-    ownerId: 26,
+    ownerId: 6,
   },
 
   {
@@ -130,7 +130,7 @@ export const Hotels = [
     location: "Aqaba",
     rating: 5.0,
     price: "130$",
-    ownerId: 28,
+    ownerId: 8,
   },
   {
     name: " W Amman Hotel ",
@@ -140,7 +140,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "130",
-    ownerId: 29,
+    ownerId: 9,
   },
   {
     name: "Hilton Dead Sea Resort & Spa",
@@ -150,7 +150,7 @@ export const Hotels = [
     location: "Dead Sea",
     rating: 5.0,
     price: "180$",
-    ownerId: 30,
+    ownerId: 17,
   },
   {
     name: "Petra Marriott",
@@ -160,7 +160,7 @@ export const Hotels = [
     location: "Petra",
     rating: 5.0,
     price: "189$",
-    ownerId: 31,
+    ownerId: 13,
   },
   {
     name: "RUM CRYSTAL lUXURY CAMP ",
@@ -170,7 +170,7 @@ export const Hotels = [
     location: "Wadi Rum",
     rating: 5.0,
     price: "27$",
-    ownerId: 32,
+    ownerId: 12,
   },
   {
     name: "Al Manara, a Luxury Collection Hotel",
@@ -180,7 +180,7 @@ export const Hotels = [
     location: "Aqaba",
     rating: 5.0,
     price: "170$",
-    ownerId: 33,
+    ownerId: 18,
   },
   {
     name: " Amman Rotana",
@@ -190,7 +190,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "120",
-    ownerId: 34,
+    ownerId: 14,
   },
   {
     name: "Kempinski Hotel",
@@ -200,7 +200,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "125$",
-    ownerId: 35,
+    ownerId: 15,
   },
   {
     name: "Le Royal ",
@@ -210,7 +210,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "137$",
-    ownerId: 36,
+    ownerId: 16,
   },
   {
     name: "Four Seasons",
@@ -220,7 +220,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "100$",
-    ownerId: 37,
+    ownerId: 17,
   },
   {
     name: "Regency Palace",
@@ -230,7 +230,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "78",
-    ownerId: 38,
+    ownerId: 18,
   },
   {
     name: "Landmark Amman ",
@@ -240,7 +240,7 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "142",
-    ownerId: 39,
+    ownerId: 19,
   },
   {
     name: "Mövenpick Hotel",
@@ -250,13 +250,14 @@ export const Hotels = [
     location: "Amman",
     rating: 5.0,
     price: "99",
-    ownerId: 40,
+    ownerId: 4,
   },
 ];
 
 export const Restaurants = [
   {
     name: "Fakhreldin Restaurant",
+    // img: "hakjs",
     img: "https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/pictuers%2FAbdali-Boulevard-Amman.jpg?alt=media&token=a02cf1d9-daa7-4d56-b370-a7ca1e3ecd81&_gl=1*ui1h6h*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQwOTY4OS41MS4wLjA.",
     description: "Specializing in traditional Jordanian Mansaf dishes.",
     location: "Karak",
@@ -668,7 +669,7 @@ export const activities = [
     location: "Amman",
     rating: 4.9,
     price: "$5",
-    ownerId: 20,
+    ownerId: 7,
   },
 ];
 
@@ -707,5 +708,128 @@ const activitiesReels = [
     hotelId: null,
     activityId: 3,
     userId: 3,
+  },
+];
+
+export const owners=[
+  {
+    username: "John",
+    password: "password1",
+    image: "user1.jpg",
+    role: "owner",
+  },
+  {
+    username: "Susan",
+    password: "password2",
+    image: "user2.jpg",
+    role: "owner",
+  },
+  {
+    username: "Michael",
+    password: "password3",
+    image: "user3.jpg",
+    role: "owner",
+  },
+  {
+    username: "Elizabeth",
+    password: "ownerpass1",
+    image: "owner1.jpg",
+    role: "owner",
+  },
+  {
+    username: "Robert",
+    password: "ownerpass2",
+    image: "owner2.jpg",
+    role: "owner",
+  },
+  {
+    username: "Linda",
+    password: "ownerpass3",
+    image: "owner3.jpg",
+    role: "owner",
+  },
+  {
+    username: "William",
+    password: "adminpass1",
+    image: "admin1.jpg",
+    role: "owner",
+  },
+  {
+    username: "Patricia",
+    password: "adminpass2",
+    image: "admin2.jpg",
+    role: "owner",
+  },
+  {
+    username: "Joseph",
+    password: "adminpass3",
+    image: "admin3.jpg",
+    role: "owner",
+  },
+  {
+    username: "David",
+    password: "testpass",
+    image: "testuser.jpg",
+    role: "owner",
+  },
+  {
+    username: "Mary",
+    password: "testownerpass",
+    image: "testowner.jpg",
+    role: "owner",
+  },
+  {
+    username: "Jennifer",
+    password: "testadminpass",
+    image: "testadmin.jpg",
+    role: "owner",
+  },
+  {
+    username: "Richard",
+    password: "johnspassword",
+    image: "johndoe.jpg",
+    role: "owner",
+  },
+  {
+    username: "Dorothy",
+    password: "janespassword",
+    image: "janedoe.jpg",
+    role: "owner",
+  },
+  {
+    username: "James",
+    password: "alicespassword",
+    image: "alicesmith.jpg",
+    role: "owner",
+  },
+  {
+    username: "Mary",
+    password: "bobspassword",
+    image: "bobjones.jpg",
+    role: "owner",
+  },
+  {
+    username: "Sarah",
+    password: "carolspassword",
+    image: "carolwilliams.jpg",
+    role: "owner",
+  },
+  {
+    username: "Thomas",
+    password: "davidspassword",
+    image: "davidbrown.jpg",
+    role: "owner",
+  },
+  {
+    username: "Laura",
+    password: "emilyspassword",
+    image: "emilyjackson.jpg",
+    role: "owner",
+  },
+  {
+    username: "Laura1",
+    password: "emilyspassword",
+    image: "emilyjackson.jpg",
+    role: "owner",
   },
 ];
