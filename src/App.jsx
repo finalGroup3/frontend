@@ -1,26 +1,26 @@
 import "./App.css";
-import Hero from "./components/home/heroSection/Hero";
+
 import Restaurants from "./components/restaurants/Restaurants";
 import MApp from "./components/map/Map";
-import Header from "./components/header/Header";
-import AboutApp from "./components/home/aboutOurApp/AboutApp";
-import JordanMAp from "./components/home/Jordanmap/JordanMAp";
-import Numbers from "./components/home/numbers/Numbers";
 import Booking from "./components/Booking/Booking4";
-import Services from "./components/home/services/Services";
-import OurChoice2 from "./components/home/ourChoice2/OurChouce2";
-import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
 import Hotel from "./components/hotel/Hotel";
 
+import About from "./components/About/Test1";
+import Dashboard from "./components/dashboard/Dashboard";
+import Reelspage from "./components/reels/ReelsPage";
+import LogIn from "./components/Auth/login/LogIn";
+import LoginProvider from "./components/Auth/login/LogInContext";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/home/Home";
+import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
 
 function App() {
   return (
     <>
   
     {/* <Hotel/> */}
-    <MApp />
-      <Header />
+    {/* <MApp /> */}
       {/* <Hero />
       <AboutApp />
       <Services />
@@ -31,6 +31,20 @@ function App() {
       {/* <Booking/> */}
       {/* <Favorites/> */}
       {/* <Footer /> */}
+      <LoginProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/bookings" element={<Booking />} />
+          <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/aboutus" element={<About />} />
+          <Route path="/reels" element={<Reelspage />} />
+          <Route path="/map" element={<MApp />} />
+          <Route path="/dashboard/admin" element={<Dashboard />} />
+          <Route path="/dashboard/owner" element={<OwnerDashboard />} />
+        </Routes>
+      </LoginProvider>
     </>
   );
 }

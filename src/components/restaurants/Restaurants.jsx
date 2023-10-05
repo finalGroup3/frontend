@@ -8,13 +8,15 @@ import shape2 from "../../assets/shape-2.png";
 import jubran from "../../assets/jubran.jpg";
 import burger from "../../assets/burger.jpg";
 import rest2 from "../../assets/rest2.png";
-import mansaf2 from "../../assets/mansaf4.jpg";
-import salt from "../../assets/SALT.jpg";
-import dominos from "../../assets/dominos.jpg";
+import rest4 from "../../assets/rest4.jpg";
+import mansaf2 from "../../assets/mansaf2.jpg";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
 
 export default function Restaurants() {
   return (
     <>
+      <Header />
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb">
         <section
@@ -251,6 +253,7 @@ export default function Restaurants() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

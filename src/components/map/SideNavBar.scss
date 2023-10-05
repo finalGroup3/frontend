@@ -6,7 +6,6 @@
 }
 
 .nnn{
-    height: 700px;
     button {
         cursor: pointer;
         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
@@ -44,6 +43,8 @@
         }
       }
 aside {
+    height: 100dvh;
+
     width: 280px;
     border-radius: 24px;
     padding: 50px;
