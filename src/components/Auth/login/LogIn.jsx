@@ -22,6 +22,7 @@ const LogIn = () => {
     state.login(user.username, user.password);
   };
   const handleSubmitSignup = (e) => {
+    // state.socket?.emit("newUser", user.username);
     e.preventDefault();
     state.signup(user.username, user.password, user.role);
   };

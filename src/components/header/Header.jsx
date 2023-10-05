@@ -66,7 +66,7 @@ export default function Header() {
               </Link>
               <NavDropdown title='Our Services' id='collasible-nav-dropdown'>
                 <NavDropdown.Item>
-                  <Link className='nav-link' to='/bookings'>
+                  <Link className='nav-link' to='/restaurants'>
                     {" "}
                     Resturents{" "}
                   </Link>
