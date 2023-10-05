@@ -8,10 +8,12 @@ import shape2 from "../../assets/shape-2.png";
 import jubran from "../../assets/jubran.jpg";
 import burger from "../../assets/burger.jpg";
 import rest2 from "../../assets/rest2.png";
+import salt from "../../assets/SALT.jpg";
 import rest4 from "../../assets/rest4.jpg";
 import mansaf2 from "../../assets/mansaf2.jpg";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import dominos from "../../assets/dominos.jpg";
 
 export default function Restaurants() {
   return (

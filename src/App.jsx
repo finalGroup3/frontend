@@ -38,6 +38,8 @@ function App() {
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/bookings" element={<Booking />} />
           <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/hotels" element={<Hotel />} />
+          {/* <Route path="/activities" element={<Activity/>} /> */}
           <Route path="/aboutus" element={<About />} />
           <Route path="/reels" element={<Reelspage />} />
           <Route path="/map" element={<MApp />} />
