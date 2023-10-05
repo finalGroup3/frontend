@@ -9,6 +9,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import { LoginContext } from "../Auth/login/LogInContext";
 import { useContext } from "react";
+import HelpButton from "../HelpButton/HelpButton";
 
 const Home = () => {
   const state = useContext(LoginContext);
@@ -20,6 +21,7 @@ const Home = () => {
   return (
     <div>
       <Header />
+      <HelpButton />
       <Hero />
       <AboutApp />
       <Services />

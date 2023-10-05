@@ -5,7 +5,7 @@ import superagent from "superagent";
 import base64 from "base-64";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export const LoginContext = React.createContext();
 
@@ -16,9 +16,8 @@ const LoginProvider = (props) => {
   const [user, setUser] = useState({ capabilities: [] });
   const [error, setError] = useState(null);
   const [socket, setSocket] = useState(null);
-  const [uuid, setUuid] = useState(null);
 
-  console.log(user);
+  console.log("user =====> ", user);
   console.log(socket);
 
   const can = (capability) => {
@@ -26,13 +25,11 @@ const LoginProvider = (props) => {
   };
 
   const login = async (username, password) => {
-
     setSocket(io(`${import.meta.env.VITE_DATABASE_URL}`));
-   const id = uuidv4();
-    setUuid(id)
+    // const id = uuidv4();
+    // setUuid(id);
 
-    console.log(uuid);
-    
+    // console.log(uuid);
 
     const data = await superagent
       .post(`${import.meta.env.VITE_DATABASE_URL}/signin`)
@@ -92,6 +89,22 @@ const LoginProvider = (props) => {
     setUser(user);
     setError(error || null);
   };
+
+  const adminArray = ["laith", "ala", "nour", "savana", "amro"];
+  const id = uuidv4();
+
+  const sendToAdmin = () => {
+    socket?.emit("join_room", `${id}`);
+
+    adminArray.map((name) => {
+      socket?.emit("sendNotification", {
+        senderName: user?.username,
+        receiverName: name,
+        roomId: id,
+      });
+    });
+  };
+
   const state = {
     loggedIn: loggedIn,
     can: can,
@@ -101,8 +114,8 @@ const LoginProvider = (props) => {
     user: user,
     token: token,
     error: error,
-    socket:socket,
-    uuid:uuid
+    socket: socket,
+    sendToAdmin: sendToAdmin,
   };
 
   useEffect(() => {
