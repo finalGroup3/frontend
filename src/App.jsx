@@ -4,6 +4,8 @@ import Restaurants from "./components/restaurants/Restaurants";
 import MApp from "./components/map/Map";
 import Booking from "./components/Booking/Booking4";
 import Favorites from "./components/favorites/Favorites";
+import Hotel from "./components/hotel/Hotel";
+
 import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
@@ -16,6 +18,19 @@ import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
 function App() {
   return (
     <>
+  
+    {/* <Hotel/> */}
+    {/* <MApp /> */}
+      {/* <Hero />
+      <AboutApp />
+      <Services />
+      <Numbers/>
+      <OurChoice2 />
+      <JordanMAp /> */}
+      {/* <Restaurants/> */}
+      {/* <Booking/> */}
+      {/* <Favorites/> */}
+      {/* <Footer /> */}
       <LoginProvider>
         <Routes>
           <Route path="/" element={<Home />} />
