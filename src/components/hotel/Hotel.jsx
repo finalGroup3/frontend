@@ -43,16 +43,6 @@ const Hotel = () => {
           </section>
           <br />
           <br />
-          <a href="#" className="hero-btn has-after">
-            <img
-              className="imgg"
-              src="./assets/hero-icon.png"
-              width={48}
-              height={48}
-              alt="booking icon"
-            />
-            <span className="label-2 text-center span">Book A Table</span>
-          </a>
           <div>
       
     </div>
