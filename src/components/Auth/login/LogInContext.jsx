@@ -5,6 +5,7 @@ import superagent from "superagent";
 import base64 from "base-64";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
+import { v4 as uuidv4 } from 'uuid';
 
 export const LoginContext = React.createContext();
 
@@ -15,6 +16,7 @@ const LoginProvider = (props) => {
   const [user, setUser] = useState({ capabilities: [] });
   const [error, setError] = useState(null);
   const [socket, setSocket] = useState(null);
+  const [uuid, setUuid] = useState(null);
 
   console.log(user);
   console.log(socket);
@@ -26,6 +28,11 @@ const LoginProvider = (props) => {
   const login = async (username, password) => {
 
     setSocket(io(`${import.meta.env.VITE_DATABASE_URL}`));
+   const id = uuidv4();
+    setUuid(id)
+
+    console.log(uuid);
+    
 
     const data = await superagent
       .post(`${import.meta.env.VITE_DATABASE_URL}/signin`)
@@ -94,7 +101,8 @@ const LoginProvider = (props) => {
     user: user,
     token: token,
     error: error,
-    socket:socket
+    socket:socket,
+    uuid:uuid
   };
 
   useEffect(() => {
