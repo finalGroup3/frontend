@@ -17,12 +17,14 @@ import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
 import Header2 from "./components/header2/Header2";
 import LoginContext from "./components/Auth/login/LogInContext";
+import Activities from './components/Activities/Activities'
 
 function App() {
   return (
     <>
 
-      <LoginContext>
+      {/* <LoginContext> */}
+        <Activities/>
         {/* <MApp /> */}
         {/* <Header /> */}
         {/* <Hero /> */}
@@ -39,8 +41,8 @@ function App() {
         {/* <Dashboard /> */}
         {/* <LogIn /> */}
         {/* <Reelspage/> */}
-        <Header2 />
-      </LoginContext>
+        {/* <Header2 /> */}
+      {/* </LoginContext> */}
     </>
   );
 }
