@@ -76,10 +76,13 @@ function About() {
     };
 
     return (
-        <div className='revv'>
+        <div className='shihabrev'>
 
 
-        <div className="container">
+        <div className='revvv'>
+
+
+        <div className="conntainer">
             <div className="title">
                 {/* <h2>our reviews</h2> */}
                 {/* <div className="underline"></div> */}
@@ -104,6 +107,7 @@ function About() {
           surprise me
         </button> */}
             </article>
+        </div>
         </div>
         </div>
 
