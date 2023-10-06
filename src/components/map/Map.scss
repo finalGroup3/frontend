@@ -99,31 +99,37 @@
   }
 
   .mapboxgl-popup-content {
-    /* width:90vw !important; */
-    border-radius: 30px !important;
-    /* From https://css.glass */
-    /* From https://css.glass */
+    width: 270px !important;
+    padding: 10px;
+    border-radius: 25px !important;
     background: #001319;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.443);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.495);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     color: aliceblue;
+   
   }
-
-  .mapcard {
-    height: auto;
+.mapcard {
+    height: 460px;
     min-height: 4vh;
-    /* height: 650px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 600px !important;
-    /* padding: 40px; */
-    border-radius: 100px !important;
-  }
-
+    width: 200px !important;
+    border-radius: 10px !important;
+    font-family: "Lugrasimo", cursive;
+    
+}
+.close-iconn{
+  font-size: 30px; /* Adjust the size as needed */
+  color: red;
+  cursor: pointer; /* Add a pointer cursor to indicate it's clickable */
+  position: absolute;
+  font-weight:bold ;
+  top: 10px; /* Adjust the top position as needed */
+  right: 1px;
+}
   .restinfoo {
     margin: 30px 20px;
     font-size: 30px;
@@ -133,7 +139,7 @@
   }
 
   .place {
-    font-size: 40px;
+    font-size: 22px;
     font-family: "Lugrasimo", cursive;
     font-weight: 900;
   }
@@ -146,81 +152,63 @@
   }
 
   .mapform {
-    /* height: 100px !important; */
-    height: auto;
-    min-height: 6vh;
-    padding: 75px;
-    width: 600px;
-    /* From https://css.glass */
-    /* From https://css.glass */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 300px; /* Adjust the max width as needed */
+    margin: 0 auto;
+    padding: 15px;
     background: rgba(0, 0, 0, 0.22);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     border: 1px solid rgba(0, 0, 0, 0.3);
   }
-
+  
   .mapform form {
-    /* width: 600px; */
-    display: flex;
-    flex-direction: column;
-    /* align-items: center;
-  justify-content: center; */
-    gap: 20px;
+    display: grid;
+    gap: 10px;
   }
-
+  
   .mapform form label {
-    font: 100;
-    font-size: 24px;
+    font-size: 12px; /* Decreased font size */
     font-family: "Lugrasimo", cursive;
     font-weight: 600;
     color: aliceblue;
   }
-
-  .mapform form input {
-    height: 55px;
-    border: 1px 0 0 0;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 20px;
+  
+  .mapform form input,
+  .mapform form textarea,
+  .mapform form select {
+    // height: 25px; /* Decreased height */
+    border: 1px solid;
+    border-radius: 6px; /* Reduced border-radius */
+    padding: 4px 8px; /* Decreased padding */
+    font-size: 12px; /* Decreased font size */
   }
-
-  .mapform form input::placeholder {
-    font-size: 20px;
-    padding: 10px 20px;
-    color: rgb(0, 27, 52);
-  }
-
+  
+  .mapform form input::placeholder,
   .mapform form textarea::placeholder {
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 12px; /* Decreased font size */
+    padding: 4px 8px; /* Decreased padding */
     color: rgb(0, 27, 52);
   }
-
-  .mapform form textarea {
-    font-size: 20px;
-    padding: 10px 20px;
-    color: rgb(0, 0, 0);
-  }
-
-  .mapform button {
-    width: 30%;
-    height: 60px;
-    /* width: 50px; */
-    font-size: 20px;
-    border-radius: 10px;
+  
+  .mapform form button {
+    height: 30px; /* Adjusted height */
+    font-size: 14px; /* Adjusted font size */
+    border-radius: 6px; /* Reduced border-radius */
     background-color: rgb(0, 29, 58);
     color: rgb(255, 255, 255);
   }
-
+  
   .mapform form select {
-    height: 55px;
-    border: 1px 0 0 0;
-    border-radius: 10px;
-    padding: 10px 20px;
-    font-size: 20px;
+    height: 25px; /* Decreased height */
   }
+  
+  
+  
   #earth {
     background-image: url("https://encrypted-tbn3.google.com/images?q=tbn:ANd9GcTQqoB4xBnIkmUg5pxDyYW2h0Q1pRTsbQBOfhg-E-y4iLFicsyi");
     width: 50px;
@@ -284,8 +272,8 @@
   .map-container {
     position: relative;
     width: 74%;
-    height: 82vh;
-    margin-top: 90px;
+    height: 87vh;
+    margin-top: 70px;
     margin-left: 49vh;
     border-radius: 40px;
     overflow: hidden;
@@ -295,7 +283,7 @@
   .sidenavbar-container {
     position: fixed;
     width: 20vw;
-    margin-top: 90px;
+    margin-top: 70px;
     margin-left: 1vh;
     border-radius: 40px;
     overflow: hidden;
