@@ -57,19 +57,20 @@ function MApp() {
   });
 
   useEffect(() => {
-    getRoute();
+    const getRoute = async () => {
+      const response = await axios.get(
+        `https://api.mapbox.com/directions/v5/mapbox/driving/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw`
+      );
+
+      const data = response.data;
+      console.log(data);
+      const coords = data.routes[0].geometry.coordinates;
+      setCoords(coords);
+    };
+
+    getRoute(); // Call the function directly
+
   }, [end, start]);
-
-  const getRoute = async () => {
-    const response = await axios.get(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw`
-    );
-
-    const data = response.data;
-    console.log(data);
-    const coords = data.routes[0].geometry.coordinates;
-    setCoords(coords);
-  };
   const geojson = {
     type: "FeatureCollection",
     features: [
