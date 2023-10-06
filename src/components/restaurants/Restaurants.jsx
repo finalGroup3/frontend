@@ -1,5 +1,5 @@
 import "./restaurants.scss";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import service1 from "../../assets/service-1.jpg";
 import service2 from "../../assets/jubran.jpg";
 import service3 from "../../assets/service-3.jpg";
@@ -15,6 +15,8 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
+import CCard from "./CCard";
+
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
 
@@ -30,7 +32,7 @@ export default function Restaurants() {
           <div className="container-top-three-resturants">
             <br />
             <h2 className="headline-1 section-title">Top Resturants</h2>
-            
+
             {/* <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
             <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
             <button onClick={() => state.updateRestaurantsInDb("send the id")}>update</button> */}
@@ -150,30 +152,17 @@ export default function Restaurants() {
           </h2>
           <p className="section-subtitle"></p>
         </div>
-        <div className="container">
+        <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
             return (
-              <div key={element.id}>
-                <div className="item">
-                  <div className="item-image">
-                    <img src={element.img} alt="Délicieux Bénédicte" />
-                  </div>
-                  <div className="item-text">
-                    <p className="item-meal-type">{element.rating}⭐⭐⭐</p>
-                    <h2 className="item-title">{element.name}</h2>
-                    <p className="item-body">{element.description}</p>
-                    <span>{element.location}</span>
-                    <a href="#" className="btn-text hover-underline label-2">
-                      Book now
-                    </a>
-                  </div>
-                  <div className="item-price">{element.price}</div>
-                </div>
-              </div>
+              <CCard key={element.id} element={element}/>
             );
           })}
+        </div>
+      </div>
+      <Footer />
 
-          {/* <div className="item">
+      {/* <div className="item">
             <div className="item-image">
               <img
                 src="https://images.unsplash.com/photo-1604135307399-86c6ce0aba8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1374&q=80"
@@ -281,9 +270,6 @@ export default function Restaurants() {
             </div>
             <div className="item-price">20JD</div>
           </div> */}
-        </div>
-      </div>
-      <Footer />
     </>
   );
 }
