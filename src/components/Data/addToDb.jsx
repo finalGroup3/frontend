@@ -122,3 +122,10 @@
 // };
 
 // export default OwnerDashboard;
+
+
+
+
+// <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
+// <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
+// <button onClick={() => state.updateRestaurantsInDb("send the id")}>update</button>
