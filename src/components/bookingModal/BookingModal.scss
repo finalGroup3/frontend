@@ -1,6 +1,7 @@
 .modalOverlay {
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba($color: #000000, $alpha: 0.5);
   height: 100%;
   width: 100%;
@@ -34,6 +35,9 @@
     .modalRight {
       color: #191c2a;
       width: 100%;
+      .descriptionionion{
+        font-size: 12px;
+      }
       .closeContain {
         position: fixed;
         top: 8px;
@@ -115,7 +119,7 @@
       }
 
       button {
-        margin-top: 50px;
+        margin-top: 10px;
         width: 200px;
         position: relative;
         padding: 10px 20px;

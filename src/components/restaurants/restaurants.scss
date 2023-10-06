@@ -77,6 +77,7 @@
   box-sizing: border-box;
 }
 .bbb {
+  
   li {
     list-style: none;
   }
@@ -680,7 +681,7 @@
       transform: scale(0.7);
     }
 
-    .event .container {
+    .event .ccontainerr {
       max-width: 420px;
       margin-inline: auto;
     }
@@ -691,7 +692,7 @@
       --section-space: 100px;
     }
 
-    :is(.service, .event) .container {
+    :is(.service, .event) .ccontainerr {
       max-width: unset;
     }
 
@@ -884,12 +885,16 @@
   font-style: italic;
 }
 
-.container {
-  width: 100vw;
+.ccontainerr {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 40px 20px;
+  // padding: 40px 20px;
+}
+.cardddddcontainsss{
+  position: relative;
 }
 
 .item {
