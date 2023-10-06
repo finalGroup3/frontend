@@ -11,7 +11,7 @@ const BookingModal = ({ open, onClose }) => {
   const notifyBooking = () => {
     state.socket.emit("sendNotification", {
       senderName: state.user.username,
-      receiverName: "shihab",
+      receiverName: "savana",
     });
   };
   return (

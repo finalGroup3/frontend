@@ -13,13 +13,14 @@ import LoginProvider from "./components/Auth/login/LogInContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 function App() {
   return (
     <>
       <LoginProvider>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/bookings" element={<Booking />} />
@@ -31,6 +32,7 @@ function App() {
           <Route path="/map" element={<MApp />} />
           <Route path="/dashboard/admin" element={<Dashboard />} />
           <Route path="/dashboard/owner" element={<OwnerDashboard />} />
+          <Route path="/" element={<LoadingScreen />} />
         </Routes>
       </LoginProvider>
     </>
