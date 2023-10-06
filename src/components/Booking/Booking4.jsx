@@ -1,5 +1,5 @@
 import "./booking4.scss";
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import MyIcon from "../../assets/user-regular.svg";
 import Time from "../../assets/clock.svg";
 import service1 from "../../assets/service-1.jpg";
@@ -7,8 +7,80 @@ import service2 from "../../assets/service-2.jpg";
 import service3 from "../../assets/service-3.jpg";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import cookie from "react-cookies";
+import superagent from "superagent";
+import { LoginContext } from "../Auth/login/LogInContext";
 
 export default function Booking() {
+  const LoginState = useContext(LoginContext);
+
+  const [restaurantsBookings, setRestaurantsBookings] = useState([]);
+  const [activitiesBookings, setActivitesBookings] = useState([]);
+  const [hotelsBookings, setHotelBookings] = useState([]);
+  console.log(restaurantsBookings, activitiesBookings, hotelsBookings);
+  //////////////////////////////////////////////////////////////////////////////////////
+  //////===================================get=========================================/////
+  const getRestaurantsBookingsFromDb = async () => {
+    const userId=LoginState.user.id
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${userId}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      setRestaurantsBookings(items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const getAcitivitesBookingsFromDb = async () => {
+    const userId=LoginState.user.id
+
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingHotel/${userId}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      setActivitesBookings(items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  const getHotelsBookingsFromDb = async () => {
+    const userId=LoginState.user.id
+
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingActivity/${userId}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      setHotelBookings(items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  /////////////////////////////////////////////////////////////////////////////////////////
+  //////===================================delete=========================================/////
+
+  const deleteRestaurantsBookings = async (id) => {
+    try {
+      const response = await superagent
+        .delete(`${import.meta.env.VITE_DATABASE_URL}/booking/${id}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+
+      if (response.ok) {
+        console.log(response.body);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getRestaurantsBookingsFromDb();
+    getAcitivitesBookingsFromDb();
+    getHotelsBookingsFromDb();
+  }, []);
+
   return (
     <>
       <Header />
@@ -55,7 +127,9 @@ export default function Booking() {
                                             <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
                                         </li> */}
                     <button class="tag__item">
-                      <div className="text">Cancel</div>
+                      <div className="text" onClick={deleteRestaurantsBookings}>
+                        Cancel
+                      </div>
                     </button>
                   </ul>
                 </div>

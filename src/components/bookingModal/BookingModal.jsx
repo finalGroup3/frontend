@@ -14,9 +14,9 @@ const BookingModal = ({ open, onClose, item }) => {
 
   const notifyBooking = async (e) => {
     e.preventDefault();
-    state.socket.emit("sendNotification", {
+    state.socket?.emit("sendNotification", {
       senderName: state.user.username,
-      receiverName: "laith",
+      receiverName: "John",
     });
 
     const object = {

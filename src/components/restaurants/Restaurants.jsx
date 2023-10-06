@@ -15,11 +15,15 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
+import { FavoritesContext } from "../favorites/favContext";
 import CCard from "./CCard";
 
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
-
+  const FaveState = useContext(FavoritesContext);
+  // const addfave = () => {
+  //   FaveState.AddToFavsDb(element)
+  // };
   return (
     <>
       <Header />

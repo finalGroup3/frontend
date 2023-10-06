@@ -3,10 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUtensils } from "@fortawesome/free-solid-svg-icons";
 import BookingModal from "../../bookingModal/BookingModal";
 // import Heart from "react-animated-heart";
-import { useState } from "react";
+import { FavoritesContext } from "../favContext";
+import { LoginContext } from "../../Auth/login/LogInContext";
 
-const Card = () => {
+import { useState ,useContext} from "react";
+
+const Card = ({element}) => {
   const [openModal, setOpenModal] = useState(false);
+
+  const LoginState = useContext(LoginContext);
+
+  const FaveState = useContext(FavoritesContext);
 
   // const [isClick, setClick] = useState(false);
 
@@ -41,11 +48,7 @@ const Card = () => {
       <ul className="cards">
         <li className="listttt">
           <div className="card">
-            <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
-              className="card__image"
-              alt=""
-            />
+            <img src={element.img} className="card__image" alt="" />
             <div className="card__overlay">
               <div className="card__header">
                 <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
@@ -57,88 +60,20 @@ const Card = () => {
                   style={{ color: "#001319" }}
                 />
                 <div className="card__header-text">
-                  <h3 className="card__title">Restaurant</h3>
+                  <h3 className="card__title">{element.name}</h3>
                   <span className="card__status">⭐⭐⭐⭐⭐</span>
                 </div>
               </div>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
-              </p>
+              <p className="card__description">{element.description}</p>
               <div className="containBtNn">
                 <button onClick={() => setOpenModal(true)}>Book Now!</button>
-                <button className="removeBTnnn">Remove</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li className="listttt">
-          <div className="card">
-            <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
-              className="card__image"
-              alt=""
-            />
-            <div className="card__overlay">
-              <div className="card__header">
-                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                  <path />
-                </svg>
-                <FontAwesomeIcon
-                  className="card__thumb"
-                  icon={faUtensils}
-                  style={{ color: "#001319" }}
-                />
-                <div className="card__header-text">
-                  <h3 className="card__title">Restaurant</h3>
-                  <span className="card__status">⭐⭐⭐</span>
-                </div>
-              </div>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
-              </p>
-              <div className="containBtNn">
-                <button onClick={() => setOpenModal(true)}>Book Now!</button>
-                <button className="removeBTnnn">Remove</button>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li className="listttt">
-          <div className="card">
-            <img
-              src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg"
-              className="card__image"
-              alt=""
-            />
-            <div className="card__overlay">
-              <div className="card__header">
-                <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
-                  <path />
-                </svg>
-                <FontAwesomeIcon
-                  className="card__thumb"
-                  icon={faUtensils}
-                  style={{ color: "#001319" }}
-                />{" "}
-                <div className="card__header-text">
-                  <h3 className="card__title">Restaurant</h3>
-                  <span className="card__status">⭐⭐⭐⭐</span>
-                </div>
-              </div>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Asperiores, blanditiis?
-              </p>
-              <div className="containBtNn">
-                <button onClick={() => setOpenModal(true)}>Book Now!</button>
-                <button className="removeBTnnn">Remove</button>
+                <button className="removeBTnnn" onClick={()=>FaveState.deleteFromFavsDb(element.id)}>Remove</button>
               </div>
             </div>
           </div>
         </li>
       </ul>
+
       <BookingModal open={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
