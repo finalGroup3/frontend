@@ -8,13 +8,13 @@ import { LoginContext } from "../Auth/login/LogInContext";
 import { FavoritesContext } from "./favContext";
 
 const Favorites = () => {
-  const [favList, setFavList] = useState([]);
+  // const [favList, setFavList] = useState([]);
 
-  const LoginState = useContext(LoginContext);
+  // const LoginState = useContext(LoginContext);
   // console.log(LoginState.user.id, "****************");
 
   const FaveState = useContext(FavoritesContext);
-  console.log(FaveState.favList, "fav from favpage");
+  // console.log(FaveState.favList, "fav from favpage");
 
   // useEffect(() => {
   //   console.log(FaveState.getFromFavsDb());

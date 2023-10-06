@@ -9,13 +9,12 @@ import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
 import LogIn from "./components/Auth/login/LogIn";
-// import Header2 from "./components/header2/Header2";
-import LoginContext from "./components/Auth/login/LogInContext";
 import Activities from "./components/Activities/Activities";
 import LoginProvider from "./components/Auth/login/LogInContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import RestaurantsContext from "./components/restaurants/RestaurantContext";
 import FavoritesContext from "./components/favorites/favContext";
 function App() {
@@ -25,7 +24,7 @@ function App() {
         <RestaurantsContext>
           <FavoritesContext>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/login" element={<LogIn />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/bookings" element={<Booking />} />
@@ -37,6 +36,7 @@ function App() {
               <Route path="/map" element={<MApp />} />
               <Route path="/dashboard/admin" element={<Dashboard />} />
               <Route path="/dashboard/owner" element={<OwnerDashboard />} />
+              <Route path="/" element={<LoadingScreen />} />
             </Routes>
           </FavoritesContext>
         </RestaurantsContext>

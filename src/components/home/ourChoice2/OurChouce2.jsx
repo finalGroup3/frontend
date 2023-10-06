@@ -119,7 +119,7 @@ export default function App() {
         </div>
       </div>
 
-      <BookingModal open={openModal} onClose={() => setOpenModal(false)} />
+      <BookingModal open={openModal} onClose={() => setOpenModal(false)} item={{image:'',name:'',description:''}}/>
     </>
   );
 }
