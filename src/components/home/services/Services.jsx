@@ -12,6 +12,9 @@ const Services = () => {
         discover exciting entertainment venues, we have you covered
       </p>
 
+      
+      <span >---------------------------------------------------------------------</span>
+
       <section className="cards">
         <article className="card card--1">
           <div className="shade"></div>
@@ -86,6 +89,9 @@ const Services = () => {
           </div>
         </article>
       </section>
+
+      <span >---------------------------------------------------------------------</span>
+
     </div>
   );
 };

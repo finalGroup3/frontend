@@ -4,6 +4,8 @@ import Restaurants from "./components/restaurants/Restaurants";
 import MApp from "./components/map/Map";
 import Booking from "./components/Booking/Booking4";
 import Favorites from "./components/favorites/Favorites";
+import Hotel from "./components/hotel/Hotel";
+
 import About from "./components/About/Test1";
 import Dashboard from "./components/dashboard/Dashboard";
 import Reelspage from "./components/reels/ReelsPage";
@@ -49,6 +51,8 @@ function App() {
           <Route path="/restaurants" element={<Restaurants />} />
           <Route path="/activities" element={<Activities />} />
 
+          <Route path="/hotels" element={<Hotel />} />
+          {/* <Route path="/activities" element={<Activity/>} /> */}
           <Route path="/aboutus" element={<About />} />
           <Route path="/reels" element={<Reelspage />} />
           <Route path="/map" element={<MApp />} />

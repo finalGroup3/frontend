@@ -1,5 +1,5 @@
 import "./SideNavBar.scss";
-import jordanmap from "../../assets/jordan1.png";
+// import jordanmap from "../../assets/jordan1.png";
 const SideNavBar = () => {
  
   return (
