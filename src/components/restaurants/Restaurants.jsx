@@ -15,9 +15,14 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
+import { FavoritesContext } from "../favorites/favContext";
+
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
-
+  const FaveState = useContext(FavoritesContext);
+  // const addfave = () => {
+  //   FaveState.AddToFavsDb(element)
+  // };
   return (
     <>
       <Header />
@@ -30,7 +35,7 @@ export default function Restaurants() {
           <div className="container-top-three-resturants">
             <br />
             <h2 className="headline-1 section-title">Top Resturants</h2>
-            
+
             {/* <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
             <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
             <button onClick={() => state.updateRestaurantsInDb("send the id")}>update</button> */}
@@ -166,6 +171,8 @@ export default function Restaurants() {
                     <a href="#" className="btn-text hover-underline label-2">
                       Book now
                     </a>
+                    <button onClick={()=>FaveState.AddToFavsDb(element)}>add to fav</button>
+                    {/* <button onClick={() => addfave(element)}>add to fav</button> */}
                   </div>
                   <div className="item-price">{element.price}</div>
                 </div>
