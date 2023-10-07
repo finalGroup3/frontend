@@ -37,6 +37,7 @@ function setupMap(center) {
 }
 
 function MApp() {
+  const [locationType, setLocationType] = useState("");
   const [pins, setPins] = useState([]);
   const [newPlace, setNewPlace] = useState(null);
   const [star, setStar] = useState(0);
@@ -68,8 +69,7 @@ function MApp() {
       setCoords(coords);
     };
 
-    getRoute(); // Call the function directly
-
+    getRoute(); 
   }, [end, start]);
   const geojson = {
     type: "FeatureCollection",
@@ -180,7 +180,7 @@ function MApp() {
       });
     }
   };
-
+ 
   return (
     <>
       <div className="ssss">
@@ -203,17 +203,17 @@ function MApp() {
               onDblClick={addNewPlace}
             >
               {pins.map((p) => (
-                <>
-                  <Marker latitude={p.lat} longitude={p.long}>
-                    <RoomIcon
-                      style={{
-                        fontSize: 7 * 6,
-                        color: "tomato",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
-                    />
-                  </Marker>
+                <><Marker latitude={p.lat} longitude={p.long}>
+                <RoomIcon
+                  style={{
+                    fontSize: 7 * 6,
+                    color: "tomato",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                />
+              </Marker>
+
                   {p.id === currentPlaceId && (
                     <section className="pppp">
                       <Popup
@@ -308,11 +308,22 @@ function MApp() {
                           placeholder="Say us something about this place."
                           onChange={(e) => setRestDesc(e.target.value)}
                         />
-                        <label>location</label>
+
+                        <label>Type</label>
+                        <select
+                          onChange={(e) => setLocationType(e.target.value)}
+                        >
+                          <option value="restaurant">restaurant</option>
+                          <option value="hotel">hotel</option>
+                          <option value="activities">activities</option>
+                        </select>
+
+                        <label>Address</label>
                         <input
-                          placeholder="enter your address."
+                          placeholder="Enter your address."
                           onChange={(e) => setRestAddress(e.target.value)}
                         />
+
                         <label>Rating</label>
                         <select onChange={(e) => setRestRating(e.target.value)}>
                           <option value="1">⭐</option>
@@ -321,9 +332,10 @@ function MApp() {
                           <option value="4">⭐⭐⭐⭐</option>
                           <option value="5">⭐⭐⭐⭐⭐</option>
                         </select>
-                        <label>price</label>
+
+                        <label>Price</label>
                         <input
-                          placeholder="enter your price range."
+                          placeholder="Enter your price range."
                           onChange={(e) => setRestPrice(e.target.value)}
                         />
 
