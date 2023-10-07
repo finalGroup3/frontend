@@ -16,13 +16,13 @@ import Home from "./components/home/Home";
 import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import RestaurantsContext from "./components/restaurants/RestaurantContext";
-import FavoritesContext from "./components/favorites/favContext";
+import FavoritesProvider from "./components/favorites/favContext";
 function App() {
   return (
     <>
       <LoginProvider>
         <RestaurantsContext>
-          <FavoritesContext>
+          <FavoritesProvider>
             <Routes>
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<LogIn />} />
@@ -38,7 +38,7 @@ function App() {
               <Route path="/dashboard/owner" element={<OwnerDashboard />} />
               <Route path="/" element={<LoadingScreen />} />
             </Routes>
-          </FavoritesContext>
+          </FavoritesProvider>
         </RestaurantsContext>
       </LoginProvider>
     </>
