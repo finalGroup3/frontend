@@ -24,7 +24,7 @@ export default function Booking() {
     const userId=LoginState.user.id
     try {
       const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${userId}`)
+        .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body;
       setRestaurantsBookings(items);
@@ -77,8 +77,8 @@ export default function Booking() {
 
   useEffect(() => {
     getRestaurantsBookingsFromDb();
-    getAcitivitesBookingsFromDb();
-    getHotelsBookingsFromDb();
+    // getAcitivitesBookingsFromDb();
+    // getHotelsBookingsFromDb();
   }, []);
 
   return (
