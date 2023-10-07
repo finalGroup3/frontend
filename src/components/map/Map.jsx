@@ -1,11 +1,12 @@
 import * as React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import RoomIcon from "@mui/icons-material/Room";
+import { LoginContext } from "../Auth/login/LogInContext";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
 import "./Map.scss";
-import SideNavBar from "./SideNavBar.jsx"
+import SideNavBar from "./SideNavBar";
 
 import Map, {
   NavigationControl,
@@ -35,7 +36,8 @@ function setupMap(center) {
   return center;
 }
 
-function MApp({ user }) {
+function MApp() {
+  const [locationType, setLocationType] = useState("");
   const [pins, setPins] = useState([]);
   const [newPlace, setNewPlace] = useState(null);
   const [star, setStar] = useState(0);
@@ -56,19 +58,19 @@ function MApp({ user }) {
   });
 
   useEffect(() => {
-    getRoute();
+    const getRoute = async () => {
+      const response = await axios.get(
+        `https://api.mapbox.com/directions/v5/mapbox/driving/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw`
+      );
+
+      const data = response.data;
+      console.log(data);
+      const coords = data.routes[0].geometry.coordinates;
+      setCoords(coords);
+    };
+
+    getRoute(); 
   }, [end, start]);
-
-  const getRoute = async () => {
-    const response = await axios.get(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${start[0]},${start[1]};${end[0]},${end[1]}?steps=true&geometries=geojson&access_token=pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw`
-    );
-
-    const data = response.data;
-    console.log(data);
-    const coords = data.routes[0].geometry.coordinates;
-    setCoords(coords);
-  };
   const geojson = {
     type: "FeatureCollection",
     features: [
@@ -85,7 +87,7 @@ function MApp({ user }) {
     e.preventDefault();
     const newPin = {
       name: restName,
-      img:restImg,
+      img: restImg,
       description: restDesc,
       location: restAddress,
       rating: restRating,
@@ -96,7 +98,7 @@ function MApp({ user }) {
 
     try {
       const res = await axios.post(
-        `${"http://localhost:3005/"}restaurants`,
+        `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
         newPin,
         {
           headers: {
@@ -145,7 +147,7 @@ function MApp({ user }) {
     const getPins = async () => {
       try {
         const allPins = await axios.get(
-          `${"http://localhost:3005/"}restaurants`,
+          `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("userToken")}`,
@@ -165,8 +167,11 @@ function MApp({ user }) {
     const endPoint = Object.keys(newEnd).map((item) => newEnd[item]);
     setEnd(endPoint);
   };
+
+  const state = useContext(LoginContext);
+
   const addNewPlace = (e) => {
-    if (user?.user?.role === "owner") {
+    if (state.user?.role === "owner") {
       const { lat, lng } = e.lngLat;
       console.log(e);
       setNewPlace({
@@ -175,29 +180,30 @@ function MApp({ user }) {
       });
     }
   };
-
+ 
   return (
     <>
-    <div className="ssss">
-    <div className="sidenavbar-container"> 
-    <div id="earth"></div>   
-    <SideNavBar/>
-</div>
-    <div className="map-container"> 
-    
-      {coords && (
-        <Map
-          {...initialViewState}
-          onClick={handleClick}
-          className='map'
-          onMove={(evt) => setInitialViewState(evt.initialViewState)}
-          mapboxAccessToken={"pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw"}
-          style={{ width: "100vw", height: "100vh" }}
-          mapStyle='mapbox://styles/mapbox/streets-v9'
-          onDblClick={addNewPlace}>
-          {pins.map((p) => (
-            <>
-              <Marker latitude={p.lat} longitude={p.long}>
+      <div className="ssss">
+        <div className="sidenavbar-container">
+          <div id="earth"></div>
+          <SideNavBar />
+        </div>
+        <div className="map-container">
+          {coords && (
+            <Map
+              {...initialViewState}
+              onClick={handleClick}
+              className="map"
+              onMove={(evt) => setInitialViewState(evt.initialViewState)}
+              mapboxAccessToken={
+                "pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw"
+              }
+              style={{ width: "100vw", height: "100vh" }}
+              mapStyle="mapbox://styles/mapbox/streets-v9"
+              onDblClick={addNewPlace}
+            >
+              {pins.map((p) => (
+                <><Marker latitude={p.lat} longitude={p.long}>
                 <RoomIcon
                   style={{
                     fontSize: 7 * 6,
@@ -207,117 +213,143 @@ function MApp({ user }) {
                   onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
                 />
               </Marker>
-              {p.id === currentPlaceId && (
-                <section className='pppp'>
+
+                  {p.id === currentPlaceId && (
+                    <section className="pppp">
+                      <Popup
+                        className="popup"
+                        key={p.id}
+                        latitude={p.lat}
+                        longitude={p.long}
+                        closeButton={true}
+                        closeOnClick={false}
+                        onClose={() => setCurrentPlaceId(null)}
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
+                            &#215;
+                          </span>
+                          <img src={p.img} />
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
+                          </div>
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
+                          </section>
+                        </div>
+                      </Popup>
+                    </section>
+                  )}
+                </>
+              ))}
+
+              <div style={{ position: "absolute", top: 10, right: 10 }}>
+                <NavigationControl />
+              </div>
+              <GeolocateControl ref={geoControlRef} />
+              <Source id="routeSource" type="geojson" data={geojson}>
+                <Layer {...lineStyle} />
+              </Source>
+
+              {newPlace && (
+                <>
+                  <Marker latitude={newPlace.lat} longitude={newPlace.lng}>
+                    <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "tomato",
+                        cursor: "pointer",
+                      }}
+                    />
+                  </Marker>
                   <Popup
-                    className='popup'
-                    key={p.id}
-                    latitude={p.lat}
-                    longitude={p.long}
+                    latitude={newPlace.lat}
+                    longitude={newPlace.lng}
                     closeButton={true}
                     closeOnClick={false}
-                    onClose={() => setCurrentPlaceId(null)}
-                    anchor='left'>
-                    <div className='mapcard'>
-                      <img src={p.img} />
+                    onClose={() => setNewPlace(null)}
+                    anchor="left"
+                  >
+                    <div className="mapform">
+                      <div
+                        className="close-iconn"
+                        onClick={() => setNewPlace(null)}
+                      >
+                        &#215;
+                      </div>
+                      <form onSubmit={handleSubmit}>
+                        <label>Name</label>
+                        <input
+                          placeholder="Enter your restaurant name"
+                          autoFocus
+                          onChange={(e) => setRestName(e.target.value)}
+                        />
 
-                      <section className='restinfoo'>
-                        <label>Place</label>
-                        <h4 className='place'>{p.name}</h4>
-                        <label>Review</label>
-                        <p className='desc'>{p.description}</p>
+                        <label>Image</label>
+                        <input
+                          placeholder="Enter your restaurant name"
+                          autoFocus
+                          onChange={(e) => setRestImg(e.target.value)}
+                        />
+
+                        <label>Description</label>
+                        <textarea
+                          placeholder="Say us something about this place."
+                          onChange={(e) => setRestDesc(e.target.value)}
+                        />
+
+                        <label>Type</label>
+                        <select
+                          onChange={(e) => setLocationType(e.target.value)}
+                        >
+                          <option value="restaurant">restaurant</option>
+                          <option value="hotel">hotel</option>
+                          <option value="activities">activities</option>
+                        </select>
+
+                        <label>Address</label>
+                        <input
+                          placeholder="Enter your address."
+                          onChange={(e) => setRestAddress(e.target.value)}
+                        />
+
                         <label>Rating</label>
-                        <div className='stars'>
-                          {Array(p.rating).fill(<StarIcon className="star" />)}
-                        </div>
-                        <label>Information</label>
-                        <span className='username'></span>
-                      </section>
+                        <select onChange={(e) => setRestRating(e.target.value)}>
+                          <option value="1">⭐</option>
+                          <option value="2">⭐⭐</option>
+                          <option value="3">⭐⭐⭐</option>
+                          <option value="4">⭐⭐⭐⭐</option>
+                          <option value="5">⭐⭐⭐⭐⭐</option>
+                        </select>
+
+                        <label>Price</label>
+                        <input
+                          placeholder="Enter your price range."
+                          onChange={(e) => setRestPrice(e.target.value)}
+                        />
+
+                        <button type="submit" className="submitButton">
+                          Add Pin
+                        </button>
+                      </form>
                     </div>
                   </Popup>
-                </section>
+                </>
               )}
-            </>
-          ))}
-
-          <div style={{ position: "absolute", top: 10, right: 10 }}>
-            <NavigationControl />
-          </div>
-          <GeolocateControl ref={geoControlRef} />
-          <Source id='routeSource' type='geojson' data={geojson}>
-            <Layer {...lineStyle} />
-          </Source>
-
-          {newPlace && (
-            <>
-              <Marker latitude={newPlace.lat} longitude={newPlace.lng}>
-                <RoomIcon
-                  style={{
-                    fontSize: 7 * 6,
-                    color: "tomato",
-                    cursor: "pointer",
-                  }}
-                />
-              </Marker>
-              <Popup
-                latitude={newPlace.lat}
-                longitude={newPlace.lng}
-                closeButton={true}
-                closeOnClick={false}
-                onClose={() => setNewPlace(null)}
-                anchor='left'>
-                <div className="mapform">
-                  <form onSubmit={handleSubmit}>
-                    <label>Name</label>
-                    <input
-                      placeholder='Enter your restaurant name'
-                      autoFocus
-                      onChange={(e) => setRestName(e.target.value)}
-                    />
-
-                    <label>Image</label>
-                    <input
-                      placeholder='Enter your restaurant name'
-                      autoFocus
-                      onChange={(e) => setRestImg(e.target.value)}
-                    />
-
-                    <label>Description</label>
-                    <textarea
-                      placeholder='Say us something about this place.'
-                      onChange={(e) => setRestDesc(e.target.value)}
-                    />
-                    <label>location</label>
-                    <input
-                      placeholder='enter your address.'
-                      onChange={(e) => setRestAddress(e.target.value)}
-                    />
-                    <label>Rating</label>
-                    <select onChange={(e) => setRestRating(e.target.value)}>
-                      <option value='1'>⭐</option>
-                      <option value='2'>⭐⭐</option>
-                      <option value='3'>⭐⭐⭐</option>
-                      <option value='4'>⭐⭐⭐⭐</option>
-                      <option value='5'>⭐⭐⭐⭐⭐</option>
-                    </select>
-                    <label>price</label>
-                    <input
-                      placeholder='enter your price range.'
-                      onChange={(e) => setRestPrice(e.target.value)}
-                    />
-
-                    <button type='submit' className='submitButton'>
-                      Add Pin
-                    </button>
-                  </form>
-                </div>
-              </Popup>
-            </>
+            </Map>
           )}
-          
-        </Map>
-      )}
-      </div>
+        </div>
       </div>
     </>
   );

@@ -118,10 +118,10 @@ export default function RestaurantsList(props) {
       long: item.long,
       lat: item.lat,
     };
-    const req = async () => {
+    const req = async (ID) => {
       try {
         const response = await superagent
-          .post(`${import.meta.env.VITE_DATABASE_URL}/hotel`)
+          .post(`${import.meta.env.VITE_DATABASE_URL}/hotel/${ID}`)
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneHotel);
         if (response.ok) {
