@@ -159,7 +159,11 @@ export default function Restaurants() {
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
             return (
+              <>
+              <div>
               <CCard key={element.id} element={element}/>
+              </div>
+              </>
             );
           })}
         </div>

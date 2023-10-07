@@ -58,7 +58,7 @@ export default function FavoritesProvider(props) {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneFave);
         if (response.ok) {
-          console.log(response.body);
+          console.log(response.body,"addddddddded");
         // console.log(favList,"favList");
 
         }
