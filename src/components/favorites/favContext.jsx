@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
 import cookie from "react-cookies";
 import superagent from "superagent";
 import { LoginContext } from "../Auth/login/LogInContext";
-// import Restaurants from "../Data/DummyData";
 
 export const FavoritesContext = React.createContext();
 
@@ -59,6 +57,7 @@ export default function FavoritesProvider(props) {
           .send(oneFave);
         if (response.ok) {
           console.log(response.body,"addddddddded");
+          getFromFavsDb();
         // console.log(favList,"favList");
 
         }
@@ -81,15 +80,17 @@ export default function FavoritesProvider(props) {
 
       if (response.ok) {
         console.log(response.body);
+          getFromFavsDb();
       }
     } catch (error) {
       console.error(error);
     }
   };
 
-  useEffect(() => {
-    getFromFavsDb();
-  }, []);
+
+  // useEffect(() => {
+  //   getFromFavsDb();
+  // }, []);
 
   const state = {
     favList: favList,
