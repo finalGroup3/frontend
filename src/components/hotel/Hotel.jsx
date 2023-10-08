@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Hotel.scss";
 import movinpick from "../../assets/movinpick.jpg";
 import hotel2 from "../../assets/hotel2.avif";
@@ -8,7 +8,12 @@ import hotel5 from "../../assets/hotel6.jpg";
 import hilton from "../../assets/hilton.webp";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import CCard from "../restaurants/CCard";
+import { RestaurantsContext } from "../restaurants/RestaurantContext";
+
 const Hotel = () => {
+  const state = useContext(RestaurantsContext);
+
   return (
     <>
       <Header />
@@ -67,108 +72,15 @@ const Hotel = () => {
           <br />
           <br />
           <div className="container">
-            <div className="item">
-              <div className="item-image">
-                <img src={movinpick} alt="Délicieux Bénédicte" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐</p>
-                <h2 className="item-title">Movenpick</h2>
-                <p className="item-body">
-                  Our hotel is designed to be a haven of comfort, providing a
-                  modern amenities and classic elegance.
-                </p>
-                <button href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </button>
-              </div>
-              <div className="item-price">150JD</div>
-            </div>
-            <div className="item">
-              <div className="item-image">
-                <img src={hotel2} alt="Du bœuf Burger" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐⭐</p>
-                <h2 className="item-title">InterContinental</h2>
-                <p className="item-body">
-                  Immerse yourself in the warm and inviting ambiance of our
-                  hotel, whereyour sense of comfort.
-                </p>
-                <a href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </a>
-              </div>
-              <div className="item-price">110JD</div>
-            </div>
-            <div className="item">
-              <div className="item-image">
-                <img src={hotel3} alt="Soupe à l’oignon" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐⭐</p>
-                <h2 className="item-title">Crown plaza</h2>
-                <p className="item-body">
-                  Experience unparalleled hospitality with our dedicated staff,
-                  committed to delivering personalized.
-                </p>
-                <a href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </a>
-              </div>
-              <div className="item-price">70JD</div>
-            </div>
-            <div className="item">
-              <div className="item-image">
-                <img src={hotel4} alt="Soupe à l’oignon" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐⭐</p>
-                <h2 className="item-title">Kempiniski</h2>
-                <p className="item-body">
-                  Indulge in the plush luxury of our well-appointed rooms,
-                  meticulously designed perfectly.
-                </p>
-                <a href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </a>
-              </div>
-              <div className="item-price">100JD</div>
-            </div>
-            <div className="item">
-              <div className="item-image">
-                <img src={hotel5} alt="Soupe à l’oignon" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐</p>
-                <h2 className="item-title">Fairmont </h2>
-                <p className="item-body">
-                  From the moment you step into our lobby, you will be greeted
-                  by a welcoming atmosphere .
-                </p>
-                <a href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </a>
-              </div>
-              <div className="item-price">50JD</div>
-            </div>{" "}
-            <div className="item">
-              <div className="item-image">
-                <img src={hilton} alt="Soupe à l’oignon" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐</p>
-                <h2 className="item-title">Hilton</h2>
-                <p className="item-body">
-                  Elevate your stay with our range of premium services,
-                  including concierge assistance, spa facilities.
-                </p>
-                <a href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </a>
-              </div>
-              <div className="item-price">120JD</div>
-            </div>
+            {state.hotelsList.map((element) => {
+              return (
+                <>
+                  <div>
+                    <CCard key={element.id} element={element} />
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </div>
