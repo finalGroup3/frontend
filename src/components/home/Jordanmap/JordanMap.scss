@@ -39,7 +39,7 @@
 }
 
 .jmap-contain{
-  position: relative;
+//   position: relative;
   width: 80%;
   margin: auto;
   height: 100vh;
@@ -54,6 +54,8 @@
 }
 
 .waves22{
+    position: relative;
+    z-index: -1;
     width: 100%;
     height: 100px;
     rotate: 180deg;
