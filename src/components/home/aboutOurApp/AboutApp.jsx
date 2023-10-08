@@ -2,13 +2,17 @@ import "./AboutApp.scss";
 
 // import border from 'src/components/imgs/border.avif'
 import React, { useState, useEffect } from "react";
+import arrowimg from '../heroSection/fast-forward-double-right-arrows-symbol.png'
+
 
 function AboutApp() {
   return (
     <>
       <div className='dontUseVW'>
         <div className='imgs-section'>
-          <svg className="aboutapp-svg"
+      <p className='nn10148'>︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾ ︾</p>
+
+          {/* <svg className="aboutapp-svg"
             xmlns='http://www.w3.org/2000/svg'
             version='1.1'
             xmlns:xlink='http://www.w3.org/1999/xlink'
@@ -78,7 +82,7 @@ function AboutApp() {
                   offset='0.66'></stop>
               </linearGradient>
             </defs>
-          </svg>
+          </svg> */}
           <section className='left-imgs-home'>
             <div className='row g-5 align-items-center'>
               <div className='col-lg-6'>
@@ -86,14 +90,14 @@ function AboutApp() {
                   <div className='col-6 text-start '>
                     <img
                       className='img-fluid rounded w-100 wow zoomIn aboutapp-img1'
-                      src='https://joctours.com/wp-content/uploads/tour01.jpg'
+                      src='https://media.tacdn.com/media/attractions-splice-spp-674x446/09/76/2d/e8.jpg'
                       alt=''
                     />
                   </div>
                   <div className='col-6 text-start'>
                     <img
                       className='img-fluid rounded w-75 wow zoomIn aboutapp-img2 '
-                      src='https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/37/3d/a5/hotel-facade.jpg?w=1200&h=-1&s=1='
+                      src='https://assets.micontenthub.com/AMMJR/outlets/il-terrazzo-restaurant/1684670360-Amman210.jpg'
                       style={{ marginTop: "25%" }}
                       alt=''
                     />
@@ -101,14 +105,14 @@ function AboutApp() {
                   <div className='col-6 text-end'>
                     <img
                       className='img-fluid rounded w-75 wow zoomIn aboutapp-img3'
-                      src='https://blog.myjordanjourney.com/hs-fs/hubfs/Screen%20Shot%202021-11-03%20at%204.35.39%20PM.png?width=1070&name=Screen%20Shot%202021-11-03%20at%204.35.39%20PM.png'
+                      src='https://www.momondo.com/himg/b2/8c/96/leonardo-5301305-151271023-455510.jpg'
                       alt=''
                     />
                   </div>
-                  <div className='col-6 text-end'>
+                  <div className='col-6  text-end'>
                     <img
                       className='img-fluid rounded w-100 wow zoomIn aboutapp-img4'
-                      src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEoutTEmzAxHryhTmGIu1UVyqhHaWKcVHo1g&usqp=CAU'
+                      src='https://media02.stockfood.com/largepreviews/MjIwNjUyMjEyMw==/71178133-Night-lights-of-Amman-capital-of-Jordan.jpg'
                       alt=''
                     />
                   </div>
@@ -117,7 +121,7 @@ function AboutApp() {
             </div>
           </section>
           <p className='aboutus-home'>
-            <h3>About our website</h3>
+            <h3> ✧✧ About our website ✧✧</h3>
             <p>
               {" "}
               Choose your destination and browse a diverse list of exciting
@@ -137,6 +141,7 @@ function AboutApp() {
               After choosing the appropriate option, book it through the website
               in an easy and secure way.
             </p>
+            <img className='arrowimg22'  src={arrowimg}alt='img'/>
 
             {/* <span className='dots'>. . . . . . . . . . . . . . . . . .  </span> */}
           </p>

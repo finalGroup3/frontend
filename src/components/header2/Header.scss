@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair&display=swap");
-
+#navbar2{
   .navbar.navbar-expand-lg.navbar-dark.bg-dark {
     background: rgba(255, 255, 255, 0) !important;
     padding: 0px;
@@ -10,8 +10,7 @@
     top: 0;
     width: 100%;
     z-index: 10;
-    color: #ffffff;
-  
+    color: #000000;
     font-family: "Playfair", serif;
     transition: 600ms ease-in;
   }
@@ -22,10 +21,10 @@
     font-weight: 700;
   }
   .navbarBrand {
-    font-size: 36px !important;
+    font-size: 34px !important;
     font-family: "Dancing Script", cursive;
     font-weight: 900;
-    color: #ffffff !important;
+    color: #001319 !important;
   }
   .header-scroll.navbar.navbar-expand-lg.navbar-dark.bg-dark {
     background-color: #001319 !important;
@@ -35,7 +34,7 @@
     }
     .dropdown-menu{
        .dropdown-item {
-      color: hsl(0, 0%, 0%) !important;
+      color: #ffffff !important;
   
     }
     }
@@ -84,3 +83,4 @@
     }
   }
   
+}

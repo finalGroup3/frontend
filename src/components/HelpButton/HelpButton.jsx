@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import ChatIcon from "@mui/icons-material/Chat";
 import { SvgIcon } from "@mui/material";
 import { LoginContext } from "../Auth/login/LogInContext";
+import { Link } from "react-router-dom";
 
 const HelpButton = () => {
   const state = useContext(LoginContext);
@@ -30,7 +31,8 @@ const HelpButton = () => {
 
   return (
     <div className="helpppBtN ">
-      <button className="Btn hidden-element" onClick={state.sendToAdmin}>
+      <Link to='/chatRoom'>
+        <button className="Btn hidden-element" onClick={state.sendToAdmin}>
         <span className="svgContainer">
           <SvgIcon>
             <ChatIcon></ChatIcon>
@@ -38,6 +40,8 @@ const HelpButton = () => {
         </span>
         <span className="BG"></span>
       </button>
+      </Link>
+      
     </div>
   );
 };

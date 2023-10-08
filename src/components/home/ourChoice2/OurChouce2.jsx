@@ -57,20 +57,20 @@ export default function App() {
         </g>
       </svg>
       <div className="swiper-box">
-        <article className="swiper-title">
-          <h2>Our special groups</h2>
-          {/* <p>We provide you with many distinctive and famous options in the region</p> */}
-        </article>
+      <article className="swiper-title">
+                <h2>✧✧ Our Choice ✧✧</h2>
+                {/* <p>We provide you with many distinctive and famous options in the region</p> */}
+              </article>
         <div className="swiperContain">
           <Swiper
             direction={"vertical"}
             slidesPerView={1}
             spaceBetween={30}
             mousewheel={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
+            // autoplay={{
+            //   delay: 2500,
+            //   disableOnInteraction: false,
+            // }}
             pagination={{
               clickable: true,
             }}
@@ -159,6 +159,7 @@ export default function App() {
             />
           </Swiper>
         </div>
+       
       </div>
     </>
   );

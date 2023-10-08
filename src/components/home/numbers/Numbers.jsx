@@ -62,7 +62,7 @@ export default function Numbers() {
           <section>
             <div className="nums-container">
               <article className="nums-title">
-                <h2>Our special groups</h2>
+                <h2> ✧✧ Our special groups ✧✧</h2>
                 <p>We provide you with many distinctive and famous options in the region</p>
               </article>
     
@@ -114,6 +114,7 @@ export default function Numbers() {
                 </section>
               </section>
             </div>
+          
           </section>
         </>
       );

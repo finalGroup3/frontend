@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
+import { Link } from "react-router-dom";
 import "./Services.scss";
 // import { Link } from "react-router-dom";
 const Services = () => {
   return (
     <div className="serviceContain">
-      <h2 className="services-heading">Our services</h2>
+      <h2 className="services-heading"> ✧✧ Our services ✧✧</h2>
       <p className="services-text">
         Our website offers a wide range of services to cater to your leisure and
         travel needs. Whether you're looking to satisfy your taste buds at a
@@ -13,7 +14,7 @@ const Services = () => {
       </p>
 
       
-      <span >---------------------------------------------------------------------</span>
+      <span className="dddot" >---------------------------------------------------------------------</span>
 
       <section className="cards">
         <article className="card card--1">
@@ -31,10 +32,14 @@ const Services = () => {
                 lunch, or dinner.
               </h3>
               <div className="services-bttnnss">
-                <button className="services-bttnn">
+
+                <Link to='/restaurants'>
+                   <button className="services-bttnn">
                   {" "}
                   see more &#10095;&#10095;{" "}
                 </button>
+                </Link>
+               
               </div>
             </div>
           </div>
@@ -90,7 +95,7 @@ const Services = () => {
         </article>
       </section>
 
-      <span >---------------------------------------------------------------------</span>
+      <span className="dddot" >---------------------------------------------------------------------</span>
 
     </div>
   );

@@ -1,4 +1,4 @@
-import "./SideNavBar.scss";
+// import "./SideNavBar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 // import jordanmap from "../../assets/jordan1.png";

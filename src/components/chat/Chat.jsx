@@ -5,18 +5,18 @@ import avatar2 from '../../imgs/user (2).png'
 import { LoginContext } from "../Auth/login/LogInContext";
 
 
-function Chat() {
+function Chat(props) {
 
   const state = useContext(LoginContext);
 
 
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-
+console.log(props.room, "iddddddddddddddddddddddddddddd")
   const sendMessage = async () => {
     if (currentMessage !== "") {
       const messageData = {
-        room: state.socket,
+        room: `${props.room}`,
         author: state.user.username,
         message: currentMessage,
         time:
