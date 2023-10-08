@@ -1,28 +1,37 @@
 :root {
-    --c-sidebar: #000000;
-    --c-default: #D9D9D9;
+    --c-sidebar: #001319;
+    --c-default: #ffffff;
     --c-active: #1DA1F2;
     --c-hover: #01081f;
 }
 
 .nnn-admin{
-    button {
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    
-        &:hover {
-          color: gold;
-          transform: scale(1.05); /* Scale up the button on hover */
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-        }
-    
-      }
+    position: fixed;
+   
         .aside-admin {
+            button {
+                cursor: pointer;
+                transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            
+                &:hover {
+                  color: #fca21c;
+                  transform: scale(1.10);
+                  
+                  svg{
+                    color: #ffffff !important;
+                  }
+                  /* Scale up the button on hover */
+                //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+                }
+               
+            
+              }
     height: 100dvh;
 
     width: 280px;
     border-radius: 24px;
     padding: 40px;
+    border-right: 1px solid #ffffff ;
     // background: var(--c-sidebar);
     .admin-logo {
         display: block;
@@ -64,11 +73,14 @@
             .icon {
                 margin-right: 16px;
                 position: relative;
+               
                 svg {
                     display: block;
                     width: 24px;
                     height: 24px;
+                    color: #ffffff;
                 }
+              
             }
             & > div {
                 display: inline-flex;
@@ -77,7 +89,7 @@
                 border-radius: 21px;
                 background: var(--c-background);
             }
-            &.home {
+            &.homeadmin {
                 --icon-fill-size: 0px;
                 --icon-house-s: 1;
                 --icon-outline-o: 1;
@@ -349,51 +361,16 @@
             }
         }
     }
+
+background-image: url('./waves.svg') !important;
 }
 
-html {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-}
 
-* {
-    box-sizing: inherit;
-    &:before,
-    &:after {
-        box-sizing: inherit;
-    }
-}
+
+
 
 // Center & dribbble
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // background: #15181C;
-    padding: 40px;
-    .dribbble {
-        position: fixed;
-        display: block;
-        right: 20px;
-        bottom: 20px;
-        img {
-            display: block;
-            height: 28px;
-        }
-    }
-    .twitter {
-        position: fixed;
-        display: block;
-        right: 64px;
-        bottom: 14px;
-        svg {
-            width: 32px;
-            height: 32px;
-            fill: #1da1f2;
-        }
-    }
-}
+
 .jordan-map1{
     max-width: 100%;
     max-height: 100%;
@@ -402,4 +379,13 @@ body {
     display: block;
     margin-left: 65px;
 }
+}
+
+.waves-navbar{
+    rotate: 90deg;
+    width: 100%;
+position: absolute;
+    height: 100%;
+    top:100px;
+   
 }

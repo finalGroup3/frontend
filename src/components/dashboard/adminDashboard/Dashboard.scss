@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
+
+.main-dashboard {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1348' height='787' preserveAspectRatio='none' viewBox='0 0 1348 787'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1942%26quot%3b)' fill='none'%3e%3crect width='1348' height='787' x='0' y='0' fill='rgba(0%2c 19%2c 25%2c 1)'%3e%3c/rect%3e%3cpath d='M10 787L797 0L1103 0L316 787z' fill='url(%26quot%3b%23SvgjsLinearGradient1943%26quot%3b)'%3e%3c/path%3e%3cpath d='M473.84000000000003 787L1260.8400000000001 0L1740.8400000000001 0L953.84 787z' fill='url(%26quot%3b%23SvgjsLinearGradient1943%26quot%3b)'%3e%3c/path%3e%3cpath d='M1346 787L559 0L227.5 0L1014.5 787z' fill='url(%26quot%3b%23SvgjsLinearGradient1944%26quot%3b)'%3e%3c/path%3e%3cpath d='M852.16 787L65.15999999999997 0L-362.34000000000003 0L424.65999999999997 787z' fill='url(%26quot%3b%23SvgjsLinearGradient1944%26quot%3b)'%3e%3c/path%3e%3cpath d='M806.6221595579538 787L1348 245.62215955795375L1348 787z' fill='url(%26quot%3b%23SvgjsLinearGradient1943%26quot%3b)'%3e%3c/path%3e%3cpath d='M0 787L541.3778404420462 787L 0 245.62215955795375z' fill='url(%26quot%3b%23SvgjsLinearGradient1944%26quot%3b)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1942'%3e%3crect width='1348' height='787' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='0%25' y1='100%25' x2='100%25' y2='0%25' id='SvgjsLinearGradient1943'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0.23)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(255%2c 255%2c 255%2c 0.23)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3clinearGradient x1='100%25' y1='100%25' x2='0%25' y2='0%25' id='SvgjsLinearGradient1944'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0.23)' offset='0'%3e%3c/stop%3e%3cstop stop-opacity='0' stop-color='rgba(255%2c 255%2c 255%2c 0.23)' offset='0.66'%3e%3c/stop%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e");
+  /* background: url(./test2.svg); */
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 2fr  8fr;
+  // grid-template-rows: repeat(30, [col] 50px);
+  /* grid-gap: 5px; */
+  font-family: "Roboto", helvetica, arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+  height: auto;
+  max-width: 100%;
+  // overflow-y: scroll;
+
+  .dashboard-page-title{
+    font-family: "Unna", serif;
+       font-size: 52px;
+       color: #fca41c;
+       font-style: italic;
+       font-weight: 700;
+       font-family: "Unna", serif;
+       margin-top:30px;
+       margin-right: 20px;
+       display: inline-block;
+       width: 250px;
+       text-align: center;
+  }
+  .dashboard-page-des{
+    font-size: 16px;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    width: 850px;
+    margin: 0;
+  }
+  .waveLine{
+    width:76%;
+    display: inline-block;
+  }
+}

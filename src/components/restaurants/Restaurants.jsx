@@ -20,12 +20,17 @@ import CCard from "./CCard";
 
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
+
   const FaveState = useContext(FavoritesContext);
   // const addfave = () => {
   //   FaveState.AddToFavsDb(element)
   // };
   return (
     <>
+    
       <Header />
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb">

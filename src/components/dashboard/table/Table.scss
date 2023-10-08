@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
+
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE;
+
+
+
+
+
+
+.table-container {
+   
+	max-width: 95%;
+	margin-right:auto;
+	margin-left:auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	// height:90vh;
+    overflow-y: scroll;
+    // overflow-x: scroll;
+
+    background-color: #0013192a ;
+    margin-top: 60px;
+    border-radius: 10px;
+position:relative;
+scroll-behavior: smooth;
+
+}
+
+.table {
+// width: 100%;
+	border:none ;
+    border-radius: 10px;
+	// min-height:80vh;
+	height:69vh;
+
+   
+    // background-color: #001319 ;
+
+
+}
+
+.table-header {
+    position: fixed;
+    top:140px;
+	display:flex;
+	width:76%;
+	background:#fca21c  ;
+	padding:($half-spacing-unit * 1.5) 0;
+    color: #1772FF;
+    height: 70px;
+    border-radius: 10px 10px 0 0 ;
+   
+}
+
+
+.table-row {
+    
+	display:flex;
+    // background-color: #001319 ;
+    border-top: 1px solid #ffffff ;
+
+	width:100%;
+	padding:($half-spacing-unit * 1.5) 0;
+	
+	// &:nth-of-type(odd) {
+	// 	background:$color-form-highlight;
+    // background-color: #001319 ;
+
+	// }
+    // &:nth-of-type(even) {
+	// 	background:$color-form-highlight;
+    // background-color: #ffffff ;
+
+	// }
+}
+.table-row:hover{
+    background-color: #ffffff2a;
+    cursor: pointer;
+    .table-data{
+    background-color: #ffffff00 !important;
+    color: #fca21c !important;
+
+    }
+}
+
+
+.table-data, .header__item {
+   
+	flex: 1 1 10%;
+	text-align:center;
+    background-color: #001319 !important;
+    background-color: #0013192a  !important;
+
+    color: #fff !important;
+    align-self: center;
+}
+.table-data:hover{
+    background-color: #00293e !important;
+
+}
+.header__item {
+	text-transform:uppercase;
+    background-color: #fca21c34  !important;
+    border-radius: 10px 10px 0 0 ;
+    color: #001319 !important;
+    align-self: center;
+  font-family: "Playfair", serif;
+  font-size: 18px;
+  font-weight: 600;
+ }

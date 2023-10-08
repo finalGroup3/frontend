@@ -16,6 +16,8 @@ const LoginProvider = (props) => {
   const [user, setUser] = useState({ capabilities: [] });
   const [error, setError] = useState(null);
   const [socket, setSocket] = useState(null);
+  const [uuid, setUuid] = useState(null);
+  
 
   console.log("user =====> ", user);
   console.log(socket);
@@ -26,10 +28,6 @@ const LoginProvider = (props) => {
 
   const login = async (username, password) => {
     setSocket(io(`${import.meta.env.VITE_DATABASE_URL}`));
-    // const id = uuidv4();
-    // setUuid(id);
-
-    // console.log(uuid);
 
     const data = await superagent
       .post(`${import.meta.env.VITE_DATABASE_URL}/signin`)
@@ -91,7 +89,10 @@ const LoginProvider = (props) => {
   };
 
   const adminArray = ["laith", "ala", "nour", "savana", "amro"];
-  const id = uuidv4();
+  let id;
+  if(user.role == 'user'){
+      id = user.id;
+  } 
 
   const sendToAdmin = () => {
     socket?.emit("join_room", `${id}`);
@@ -115,6 +116,7 @@ const LoginProvider = (props) => {
     token: token,
     error: error,
     socket: socket,
+    id:id||user.id,
     sendToAdmin: sendToAdmin,
   };
 
