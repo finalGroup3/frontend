@@ -55,7 +55,7 @@ const OwnerDashboard = () => {
     </div>
     <main>
       <div className="main__col--1">
-        <h2>Overview</h2>
+        <h2>Owner dashboard</h2>
       </div>
       <div className="main__col--2">
         <div className="box box--1">
@@ -87,9 +87,10 @@ const OwnerDashboard = () => {
         </div>
       </div>
       <div className="main__col--3">
-        <div className="graphic--container">
+      <div className="graphic--container">
+  <img className="img-chartt" src="https://static.vecteezy.com/system/resources/previews/017/642/024/original/financial-business-statistics-with-bar-graph-and-candlestick-chart-show-stock-market-price-and-effective-earning-on-dark-green-background-vector.jpg" alt="illustration" />
+</div>
           
-        </div>
         
       </div>
     </main>
