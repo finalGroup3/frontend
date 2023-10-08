@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Hotel.scss";
 import movinpick from "../../assets/movinpick.jpg";
 import hotel2 from "../../assets/hotel2.avif";
@@ -8,7 +8,12 @@ import hotel5 from "../../assets/hotel6.jpg";
 import hilton from "../../assets/hilton.webp";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import CCard from "../restaurants/CCard";
+import { RestaurantsContext } from "../restaurants/RestaurantContext";
+
 const Hotel = () => {
+  const state = useContext(RestaurantsContext);
+
   return (
     <>
       <Header />
@@ -67,23 +72,15 @@ const Hotel = () => {
           <br />
           <br />
           <div className="container">
-            <div className="item">
-              <div className="item-image">
-                <img src={movinpick} alt="Délicieux Bénédicte" />
-              </div>
-              <div className="item-text">
-                <p className="item-meal-type">⭐⭐⭐</p>
-                <h2 className="item-title">Movenpick</h2>
-                <p className="item-body">
-                  Our hotel is designed to be a haven of comfort, providing a
-                  modern amenities and classic elegance.
-                </p>
-                <button href="#" className="btn-text hover-underline label-2">
-                  Book now
-                </button>
-              </div>
-              <div className="item-price">150JD</div>
-            </div>
+            {state.hotelsList.map((element) => {
+              return (
+                <>
+                  <div>
+                    <CCard key={element.id} element={element} />
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </div>
