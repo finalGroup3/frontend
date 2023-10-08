@@ -37,7 +37,10 @@ function setupMap(center) {
 }
 
 function MApp() {
-  const [locationType, setLocationType] = useState("");
+  const [locationType, setLocationType] = useState("resturant");
+  const [resturant, setResturant] = useState([]);
+  const [hotel, setHotel] = useState([]);
+  const [activity, setActivity] = useState([]);
   const [pins, setPins] = useState([]);
   const [newPlace, setNewPlace] = useState(null);
   const [star, setStar] = useState(0);
@@ -97,6 +100,7 @@ function MApp() {
     };
 
     try {
+      if (locationType == "resturant"){
       const res = await axios.post(
         `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
         newPin,
@@ -106,9 +110,35 @@ function MApp() {
           },
         }
       );
-      setPins([...pins, res.data]);
+      setResturant([...resturant, res.data]);
       setNewPlace(null);
-    } catch (err) {
+    }else if 
+      (locationType == "hotel"){
+        const res = await axios.post(
+          `${import.meta.env.VITE_DATABASE_URL}/hotel`,
+          newPin,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
+        );
+        setHotel([...hotel, res.data]);
+        setNewPlace(null);
+         } else  
+        {
+          const res = await axios.post(
+            `${import.meta.env.VITE_DATABASE_URL}/activity`,
+            newPin,
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              },
+            }
+          );
+          setActivity([...activity, res.data]);
+          setNewPlace(null);
+   }}catch (err) {
       console.log(err);
     }
   };
@@ -154,12 +184,44 @@ function MApp() {
             },
           }
         );
-        setPins(allPins.data);
+        setResturant(allPins.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const getPins2 = async () => {
+      try {
+        const allPins = await axios.get(
+          `${import.meta.env.VITE_DATABASE_URL}/activity`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
+        );
+        setActivity(allPins.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    const getPins3 = async () => {
+      try {
+        const allPins = await axios.get(
+          `${import.meta.env.VITE_DATABASE_URL}/hotel`,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
+        );
+        setHotel(allPins.data);
       } catch (err) {
         console.log(err);
       }
     };
     getPins();
+    getPins2();
+    getPins3();
   }, []);
 
   const handleClick = (e) => {
@@ -180,7 +242,7 @@ function MApp() {
       });
     }
   };
- 
+
   return (
     <>
       <div className="ssss">
@@ -202,12 +264,112 @@ function MApp() {
               mapStyle="mapbox://styles/mapbox/streets-v9"
               onDblClick={addNewPlace}
             >
-              {pins.map((p) => (
+              {resturant.map((p) => (
                 <><Marker latitude={p.lat} longitude={p.long}>
                 <RoomIcon
                   style={{
                     fontSize: 7 * 6,
-                    color: "tomato",
+                    color: "red",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                />
+              </Marker>
+
+                  {p.id === currentPlaceId && (
+                    <section className="pppp">
+                      <Popup
+                        className="popup"
+                        key={p.id}
+                        latitude={p.lat}
+                        longitude={p.long}
+                        closeButton={true}
+                        closeOnClick={false}
+                        onClose={() => setCurrentPlaceId(null)}
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
+                            &#215;
+                          </span>
+                          <img src={p.img} />
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
+                          </div>
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
+                          </section>
+                        </div>
+                      </Popup>
+                    </section>
+                  )}
+                </>
+              ))} {hotel.map((p) => (
+                <><Marker latitude={p.lat} longitude={p.long}>
+                <RoomIcon
+                  style={{
+                    fontSize: 7 * 6,
+                    color: "#FCA41C",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                />
+              </Marker>
+
+                  {p.id === currentPlaceId && (
+                    <section className="pppp">
+                      <Popup
+                        className="popup"
+                        key={p.id}
+                        latitude={p.lat}
+                        longitude={p.long}
+                        closeButton={true}
+                        closeOnClick={false}
+                        onClose={() => setCurrentPlaceId(null)}
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
+                            &#215;
+                          </span>
+                          <img src={p.img} />
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
+                          </div>
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
+                          </section>
+                        </div>
+                      </Popup>
+                    </section>
+                  )}
+                </>
+              ))} {activity.map((p) => (
+                <><Marker latitude={p.lat} longitude={p.long}>
+                <RoomIcon
+                  style={{
+                    fontSize: 7 * 6,
+                    color: "#0C7592",
                     cursor: "pointer",
                   }}
                   onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
@@ -313,9 +475,9 @@ function MApp() {
                         <select
                           onChange={(e) => setLocationType(e.target.value)}
                         >
-                          <option value="restaurant">restaurant</option>
-                          <option value="hotel">hotel</option>
-                          <option value="activities">activities</option>
+                          <option value="resturant" name= "resturant">restaurant</option>
+                          <option value="hotel"name= "hotel">hotel</option>
+                          <option value="activities"name= "activities">activities</option>
                         </select>
 
                         <label>Address</label>
