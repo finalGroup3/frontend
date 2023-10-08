@@ -42,8 +42,11 @@ $(".hover").mouseleave(
                         </div>
                         <div>
                             <h2>Amman</h2>
+                            
                         </div>
+                        
                     </figcaption>
+                    
                     <a href="#"></a>
                 </figure>
                 <figure class="snip1432"><img src="https://media.meer.com/attachments/5594c4d91edbe7f4e0cf444ebca76b5447aba597/store/fill/860/645/ab222a80768bae72a4c3025f24abff06bab861b36cb7dc55fa1343678810/Camping-site-at-Wadi-Rum-Jordan.jpg" alt="sample83" />
