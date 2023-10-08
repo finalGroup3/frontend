@@ -1,14 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import { LoginContext } from "../../Auth/login/LogInContext";
-import Map from '../../map/Map'; 
-import "./OwnerDashboard.scss"; 
+// import Map from '../../map/Map'; 
+// import "./OwnerDashboard.scss"; 
 
 const OwnerDashboard = () => {
   const [notifications, setNotifications] = useState([]);
   const [missing, setMissing] = useState([]);
-  const [showNotifications, setShowNotifications] = useState(false);
   const [showMap, setShowMap] = useState(false);
-  const [showCreateRestaurantMessage, setShowCreateRestaurantMessage] = useState(false);
   const state = useContext(LoginContext);
 
   state.socket?.emit("get-all");
@@ -42,14 +40,6 @@ const OwnerDashboard = () => {
       state.socket.off("getNotification");
     };
   }, [state.socket]);
-
-  const handleCreateRestaurant = () => {
-    setShowCreateRestaurantMessage(true);
-    setTimeout(() => {
-      setShowCreateRestaurantMessage(false);
-    }, 9900000); 
-
-    console.log("Create new restaurant");
   };
 
   return (
