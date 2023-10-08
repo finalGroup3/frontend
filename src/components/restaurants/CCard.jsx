@@ -1,11 +1,14 @@
 import BookingModal from "../bookingModal/BookingModal";
-import { useState } from "react";
+import { useState,useContext  } from "react";
+import { FavoritesContext } from "../favorites/favContext";
 
 const CCard = ({ element }) => {
+  const favstate = useContext(FavoritesContext);
+
   const [openModal, setOpenModal] = useState(false);
   return (
     <>
-      <div key={element.id}>
+      <div >
         <div className="item">
           <div className="item-image">
             <img src={element.img} alt="Délicieux Bénédicte" />
@@ -21,6 +24,12 @@ const CCard = ({ element }) => {
             >
               Book now
             </a>
+             <button
+              className="btn-text hover-underline label-2"
+              onClick={() => favstate.AddToFavsDb(element)}
+            >
+             add to fav
+            </button>
           </div>
           <div className="item-price">{element.price}</div>
         </div>
