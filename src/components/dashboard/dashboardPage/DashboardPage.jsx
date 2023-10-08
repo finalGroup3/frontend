@@ -1,9 +1,9 @@
 import React from 'react'
-// import './DashboardPage.scss'
+import './DashboardPage.scss'
 
 export default function DashboardPage() {
   return (
-    <div>
+    <div className='nnnnnnn'>
  <div className="app-main">
       <div className="main-header-line">
         <h1>Applications Dashboard</h1>
