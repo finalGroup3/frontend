@@ -1,10 +1,7 @@
 import { LoginContext } from "../../Auth/login/LogInContext";
 import { useState, useContext, useEffect } from "react";
 import Map from '../../map/Map'; 
-
 import "./OwnerDashboard.scss"; 
-
-
 
 const OwnerDashboard = () => {
   const [notifications, setNotifications] = useState([]);
@@ -95,7 +92,6 @@ const OwnerDashboard = () => {
             </div>
             <div className="box--content">
               <p className="box--title">Bookings</p>
-              {/* <p className="box--number">40</p> */}
             </div>
           </div>
           <div className="box box--2">
@@ -104,7 +100,6 @@ const OwnerDashboard = () => {
             </div>
             <div className="box--content">
               <p className="box--title">Cancellations</p>
-              {/* <p className="box--number">11</p> */}
             </div>
           </div>
           <div className="box box--3">
@@ -113,7 +108,6 @@ const OwnerDashboard = () => {
             </div>
             <div className="box--content">
               <p className="box--title">Views</p>
-              {/* <p className="box--number">779</p> */}
             </div>
           </div>
         </div>
@@ -160,7 +154,7 @@ const OwnerDashboard = () => {
       <aside>
         
       <div className="notifications">
-      <p>notifications</p>
+      <p>Notifications</p>
       {notifications.map((n, i) => {
         console.log(n);
         return (
@@ -176,10 +170,6 @@ const OwnerDashboard = () => {
     </div>
       </aside>
     </div>
-
-
-
-   
     </div>
     </>
   );
