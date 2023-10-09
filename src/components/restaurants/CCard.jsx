@@ -1,14 +1,48 @@
 import BookingModal from "../bookingModal/BookingModal";
-import { useState,useContext  } from "react";
+import { useState, useContext, useEffect } from "react";
 import { FavoritesContext } from "../favorites/favContext";
+// import Button from 'react-bootstrap/Button';
+import { ReelContext } from "../../components/reels/ReelsContext";
 
-const CCard = ({ element }) => {
+import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
+const CCard = ({ element, type }) => {
   const favstate = useContext(FavoritesContext);
-
+  const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const reelState = useContext(ReelContext);
+  const [Reeels, setReeels] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      if (type === "restaurant") {
+        console.log(element.id, "iddddddeeeeeeeeeeeeeeeddddd");
+
+        await reelState.getSpecificRestReel(element.id);
+
+        setReeels(reelState.restReels);
+
+        console.log(Reeels, "reeeelsxxxxxxxxxxxxxxx");
+      }
+    }
+
+    fetchData();
+  }, [type, element.id]);
+
+  // if (type==="hotel") {
+  //     reelState.getSpecificHotelReel(element.id);
+  //     setReeels(reelState.hotelReels)
+  //     console.log(Reeels)
+
+  // }
+  // if (type==="activity") {
+  //     reelState.getSpecificActivReel(element.id);
+  //     setReeels(reelState.activReels)
+  //     console.log(Reeels)
+
+  // }
+
   return (
     <>
-      <div >
+      <div>
         <div className="item">
           <div className="item-image">
             <img src={element.img} alt="Délicieux Bénédicte" />
@@ -24,16 +58,33 @@ const CCard = ({ element }) => {
             >
               Book now
             </a>
-             <button
+            <button
               className="btn-text hover-underline label-2"
               onClick={() => favstate.AddToFavsDb(element)}
             >
-             add to fav
+              add to fav
             </button>
           </div>
           <div className="item-price">{element.price}</div>
         </div>
-        <BookingModal open={openModal} onClose={() => setOpenModal(false)} item={element}/>
+
+        <button onClick={() => setModalShow(true)}>review</button>
+
+        <ReviewsModal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          Reeels={Reeels}
+          type={type}
+          restId={element.id}
+          hotelId={element.id}
+          activId={element.id}
+        />
+
+        <BookingModal
+          open={openModal}
+          onClose={() => setOpenModal(false)}
+          item={element}
+        />
       </div>
     </>
   );
