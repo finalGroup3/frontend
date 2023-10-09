@@ -8,11 +8,11 @@ export const FavoritesContext = React.createContext();
 export default function FavoritesProvider(props) {
   const LoginState = useContext(LoginContext);
 
-  console.log(LoginState.user.id, "/////////////");
+  // console.log(LoginState.user.id, "/////////////");
 
   const [favList, setFavList] = useState([]);
 
-  console.log(favList,"favs from context");
+  // console.log(favList,"favs from context");
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
   const getFromFavsDb = async () => {
@@ -24,7 +24,7 @@ export default function FavoritesProvider(props) {
         .set("authorization", `Bearer ${cookie.load("auth")}`);
         if (response.ok) {
           const items = response.body;
-        console.log(items.favs,"items++++++++")
+        // console.log(items.favs,"items++++++++")
         // console.log(response.body);
       // console.log(favList,"favList");
 

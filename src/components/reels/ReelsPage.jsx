@@ -10,7 +10,7 @@ const Reelspage = () => {
 
   useEffect(() => {
     reelState.getAllReels();
-    console.log(reelState.allReels, "================");
+    // console.log(reelState.allReels, "================");
   }, []);
 
   return (
