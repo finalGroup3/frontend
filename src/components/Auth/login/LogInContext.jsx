@@ -19,8 +19,8 @@ const LoginProvider = (props) => {
   const [uuid, setUuid] = useState(null);
   
 
-  console.log("user =====> ", user);
-  console.log(socket);
+  // console.log("user =====> ", user);
+  // console.log(socket);
 
   const can = (capability) => {
     return state?.user?.capabilities?.includes(capability);
