@@ -10,6 +10,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CCard from "../restaurants/CCard";
 import { RestaurantsContext } from "../restaurants/RestaurantContext";
+import ReelModal from "../reels/Modal/ReelModal";
 
 const Hotel = () => {
   const state = useContext(RestaurantsContext);
@@ -76,7 +77,10 @@ const Hotel = () => {
               return (
                 <>
                   <div>
-                    <CCard key={element.id} element={element} />
+                    <CCard key={element.id} element={element} hotelId={element.id}/>
+                    <div className="s">
+                    <ReelModal hotelId={element.id} />
+                    </div>
                   </div>
                 </>
               );

@@ -17,6 +17,7 @@ import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
 import { FavoritesContext } from "../favorites/favContext";
 import CCard from "./CCard";
+import ReelModal from "../reels/Modal/ReelModal";
 
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
@@ -163,7 +164,14 @@ export default function Restaurants() {
         </div>
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
-            return <CCard key={element.id} element={element} />;
+            return(
+              <>
+              <CCard key={element.id} element={element} restId={element.id} />
+              <ReelModal restId={element.id} />
+              </>
+              
+              );
+
           })}
         </div>
       </div>

@@ -29,12 +29,14 @@ const ReelsProvider = (props) => {
   };
 
   const AddReel = (item) => {
+  
     const oneReel = {
       username: loginState.user.username,
       url: item.url,
       description: item.description,
       rating: item.rating,
       userId: loginState.user.id,
+     
     };
     const req = async () => {
       try {
@@ -72,8 +74,15 @@ const ReelsProvider = (props) => {
       const response = await superagent
         .get(`${import.meta.env.VITE_DATABASE_URL}/reelsRestaurant/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      setRestReels(items);
+        if (response.ok) {
+        const items = response.body.reels;
+        console.log(items,"ressssssspons")
+        // console.log(response.body);
+        setRestReels(items);
+        console.log(restReels,"afterrespons")
+      }
+
+      // return items
     } catch (error) {
       console.error(error);
     }
@@ -84,7 +93,8 @@ const ReelsProvider = (props) => {
       const response = await superagent
         .get(`${import.meta.env.VITE_DATABASE_URL}/reelsHotel/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
+      const items = response.body.reels;
+      console.log(items,"ressssssspons")
       setHotelReels(items);
     } catch (error) {
       console.error(error);
@@ -96,7 +106,9 @@ const ReelsProvider = (props) => {
       const response = await superagent
         .get(`${import.meta.env.VITE_DATABASE_URL}/reelsActivity/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
+      const items = response.body.reels;
+      console.log(items,"ressssssspons")
+
       setActivReels(items);
     } catch (error) {
       console.error(error);
@@ -120,7 +132,9 @@ const ReelsProvider = (props) => {
   const AddComment = (item, reelId) => {
     const oneComment = {
       content: item.content,
-      date: `${new Date(Date.now()).getHours() + new Date(Date.now()).getMinutes()}`,
+      date: `${
+        new Date(Date.now()).getHours() + new Date(Date.now()).getMinutes()
+      }`,
       userId: loginState.id,
       reelId: reelId,
     };
@@ -154,6 +168,9 @@ const ReelsProvider = (props) => {
       console.error(error);
     }
   };
+  console.log(allReels,"afterrespons")
+  console.log(restReels,"afterrespons")
+
 
   useEffect(() => {
     getAllReels();
