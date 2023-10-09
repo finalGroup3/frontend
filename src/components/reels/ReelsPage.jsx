@@ -1,15 +1,29 @@
-import { useEffect, useContext } from "react";
+import { useEffect, useState } from "react";
 import "./Reels.scss";
 
 import Reel from "./Reel";
 import SideNavBar from "./SideNavBar";
-import { ReelContext } from "./ReelsContext";
 import ReelModal from "./Modal/ReelModal";
+import superagent from "superagent";
+import cookie from "react-cookies";
+
 const Reelspage = () => {
-  const reelState = useContext(ReelContext);
+  const [allReels, setAllReels] = useState([]);
+
+  const getAllReels = async () => {
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/reels`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      setAllReels(items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   useEffect(() => {
-    reelState.getAllReels();
+    getAllReels();
     // console.log(reelState.allReels, "================");
   }, []);
 
@@ -23,12 +37,16 @@ const Reelspage = () => {
           <center className="cccenter">
             <h3 className="reels-title">Reels</h3>
             <div className="abcontainer">
+              <ReelModal getAllReels={getAllReels} />
               <div className="video-container" id="video-container">
-                {reelState.allReels.reverse().map((list, i) => (
-                  <Reel key={i} item={list} />
-                ))}
+                {allReels.reverse().map((list, i) => {
+                  return (
+                    <>
+                      <Reel key={i} item={list} />
+                    </>
+                  );
+                })}
               </div>
-              <ReelModal />
             </div>
           </center>
         </div>

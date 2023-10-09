@@ -1,17 +1,16 @@
 import { useState, useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import AddBoxIcon from "@mui/icons-material/AddBox";
 import axios from "axios";
 import cookie from "react-cookies";
 import { LoginContext } from "../../Auth/login/LogInContext";
 import { FaStar } from "react-icons/fa";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 
 import "./ReelModal.scss";
 import Form from "react-bootstrap/Form";
 
-function ReelModal({ restId, hotelId, activId }) {
+function ReelModal({ getAllReels, restId, hotelId, activId }) {
   const loginState = useContext(LoginContext);
 
   const [show, setShow] = useState(false);
@@ -20,6 +19,7 @@ function ReelModal({ restId, hotelId, activId }) {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const [category, setcategory] = useState("");
+  console.log(rating);
 
   // console.log(category);
 
@@ -65,6 +65,7 @@ function ReelModal({ restId, hotelId, activId }) {
       .then((response) => {
         console.log("Upload successful:", response.data);
         handleClose();
+        getAllReels();
       })
       .catch((error) => {
         console.error("Error uploading video:", error);
@@ -73,15 +74,9 @@ function ReelModal({ restId, hotelId, activId }) {
 
   return (
     <div className="bruhhh">
-      <AddBoxIcon
-        style={{
-          fontSize: 7 * 9,
-          color: "white",
-          cursor: "pointer",
-        }}
-        className="modalbutn"
-        onClick={handleShow}
-      />
+      <div className="modalbutn" onClick={handleShow}>
+        &#43;
+      </div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
@@ -104,6 +99,7 @@ function ReelModal({ restId, hotelId, activId }) {
                 return (
                   <label key={idx}>
                     <input
+                      className="hehe"
                       type="radio"
                       name="rating"
                       value={currentRating}
@@ -161,14 +157,12 @@ function ReelModal({ restId, hotelId, activId }) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
           <Button className="bottanoo" variant="primary" onClick={addToReels}>
             Save Changes
           </Button>
-
         </Modal.Footer>
       </Modal>
     </div>

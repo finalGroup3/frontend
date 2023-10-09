@@ -3,6 +3,7 @@ import cookie from "react-cookies";
 import superagent from "superagent";
 import { LoginContext } from "../Auth/login/LogInContext";
 
+
 export const ReelContext = React.createContext();
 
 const ReelsProvider = (props) => {
@@ -13,6 +14,7 @@ const ReelsProvider = (props) => {
   const [restReels, setRestReels] = useState([]);
   const [hotelReels, setHotelReels] = useState([]);
   const [activReels, setActivReels] = useState([]);
+  // console.log('aaaaaaaaaaaaaaaaa',comments)
 
   // console.log(allReels);
 
@@ -123,18 +125,20 @@ const ReelsProvider = (props) => {
         .get(`${import.meta.env.VITE_DATABASE_URL}/comments/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body;
-      setComments(items);
+      setComments(items.comments);
+      // console.log('all comments oooooooooooooooooooooooo',items)
     } catch (error) {
       console.error(error);
     }
   };
 
-  const AddComment = (item, reelId) => {
+  const AddComment = (content, reelId) => {
     const oneComment = {
-      content: item.content,
-      date: `${
-        new Date(Date.now()).getHours() + new Date(Date.now()).getMinutes()
-      }`,
+      content: content,
+      date:
+        `${new Date(Date.now()).getHours()}` +
+        ":" +
+        `${new Date(Date.now()).getMinutes()}`,
       userId: loginState.id,
       reelId: reelId,
     };
