@@ -2,6 +2,7 @@
   width: 100%;
   height: 100px;
 }
+
 .swiper-box {
   // rotate: 180deg;
   background-color: #fff;
@@ -54,33 +55,33 @@
     height: 600px;
     position: relative;
 
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3cpath d='M1440 0L1044.28 0L1440 69.93z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1044.28 0L1440 69.93L1440 192.11L934.77 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M934.77 0L1440 192.11L1440 399.41L405.15 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M405.1500000000001 0L1440 399.41L1440 486.25L306.8900000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L540.08 560L0 360.34000000000003z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 360.34000000000003L540.08 560L674.8100000000001 560L0 260.29z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 260.29L674.8100000000001 560L1111.1200000000001 560L0 139.31z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 139.31L1111.1200000000001 560L1303.5300000000002 560L0 92.34z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-    background-size: 100% 100%;
-  }
-  .restChoice {
-    background: url("https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/restaurantsPic%2FSolayaRestaurant.jpg?alt=media&token=c4d5b7fa-322d-44e3-85ba-beb49fc60e02&_gl=1*u88d39*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQxMjU5Ni42MC4wLjA.");
-    background-size: cover;
-    background-position: center;
-    box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-  }
-  .hotelChoice {
-    background: url("https://s7d1.scene7.com/is/image/marriotts7prod/rz-ammrz-hotel-exterior-26652:Classic-Hor?wid=2880&fit=constrain");
-    background-size: cover;
-    background-position: center bottom -100px;
-    box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-  }
-  .activChoice {
-    background: url("https://amusementlogic.com/wp-content/uploads/2021/06/SARAYA-AQABA-WP_03_2.jpg");
-    background-size: cover;
-    background-position: center bottom -200px;
-    box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-    -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
-  }
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3cpath d='M1440 0L1044.28 0L1440 69.93z' fill='rgba(255%2c 255%2c 255%2c .1)'%3e%3c/path%3e%3cpath d='M1044.28 0L1440 69.93L1440 192.11L934.77 0z' fill='rgba(255%2c 255%2c 255%2c .075)'%3e%3c/path%3e%3cpath d='M934.77 0L1440 192.11L1440 399.41L405.15 0z' fill='rgba(255%2c 255%2c 255%2c .05)'%3e%3c/path%3e%3cpath d='M405.1500000000001 0L1440 399.41L1440 486.25L306.8900000000001 0z' fill='rgba(255%2c 255%2c 255%2c .025)'%3e%3c/path%3e%3cpath d='M0 560L540.08 560L0 360.34000000000003z' fill='rgba(0%2c 0%2c 0%2c .1)'%3e%3c/path%3e%3cpath d='M0 360.34000000000003L540.08 560L674.8100000000001 560L0 260.29z' fill='rgba(0%2c 0%2c 0%2c .075)'%3e%3c/path%3e%3cpath d='M0 260.29L674.8100000000001 560L1111.1200000000001 560L0 139.31z' fill='rgba(0%2c 0%2c 0%2c .05)'%3e%3c/path%3e%3cpath d='M0 139.31L1111.1200000000001 560L1303.5300000000002 560L0 92.34z' fill='rgba(0%2c 0%2c 0%2c .025)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-size: 100% 100%;
+}
+.restChoice {
+  background: url("https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/restaurantsPic%2FSolayaRestaurant.jpg?alt=media&token=c4d5b7fa-322d-44e3-85ba-beb49fc60e02&_gl=1*u88d39*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQxMjU5Ni42MC4wLjA.");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+}
+.hotelChoice {
+  background: url("https://s7d1.scene7.com/is/image/marriotts7prod/rz-ammrz-hotel-exterior-26652:Classic-Hor?wid=2880&fit=constrain");
+  background-size: cover;
+  background-position: center bottom -100px;
+  box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+}
+.activChoice {
+  background: url("https://amusementlogic.com/wp-content/uploads/2021/06/SARAYA-AQABA-WP_03_2.jpg");
+  background-size: cover;
+  background-position: center bottom -200px;
+  box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -webkit-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+  -moz-box-shadow: 800px 0px 159px 50px rgba(0, 0, 0, 0.74) inset;
+}
 
   .swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet,
   .swiper-pagination-horizontal.swiper-pagination-bullets
@@ -183,13 +184,14 @@
     }
   }
 
-  .swiper_slider {
-    display: flex;
-    flex-direction: column;
-  }
-  .swiper-backface-hidden .swiper-slide {
-    display: flex;
-    justify-content: flex-start;
-    border-radius: 200px 0;
-  }
+.swiper_slider {
+  display: flex;
+  flex-direction: column;
+}
+.swiper-backface-hidden .swiper-slide {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 200px 0;
+}
+
 }

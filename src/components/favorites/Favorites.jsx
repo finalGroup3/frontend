@@ -20,13 +20,24 @@ const Favorites = () => {
   return (
     <>
       <Header />
+      
       <div className="favPicture">
         <FavHero />
-        <div className="favCategoryyyy">Restaurants</div>
-
-        {favstate.favList.map((element) => {
+        
+        <div className="favCategoryyyy">✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧  </div>
+        {/* <button
+          onClick={() => {
+            getFromFavsDb
+          }}
+        >
+          get from data
+        </button> */}
+        <div className="favs-items"> 
+            {favstate.favList.map((element) => {
           return <Card key={element.id} element={element} />;
         })}
+        </div>
+      
       </div>
       <Footer />
     </>

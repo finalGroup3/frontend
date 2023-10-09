@@ -1,4 +1,4 @@
-import "./Room.css";
+import "./Room.scss";
 import { useState, useEffect, useContext } from "react";
 import Chat from "./Chat";
 import { LoginContext } from "../Auth/login/LogInContext";
@@ -7,14 +7,29 @@ function Room() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
+  const [notifications, setNotifications] = useState([]);
 
   const state = useContext(LoginContext);
+
+
+  useEffect(() => {
+    state.socket?.on("getNotification", (data) => {
+      setNotifications((prev) => [...prev, data]);
+    });
+  
+    return () => {
+      state.socket?.off("getNotification");
+    };
+  }, [state.socket]);
+  
   const joinRoom = () => {
     state.socket?.emit("send_roomId", room);
     if (username !== "" && room !== "") {
       setShowChat(true);
     }
   };
+
+
   useEffect(() => {
 
     if (state.user?.role === 'user') {
@@ -22,14 +37,33 @@ function Room() {
     } 
   }, [showChat]);
 
+  console.log(notifications)
+  console.log(notifications[0])
+
+
   return (
-    <div className="ChatApp">
+    <>
+   
+     <div className="ChatApp">
       {
         state?.user?.role === 'user' ?
-          (<Chat socket={state.socket} username={state.user.username} room={`${state.user.id}`} />) :
+          (<Chat room = {state.user.id}  />) :
           !showChat
             ? (
-              <div className="joinChatContainer">
+              <>
+               <section className="users-chat">
+    <div className="notifications">
+          {
+            notifications.map((n,i) => {
+              console.log(n)
+              return (
+                <p key={i}>{n.senderName} joined room {n.roomId}</p>
+              )
+            })
+          }
+        </div>
+    </section>
+               <div className="joinChatContainer">
                 <h3>Join A Chat</h3>
                 <input
                   type="text"
@@ -47,10 +81,14 @@ function Room() {
                 />
                 <button onClick={joinRoom}>Join Room</button>
               </div>
+              </>
+             
             ) : (
-              <Chat  />
+              <Chat room = {room}  />
             )}
     </div>
+    </>
+   
   );
 }
 

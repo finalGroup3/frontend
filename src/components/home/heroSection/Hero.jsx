@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import petra from './petra2.jpg'
 import mask from './grunge2.jpg'
 // import img from './img.png'
-// import video from 'https://streamable.com/xhb05s'
+// import video from './intro.mp4'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +96,7 @@ export default function Hero() {
               {/* <div className="cafe-inner">Welcome To </div> */}
             </div>
             <div className="mozart">
-              <div className="mozart-inner">Wandetlust</div>
+              <div className="mozart-inner">✧Wanderlust</div>
            
            
             
@@ -124,10 +124,10 @@ export default function Hero() {
 
           </div> */}
           
-            <img className='arrowimg' src={arrowimg}alt='img'/>
+            <img className='arrowimg'  src={arrowimg}alt='img'/>
 
         </section>
-       
+   
     </section>
         {/* <svg className="waves-hero" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shapeRendering="auto">
             <defs>

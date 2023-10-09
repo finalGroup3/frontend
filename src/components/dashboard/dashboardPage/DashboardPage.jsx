@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import './DashboardPage.scss'
 
 export default function DashboardPage() {

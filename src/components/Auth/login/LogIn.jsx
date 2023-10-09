@@ -147,7 +147,7 @@ const LogIn = () => {
                             <div className="form-group mt-2">
                               <div className="radioContain">
                                 <div className="lllllll">
-                                  <label htmlFor="">User</label>
+                                  <label htmlFor="">Customer</label>
                                   <input
                                     type="radio"
                                     name="user"
@@ -160,7 +160,7 @@ const LogIn = () => {
                                   />
                                 </div>
                                 <div className="lllllll">
-                                  <label htmlFor="">Owner</label>
+                                  <label htmlFor="">Service Provider</label>
                                   <input
                                     type="radio"
                                     name="user"
