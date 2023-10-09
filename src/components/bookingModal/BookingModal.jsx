@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import superagent from "superagent";
 import cookie from "react-cookies";
 
-const BookingModal = ({ open, onClose, item }) => {
+const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
   const [username, setUsername] = useState("");
   const [howmany, setHowmany] = useState("");
   const [date, setDate] = useState("");
@@ -18,6 +18,7 @@ const BookingModal = ({ open, onClose, item }) => {
       senderName: state.user.username,
       receiverName: "laith",
     });
+    console.log("restId ", restId, "hotelId ", hotelId, "activId ", activId);
 
     const object = {
       name: item.name,
@@ -27,13 +28,24 @@ const BookingModal = ({ open, onClose, item }) => {
       date: date,
     };
 
+
+    if (restId) {
+      object["restaurantId"] = restId;
+    }
+    if (hotelId) {
+      object["hotelId"] = hotelId;
+    }
+    if (activId) {
+      object["activityId"] = activId;
+    }
+
     try {
       const response = await superagent
         .post(`${import.meta.env.VITE_DATABASE_URL}/booking`)
         .set("authorization", `Bearer ${cookie.load("auth")}`)
         .send(object);
       if (response.ok) {
-        console.log(response.body);
+        console.log("oooooooooooooooo", response.body);
       }
     } catch (error) {
       console.error(error);
