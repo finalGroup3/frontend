@@ -5,7 +5,8 @@ import { FavoritesContext } from "../favorites/favContext";
 import { ReelContext } from "../../components/reels/ReelsContext";
 
 import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
-const CCard = ({ element, type }) => {
+
+const CCard = ({ element, type, restId, hotelId, activId }) => {
   const favstate = useContext(FavoritesContext);
   const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -84,6 +85,9 @@ const CCard = ({ element, type }) => {
           open={openModal}
           onClose={() => setOpenModal(false)}
           item={element}
+          restId={restId}
+          activId={activId}
+          hotelId={hotelId}
         />
       </div>
     </>
