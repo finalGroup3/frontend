@@ -16,7 +16,7 @@ const BookingModal = ({ open, onClose, item }) => {
     e.preventDefault();
     state.socket?.emit("sendNotification", {
       senderName: state.user.username,
-      receiverName: "John",
+      receiverName: "laith",
     });
 
     const object = {

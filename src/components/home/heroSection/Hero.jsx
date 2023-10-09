@@ -44,17 +44,17 @@ export default function Hero() {
   <source src={video} type='video/mp4' />
 </video> */}
 
-      {/* <video
+      <video
 
         ref={videoRef}
         muted
         loop
         autoPlay
-        src={video}
+        src={"https://streamable.com/xhb05s?src=player-page-share"}
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
-      ></video> */}
+      ></video>
 
       
       <div className="mask-contain"><img className='mask' src={mask}/></div>

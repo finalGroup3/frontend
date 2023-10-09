@@ -246,10 +246,10 @@ function MApp() {
   return (
     <>
       <div className="ssss">
-        <div className="sidenavbar-container">
+        {/* <div className="sidenavbar-container">
           <div id="earth"></div>
           <SideNavBar />
-        </div>
+        </div> */}
         <div className="map-container">
           {coords && (
             <Map
