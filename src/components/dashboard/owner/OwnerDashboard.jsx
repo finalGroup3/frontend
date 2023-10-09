@@ -185,6 +185,8 @@ const OwnerDashboard = () => {
   );
 };
 export default OwnerDashboard;
+
+
 //   const AddToRestaurantsDb = () => {
 //     Restaurants.forEach((item) => {
 //     const oneRestaurant = {
