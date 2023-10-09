@@ -10,7 +10,7 @@ import { FaStar } from "react-icons/fa";
 import "./ReelModal.scss";
 import Form from "react-bootstrap/Form";
 
-function ReelModal() {
+function ReelModal({ getAllReels }) {
   const loginState = useContext(LoginContext);
 
   const [show, setShow] = useState(false);
@@ -18,7 +18,7 @@ function ReelModal() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
-  console.log(rating)
+  console.log(rating);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -49,6 +49,7 @@ function ReelModal() {
       .then((response) => {
         console.log("Upload successful:", response.data);
         handleClose();
+        getAllReels();
       })
       .catch((error) => {
         console.error("Error uploading video:", error);
@@ -57,15 +58,7 @@ function ReelModal() {
 
   return (
     <div className="bruhhh">
-      <AddBoxIcon
-        style={{
-          fontSize: 7 * 9,
-          color: "white",
-          cursor: "pointer",
-        }}
-        className="modalbutn"
-        onClick={handleShow}
-      />
+      <div className="modalbutn" onClick={handleShow}>&#43;</div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Modal heading</Modal.Title>
@@ -88,6 +81,7 @@ function ReelModal() {
                 return (
                   <label key={idx}>
                     <input
+                      className="hehe"
                       type="radio"
                       name="rating"
                       value={currentRating}
