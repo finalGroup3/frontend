@@ -1,4 +1,4 @@
-import { useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 import "./Reels.scss";
 
 import Reel from "./Reel";
@@ -22,10 +22,9 @@ const Reelspage = () => {
     }
   };
 
-
   useEffect(() => {
     getAllReels();
-    console.log(allReels, "================");
+    // console.log(reelState.allReels, "================");
   }, []);
 
   return (
@@ -38,7 +37,7 @@ const Reelspage = () => {
           <center className="cccenter">
             <h3 className="reels-title">Reels</h3>
             <div className="abcontainer">
-              <ReelModal getAllReels={getAllReels}/>
+              <ReelModal getAllReels={getAllReels} />
               <div className="video-container" id="video-container">
                 {allReels.reverse().map((list, i) => {
                   return (

@@ -14,13 +14,13 @@ const CCard = ({ element, type }) => {
   useEffect(() => {
     async function fetchData() {
       if (type === "restaurant") {
-        console.log(element.id, "iddddddeeeeeeeeeeeeeeeddddd");
+        // console.log(element.id, "iddddddeeeeeeeeeeeeeeeddddd");
 
         await reelState.getSpecificRestReel(element.id);
 
         setReeels(reelState.restReels);
 
-        console.log(Reeels, "reeeelsxxxxxxxxxxxxxxx");
+        // console.log(Reeels, "reeeelsxxxxxxxxxxxxxxx");
       }
     }
 

@@ -16,7 +16,7 @@ const ReelsProvider = (props) => {
   const [activReels, setActivReels] = useState([]);
   // console.log('aaaaaaaaaaaaaaaaa',comments)
 
-  console.log('all reels +++++++++++++++++++++++++++++',allReels);
+  // console.log(allReels);
 
   const getAllReels = async () => {
     try {
@@ -47,7 +47,7 @@ const ReelsProvider = (props) => {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneReel);
         if (response.ok) {
-          console.log(response.body);
+          // console.log(response.body);
           setAllReels([...allReels, response.body]);
         }
       } catch (error) {
@@ -78,10 +78,10 @@ const ReelsProvider = (props) => {
         .set("authorization", `Bearer ${cookie.load("auth")}`);
         if (response.ok) {
         const items = response.body.reels;
-        console.log(items,"ressssssspons")
+        // console.log(items,"ressssssspons")
         // console.log(response.body);
         setRestReels(items);
-        console.log(restReels,"afterrespons")
+        // console.log(restReels,"afterrespons")
       }
 
       // return items
@@ -96,7 +96,7 @@ const ReelsProvider = (props) => {
         .get(`${import.meta.env.VITE_DATABASE_URL}/reelsHotel/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body.reels;
-      console.log(items,"ressssssspons")
+      // console.log(items,"ressssssspons")
       setHotelReels(items);
     } catch (error) {
       console.error(error);
@@ -109,7 +109,7 @@ const ReelsProvider = (props) => {
         .get(`${import.meta.env.VITE_DATABASE_URL}/reelsActivity/${id}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body.reels;
-      console.log(items,"ressssssspons")
+      // console.log(items,"ressssssspons")
 
       setActivReels(items);
     } catch (error) {
@@ -149,7 +149,7 @@ const ReelsProvider = (props) => {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneComment);
         if (response.ok) {
-          console.log(response.body);
+          // console.log(response.body);
           setComments([...comments, response.body]);
         }
       } catch (error) {
@@ -166,14 +166,14 @@ const ReelsProvider = (props) => {
         .set("authorization", `Bearer ${cookie.load("auth")}`);
 
       if (response.ok) {
-        console.log(response.body);
+        // console.log(response.body);
       }
     } catch (error) {
       console.error(error);
     }
   };
-  console.log(allReels,"afterrespons")
-  console.log(restReels,"afterrespons")
+  // console.log(allReels,"afterrespons")
+  // console.log(restReels,"afterrespons")
 
 
   useEffect(() => {

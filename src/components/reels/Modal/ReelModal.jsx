@@ -21,7 +21,7 @@ function ReelModal({ getAllReels, restId, hotelId, activId }) {
   const [category, setcategory] = useState("");
   console.log(rating);
 
-  console.log(category);
+  // console.log(category);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,7 +32,7 @@ function ReelModal({ getAllReels, restId, hotelId, activId }) {
   };
 
   const addToReels = () => {
-    console.log(restId, hotelId, activId, "///////////");
+    // console.log(restId, hotelId, activId, "///////////");
 
     const req = `${import.meta.env.VITE_DATABASE_URL}/reelsUpload`;
     // const restaurantId = restId;
