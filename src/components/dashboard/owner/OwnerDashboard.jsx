@@ -146,9 +146,7 @@ const OwnerDashboard = () => {
         <text x={18} y="20.35" className="percentage">60%</text>
       </svg>
     </div>
-  </div>
-            
-          
+  </div> 
         </div>
       </main>
       <aside>
