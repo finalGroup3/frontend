@@ -267,19 +267,26 @@
     color:yellow
   }
   .map-container {
-    position: relative;
-    width: 74%;
-    height: 87vh;
-    margin-top: 70px;
-    margin-left: 49vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Adjust the width as needed, for example, 90% of the viewport width */
+    height: 90vh; /* Adjust the height as needed, for example, 90% of the viewport height */
+    max-width: 1200px; /* Set a maximum width to prevent it from getting too wide */
+    max-height: 1000px; /* Set a maximum height to prevent it from getting too tall */
     border-radius: 40px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+    z-index: 1;
+}
+
+
+
 
   .sidenavbar-container {
     position: fixed;
-    width: 20vw;
+    width: 400vw;
     margin-top: 70px;
     margin-left: 1vh;
     border-radius: 40px;
