@@ -201,7 +201,7 @@ const Hotel = () => {
           </div>
           <br />
           <br />
-          <div className="container">
+          <div className="containerr">
             {state.hotelsList.map((element) => {
               return (
                 <>
