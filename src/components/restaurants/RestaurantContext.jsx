@@ -10,7 +10,7 @@ export default function RestaurantsList(props) {
   const [restaurantsList, setRestaurantsList] = useState([]);
   const [activitiesList, setActivitesList] = useState([]);
   const [hotelsList, setHotelsList] = useState([]);
-  // console.log(restaurantsList,activitiesList,hotelsList)
+  console.log(restaurantsList,activitiesList,hotelsList)
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
   const getFromRestaurantsDb = async () => {

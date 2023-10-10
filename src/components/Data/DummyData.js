@@ -118,7 +118,7 @@ export const Hotels = [
       "Experience luxury and elegance at our 5-star hotel in The St. Regis Amman.",
     location: "Amman",
     rating: 5.0,
-    price: "$$$",
+    price: "123$$$",
     ownerId: 6,
   },
 
