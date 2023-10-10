@@ -23,4 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
-0929(1).mp4 
+*.mp4
+*.mov
+
+/src/components/home/heroSection/intro.mp4
+node_modules

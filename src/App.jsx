@@ -14,11 +14,11 @@ import LoginProvider from "./components/Auth/login/LogInContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
-
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import RestaurantsContext from "./components/restaurants/RestaurantContext";
 import FavoritesProvider from "./components/favorites/favContext";
 import ReelsProvider from "./components/reels/ReelsContext";
+import Room from "./components/chat/Room";
 function App() {
   return (
     <>
@@ -39,6 +39,7 @@ function App() {
                 <Route path="/map" element={<MApp />} />
                 <Route path="/dashboard/admin" element={<Dashboard />} />
                 <Route path="/dashboard/owner" element={<OwnerDashboard />} />
+                <Route path='/chatRoom' element={<Room />} />
                 <Route path="/" element={<LoadingScreen />} />
               </Routes>
             </ReelsProvider>
