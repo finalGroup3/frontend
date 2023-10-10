@@ -6,6 +6,8 @@ import { LoginContext } from "../Auth/login/LogInContext";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
 import "./Map.scss";
+import cookie from "react-cookies";
+
 import Map, {
   NavigationControl,
   Layer,
@@ -110,7 +112,7 @@ function MApp() {
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -122,7 +124,7 @@ function MApp() {
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -134,7 +136,7 @@ function MApp() {
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -183,7 +185,7 @@ function MApp() {
           `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -198,7 +200,7 @@ function MApp() {
           `${import.meta.env.VITE_DATABASE_URL}/activity`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -213,7 +215,7 @@ function MApp() {
           `${import.meta.env.VITE_DATABASE_URL}/hotel`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );

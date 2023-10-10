@@ -257,7 +257,6 @@ export const Hotels = [
 export const Restaurants = [
   {
     name: "Fakhreldin Restaurant",
-    // img: "hakjs",
     img: "https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/pictuers%2FAbdali-Boulevard-Amman.jpg?alt=media&token=a02cf1d9-daa7-4d56-b370-a7ca1e3ecd81&_gl=1*ui1h6h*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQwOTY4OS41MS4wLjA.",
     description: "Specializing in traditional Jordanian Mansaf dishes.",
     location: "Karak",
