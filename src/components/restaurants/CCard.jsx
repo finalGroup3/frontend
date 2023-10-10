@@ -100,18 +100,7 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
 </h4>
             <div className="dessss">
             
-            <div className="item-price2">
-          {/* <div className="product-links"> */}
-          {/* <div className="enlarged-photo-modal"> */}
-                <button onClick={() => setModalShow(true)}>
-                <FontAwesomeIcon className="playicon22" icon={faCirclePlay} />
-                  {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
-                      marginTop: "-1px",}}>review</p> */}
-                </button>
-              {/* </div> */}
-
-          {/* </div> */}
-        </div>
+            
         <p className="item-body">{element.description}</p>
             </div>
 
@@ -125,9 +114,20 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
             </a>
             
             </div>
-          
-          </div>
+            <div className="item-price2">
+          {/* <div className="product-links"> */}
+          {/* <div className="enlarged-photo-modal"> */}
+                <button onClick={() => setModalShow(true)}>
+                <FontAwesomeIcon className="playicon22" icon={faCirclePlay} />
+                  {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
+                      marginTop: "-1px",}}>review</p> */}
+                </button>
+              {/* </div> */}
+
+          {/* </div> */}
           <div className="item-price">{element.price}JD</div>
+        </div>
+          </div>
           
 
         <ReviewsModal

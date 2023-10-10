@@ -962,27 +962,28 @@
     -webkit-box-orient: vertical;
   }
 .item-price2{
-  width: 40px;
-    height: 120px;
+  width: 120px;
+    height: 50px;
     background-color: #000000;
     color: #fff;
-    // margin-top: 150px;
-    margin-right: 20px;
+    margin-top: 27px;
+    margin-left: 190px;
     font-size: 2rem;
     display: flex;
-    justify-content: center;
-    align-items: right;
-    padding-top: 7px;
+    justify-content: left;
+    align-items: center;
+    // padding-top: 7px;
 }
   .item-price {
     width: 100px;
     height: 100px;
     background-color: rgba(255, 215, 0, 0.5);
     color: #fff;
-    margin-left: auto;
+    margin-top: 70px;
+    margin-left: 100px;
     font-size: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: rog;
     align-items: center;
     padding-top: 7px;
   }
