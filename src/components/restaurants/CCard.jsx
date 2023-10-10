@@ -79,8 +79,8 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                 style={{
                   width: "55px",
                   height: "55px",
-                  marginLeft: "200px",
-                  marginTop: "-40px",
+                  marginLeft: "250px",
+                  marginTop: "-30px",
                 }}
               />
             </button>
@@ -89,7 +89,8 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
   fontFamily: "'Georgia', serif",
   color: "rgba(255, 215, 0, 0.5)",  // Gold color with 50% opacity
   textAlign: "center",
-  marginBottom: "10px",
+  marginBottom: "15px",
+  marginTop: "20px",
   fontSize:"20px",
   fontWeight:"bold",
   textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
@@ -97,9 +98,24 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
 }}>
   {element.name}
 </h4>
+            <div className="dessss">
+            
+            <div className="item-price2">
+          {/* <div className="product-links"> */}
+          {/* <div className="enlarged-photo-modal"> */}
+                <button onClick={() => setModalShow(true)}>
+                <FontAwesomeIcon className="playicon22" icon={faCirclePlay} />
+                  {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
+                      marginTop: "-1px",}}>review</p> */}
+                </button>
+              {/* </div> */}
 
+          {/* </div> */}
+        </div>
+        <p className="item-body">{element.description}</p>
+            </div>
 
-            <p className="item-body">{element.description}</p>
+            
             {/* <span>{element.location}</span> */}
             <a
               className="btn-text hover-underline label-2"
@@ -107,18 +123,12 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
             >
               Book now
             </a>
-            <div className="product-links">
-              <div className="enlarged-photo-modal">
-                <button onClick={() => setModalShow(true)}>
-                <FontAwesomeIcon className="playicon22" icon={faCirclePlay} />
-                  {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
-                      marginTop: "-1px",}}>review</p> */}
-                </button>
-              </div>
+            
             </div>
+          
           </div>
           <div className="item-price">{element.price}JD</div>
-        </div>
+          
 
         <ReviewsModal
           show={modalShow}

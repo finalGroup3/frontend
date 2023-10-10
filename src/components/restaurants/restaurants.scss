@@ -923,7 +923,7 @@
   .item-text {
     margin: -30px auto;
     margin-bottom: -50px;
-    height: 370px;
+    height: 300px;
     width: 350px;
     background-color: #1d1c20;
     color: #fff;
@@ -932,6 +932,11 @@
 
   .item-meal-type {
     font-style: italic;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding-top: 7px;
+
   }
 
   .item-title {
@@ -956,11 +961,23 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
-
+.item-price2{
+  width: 40px;
+    height: 120px;
+    background-color: #000000;
+    color: #fff;
+    // margin-top: 150px;
+    margin-right: 20px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    padding-top: 7px;
+}
   .item-price {
     width: 100px;
     height: 100px;
-    background-color: #97710a;
+    background-color: rgba(255, 215, 0, 0.5);
     color: #fff;
     margin-left: auto;
     font-size: 2rem;
@@ -984,5 +1001,8 @@
     font-size: 33px;
     color: #fca41c;
   }
- 
+ .dessss{
+display: flex;
+// flex-direction: column;
+ }
 }
