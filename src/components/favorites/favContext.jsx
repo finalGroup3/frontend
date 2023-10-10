@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext,useEffect } from "react";
 import cookie from "react-cookies";
 import superagent from "superagent";
 import { LoginContext } from "../Auth/login/LogInContext";
@@ -88,9 +88,9 @@ export default function FavoritesProvider(props) {
   };
 
 
-  // useEffect(() => {
-  //   getFromFavsDb();
-  // }, []);
+  useEffect(() => {
+    getFromFavsDb();
+  }, []);
 
   const state = {
     favList: favList,
