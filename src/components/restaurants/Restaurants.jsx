@@ -34,7 +34,7 @@ export default function Restaurants() {
     
       <Header />
       {/* --------------------------------- TOP resturants------------------------------------- */}
-      <div className="bbb">
+      <div className="bbb22">
         <section
           className="section service bg-black-10 text-center "
           aria-label="service"

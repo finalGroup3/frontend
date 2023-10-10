@@ -39,8 +39,8 @@
   --fontSize-headline-1: calc(2rem + 2.5vw);
   --fontSize-headline-2: calc(1.3rem + 2.4vw);
   --fontSize-title-1: calc(1.6rem + 1.2vw);
-  --fontSize-title-2: 2.2rem;
-  --fontSize-title-3: 2.1rem;
+  --fontSize-title-2: 1rem;
+  --fontSize-title-3: 1.1rem;
   --fontSize-title-4: calc(1.6rem + 1.2vw);
   --fontSize-body-1: 2.4rem;
   --fontSize-body-2: 1.6rem;
@@ -76,7 +76,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-.bbb {
+.bbb22 {
   li {
     list-style: none;
   }
@@ -457,7 +457,7 @@
   }
   .btn-text {
     position: relative;
-    padding: 50px 50px;
+    padding: 16px 18px;
     border-radius: 7px;
     border: 2px solid #fca41c;
     font-size: 14px;
@@ -923,8 +923,8 @@
   .item-text {
     margin: -30px auto;
     margin-bottom: -50px;
-    height: 500px;
-    width: 400px;
+    height: 370px;
+    width: 350px;
     background-color: #1d1c20;
     color: #fff;
     padding: 20px;
@@ -980,4 +980,9 @@
     height: 200px;
     margin: 10px;
   }
+  .playicon22{
+    font-size: 33px;
+    color: #fca41c;
+  }
+ 
 }

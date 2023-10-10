@@ -6,6 +6,9 @@ import { ReelContext } from "../../components/reels/ReelsContext";
 import vieww from "../../assets/golddd.png";
 import favv from "../../assets/ggoolldd.png";
 import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
+import { FaStar } from "react-icons/fa";
 
 const CCard = ({ element, type, restId, hotelId, activId }) => {
   const favstate = useContext(FavoritesContext);
@@ -50,21 +53,52 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
             <img src={element.img} alt="Délicieux Bénédicte" />
           </div>
           <div className="item-text">
-            <p className="item-meal-type" >{element.rating}⭐⭐⭐</p>
-            <button onClick={favstate.AddToFavsDb(element)}>
-                    <img
-                      src={favv}
-                      alt="Review"
-                      className={`rotate-on-click ${modalShow ? "rotate" : ""}`}
-                      style={{
-                        width: "55px",
-                        height: "55px",
-                        marginLeft: "200px",
-                        marginTop: "-40px",
-                      }}
+            <p className="item-meal-type">{[...Array(element.rating)].map((star, idx) => {
+                const currentRating = idx + 1;
+                return (
+                  <label key={idx}>
+                    <input
+                      className="hehe"
+                      type="radio"
+                      name="rating"
+                      value={currentRating}
                     />
-                  </button>
-            <h2 className="item-title">{element.name}</h2>
+                    <FaStar
+                      className="ssttarr"
+                      size={18}
+                      color="#FCA41C" 
+                    />
+                  </label>
+                );
+              })}</p>
+            <button onClick={favstate.AddToFavsDb(element)}>
+              <img
+                src={favv}
+                alt="Review"
+                className={`rotate-on-click ${modalShow ? "rotate" : ""}`}
+                style={{
+                  width: "55px",
+                  height: "55px",
+                  marginLeft: "200px",
+                  marginTop: "-40px",
+                }}
+              />
+            </button>
+            
+            <h4 className="item-title" style={{
+  fontFamily: "'Georgia', serif",
+  color: "rgba(255, 215, 0, 0.5)",  // Gold color with 50% opacity
+  textAlign: "center",
+  marginBottom: "10px",
+  fontSize:"20px",
+  fontWeight:"bold",
+  textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
+  letterSpacing: "0.5px",
+}}>
+  {element.name}
+</h4>
+
+
             <p className="item-body">{element.description}</p>
             {/* <span>{element.location}</span> */}
             <a
@@ -74,25 +108,17 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
               Book now
             </a>
             <div className="product-links">
-                <div className="enlarged-photo-modal">
-                  <button onClick={() => setModalShow(true)}>
-                    <img
-                      src={vieww}
-                      alt="Review"
-                      style={{ width: "55px", height: "55px" ,marginLeft: "160px",
-                      marginTop: "-50px",}}
-                    />
-                    {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
+              <div className="enlarged-photo-modal">
+                <button onClick={() => setModalShow(true)}>
+                <FontAwesomeIcon className="playicon22" icon={faCirclePlay} />
+                  {/* <p style={{ width: "55px", height: "55px" ,marginLeft: "250px",
                       marginTop: "-1px",}}>review</p> */}
-                  </button>
-                </div>
-                 
-                </div>
+                </button>
+              </div>
+            </div>
           </div>
           <div className="item-price">{element.price}JD</div>
         </div>
-
-        
 
         <ReviewsModal
           show={modalShow}
