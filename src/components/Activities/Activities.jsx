@@ -5,7 +5,9 @@ import Header from "../header/Header";
 import $ from "jquery";
 import CCard from "../restaurants/CCard";
 import { RestaurantsContext } from "../restaurants/RestaurantContext";
-import ReelModal from "../reels/Modal/ReelModal";
+// import ReelModal from "../reels/Modal/ReelModal";
+import Modal22 from "../reels/Modal22/Modal22";
+
 
 export default function Activities() {
   const state = useContext(RestaurantsContext);
@@ -201,7 +203,8 @@ export default function Activities() {
               <>
                 <div>
                   <CCard key={element.id} element={element} activId={element.id} />
-                  <ReelModal activId={element.id} />
+                  {/* <ReelModal activId={element.id} /> */}
+                  <Modal22 activId={element.id} />
 
                 </div>
               </>
