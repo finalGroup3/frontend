@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './test.scss';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSortUp } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortUp } from '@fortawesome/free-solid-svg-icons'
+import { faQuoteRight } from '@fortawesome/free-solid-svg-icons'
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 function About() {
     const reviews = [
         {
@@ -13,7 +13,7 @@ function About() {
             img:
                 'https://ca.slack-edge.com/TNGRRLUMA-UPRCC16QP-c23a216df82e-512',
             text:
-                "I booked a table at this restaurant for a special anniversary dinner, and it exceeded all expectations. The ambiance was romantic, the food was exquisite, and the service was top-notch. A truly memorable experience",
+                " I booked a table at this restaurant for a special anniversary dinner, and it exceeded all expectations. The ambiance was romantic, the food was exquisite, and the service was top-notch. A truly memorable experience ",
         },
         {
             id: 2,
@@ -22,7 +22,7 @@ function About() {
             img:
                 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883409/person-2_np9x5l.jpg',
             text:
-                "I took a guided tour of the city's historic landmarks through this website, and it was fantastic. Our guide was knowledgeable, and we got to see all the must-visit places. I'll definitely book more activities through this platform.",
+                " I took a guided tour of the city's historic landmarks through this website, and it was fantastic. Our guide was knowledgeable, and we got to see all the must-visit places. I'll definitely book more activities through this platform. ",
         },
         {
             id: 3,
@@ -31,7 +31,7 @@ function About() {
             img:
                 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
             text:
-                'We stayed at this charming bed and breakfast during our weekend getaway. The cozy atmosphere and homemade breakfast made our stay delightful. The innkeeper was warm and welcoming. Cant wait to return!',
+                ' We stayed at this charming bed and breakfast during our weekend getaway. The cozy atmosphere and homemade breakfast made our stay delightful. The innkeeper was warm and welcoming. Cant wait to return! ',
         },
         {
             id: 4,
@@ -40,7 +40,7 @@ function About() {
             img:
                 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
             text:
-                'We dined at this restaurant for a business meeting, and it was a hit with our clients. The private dining area was ideal for our needs, and the menu had something for everyone. Exceptional service and a great atmosphere.',
+                ' We dined at this restaurant for a business meeting, and it was a hit with our clients. The private dining area was ideal for our needs, and the menu had something for everyone. Exceptional service and a great atmosphere. ',
         },
     ];
 
@@ -94,7 +94,7 @@ function About() {
                 </div>
                 <h4 id="author">{author}</h4>
                 <p id="job">{job}</p>
-                <p id="info">{info}</p>
+                <p id="info"><FontAwesomeIcon icon={faQuoteRight} />{info}<FontAwesomeIcon icon={faQuoteLeft} /></p>
 
                 <div className="button-container">
                     <button className="prev-btn" onClick={prevPerson}>

@@ -41,7 +41,6 @@ function App() {
               <Route path="/map" element={<MApp />} />
               <Route path="/dashboard/admin" element={<Dashboard />} />
               <Route path="/dashboard/owner" element={<OwnerDashboard />} />
-              <Route path="/chatRoom" element={<Room />} />
               <Route path="/" element={<LoadingScreen />} />
             </Routes>
           </FavoritesProvider>
