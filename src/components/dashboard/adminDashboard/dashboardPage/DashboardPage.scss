@@ -43,24 +43,6 @@
     position: relative;
     max-width: 1680px;
   }
-  .welcome-dashboard{
-    font-family: "Unna", serif;
-       font-size: 32px;
-       color: #fca41c;
-       font-style: italic;
-       font-weight: 700;
-       font-family: "Unna", serif;
-       margin-top:30px;
-       margin-right: 20px;
-       display: inline-block;
-      //  width: 250px;
-       text-align: center;
-  }
-  .des-dash-p{
-    font-family: "Playfair", serif;
-    width: 700px;
-
-  }
   
   .app-main {
     overflow-y: scroll;
@@ -130,12 +112,12 @@
     align-items: center;
     margin-bottom: 16px;
   
-    // h1 {
-    //   color: var(--main-color);
-    //   margin: 0;
-    //   font-size: 24px;
-    //   line-height: 32px;
-    // }
+    h1 {
+      color: var(--main-color);
+      margin: 0;
+      font-size: 24px;
+      line-height: 32px;
+    }
   
     input {
       border-radius: 4px;
@@ -215,7 +197,6 @@
     border-radius: 10px;
     background-color: #01081e;
     background-color: #001319e3;
-    border: 1px solid #4343435a;
 
     padding: 16px;
     display: flex;
@@ -391,8 +372,6 @@
     justify-content: space-around;
     border-radius: 15px;
     transition: ease-in all 0.4s;
-    border: 1px solid #4343435a;
-
     color:  #fe9e00 ;
 
     // gap: 10px;
@@ -413,8 +392,7 @@
     }
   .barChart{
     background-color: #01081f;
-    width:815px;
-    border: 1px solid #4343435a;
+    width:780px;
     height: 400px;
     border-radius: 15px;
     background-color: #001319e3;

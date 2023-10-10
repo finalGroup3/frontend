@@ -71,8 +71,7 @@ export default function RestaurantsList(props) {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneRestaurant);
         if (response.ok) {
-          console.log(response.body);
-          getFromRestaurantsDb()
+          // console.log(response.body);
         }
       } catch (error) {
         console.error(error);
@@ -99,9 +98,7 @@ export default function RestaurantsList(props) {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneActivity);
         if (response.ok) {
-          console.log(response.body);
-          getFromActivitesDb()
-
+          // console.log(response.body);
         }
       } catch (error) {
         console.error(error);
@@ -129,7 +126,6 @@ export default function RestaurantsList(props) {
           .send(oneHotel);
         if (response.ok) {
           console.log(response.body);
-          getFromHotelsDb()
         }
       } catch (error) {
         console.error(error);
@@ -162,8 +158,6 @@ export default function RestaurantsList(props) {
         .send(updatedItem);
       if (response.ok) {
         console.log(response.body);
-        getFromRestaurantsDb()
-
       }
     } catch (error) {
       console.error(error);
@@ -190,8 +184,6 @@ export default function RestaurantsList(props) {
         .send(updatedItem);
       if (response.ok) {
         console.log(response.body);
-        getFromActivitesDb()
-
       }
     } catch (error) {
       console.error(error);
@@ -218,8 +210,6 @@ export default function RestaurantsList(props) {
         .send(updatedItem);
       if (response.ok) {
         console.log(response.body);
-        getFromHotelsDb()
-
       }
     } catch (error) {
       console.error(error);
@@ -251,8 +241,6 @@ export default function RestaurantsList(props) {
 
       if (response.ok) {
         console.log(response.body);
-        getFromActivitesDb()
-       
       }
     } catch (error) {
       console.error(error);
@@ -266,8 +254,6 @@ export default function RestaurantsList(props) {
 
       if (response.ok) {
         console.log(response.body);
-        getFromHotelsDb()
-
       }
     } catch (error) {
       console.error(error);

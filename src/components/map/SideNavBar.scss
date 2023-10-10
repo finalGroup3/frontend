@@ -6,49 +6,63 @@
 }
 
 .nnn{
-   
-aside {
-
     button {
         cursor: pointer;
         transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     
         &:hover {
-          color: #fca21c;
-          transform: scale(1.10);
-          
-          svg{
-            color: #ffffff !important;
-          }
-          /* Scale up the button on hover */
-        //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+          color: gold;
+          transform: scale(1.05); /* Scale up the button on hover */
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
         }
-       
     
+        /* Add more specific styles for each button as needed */
+        &.home {
+            
+          /* Styles for the home button */
+        }
+    
+        &.explore {
+          /* Styles for the explore button */
+        }
+    
+        &.messages {
+          /* Styles for the messages button */
+        }
+    
+        &.bookmark {
+          /* Styles for the bookmark button */
+        }
+    
+        &.lists {
+          /* Styles for the lists button */
+        }
+    
+        &.profile {
+          /* Styles for the profile button */
+        }
       }
-height: 100dvh;
+aside {
+    height: 100dvh;
 
-width: 280px;
-border-radius: 24px;
-padding: 40px;
-border-right: 1px solid #ffffff ;
-// background: var(--c-sidebar);
-    .logooo {
+    width: 280px;
+    border-radius: 24px;
+    padding: 50px;
+    background: var(--c-sidebar);
+    .logo {
         display: block;
+        width: 28px;
         height: 28px;
         fill: var(--logo-color, var(--c-default));
-        margin-bottom: 117px;
-        font-size: 45px !important;
-        font-family: 'Dancing Script', cursive;
-        font-weight: 900;
+        // margin-bottom: 5px;
     }
     nav {
         display: grid;
-        grid-gap: 46px;
+        grid-gap: 36px;
         button {
             --c-color: var(--c-default);
-            // --c-background: var(--c-sidebar);
-            // --icon-fill: var(--c-background);
+            --c-background: var(--c-sidebar);
+            --icon-fill: var(--c-background);
             -webkit-tap-highlight-color: transparent;
             -webkit-appearance: none;
             outline: none;
@@ -57,7 +71,7 @@ border-right: 1px solid #ffffff ;
             padding: 0;
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            font-size:22px;
+            font-size: 19px;
             line-height: 24px;
             font-weight: bold;
             text-align: left;
@@ -72,14 +86,11 @@ border-right: 1px solid #ffffff ;
             .icon {
                 margin-right: 16px;
                 position: relative;
-               
                 svg {
                     display: block;
                     width: 24px;
                     height: 24px;
-                    color: #ffffff;
                 }
-              
             }
             & > div {
                 display: inline-flex;

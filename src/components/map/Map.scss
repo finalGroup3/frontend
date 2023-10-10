@@ -1,93 +1,78 @@
 .ssss {
   overflow: hidden;
 
-  label {
- 
-        font-size: 18px; 
-        font-family: "Lugrasimo", cursive;
-        font-family: "Playfair", serif;
-        font-weight: 600;
-        color: #FCA41C ;
-        padding: 15px 10px 10px 10px;
-     
+  .map label {
+    width: max-content;
+    color: tomato;
+    font-size: 13px;
+    border-bottom: 0.5px solid tomato;
+    margin: 3px 0;
   }
 
-  .desc {
-    font-size: 17px;
-    font-family: "Playfair", serif;
-    font-family: "Unna", serif;
+  .map .desc {
+    font-size: 14px;
   }
 
-   .star {
+  .map .star {
     color: gold;
   }
 
- .username {
+  .map .username {
     font-size: 14px;
   }
 
-  .date {
+  .map .date {
     font-size: 12px;
   }
 
-  form {
-    // width: 450px;
-    height: 470px;
+  .map form {
+    width: 250px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    color: rgba(88, 87, 87, 0);
+    color: rgb(88, 87, 87);
   }
 
-   input {
+  .map input {
     border: none;
-    border-radius: 7px;
-    height:40px;
-    padding-left: 10px;
     border-bottom: 1px solid gray;
   }
 
-  input::placeholder,
+  .map input::placeholder,
   textarea::placeholder {
-    font-size: 14px;
-    color: rgb(161, 161, 161);
+    font-size: 12px;
+    color: rgb(185, 184, 184);
   }
 
-   input:focus,
+  .map input:focus,
   textarea:focus,
   select:focus {
     outline: none;
   }
 
-   textarea {
-    border-radius: 7px;
-    padding: 10px 0 0 10px;
+  .map textarea {
     border: none;
     border-bottom: 1px solid gray;
   }
 
- .submitButton {
+  .map .submitButton {
     border: none;
     padding: 5px;
     border-radius: 5px;
     color: white;
-    background-color: rgba(255, 99, 71, 0);
-    border: 2px solid #FCA41C;
+    background-color: tomato;
     cursor: pointer;
-    margin-top: 30px;
-    width: 200px;
-    font-size: 14px;
-    height: 40px;
   }
 
-  .buttons,
+  .map .buttons,
   .logout {
     position: absolute;
     top: 10px;
     right: 10px;
   }
 
-   .button {
+  .map .button {
     border: none;
     padding: 5px;
     border-radius: 5px;
@@ -96,53 +81,57 @@
     cursor: pointer;
   }
 
-   .button:focus {
+  .map .button:focus {
     outline: none;
   }
 
-  
+  .map .logout {
+    background-color: tomato;
+  }
 
-  
+  .map .login {
+    background-color: teal;
+    margin-right: 10px;
+  }
+
+  .map .register {
+    background-color: slateblue;
+  }
 
   .mapboxgl-popup-content {
-    width: 600px !important;
-    padding: 27px;
+    width: 290px !important;
+    padding: 10px;
     border-radius: 25px !important;
-    background: #001319db;
+    background: #001319;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
     border: 1px solid rgba(0, 0, 0, 0.2);
     color: aliceblue;
-    height: auto;
-    min-height: 520px;
-  
-    // overflow-y: scroll;
    
   }
 .mapcard {
-    height: 400px;
-    // min-height: 4vh;
+    height: 460px;
+    min-height: 4vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 430px !important;
+    width: 200px !important;
     border-radius: 10px !important;
     font-family: "Lugrasimo", cursive;
-    gap: 10px;
-  
+    
 }
-.mapboxgl-popup-close-button{
+.close-iconn{
   font-size: 30px; 
   color: red;
   cursor: pointer; 
-  // position: absolute;
+  position: absolute;
   font-weight:bold ;
   top: 10px; 
-  right: 20px;
+  right: 1px;
 }
   .restinfoo {
-    // margin: 30px 20px;
+    margin: 30px 20px;
     font-size: 30px;
     display: flex;
     flex-direction: column;
@@ -150,104 +139,130 @@
   }
 
   .place {
-    font-size: 24px;
-    color: #FCA41C;
-    text-align: center;
+    font-size: 22px;
     font-family: "Lugrasimo", cursive;
     font-weight: 900;
-    font-family: "Unna", serif;
-    // margin-top: 30px;
   }
 
   .mapcard img {
     border-radius: 30px 0 !important;
-    width: 400px;
-    align-self: center;
+  
+    height: 400px;
   }
 
-  // .mapform {
-  //   display: grid;
-  //   grid-template-columns: 1fr;
-  //   gap: 15px;
-  //   max-width: 450px; 
-  //   width: 360px !important;
-  //   height: 60dvh;
-
-  //   margin: 0 auto;
-  //   padding: 15px;
-  //   background: rgba(255, 255, 255, 0);
-  //   border-radius: 12px;
-  //   box-shadow: 0 4px 20px rgba(0, 0, 0, 0);
-  //   backdrop-filter: blur(3px);
-  //   -webkit-backdrop-filter: blur(3px);
-  //   border: 1px solid rgba(0, 0, 0, 0);
-  // }
-  
-  // .mapform form {
-  //   display: grid;
-  //   gap: 10px;
-  // }
-  
-  // .mapform form label {
-  //   font-size: 17px; 
-  //   font-family: "Lugrasimo", cursive;
-  //   font-family: "Playfair", serif;
-  //   font-weight: 600;
-  //   color: #FCA41C ;
-  // }
-  
-  // .mapform form input,
-  // .mapform form textarea,
-  // .mapform form select {
-  //   border: 1px solid;
-  //   border-radius: 6px; 
-  //   padding: 4px 8px; 
-  //   font-size: 12px; 
-  // }
-  
-  // .mapform form input::placeholder,
-  // .mapform form textarea::placeholder {
-  //   font-size: 12px; 
-  //   padding: 4px 8px; 
-  //   color: rgb(0, 27, 52);
-  // }
-  
-  // .mapform form button {
-  //   height: 30px; 
-  //   font-size: 14px; 
-  //   border-radius: 6px; 
-  //   background-color: rgb(0, 29, 58);
-  //   color: rgb(255, 255, 255);
-  // }
-  
-  // .mapform form select {
-  //   height: 28px; 
-  // }
-
-  .two-inputs{
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    select{
-      height: 38px; 
-      width: 170px;
-      border-radius: 7px;
-      order: none;
-    border-radius: 7px;
-    height: 40px;
-    padding-left: 10px;
-   font-size: 14px;
-  
-    }
-    input{
-      width: 120px;
-     
-    }
-    // justify-content: center;
-
+  .mapform {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 300px; 
+    margin: 0 auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.22);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(0, 0, 0, 0.3);
   }
   
+  .mapform form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .mapform form label {
+    font-size: 12px; 
+    font-family: "Lugrasimo", cursive;
+    font-weight: 600;
+    color: aliceblue;
+  }
+  
+  .mapform form input,
+  .mapform form textarea,
+  .mapform form select {
+    border: 1px solid;
+    border-radius: 6px; 
+    padding: 4px 8px; 
+    font-size: 12px; 
+  }
+  
+  .mapform form input::placeholder,
+  .mapform form textarea::placeholder {
+    font-size: 12px; 
+    padding: 4px 8px; 
+    color: rgb(0, 27, 52);
+  }
+  
+  .mapform form button {
+    height: 30px; 
+    font-size: 14px; 
+    border-radius: 6px; 
+    background-color: rgb(0, 29, 58);
+    color: rgb(255, 255, 255);
+  }
+  
+  .mapform form select {
+    height: 25px; 
+  }
+  
+  
+  
+  #earth {
+    background-image: url("https://encrypted-tbn3.google.com/images?q=tbn:ANd9GcTQqoB4xBnIkmUg5pxDyYW2h0Q1pRTsbQBOfhg-E-y4iLFicsyi");
+    width: 50px;
+    height: 50px;
+    box-shadow: inset 16px 0 40px 3px rgba(0, 0, 0, 0.9),
+      inset -3px 0 5px 2px rgba(255, 255, 255, 0.16);
+    background-size: 190px;
+    margin: 10px auto;
+    border-radius: 50%;
+    position: relative;
+    animation-name: move, scale, rotate;
+    animation-duration: 4s, 4s, 4s;
+    animation-iteration-count: infinite, infinite, infinite;
+    animation-timing-function: ease-in-out, linear, linear;
+    z-index: 2;
+  }
+
+  @keyframes move {
+    0% {
+      left: 50px;
+    }
+    70% {
+      left: -50px;
+    }
+    100% {
+      left: 50px;
+    }
+  }
+
+  @keyframes scale {
+    0% {
+      transform: scale(1);
+    }
+    32% {
+      transform: scale(0.4);
+      animation-timing-function: ease-in;
+    }
+    70% {
+      transform: scale(1);
+      animation-timing-function: ease-in;
+    }
+    75% {
+      transform: scale(1.2);
+      animation-timing-function: ease-in-out;
+    }
  
+  }
+
+  @keyframes rotate {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: 190px;
+    }
+  }
   .stars{
     color:yellow
   }
@@ -272,16 +287,10 @@
 
   .sidenavbar-container {
     position: fixed;
-    width: 20vw;
-    // margin-top: 70px;
+    width: 400vw;
+    margin-top: 70px;
     margin-left: 1vh;
     border-radius: 40px;
     overflow: hidden;
-  }
-
-  .mapboxgl-popup-anchor-left{
-// max-width: 750px !important;
-min-height: 62dvh;
-
   }
 }

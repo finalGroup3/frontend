@@ -5,9 +5,8 @@ import BookingModal from "../../bookingModal/BookingModal";
 // import Heart from "react-animated-heart";
 import { FavoritesContext } from "../favContext";
 import { LoginContext } from "../../Auth/login/LogInContext";
-import heart from './bookmark (1).png'
+
 import { useState ,useContext} from "react";
-import { Rating } from "@mui/material";
 
 const Card = ({element}) => {
   const [openModal, setOpenModal] = useState(false);
@@ -55,15 +54,14 @@ const Card = ({element}) => {
                 <svg className="card__arc" xmlns="http://www.w3.org/2000/svg">
                   <path />
                 </svg>
-                {/* <FontAwesomeIcon
+                <FontAwesomeIcon
                   className="card__thumb"
                   icon={faUtensils}
-              
-                /> */}
-                <img className="fav-heart" src={heart} alt="" />
+                  style={{ color: "#001319" }}
+                />
                 <div className="card__header-text">
                   <h3 className="card__title">{element.name}</h3>
-                  <span className="card__status"><Rating name="read-only" value={element.rating} readOnly  /></span>
+                  <span className="card__status">⭐⭐⭐⭐⭐</span>
                 </div>
               </div>
               <p className="card__description">{element.description}</p>

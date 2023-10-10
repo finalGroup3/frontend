@@ -32,12 +32,9 @@ console.log(props.room, "iddddddddddddddddddddddddddddd")
   };
 
   useEffect(() => {
-    if (state.socket) {
-      state.socket.off("receive_message");
-      state.socket.on("receive_message", (data) => {
-        setMessageList((list) => [...list, data]);
-      });
-    }
+    state.socket?.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+    });
   }, [state.socket]);
 
   return (
@@ -58,7 +55,6 @@ console.log(props.room, "iddddddddddddddddddddddddddddd")
 <span className="dots"> ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ ❖ </span> */}
 
   </div>
-  {/* <p>✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧</p> */}
   
    <div className="chat-window">
       <div className="chat-header">

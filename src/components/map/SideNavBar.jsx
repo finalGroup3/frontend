@@ -8,9 +8,8 @@ const SideNavBar = () => {
    <div>
   <aside>
       {/* <img className="jordan-map1" src={jordanmap}/> */}
-      <span className="logooo">Wanderlust</span>
-    {/* <svg className="logo" viewBox="0 0 28 28">
-    </svg> */}
+    <svg className="logo" viewBox="0 0 28 28">
+    </svg>
     <nav>
       <button className="home">
         <div>
