@@ -6,6 +6,8 @@ import alaa from "./ALA.jpg";
 import amro from "./amroo.jpg";
 import "./test1.scss";
 import Test from "./Test";
+import Team from "./Team";
+
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 
@@ -13,11 +15,6 @@ function About() {
   return (
     <>
       <Header />
-
-
-
-
-
 
       <div className='act'>
 
@@ -70,7 +67,7 @@ function About() {
       </div>
       <div className="allcom">
         <div className="bg">
-          <h1 className="ti"><strong class="underline-event">
+          <h1 className="abouttit"><strong class="underline-event">
             <span class="underlined underline-clip">About Us </span>
           </strong></h1>
         </div>
@@ -204,7 +201,7 @@ function About() {
           </h1>
         </div>
       </div>
-      <div id="aaapp">
+      {/* <div id="aaapp">
         <div id="profiles">
           <div class="profile">
             <div class="profile-content">
@@ -213,6 +210,15 @@ function About() {
               </div>
               <h3 class="profile-name">Savana</h3>
             </div>
+            <div class="box">
+              <div>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
+                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+
+              </div>
+            </div>
           </div>
           <div class="profile">
             <div class="profile-content">
@@ -220,6 +226,16 @@ function About() {
                 <img class="profile-pic-image" src={alaa} />
               </div>
               <h3 class="profile-name" > A LA' </h3>
+
+            </div>
+            <div class="box">
+              <div>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
+                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+
+              </div>
             </div>
           </div>
           <div class="profile">
@@ -229,6 +245,15 @@ function About() {
               </div>
               <h3 class="profile-name">Laith</h3>
             </div>
+            <div class="box">
+              <div>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
+                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+
+              </div>
+            </div>
           </div>
           <div class="profile">
             <div class="profile-content">
@@ -236,6 +261,15 @@ function About() {
                 <img class="profile-pic-image" src={nour} />
               </div>
               <h3 class="profile-name">Nour</h3>
+            </div>
+            <div class="box">
+              <div>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
+                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+
+              </div>
             </div>
           </div>
           <div class="profile">
@@ -245,11 +279,21 @@ function About() {
               </div>
               <h3 class="profile-name">Amro</h3>
             </div>
+            <div class="box">
+              <div>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
+                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
+                </ul>
+
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    {/* </div > */}
-     
+      </div> */}
+      {/* </div > */}
+
+      <Team />
 
       <div className="aboutss" id="abouts">
         <h1 className="underline-event">
