@@ -75,23 +75,22 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
               <img
                 src={favv}
                 alt="Review"
-                className={`rotate-on-click ${modalShow ? "rotate" : ""}`}
                 style={{
-                  width: "55px",
-                  height: "55px",
-                  marginLeft: "250px",
-                  marginTop: "-30px",
+                  width: "35px",
+                  height: "35px",
+                  marginLeft: "270px",
+                  marginTop: "-44px",
                 }}
               />
             </button>
             
             <h4 className="item-title" style={{
   fontFamily: "'Georgia', serif",
-  color: "rgba(255, 215, 0, 0.5)",  // Gold color with 50% opacity
+  color: "white",  // Gold color with 50% opacity
   textAlign: "center",
   marginBottom: "15px",
-  marginTop: "20px",
-  fontSize:"20px",
+  marginTop: "15px",
+  fontSize:"18px",
   fontWeight:"bold",
   textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
   letterSpacing: "0.5px",
@@ -111,9 +110,8 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
               onClick={() => setOpenModal(true)}
             >
               Book now
+              
             </a>
-            
-            </div>
             <div className="item-price2">
           {/* <div className="product-links"> */}
           {/* <div className="enlarged-photo-modal"> */}
@@ -123,10 +121,12 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                       marginTop: "-1px",}}>review</p> */}
                 </button>
               {/* </div> */}
-
+              </div>
+            </div>
+           
           {/* </div> */}
           <div className="item-price">{element.price}JD</div>
-        </div>
+       
           </div>
           
 

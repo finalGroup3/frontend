@@ -458,6 +458,7 @@
   .btn-text {
     position: relative;
     padding: 16px 18px;
+    margin-left:5px ;
     border-radius: 7px;
     border: 2px solid #fca41c;
     font-size: 14px;
@@ -962,30 +963,29 @@
     -webkit-box-orient: vertical;
   }
 .item-price2{
-  width: 120px;
-    height: 50px;
-    background-color: #000000;
-    color: #fff;
-    margin-top: 27px;
-    margin-left: 190px;
+    color: #FCA41C;
+    margin-top: -52px;
+    margin-left: 153px;
+    margin-right: 5px;
     font-size: 2rem;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     // padding-top: 7px;
 }
   .item-price {
     width: 100px;
     height: 100px;
-    background-color: rgba(255, 215, 0, 0.5);
+    background-color: rgba(160, 6, 6, 0.842);
     color: #fff;
-    margin-top: 70px;
-    margin-left: 100px;
+    margin-top: 20px;
+    margin-left: 330px;
     font-size: 2rem;
     display: flex;
-    justify-content: rog;
+    justify-content: center;
     align-items: center;
     padding-top: 7px;
+    font-family: 'Arial', sans-serif;
   }
   /* .with-shadow {
   display:grid;
