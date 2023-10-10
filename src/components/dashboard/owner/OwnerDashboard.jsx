@@ -4,6 +4,7 @@ import Map from "../../map/Map";
 import "./OwnerDashboard.scss";
 import superagent from "superagent";
 import cookie from "react-cookies";
+import { RestaurantsContext } from "../../restaurants/RestaurantContext";
 
 const OwnerDashboard = () => {
   const [notifications, setNotifications] = useState([]);
@@ -23,83 +24,93 @@ const OwnerDashboard = () => {
 
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
-  const getrestBookingsFromDb = async () => {
-    const userId = state.user.id;
-    console.log(userId, "**********************************");
-    try {
-      const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${userId}`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      setrestBookings(items);
-      console.log(items, "restBookings");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  // const getrAllBookingsFromDb = async () => {
-  //   const userId = state.user.id;
-  //   console.log(userId, "**********************************");
-  //   try {
-  //     const response = await superagent
-  //       .get(`${import.meta.env.VITE_DATABASE_URL}/booking`)
-  //       .set("authorization", `Bearer ${cookie.load("auth")}`);
-  //     const items = response.body;
-  //     setrestBookings(items);
-  //     console.log(items, "restBookings");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-  const getActivityBookingsFromDb = async () => {
-    const userId = state.user.id;
-    try {
-      const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingActivity/${userId}`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      setactivityBookings(items);
-      console.log(items, "activityBookings");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-  const gethotelBookingsFromDb = async () => {
-    const userId = state.user.id;
-    try {
-      const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/bookingHotel/${userId}`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      sethotelBookings(items);
+  const FaveState = useContext(RestaurantsContext);
+  const userId = state.user.id;
+  console.log(userId, "userId");
 
-      console.log(items, "hotelBookings");
-    } catch (error) {
-      console.error(error);
-    }
+  //////============get user services==================///////////
+  const userRestaurants = FaveState.restaurantsList.filter((restaurant) => {
+    return restaurant.ownerId === userId;
+  });
+  const userHotels = FaveState.hotelsList.filter((restaurant) => {
+    return restaurant.ownerId === userId;
+  });
+  const userActivities = FaveState.activitiesList.filter((restaurant) => {
+    return restaurant.ownerId === userId;
+  });
+
+  //////============get id for each service==================///////////
+
+  const userRestaurantsIds = userRestaurants?.map((restaurant) => {
+    return restaurant.id;
+  });
+  const userHotelsIds = userHotels?.map((restaurant) => {
+    return restaurant.id;
+  });
+  const userActivitiesIds = userActivities?.map((restaurant) => {
+    return restaurant.id;
+  });
+
+  // console.log(userRestaurants, "userRestaurants", userHotels, userActivities);
+
+  const getrestBookingsFromDb = () => {
+    userRestaurantsIds.map(async (restaurant) => {
+      try {
+        const response = await superagent
+          .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${restaurant}`)
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        setrestBookings(items.bookings);
+      } catch (error) {
+        console.error(error);
+      }
+    });
   };
-  const getAllBookingsforOwner = () => {
-    console.log(state.user.id, "\\\\////");
-    getrestBookingsFromDb();
-    getActivityBookingsFromDb();
-    gethotelBookingsFromDb();
+
+  const getActivityBookingsFromDb = () => {
+    userActivitiesIds.map(async (restaurant) => {
+      try {
+        const response = await superagent
+          .get(
+            `${import.meta.env.VITE_DATABASE_URL}/bookingActivity/${restaurant}`
+          )
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        setactivityBookings(items.bookings);
+      } catch (error) {
+        console.error(error);
+      }
+    });
   };
+
+  const gethotelBookingsFromDb = () => {
+    userHotelsIds.map(async (restaurant) => {
+      try {
+        const response = await superagent
+          .get(
+            `${import.meta.env.VITE_DATABASE_URL}/bookingHotel/${restaurant}`
+          )
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        sethotelBookings(items.bookings);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  };
+
   useEffect(() => {
     console.log(state.user.id, "\\\\////");
     getrestBookingsFromDb();
     getActivityBookingsFromDb();
     gethotelBookingsFromDb();
   }, []);
-  for (let i = 0; i < restBookings.length; i++) {
-    AllBookings.push(restBookings[i]);
-  }
-  for (let i = 0; i < activityBookings.length; i++) {
-    AllBookings.push(activityBookings[i]);
-  }
-  for (let i = 0; i < hotelBookings.length; i++) {
-    AllBookings.push(hotelBookings[i]);
-  }
-  console.log(AllBookings, "AllBookings");
+
+
+  
+
+  //////////////////////////////////========================================//////////////////////////////////////////////
+
   const handleCreateRestaurant = () => {
     setShowCreateRestaurantMessage(true);
     setTimeout(() => {
@@ -110,7 +121,7 @@ const OwnerDashboard = () => {
   };
 
   state.socket?.emit("get-all");
-  console.log(AllBookings, "AllBookings");
+  // console.log(AllBookings, "AllBookings");
   useEffect(() => {
     state.socket?.on("new-notifications-msg", (payload) => {
       setMissing((prev) => {
@@ -134,6 +145,12 @@ const OwnerDashboard = () => {
       state.socket?.off("getNotification");
     };
   }, [state.socket]);
+
+  console.log(restBookings, "restBookings");
+  console.log(activityBookings, "activityBookings");
+  console.log(hotelBookings, "hotelBookings");
+
+
   return (
     <>
       <div className="ooooo">
@@ -184,7 +201,7 @@ const OwnerDashboard = () => {
                 </div>
                 <div
                   className="box--content"
-                  onClick={() => getAllBookingsforOwner}
+                  onClick={() => getrestBookingsFromDb()}
                 >
                   <p className="box--title">Bookings</p>
                 </div>

@@ -37,6 +37,8 @@ function setupMap(center) {
 }
 
 function MApp() {
+  const state = useContext(LoginContext);
+
   const [locationType, setLocationType] = useState("resturant");
   const [resturant, setResturant] = useState([]);
   const [hotel, setHotel] = useState([]);
@@ -87,6 +89,8 @@ function MApp() {
     ],
   };
   const handleSubmit = async (e) => {
+  const userId = state.user.id;
+
     e.preventDefault();
     const newPin = {
       name: restName,
@@ -95,12 +99,13 @@ function MApp() {
       location: restAddress,
       rating: restRating,
       price: restPrice,
+      ownerId: userId,
       long: newPlace.lng,
       lat: newPlace.lat,
     };
 
     try {
-      if (locationType == "resturant"){
+      if (locationType === "resturant"){
       const res = await axios.post(
         `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
         newPin,
@@ -113,7 +118,7 @@ function MApp() {
       setResturant([...resturant, res.data]);
       setNewPlace(null);
     }else if 
-      (locationType == "hotel"){
+      (locationType === "hotel"){
         const res = await axios.post(
           `${import.meta.env.VITE_DATABASE_URL}/hotel`,
           newPin,
@@ -230,7 +235,6 @@ function MApp() {
     setEnd(endPoint);
   };
 
-  const state = useContext(LoginContext);
 
   const addNewPlace = (e) => {
     if (state.user?.role === "owner") {
