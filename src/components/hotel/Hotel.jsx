@@ -10,9 +10,8 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CCard from "../restaurants/CCard";
 import { RestaurantsContext } from "../restaurants/RestaurantContext";
-import service2 from "../../assets/jubran.jpg";
-import dominos from "../../assets/dominos.jpg";
-import salt from "../../assets/SALT.jpg";
+// import ReelModal from "../reels/Modal/ReelModal";
+import Modal22 from "../reels/Modal22/Modal22";
 
 
 const Hotel = () => {
@@ -206,7 +205,12 @@ const Hotel = () => {
               return (
                 <>
                   <div>
-                    <CCard key={element.id} element={element} />
+                    <CCard key={element.id} element={element} hotelId={element.id}/>
+                    <div className="s">
+                    {/* <ReelModal hotelId={element.id} /> */}
+                    <Modal22 hotelId={element.id} />
+
+                    </div>
                   </div>
                 </>
               );

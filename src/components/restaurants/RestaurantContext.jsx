@@ -31,7 +31,7 @@ export default function RestaurantsList(props) {
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body;
       setActivitesList(items);
-      console.log(items)
+      // console.log(items)
     } catch (error) {
       console.error(error);
     }
@@ -42,7 +42,7 @@ export default function RestaurantsList(props) {
         .get(`${import.meta.env.VITE_DATABASE_URL}/hotel`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
       const items = response.body;
-      console.log(items)
+      // console.log(items)
       setHotelsList(items);
     } catch (error) {
       console.error(error);
@@ -71,7 +71,7 @@ export default function RestaurantsList(props) {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneRestaurant);
         if (response.ok) {
-          console.log(response.body);
+          // console.log(response.body);
         }
       } catch (error) {
         console.error(error);
@@ -98,7 +98,7 @@ export default function RestaurantsList(props) {
           .set("authorization", `Bearer ${cookie.load("auth")}`)
           .send(oneActivity);
         if (response.ok) {
-          console.log(response.body);
+          // console.log(response.body);
         }
       } catch (error) {
         console.error(error);
@@ -215,7 +215,7 @@ export default function RestaurantsList(props) {
       console.error(error);
     }
   };
-  console.log(cookie.load("auth"));
+  // console.log(cookie.load("auth"));
 
   /////////////////////////////////////////////////////////////////////////////////////////
   //////===================================delete=========================================/////

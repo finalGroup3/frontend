@@ -57,10 +57,10 @@ export default function App() {
         </g>
       </svg>
       <div className="swiper-box">
-      <article className="swiper-title">
-                <h2>✧✧ Our Choice ✧✧</h2>
-                {/* <p>We provide you with many distinctive and famous options in the region</p> */}
-              </article>
+        <article className="swiper-title">
+          <h2>✧✧ Our Choice ✧✧</h2>
+          {/* <p>We provide you with many distinctive and famous options in the region</p> */}
+        </article>
         <div className="swiperContain">
           <Swiper
             direction={"vertical"}
@@ -150,8 +150,7 @@ export default function App() {
               open={openActivModal}
               onClose={() => setOpenActivModal(false)}
               item={{
-                image:
-                  "https://amusementlogic.com/wp-content/uploads/2021/06/SARAYA-AQABA-WP_03_2.jpg",
+                img: "https://amusementlogic.com/wp-content/uploads/2021/06/SARAYA-AQABA-WP_03_2.jpg",
                 name: "saraya aqaba Waterpark",
                 description:
                   "The region's most picturesque water park with a stunning view of the surrounding mountain range. Featuring water-drenched versions of the country's most iconic landmarks.",
@@ -159,7 +158,6 @@ export default function App() {
             />
           </Swiper>
         </div>
-       
       </div>
     </>
   );
