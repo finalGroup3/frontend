@@ -73,19 +73,21 @@ export default function ReviewsModal(props) {
         </Modal.Header>
         <Modal.Body>
           <center className="cccenter">
-            <h3 className="reels-title">Reels</h3>
             <div className="abcontainer">
-              <div className="video-container" id="video-container">
+              <div className="video-container" id="video-container" >
                 {filteredreel?.reverse().map((list, i) => (
+                  <>
+                  {/* <h3 className="reels-title">{list.name}</h3> */}
                   <Reel key={i} item={list} />
+                  </>
                 ))}
               </div>
             </div>
           </center>
         </Modal.Body>
-        <Modal.Footer>
+        {/* <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </>
   );

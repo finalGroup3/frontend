@@ -18,7 +18,7 @@ function ReelModal({ getAllReels, restId, hotelId, activId }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
-  const [category, setcategory] = useState("");
+  const [category, setcategory] = useState("restaurant");
   console.log(rating);
 
   // console.log(category);
