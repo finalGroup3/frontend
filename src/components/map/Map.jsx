@@ -36,7 +36,8 @@ function setupMap(center) {
 }
 
 function MApp() {
-  const loginState = useContext(LoginContext);
+  const state = useContext(LoginContext);
+
   const [locationType, setLocationType] = useState("resturant");
   const [resturant, setResturant] = useState([]);
   const [hotel, setHotel] = useState([]);
@@ -87,6 +88,8 @@ function MApp() {
     ],
   };
   const handleSubmit = async (e) => {
+    const userId = state.user.id;
+
     e.preventDefault();
     const newPin = {
       name: restName,
@@ -95,9 +98,9 @@ function MApp() {
       location: restAddress,
       rating: restRating,
       price: restPrice,
+      ownerId: userId,
       long: newPlace.lng,
       lat: newPlace.lat,
-      ownerId: loginState.user.id,
     };
 
     try {
@@ -230,8 +233,6 @@ function MApp() {
     setEnd(endPoint);
   };
 
-  const state = useContext(LoginContext);
-
   const addNewPlace = (e) => {
     if (state.user?.role === "owner") {
       const { lat, lng } = e.lngLat;
@@ -250,7 +251,7 @@ function MApp() {
           <div id="earth"></div>
           <SideNavBar />
         </div> */}
-        <SideNavBar/>
+        <SideNavBar />
         <div className="map-container">
           {coords && (
             <Map
