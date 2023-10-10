@@ -205,17 +205,17 @@ const Hotel = () => {
             {state.hotelsList.map((element) => {
               return (
                 <>
-                  <div>
+                  
                     <CCard key={element.id} element={element} hotelId={element.id}/>
-                    <div className="s">
+                    
                     {/* <ReelModal hotelId={element.id} /> */}
                     <Modal22 hotelId={element.id} />
 
-                    </div>
-                  </div>
+                   
                 </>
               );
             })}
+                  
           </div>
         </div>
       </div>
