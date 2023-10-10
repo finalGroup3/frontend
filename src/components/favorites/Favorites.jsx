@@ -3,43 +3,43 @@ import Card from "./favCard/Card";
 import FavHero from "./favHero/FavHero";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
+
 import { LoginContext } from "../Auth/login/LogInContext";
 import { FavoritesContext } from "./favContext";
 
+
 const Favorites = () => {
-  // const [favList, setFavList] = useState([]);
+  const LoginState = useContext(LoginContext);
+  const favstate = useContext(FavoritesContext);
 
-  // const LoginState = useContext(LoginContext);
-  // console.log(LoginState.user.id, "****************");
+  console.log(LoginState.user.id, "/////////////");
 
-  const FaveState = useContext(FavoritesContext);
-  // console.log(FaveState.favList, "fav from favpage");
-
-  // useEffect(() => {
-  //   console.log(FaveState.getFromFavsDb());
-  //   setFavList(FaveState.getFromFavsDb());
-  //   console.log(favList);
-  // }, []);
+  console.log(favstate.favList, "favs from compoonent");
 
   return (
     <>
       <Header />
+      
       <div className="favPicture">
         <FavHero />
-        <div className="favCategoryyyy">Restaurants</div>
-        <button
+        
+        <div className="favCategoryyyy">✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧  </div>
+        {/* <button
           onClick={() => {
-            FaveState.getFromFavsDb();
+            getFromFavsDb
           }}
         >
-          get from data{" "}
-        </button>
-        {FaveState.favList.map((element) => {
-          return <Card element={element} />;
+          get from data
+        </button> */}
+        <div className="favs-items"> 
+            {favstate.favList.map((element) => {
+          return <Card key={element.id} element={element} />;
         })}
-        <Footer />
+        </div>
+      
       </div>
+      <Footer />
     </>
   );
 };

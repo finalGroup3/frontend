@@ -194,22 +194,7 @@ main {
 	border-radius: 50%;
 	position: relative;
 }
-.img-container::after {
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	content: "\f10e";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 2.5rem;
-	height: 2.5rem;
-	display: grid;
-	place-items: center;
-	border-radius: 50%;
-	transform: translateY(25%);
-	background: var(--clr-primary-5);
-	color: var(--clr-white);
-}
+
 .img-container::before {
 	content: "";
 	width: 100%;
@@ -261,4 +246,16 @@ main {
 	background: var(--clr-primary-5);
 	color: var(--clr-primary-1);
 }
+}
+
+
+// q { quotes: '\201c' '\201d'; }
+// q:before { content: open-quote; }
+// q:after  { content: close-quote; }
+@media all and (max-width: 850px) {
+  p { 
+    font-size: 2rem; 
+    margin: 2rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
 }

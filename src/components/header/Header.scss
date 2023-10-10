@@ -1,78 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair&display=swap");
 
-.navbar.navbar-expand-lg.navbar-dark.bg-dark {
-  background: rgba(0, 0, 0, 0) !important;
-  padding: 0px;
-  margin: 0;
-  font-size: 18px;
-  transition: background-color 0.3s ease;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  color: #000000;
-
-  font-family: "Playfair", serif;
-  transition: 600ms ease-in;
-}
-
-.nav-link:focus,
-.nav-link:hover {
-  color: #fca41c !important;
-  font-weight: 700;
-}
-.navbarBrand {
-  font-size: 34px !important;
-  font-family: "Dancing Script", cursive;
-  font-weight: 900;
-  color: #001319 !important;
-}
-.header-scroll.navbar.navbar-expand-lg.navbar-dark.bg-dark {
-  background-color: #001319 !important;
-  transition: 600ms ease-in;
-  .nav-link {
-    color: #ffffff !important;
+  .navbar.navbar-expand-lg.navbar-dark.bg-dark {
+    background: rgba(255, 255, 255, 0) !important;
+    padding: 0px;
+    margin: 0;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    color: #ffffff;
+  
+    font-family: "Playfair", serif;
+    transition: 600ms ease-in;
   }
-
+  
   .nav-link:focus,
   .nav-link:hover {
     color: #fca41c !important;
     font-weight: 700;
   }
   .navbarBrand {
+    font-size: 36px !important;
+    font-family: "Dancing Script", cursive;
+    font-weight: 900;
     color: #ffffff !important;
   }
-}
-
-.navbar .container {
-  width: 100%;
-}
-
-/* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-    max-width: 1620px;
-} */
-
-@media (min-width: 1400px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl,
-  .container-xxl {
-    max-width: 1400px !important;
+  .header-scroll.navbar.navbar-expand-lg.navbar-dark.bg-dark {
+    background-color: #001319 !important;
+    transition: 600ms ease-in;
+    .nav-link {
+      color: #ffffff !important;
+    }
+    .dropdown-menu{
+       .dropdown-item {
+      color: hsl(0, 0%, 0%) !important;
+  
+    }
+    }
+   
+  
+    .nav-link:focus,
+    .nav-link:hover {
+      color: #fca41c !important;
+      font-weight: 700;
+    }
+    .navbarBrand {
+      color: #ffffff !important;
+    }
   }
-}
-.nav-link {
-  color: #001319 !important;
-  padding-right: var(--bs-navbar-nav-link-padding-x) !important;
-  padding-left: var(--bs-navbar-nav-link-padding-x) !important;
-
-  .img {
-    padding: 3px;
-    object-fit: contain;
-    width: 40px;
-    height: 40px;
-    border: 1px solid white;
-    border-radius: 50%;
+  
+  .navbar .container {
+    width: 100%;
   }
-}
+  
+  /* .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+      max-width: 1620px;
+  } */
+  
+  @media (min-width: 1400px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+      max-width: 1400px !important;
+    }
+  }
+  .nav-link {
+    color: #ffffff !important;
+    padding-right: var(--bs-navbar-nav-link-padding-x) !important;
+    padding-left: var(--bs-navbar-nav-link-padding-x) !important;
+  
+    .img {
+      padding: 3px;
+      object-fit: contain;
+      width: 40px;
+      height: 40px;
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+  }
+  

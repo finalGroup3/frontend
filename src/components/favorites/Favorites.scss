@@ -1,10 +1,11 @@
 .favPicture {
-  background: url(https://wallpapercave.com/wp/wp4489084.jpg);
-  background-position: -500px;
-  background-size: cover;
+  // background: url(https://wallpapercave.com/wp/wp4489084.jpg);
+  // background-position: -500px;
+  // background-size: cover;
   box-shadow: -1200px -800px 200px 100px rgba(#001319, 0.95) inset;
   -webkit-box-shadow: -1200px -800px 200px 100px rgba(#001319, 0.95) inset;
   -moz-box-shadow: -1200px -800px 200px 100px rgba(#001319, 0.95) inset;
+
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@500&family=Inclusive+Sans&family=Jost:wght@200&family=Merriweather+Sans:wght@300&family=Noto+Serif:ital@1&family=Oswald&family=Poppins:wght@100;300;400;800&display=swap");
@@ -25,4 +26,18 @@
   font-family: "Noto Serif", serif;
   font-family: "Oswald", sans-serif;
   font-family: "Poppins", sans-serif;
+  font-family: "Prata", serif;
+  
+}
+.favs-items{
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap; 
+   width: 90%;
+  margin: auto;
+
+
+}
+.waves333{
+  height: 300px;
 }
