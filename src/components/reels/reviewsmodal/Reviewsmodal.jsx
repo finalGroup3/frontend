@@ -2,17 +2,18 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { ReelContext } from "../ReelsContext";
 import Reel from "../Reel";
-import { useContext, useState } from "react";
-
+import { useContext, useState,useEffect } from "react";
+import cookie from "react-cookies";
+import superagent from "superagent";
 export default function ReviewsModal(props) {
-  //   const [Reeels, setReeels] = useState([]);
-  const reelState = useContext(ReelContext);
+  // const reelState = useContext(ReelContext);
+  const [allReels, setAllReels] = useState([]);
   // if (props.type=="restaurant") {
   //     console.log(props.Id,"iddddddddddd")
   //     // reelState.getSpecificRestReel(props.Id);
   //     // setReeels(reelState.restReels)
   // console.log(props.restId, "props.id");
-  const allreel = reelState.allReels;
+  // const allreel = allReels;
   // console.log(allreel);
   // setReeels(allreel)
   // }
@@ -26,14 +27,26 @@ export default function ReviewsModal(props) {
 
   // }
 
-  const filteredResturant = reelState.allReels.filter(
+ const getAllReels = async () => {
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/reels`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      setAllReels(items);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const filteredResturant = allReels.filter(
     (item) =>
       item.category === "restaurant" && item.restaurantId == props.restId
   );
-  const filteredActivity = reelState.allReels.filter(
+  const filteredActivity = allReels.filter(
     (item) => item.category === "activity" && item.activityId == props.restId
   );
-  const filteredHotel = reelState.allReels.filter(
+  const filteredHotel = allReels.filter(
     (item) => item.category === "hotel" && item.hotelId == props.restId
   );
   
@@ -57,7 +70,9 @@ export default function ReviewsModal(props) {
     }
     //  filteredreel.push(filteredHotel);
   }
-
+ useEffect(() => {
+    getAllReels();
+  }, []);
   return (
     <>
       <Modal
