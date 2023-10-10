@@ -124,6 +124,7 @@ function ReelModal({ getAllReels, restId, hotelId, activId }) {
             <Form.Group controlId="formFile" className="mb-3">
               <Form.Label>Upload Video</Form.Label>
               <Form.Control type="file" onChange={handleFileChange} />
+              <label className="cateGGGGGory">Category</label>
               <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                   Dropdown Button
