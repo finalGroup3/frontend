@@ -1,15 +1,14 @@
 import "./booking4.scss";
-import React, { useState, useEffect, useContext } from "react";
-import MyIcon from "../../assets/user-regular.svg";
+import  { useState, useEffect, useContext } from "react";
+
 import Time from "../../assets/clock.svg";
-import service1 from "../../assets/service-1.jpg";
-import service2 from "../../assets/service-2.jpg";
-import service3 from "../../assets/service-3.jpg";
+
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import cookie from "react-cookies";
 import superagent from "superagent";
 import { LoginContext } from "../Auth/login/LogInContext";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 
 export default function Booking() {
   const LoginState = useContext(LoginContext);
@@ -82,106 +81,123 @@ export default function Booking() {
   return (
     <>
       <Header />
-      <div class="overlay">
+      <div className='overlay'>
         <h1>My Booking List</h1>
       </div>
-      <div className="center-container">
-        <div className="ddd">
-          <section class="dark">
-            <div class="container py-4">
-              {restaurantsBookings?.map((element) => (
+      <div className='center-container'>
+        <div className='ddd'>
+          <section className='dark'>
+            <div className='container py-4'>
+              {restaurantsBookings.map((element, i) => (
                 <div key={element.id}>
-                  <article class="postcard dark blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src={element.img}
-                        alt="Image Title"
-                      />
-                    </a>
-                    <div class="postcard__text">
-                      <h1 class="postcard__title blue">
-                        <a href="#">{element.name}</a>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <time datetime="2020-05-25 12:00:00">
-                          <i class="fas fa-calendar-alt mr-2"></i>⭐⭐⭐⭐⭐
-                        </time>
+                  {i % 2 == 0 ? (
+                    <article className='postcard dark blue'>
+                      <a className='postcard__img_link' href='#'>
+                        <img
+                          className='postcard__img'
+                          src={element.img}
+                          alt='Image Title'
+                        />
+                      </a>
+                      <div className='postcard__text'>
+                        <h1 className='postcard__title blue'>
+                          <p>{element.name}</p>
+                        </h1>
+                        <div className='postcard__bar'></div>
+                        <div className='postcard__subtitle small'>
+                          <time dateTime='2020-05-25 12:00:00'>
+                            <i className='fas fa-calendar-alt mr-2'></i>
+                            ⭐⭐⭐⭐⭐
+                          </time>
+                        </div>
+
+                        <div className='postcard__preview-txt'>
+                          {element.date.toString().split("T")[0]}
+                        </div>
+                        <ul className='postcard__tagbox'>
+                          <li>
+                            <div className='postcard__preview-name'>
+                              {element.username.toUpperCase()}
+                            </div>
+                          </li>
+                          <li className='tag__item'>
+                            <PeopleAltIcon />
+                            <div className='text'>{element.howmany}</div>
+                          </li>
+                          <li className='tag__item'>
+                            <img src={Time} alt='My Icon' />
+                            <div className='text'>
+                              {element.date.toString().split("T")[0]}{" "}
+                            </div>
+                          </li>
+
+                          <button className='tag__item'>
+                            <div
+                              className='text'
+                              onClick={() =>
+                                deleteRestaurantsBookings(element.id)
+                              }>
+                              Cancel
+                            </div>
+                          </button>
+                        </ul>
                       </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">{element.date}</div>
-                      <ul class="postcard__tagbox">
-                        <li class="tag__item">
-                          <img src={MyIcon} alt="My Icon" />
-                          <div className="text">{element.howmany}</div>
-                        </li>
-                        <li class="tag__item">
-                          <img src={Time} alt="My Icon" />
-                          <div className="text">{element.date}</div>
-                        </li>
+                    </article>
+                  ) : (
+                    <article className='postcard dark red'>
+                      <a className='postcard__img_link' href='#'>
+                        <img
+                          className='postcard__img'
+                          src={element.img}
+                          alt='Image Title'
+                        />
+                      </a>
+                      <div className='postcard__text'>
+                        <h1 className='postcard__title red'>
+                          <p>{element.name}</p>
+                        </h1>
+                        <div className='postcard__bar' />
+                        <div className='postcard__subtitle small'>
+                          <time dateTime='2020-05-25 12:00:00'>
+                            <i className='fas fa-calendar-alt mr-2' />
+                            ⭐⭐⭐⭐
+                          </time>
+                        </div>
 
-                        <button class="tag__item">
-                          <div
-                            className="text"
-                            onClick={() =>
-                              deleteRestaurantsBookings(element.id)
-                            }
-                          >
-                            Cancel
-                          </div>
-                        </button>
-                      </ul>
-                    </div>
-                  </article>
-                </div>
-              ))}
-            </div>
+                        <div className='postcard__preview-txt'>
+                          {element.date.toString().split("T")[0]}
+                        </div>
 
-            <div class="container py-4">
-              {AllBookings?.map((element) => (
-                <div key={element.id}>
-                  <article class="postcard dark blue">
-                    <a class="postcard__img_link" href="#">
-                      <img
-                        class="postcard__img"
-                        src={element.img}
-                        alt="Image Title"
-                      />
-                    </a>
-                    <div class="postcard__text">
-                      <h1 class="postcard__title blue">
-                        <a href="#">{element.name}</a>
-                      </h1>
-                      <div class="postcard__subtitle small">
-                        <time datetime="2020-05-25 12:00:00">
-                          <i class="fas fa-calendar-alt mr-2"></i>⭐⭐⭐⭐⭐
-                        </time>
+                        <ul className='postcard__tagbox'>
+                          <li>
+                            <div className='postcard__preview-name'>
+                              {element.username.toUpperCase()}
+                            </div>
+                          </li>
+                          <li className='tag__item'>
+                            <PeopleAltIcon />
+                            <div className='text'>{element.howmany}</div>
+                          </li>
+                          <li className='tag__item'>
+                            <img src={Time} alt='My Icon' />
+                            <div className='text'>
+                              {element.date.toString().split("T")[0]}
+                            </div>
+                          </li>
+
+                          <button className='tag__item'>
+                            <div
+                              className='text'
+                              onClick={() =>
+                                deleteRestaurantsBookings(element.id)
+                              }>
+                              Cancel
+                            </div>
+                          </button>
+                        </ul>
                       </div>
-                      <div class="postcard__bar"></div>
-                      <div class="postcard__preview-txt">{element.date}</div>
-                      <ul class="postcard__tagbox">
-                        <li class="tag__item">
-                          <img src={MyIcon} alt="My Icon" />
-                          <div className="text">{element.howmany}</div>
-                        </li>
-                        <li class="tag__item">
-                          <img src={Time} alt="My Icon" />
-                          <div className="text">{element.date}</div>
-                        </li>
-
-                        <button class="tag__item">
-                          <div
-                            className="text"
-                            onClick={() =>
-                              deleteRestaurantsBookings(element.id)
-                            }
-                          >
-                            Cancel
-                          </div>
-                        </button>
-                      </ul>
-                    </div>
-                  </article>
+                    </article>
+                  )}
                 </div>
               ))}
             </div>

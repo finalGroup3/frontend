@@ -32,7 +32,7 @@ export default function Header() {
   }, []);
 
   return (
-    <section>
+    <section className='nav-bar-home'>
       <Navbar
         id={"navbar2"}
         className={isScrolled ? className : ""}
@@ -50,14 +50,16 @@ export default function Header() {
               <Link className='nav-link' to='/'>
                 Home
               </Link>
-              <Link className='nav-link' to='/favorites'>
-                Favorites
-              </Link>
-              <Link className='nav-link' to='/bookings'>
-                {" "}
-                Bookings{" "}
-              </Link>
-              {/* <Link to="/bookings">Bookings</Link> */}
+              <When condition={state.user.role === "user"}>
+                <Link className='nav-link' to='/favorites'>
+                  Favorites
+                </Link>
+              </When>
+              <When condition={state.user.role === "user"}>
+                <Link className='nav-link' to='/bookings'>
+                  Bookings
+                </Link>
+              </When>
               <Link className='nav-link' to='/reels'>
                 Reels
               </Link>

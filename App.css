@@ -12,4 +12,8 @@ body{
     z-index: 1;
     color: aliceblue;
   }
+
+  p{
+    margin-bottom: 0 !important;
+  }
   
