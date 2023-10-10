@@ -205,18 +205,20 @@ export default function Activities() {
 
         <div className="header">
           <h2 className="headline-1 section-title">
-            <p className="steak"></p>
-            Our Activities<p className="steak"></p>
+          
+            Our Activities
           </h2>
           <p className="section-subtitle"></p>
+        <br />
+        <br />
         </div>
         <div className="ccontainerr">
           {state.activitiesList.map((element) => {
             return (
               <>
-                <CCard key={element.id} element={element} restId={element.id} />
+                <CCard key={element.id} element={element} activId={element.id} />
                 {/* <ReelModal restId={element.id} /> */}
-                <Modal22 restId={element.id} />
+                <Modal22 activId={element.id} />
               </>
             );
           })}

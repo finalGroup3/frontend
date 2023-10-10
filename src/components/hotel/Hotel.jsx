@@ -174,7 +174,7 @@ const Hotel = () => {
 
         </div>
 
-
+        </div>
 
             
           {/* <a href="#" className="hero-btn has-after">
@@ -187,8 +187,9 @@ const Hotel = () => {
             />
             <span className="label-2 text-center span">Book A Table</span>
           </a> */}
-          <div></div>
+          <div className="hhhhh">
           {/* ------------------------------------ cards ----------------------------------------------- */}
+
           <div className="header">
             <div className="parallax-container">
               <h2 className="headline-1 section-title ">
@@ -218,6 +219,7 @@ const Hotel = () => {
           </div>
         </div>
       </div>
+      
       <Footer />
     </>
   );

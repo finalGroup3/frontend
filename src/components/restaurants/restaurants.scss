@@ -937,6 +937,14 @@
     justify-content: left;
     align-items: left;
     padding-top: 7px;
+    font-size: 1rem; /* Set your desired font size */
+    overflow: hidden;
+    max-width: 50ch;
+    min-height: 2rem; /* 3 lines multiplied by the line-height (1.5rem) */
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 
   }
 

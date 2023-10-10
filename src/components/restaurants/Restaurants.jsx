@@ -163,6 +163,8 @@ export default function Restaurants() {
             Our Resturants<p className="steak"></p>
           </h2>
           <p className="section-subtitle"></p>
+          <br />
+          <br />
         </div>
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
