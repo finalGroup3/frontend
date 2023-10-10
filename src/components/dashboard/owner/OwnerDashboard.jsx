@@ -1,10 +1,16 @@
 import { LoginContext } from "../../Auth/login/LogInContext";
 import { useState, useContext, useEffect } from "react";
-import Map from "../../map/Map";
 import "./OwnerDashboard.scss";
 import superagent from "superagent";
 import cookie from "react-cookies";
 import { RestaurantsContext } from "../../restaurants/RestaurantContext";
+import DashboardMap from "./DashboardMap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleCheck,
+  faCalendarXmark,
+} from "@fortawesome/free-regular-svg-icons";
+import { faHourglassEnd } from "@fortawesome/free-solid-svg-icons";
 
 const OwnerDashboard = () => {
   const [notifications, setNotifications] = useState([]);
@@ -106,9 +112,6 @@ const OwnerDashboard = () => {
     gethotelBookingsFromDb();
   }, []);
 
-
-  
-
   //////////////////////////////////========================================//////////////////////////////////////////////
 
   const handleCreateRestaurant = () => {
@@ -150,7 +153,6 @@ const OwnerDashboard = () => {
   console.log(activityBookings, "activityBookings");
   console.log(hotelBookings, "hotelBookings");
 
-
   return (
     <>
       <div className="ooooo">
@@ -172,7 +174,7 @@ const OwnerDashboard = () => {
               >
                 Create Service
               </button>
-              {showMap && <Map />}
+              {showMap && <DashboardMap />}
 
               <button className="sidebar-btn">Category</button>
               <button className="sidebar-btn">Raport</button>
@@ -192,44 +194,29 @@ const OwnerDashboard = () => {
             <div className="main__col--2">
               <div className="box box--1">
                 <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="fluent:people-32-filled"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
+                  <FontAwesomeIcon icon={faHourglassEnd} className="iconify" />
                 </div>
                 <div
                   className="box--content"
                   onClick={() => getrestBookingsFromDb()}
                 >
-                  <p className="box--title">Bookings</p>
+                  <p className="box--title">Active</p>
                 </div>
               </div>
               <div className="box box--2">
                 <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="clarity:group-line"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
+                  <FontAwesomeIcon icon={faCalendarXmark} className="iconify" />
                 </div>
                 <div className="box--content">
-                  <p className="box--title">Cancellations</p>
+                  <p className="box--title">Canceled</p>
                 </div>
               </div>
               <div className="box box--3">
                 <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="ant-design:cloud-download-outlined"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
+                  <FontAwesomeIcon icon={faCircleCheck} className="iconify" />
                 </div>
                 <div className="box--content">
-                  <p className="box--title">Views</p>
+                  <p className="box--title">Past</p>
                 </div>
               </div>
             </div>
@@ -265,13 +252,13 @@ const OwnerDashboard = () => {
                     />
                     <path
                       className="circle"
-                      strokeDasharray="15, 100"
+                      strokeDasharray="10, 100"
                       d="M18 2.0845
       a 15.9155 15.9155 0 0 1 0 31.831
       a 15.9155 15.9155 0 0 1 0 -31.831"
                     />
                     <text x={18} y="20.35" className="percentage">
-                      15%
+                      10%
                     </text>
                   </svg>
                 </div>
@@ -298,10 +285,62 @@ const OwnerDashboard = () => {
               </div>
               {/* ------------------------------------- booking details------------------------------------------ */}
             </div>
+            <div className="main__col--4">
+              <h1>Reservations</h1>
+              <div className="simple-bar-chart">
+                <div
+                  className="item"
+                  style={{ "--clr": "#5EB344", "--val": "45" }}
+                >
+                  <div className="label">2018</div>
+                  <div className="value">167</div>
+                </div>
+
+                <div
+                  className="item"
+                  style={{ "--clr": "#FCB72A", "--val": "59" }}
+                >
+                  <div className="label">2019</div>
+                  <div className="value">298</div>
+                </div>
+
+                <div
+                  className="item"
+                  style={{ "--clr": "#F8821A", "--val": "62" }}
+                >
+                  <div className="label">2020</div>
+                  <div className="value">306</div>
+                </div>
+
+                <div
+                  className="item"
+                  style={{ "--clr": "#E0393E", "--val": "78" }}
+                >
+                  <div className="label">2021</div>
+                  <div className="value">420</div>
+                </div>
+
+                <div
+                  className="item"
+                  style={{ "--clr": "#963D97", "--val": "90" }}
+                >
+                  <div className="label">2022</div>
+                  <div className="value">531</div>
+                </div>
+
+                <div
+                  className="item"
+                  style={{ "--clr": "#069CDB", "--val": "73" }}
+                >
+                  <div className="label">2023</div>
+                  <div className="value">350</div>
+                </div>
+              </div>
+            </div>
           </main>
           <aside>
+            <p className="notifTitlE">Notifications</p>
             <div className="notifications">
-              <p>Notifications</p>
               {notifications.map((n, i) => {
                 console.log(n);
                 return (
@@ -316,7 +355,7 @@ const OwnerDashboard = () => {
                 return (
                   <p key={i}>
                     {" "}
-                    {n} has made a reservation while you are offline
+                    {n} has made a reservation while you are <span className="offlineffff">offline</span>
                   </p>
                 );
               })}

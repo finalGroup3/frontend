@@ -14,7 +14,7 @@
   .inner {
     display: grid;
     grid-template-columns: 250px 1fr 355px;
-    height: 100%;
+    height: 100vh;
   }
 
   li {
@@ -128,7 +128,7 @@
 
   .main__col--1 h2 {
     font-weight: bold;
-    font-size: 23px;
+    font-size: 30px;
     color: #fff;
   }
 
@@ -154,10 +154,14 @@
   }
   .flex-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
+    gap: 162px;
     z-index: 0;
+  }
+  .iconify {
+    font-size: 20px;
   }
 
   .single-chart {
@@ -235,7 +239,7 @@
   }
 
   .box--title {
-    color: #5b607e;
+    color: white;
     font-size: 20px;
     font-weight: bold;
   }
@@ -248,9 +252,16 @@
 
   .main__col--3 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
-    margin: 50px 0;
+    margin: 30px 0;
+    height: auto;
+  }
+  .main__col--4{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    margin: 20px 0;
     height: auto;
   }
 
@@ -304,6 +315,7 @@
   aside {
     padding: 20px 20px;
     background: #052630c2;
+    overflow: hidden;
   }
   #sidebar {
     background-color: #052630c2;
@@ -480,27 +492,95 @@
   }
 
   .notifications {
+    overflow-y: auto;
+    height: 90%;
     background-color: #0f0909;
     border: 1px solid #ddd;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
   }
-  
+
   .notifications p {
     margin: 0 0 10px;
     padding: 10px;
-    background-color: #0f7224;
+    background-color: #165769  ;
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  
+  .notifTitlE{
+    font-size: 25px;
+  }
+
   /* Optional: Add some additional styles for better readability */
   .notifications p:nth-child(even) {
-    background-color: #0f7224;
+    background-color: #165769 ;
   }
-  
+
   .notifications p:hover {
     background-color: #1e83b3;
+  }
+  .offlineffff{
+    color: #FCA41C ;
+    font-weight: 500;
+  }
+
+  //==========================================================================
+
+  .simple-bar-chart {
+    --line-count: 10;
+    --line-color: currentcolor;
+    --line-opacity: 0.25;
+    --item-gap: 2%;
+    --item-default-color: #060606;
+
+    height: 14rem;
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--item-gap);
+    align-items: end;
+    padding-inline: var(--item-gap);
+    --padding-block: 1.5rem; /*space for labels*/
+    padding-block: var(--padding-block);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .simple-bar-chart::after {
+    content: "";
+    position: absolute;
+    inset: var(--padding-block) 0;
+    z-index: -1;
+    --line-width: 1px;
+    --line-spacing: calc(100% / var(--line-count));
+    background-image: repeating-linear-gradient(
+      to top,
+      transparent 0 calc(var(--line-spacing) - var(--line-width)),
+      var(--line-color) 0 var(--line-spacing)
+    );
+    box-shadow: 0 var(--line-width) 0 var(--line-color);
+    opacity: var(--line-opacity);
+  }
+  .simple-bar-chart > .item {
+    height: calc(1% * var(--val));
+    background-color: var(--clr, var(--item-default-color));
+    position: relative;
+    animation: item-height 1s ease forwards;
+  }
+  @keyframes item-height {
+    from {
+      height: 0;
+    }
+  }
+
+  .simple-bar-chart > .item > * {
+    position: absolute;
+    text-align: center;
+  }
+  .simple-bar-chart > .item > .label {
+    inset: 100% 0 auto 0;
+  }
+  .simple-bar-chart > .item > .value {
+    inset: auto 0 100% 0;
   }
 }

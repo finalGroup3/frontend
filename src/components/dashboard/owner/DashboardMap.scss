@@ -1,0 +1,297 @@
+.sssslaith {
+    overflow: hidden;
+  
+    .map label {
+      width: max-content;
+      color: tomato;
+      font-size: 13px;
+      border-bottom: 0.5px solid tomato;
+      margin: 3px 0;
+    }
+  
+    .map .desc {
+      font-size: 14px;
+    }
+  
+    .map .star {
+      color: gold;
+    }
+  
+    .map .username {
+      font-size: 14px;
+    }
+  
+    .map .date {
+      font-size: 12px;
+    }
+  
+    .map form {
+      width: 250px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: rgb(88, 87, 87);
+    }
+  
+    .map input {
+      border: none;
+      border-bottom: 1px solid gray;
+    }
+  
+    .map input::placeholder,
+    textarea::placeholder {
+      font-size: 12px;
+      color: rgb(185, 184, 184);
+    }
+  
+    .map input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+    }
+  
+    .map textarea {
+      border: none;
+      border-bottom: 1px solid gray;
+    }
+  
+    .map .submitButton {
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      background-color: tomato;
+      cursor: pointer;
+    }
+  
+    .map .buttons,
+    .logout {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  
+    .map .button {
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  
+    .map .button:focus {
+      outline: none;
+    }
+  
+    .map .logout {
+      background-color: tomato;
+    }
+  
+    .map .login {
+      background-color: teal;
+      margin-right: 10px;
+    }
+  
+    .map .register {
+      background-color: slateblue;
+    }
+  
+    .mapboxgl-popup-content {
+      width: 290px !important;
+      padding: 10px;
+      border-radius: 25px !important;
+      background: #001319;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      color: aliceblue;
+     
+    }
+  .mapcard {
+      height: 460px;
+      min-height: 4vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 200px !important;
+      border-radius: 10px !important;
+      font-family: "Lugrasimo", cursive;
+      
+  }
+  .close-iconn{
+    font-size: 30px; 
+    color: red;
+    cursor: pointer; 
+    position: absolute;
+    font-weight:bold ;
+    top: 10px; 
+    right: 1px;
+  }
+    .restinfoo {
+      margin: 30px 20px;
+      font-size: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .place {
+      font-size: 22px;
+      font-family: "Lugrasimo", cursive;
+      font-weight: 900;
+    }
+  
+    .mapcard img {
+      border-radius: 30px 0 !important;
+    
+      height: 400px;
+    }
+  
+    .mapform {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      max-width: 300px; 
+      margin: 0 auto;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+    
+    .mapform form {
+      display: grid;
+      gap: 10px;
+    }
+    
+    .mapform form label {
+      font-size: 12px; 
+      font-family: "Lugrasimo", cursive;
+      font-weight: 600;
+      color: aliceblue;
+    }
+    
+    .mapform form input,
+    .mapform form textarea,
+    .mapform form select {
+      border: 1px solid;
+      border-radius: 6px; 
+      padding: 4px 8px; 
+      font-size: 12px; 
+    }
+    
+    .mapform form input::placeholder,
+    .mapform form textarea::placeholder {
+      font-size: 12px; 
+      padding: 4px 8px; 
+      color: rgb(0, 27, 52);
+    }
+    
+    .mapform form button {
+      height: 30px; 
+      font-size: 14px; 
+      border-radius: 6px; 
+      background-color: rgb(0, 29, 58);
+      color: rgb(255, 255, 255);
+    }
+    
+    .mapform form select {
+      height: 25px; 
+    }
+    
+    
+    
+    #earth {
+      background-image: url("https://encrypted-tbn3.google.com/images?q=tbn:ANd9GcTQqoB4xBnIkmUg5pxDyYW2h0Q1pRTsbQBOfhg-E-y4iLFicsyi");
+      width: 50px;
+      height: 50px;
+      box-shadow: inset 16px 0 40px 3px rgba(0, 0, 0, 0.9),
+        inset -3px 0 5px 2px rgba(255, 255, 255, 0.16);
+      background-size: 190px;
+      margin: 10px auto;
+      border-radius: 50%;
+      position: relative;
+      animation-name: move, scale, rotate;
+      animation-duration: 4s, 4s, 4s;
+      animation-iteration-count: infinite, infinite, infinite;
+      animation-timing-function: ease-in-out, linear, linear;
+      z-index: 2;
+    }
+  
+    @keyframes move {
+      0% {
+        left: 50px;
+      }
+      70% {
+        left: -50px;
+      }
+      100% {
+        left: 50px;
+      }
+    }
+  
+    @keyframes scale {
+      0% {
+        transform: scale(1);
+      }
+      32% {
+        transform: scale(0.4);
+        animation-timing-function: ease-in;
+      }
+      70% {
+        transform: scale(1);
+        animation-timing-function: ease-in;
+      }
+      75% {
+        transform: scale(1.2);
+        animation-timing-function: ease-in-out;
+      }
+   
+    }
+  
+    @keyframes rotate {
+      0% {
+        background-position: 0px;
+      }
+      100% {
+        background-position: 190px;
+      }
+    }
+    .stars{
+      color:yellow
+    }
+    .map-container {
+      translate: 127px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%; /* Adjust the width as needed, for example, 90% of the viewport width */
+      height: 90vh; /* Adjust the height as needed, for example, 90% of the viewport height */
+      max-width: 1200px; /* Set a maximum width to prevent it from getting too wide */
+      max-height: 1000px; /* Set a maximum height to prevent it from getting too tall */
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+  }
+  
+  
+  
+  
+    .sidenavbar-container {
+      position: fixed;
+      width: 400vw;
+      margin-top: 70px;
+      margin-left: 1vh;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+  }
+  

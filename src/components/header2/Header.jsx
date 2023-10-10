@@ -6,7 +6,7 @@ import { LoginContext } from "../Auth/login/LogInContext";
 import "./Header.scss";
 import { useEffect, useState, useContext } from "react";
 import { When } from "react-if";
-import profile from "./laith profile.png";
+import profile from "../../assets/profile.png";
 import { Link } from "react-router-dom";
 
 export default function Header() {
