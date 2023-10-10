@@ -15,7 +15,6 @@ import Map, {
   Popup,
 } from "react-map-gl";
 import SideNavBar from "../reels/SideNavBar";
-import { Rating } from "@mui/material";
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
   enableHighAccuracy: true,
@@ -43,7 +42,9 @@ function MApp() {
   const [resturant, setResturant] = useState([]);
   const [hotel, setHotel] = useState([]);
   const [activity, setActivity] = useState([]);
+  const [pins, setPins] = useState([]);
   const [newPlace, setNewPlace] = useState(null);
+  const [star, setStar] = useState(0);
   const [start, setStart] = useState(zzz);
   const [currentPlaceId, setCurrentPlaceId] = useState(null);
   const [end, setEnd] = useState([zzz]);
@@ -54,7 +55,6 @@ function MApp() {
   const [restAddress, setRestAddress] = useState("");
   const [restRating, setRestRating] = useState(0);
   const [restPrice, setRestPrice] = useState("");
-  
   const [initialViewState, setInitialViewState] = useState({
     longitude: 35.9106,
     latitude: 31.9539,
@@ -246,17 +246,18 @@ function MApp() {
 
   return (
     <>
-      <div className='ssss'>
-        <div className="sidenavbar-container">
-         
-        </div> 
+      <div className="ssss">
+        {/* <div className="sidenavbar-container">
+          <div id="earth"></div>
+          <SideNavBar />
+        </div> */}
         <SideNavBar />
         <div className="map-container">
           {coords && (
             <Map
               {...initialViewState}
               onClick={handleClick}
-              className='map'
+              className="map"
               onMove={(evt) => setInitialViewState(evt.initialViewState)}
               mapboxAccessToken={
                 "pk.eyJ1IjoiYW1yb2Jhbmlpc3NhIiwiYSI6ImNsa3RtZXZ6aTBheG8zZnFvZXA2NmJ1dmoifQ.niUJad6HoR8yfURjiAS5Dw"
@@ -279,36 +280,37 @@ function MApp() {
                   </Marker>
 
                   {p.id === currentPlaceId && (
-                    <section className='pppp'>
+                    <section className="pppp">
                       <Popup
-                        className='popup'
+                        className="popup"
                         key={p.id}
                         latitude={p.lat}
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
                         onClose={() => setCurrentPlaceId(null)}
-                        anchor='left'>
-                        <div className='mapcard'>
-                          {/* <span
-                            className='close-iconn'
-                            onClick={() => setCurrentPlaceId(null)}>
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
                             &#215;
-                          </span> */}
+                          </span>
                           <img src={p.img} />
-                          <div className='stars'>
-                            {/* {Array(p.rating).fill(
-                              <StarIcon className='star' />
-                            )} */}
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
                           </div>
-                          <section className='restinfoo'>
-                            {/* <label>Name</label> */}
-                            <h4 className='place'>{p.name}</h4>
-                            {/* <label>Description</label> */}
-                            <p className='desc'>{p.description}</p>
-                            {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
-                            <Rating name="read-only" value={p.rating} readOnly />
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
                           </section>
                         </div>
                       </Popup>
@@ -330,35 +332,37 @@ function MApp() {
                   </Marker>
 
                   {p.id === currentPlaceId && (
-                    <section className='pppp'>
+                    <section className="pppp">
                       <Popup
-                        className='popup'
+                        className="popup"
                         key={p.id}
                         latitude={p.lat}
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
                         onClose={() => setCurrentPlaceId(null)}
-                        anchor='left'>
-                        <div className='mapcard'>
-                          {/* <span
-                            className='close-iconn'
-                            onClick={() => setCurrentPlaceId(null)}>
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
                             &#215;
-                          </span> */}
+                          </span>
                           <img src={p.img} />
-                          <div className='stars'>
-                            {/* {Array(p.rating).fill(
-                              <StarIcon className='star' />
-                            )} */}
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
                           </div>
-                          <section className='restinfoo'>
-                            {/* <label>Name</label> */}
-                            <h4 className='place'>{p.name}</h4>
-                            {/* <label>Description</label> */}
-                            <p className='desc'>{p.description}</p>
-                            {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
                           </section>
                         </div>
                       </Popup>
@@ -380,35 +384,37 @@ function MApp() {
                   </Marker>
 
                   {p.id === currentPlaceId && (
-                    <section className='pppp'>
+                    <section className="pppp">
                       <Popup
-                        className='popup'
+                        className="popup"
                         key={p.id}
                         latitude={p.lat}
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
                         onClose={() => setCurrentPlaceId(null)}
-                        anchor='left'>
-                        <div className='mapcard'>
-                          {/* <span
-                            className='close-iconn'
-                            onClick={() => setCurrentPlaceId(null)}>
+                        anchor="left"
+                      >
+                        <div className="mapcard">
+                          <span
+                            className="close-iconn"
+                            onClick={() => setCurrentPlaceId(null)}
+                          >
                             &#215;
-                          </span> */}
+                          </span>
                           <img src={p.img} />
-                          <div className='stars'>
-                            {/* {Array(p.rating).fill(
-                              <StarIcon className='star' />
-                            )} */}
+                          <div className="stars">
+                            {Array(p.rating).fill(
+                              <StarIcon className="star" />
+                            )}
                           </div>
-                          <section className='restinfoo'>
-                            {/* <label>Name</label> */}
-                            <h4 className='place'>{p.name}</h4>
-                            {/* <label>Description</label> */}
-                            <p className='desc'>{p.description}</p>
-                            {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
+                          <section className="restinfoo">
+                            <label>Name</label>
+                            <h4 className="place">{p.name}</h4>
+                            <label>Description</label>
+                            <p className="desc">{p.description}</p>
+                            <label>Price</label>
+                            <p className="desc">{p.price}JD</p>
                           </section>
                         </div>
                       </Popup>
@@ -420,7 +426,7 @@ function MApp() {
                 <NavigationControl />
               </div>
               <GeolocateControl ref={geoControlRef} />
-              <Source id='routeSource' type='geojson' data={geojson}>
+              <Source id="routeSource" type="geojson" data={geojson}>
                 <Layer {...lineStyle} />
               </Source>
               {newPlace && (
@@ -440,35 +446,37 @@ function MApp() {
                     closeButton={true}
                     closeOnClick={false}
                     onClose={() => setNewPlace(null)}
-                    anchor='left'>
-                    {/* <div className='mapform'> */}
-                      {/* <div
-                        className='close-iconn'
-                        onClick={() => setNewPlace(null)}>
+                    anchor="left"
+                  >
+                    <div className="mapform">
+                      <div
+                        className="close-iconn"
+                        onClick={() => setNewPlace(null)}
+                      >
                         &#215;
-                      </div> */}
+                      </div>
                       <form onSubmit={handleSubmit}>
                         <label>Name</label>
                         <input
-                          placeholder='Enter your restaurant name'
+                          placeholder="Enter your restaurant name"
                           autoFocus
                           onChange={(e) => setRestName(e.target.value)}
                         />
 
                         <label>Image</label>
                         <input
-                          placeholder='Enter your restaurant name'
+                          placeholder="Enter your restaurant name"
                           autoFocus
                           onChange={(e) => setRestImg(e.target.value)}
                         />
 
                         <label>Description</label>
                         <textarea
-                          placeholder='Say us something about this place.'
+                          placeholder="Say us something about this place."
                           onChange={(e) => setRestDesc(e.target.value)}
                         />
-                        <section className="two-inputs">
-                           <label>Type</label>
+
+                        <label>Type</label>
                         <select
                           onChange={(e) => setLocationType(e.target.value)}
                         >
@@ -483,47 +491,32 @@ function MApp() {
                           </option>
                         </select>
 
-                        <label>Rating</label>
-                        <select onChange={(e) => setRestRating(e.target.value)}>
-                          <option value='1'>⭐</option>
-                          <option value='2'>⭐⭐</option>
-                          <option value='3'>⭐⭐⭐</option>
-                          <option value='4'>⭐⭐⭐⭐</option>
-                          <option value='5'>⭐⭐⭐⭐⭐</option>
-                        </select>
-                        <label>Price</label>
+                        <label>Address</label>
                         <input
-                          placeholder='price range.'
-                          onChange={(e) => setRestPrice(e.target.value)}
-                        />
-                        </section>
-                       
-                      {/* <section className="two-inputs"> */}
-                         <label>Address</label>
-                        <input
-                          placeholder='Enter your address.'
+                          placeholder="Enter your address."
                           onChange={(e) => setRestAddress(e.target.value)}
                         />
-                        
-                      {/* </section> */}
-                       
-{/* 
+
                         <label>Rating</label>
                         <select onChange={(e) => setRestRating(e.target.value)}>
-                          <option value='1'>⭐</option>
-                          <option value='2'>⭐⭐</option>
-                          <option value='3'>⭐⭐⭐</option>
-                          <option value='4'>⭐⭐⭐⭐</option>
-                          <option value='5'>⭐⭐⭐⭐⭐</option>
-                        </select> */}
+                          <option value="1">⭐</option>
+                          <option value="2">⭐⭐</option>
+                          <option value="3">⭐⭐⭐</option>
+                          <option value="4">⭐⭐⭐⭐</option>
+                          <option value="5">⭐⭐⭐⭐⭐</option>
+                        </select>
 
-                       
+                        <label>Price</label>
+                        <input
+                          placeholder="Enter your price range."
+                          onChange={(e) => setRestPrice(e.target.value)}
+                        />
 
-                        <button type='submit' className='submitButton'>
+                        <button type="submit" className="submitButton">
                           Add Pin
                         </button>
                       </form>
-                    {/* </div> */}
+                    </div>
                   </Popup>
                 </>
               )}

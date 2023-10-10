@@ -1,44 +1,21 @@
 import "./Dashboard.scss";
-import { useState,useEffect } from "react";
+
+import React, { useState } from "react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SideNavBar from "./SideNavBar2";
+import Chat from "../../chat/Chat";
 import DashboardPage from "./dashboardPage/DashboardPage";
 import Room from "../../chat/Room";
-import DashboardTable from "../table/Table";
-import waveLine from "./WaveLine.svg";
-import { useContext } from "react";
+import { Unstable_Popup as Popup } from "@mui/base/Unstable_Popup";
+import Table from "../table/Table";
+import waveLine from './WaveLine.svg'
+import {useContext} from 'react'
 import { RestaurantsContext } from "../../restaurants/RestaurantContext";
-import superagent from "superagent";
-import cookie from "react-cookies";
-import UsersTable from "../table/UsersTable";
-
+import WavesAnimation from "../waves";
 const Dashboard = () => {
   const [component, setComponent] = useState("Dashboard");
-  const [users, setUsers] = useState("Dashboard");
   const state = useContext(RestaurantsContext);
-
-
-
-  const usersFromDB = async () => {
-    try {
-      const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/allusers`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
-   
-      
-      setUsers(response.body);
-      console.log(users, "++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    } catch (error) {
-      console.error(error);
-    }
-  };
- 
-
-  
-  useEffect(() => {
-  
-    usersFromDB()
-  }, []);
-
 
   const currComponent = (component) => {
     setComponent(component);
@@ -53,37 +30,47 @@ const Dashboard = () => {
             currComponent={currComponent}
           />
 
+          {/* <section className="top-nav-contain">
+            <section className="top-nav-admin">
+              <span className="notfi-admiv">
+              <Popup/>
+              </span>
+            </section>
+          </section> */}
+
           {component == "HelpCenter" ? (
             <Room />
           ) : component == "Dashboard" ? (
             <DashboardPage />
-          ) : component == "Restaurants" ? (
-            <div>
-              <h3 className='dashboard-page-title'>Restaurants</h3>
-
-              <DashboardTable
-                data={state.restaurantsList}
-                type={"Restaurants"}
-              />
-            </div>
-          ) : component == "Hotels" ? (
-            <div>
-              <h3 className='dashboard-page-title'>Hotels</h3>
-              {/* <img className='waveLine' src={waveLine} /> */}
-              <DashboardTable data={state.hotelsList} type={"Hotels"} />
-            </div>
-          ) : component == "Activties" ? (
-            <div>
-              <h3 className='dashboard-page-title'>Activties</h3>
-              {/* <img className='waveLine' src={waveLine} /> */}
-              <DashboardTable data={state.activitiesList} type={"Activties"} />
-            </div>
-          ) : component == "Users" ? (
-            <div>
-              <h3 className='dashboard-page-title'>Users</h3>
-              <UsersTable data={users} />
-            </div>
-          ) : (
+          ) :  component == "Restaurants" ? (
+           <div>
+           <h3 className="dashboard-page-title">Restaurants</h3>
+           {/* <img className='waveLine' src={waveLine}/> */}
+           <WavesAnimation className='waveLine'/>
+           {/* <p className="dashboard-page-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit vero, maxime voluptatibus voluptates molestiae velit assumenda, fugiat tenetur ipsam odio repellendus molestias facere architecto odit? Error iure necessitatibus fuga!</p> */}
+            <Table data={state.restaurantsList} />
+            </div>) :  component == "Hotels" ? (
+           <div>
+           <h3 className="dashboard-page-title">Hotels</h3>
+           <img className='waveLine' src={waveLine}/>
+           {/* <p className="dashboard-page-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit vero, maxime voluptatibus voluptates molestiae velit assumenda, fugiat tenetur ipsam odio repellendus molestias facere architecto odit? Error iure necessitatibus fuga!</p> */}
+            <Table data={state.hotelsList} />
+            </div>) :  component == "Activties" ? (
+           <div>
+           <h3 className="dashboard-page-title">Activties</h3>
+           <img className='waveLine' src={waveLine}/>
+           {/* <p className="dashboard-page-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit vero, maxime voluptatibus voluptates molestiae velit assumenda, fugiat tenetur ipsam odio repellendus molestias facere architecto odit? Error iure necessitatibus fuga!</p> */}
+            <Table data={state.activitiesList} />
+            </div>) :  component == "Restaurants" ? (
+           <div>
+           <h3 className="dashboard-page-title">Restaurants</h3>
+           <img className='waveLine' src={waveLine}/>
+           {/* <p className="dashboard-page-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus impedit vero, maxime voluptatibus voluptates molestiae velit assumenda, fugiat tenetur ipsam odio repellendus molestias facere architecto odit? Error iure necessitatibus fuga!</p> */}
+            <Table data={""} />
+            </div>):
+            
+            
+            (
             ""
           )}
         </div>

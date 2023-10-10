@@ -10,7 +10,9 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CCard from "../restaurants/CCard";
 import { RestaurantsContext } from "../restaurants/RestaurantContext";
-import ReelModal from "../reels/Modal/ReelModal";
+// import ReelModal from "../reels/Modal/ReelModal";
+import Modal22 from "../reels/Modal22/Modal22";
+
 
 const Hotel = () => {
   const state = useContext(RestaurantsContext);
@@ -49,6 +51,132 @@ const Hotel = () => {
           </section>
           <br />
           <br />
+          <h2 className="headline-1 section-title">Top Hotels</h2>
+            <p className="section-subtitle"></p>
+<div className="TopTop">
+            <section
+          className="section service bg-black-10 text-center "
+          aria-label="service"
+        >
+          <div className="container-top-three-resturants">
+            <br />
+            {/* <h2 className="headline-1 section-title">Top Resturants</h2> */}
+
+            {/* <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
+            <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
+            <button onClick={() => state.updateRestaurantsInDb("send the id")}>update</button> */}
+
+            {/* <p className="section-subtitle2 label-2">Flavors For Royalty</p> */}
+            {/* <p className="section-subtitle"></p> */}
+            <br />
+            <br />
+            <ul className="grid-list">
+              <li>
+                <div className="service-card">
+                  <a href="#" className="has-before hover:shine">
+                    <figure
+                      className="card-banner img-holder"
+                      style={{ "--width": "285", "--height": "336" }}
+                    >
+                      <img
+                        src="https://media.cntraveler.com/photos/53d9b725dcd5888e1459604a/16:9/w_2560,c_limit/m-venpick-resort-residence-aqaba-aqaba-jordan-109878-1.jpg"
+                        width={285}
+                        height={336}
+                        loading="lazy"
+                        alt="Breakfast"
+                        className="img-cover"
+                      />
+                    </figure>
+                  </a>
+                  <div className="card-content">
+                    <h3 className="title-4 card-title">
+                      <a href="#">Movenpick</a>
+                    </h3>
+                    <a href="#" className="btn-text hover-underline label-2">
+                      Book now
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="service-card">
+                  <a href="#" className="has-before hover:shine">
+                    <figure
+                      className="card-banner img-holder"
+                      style={{ "--width": "285", "--height": "336" }}
+                    >
+                      <img
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/37/3d/a5/hotel-facade.jpg?w=1200&h=-1&s=1"
+                        width={285}
+                        height={336}
+                        loading="lazy"
+                        alt="Appetizers"
+                        className="img-cover"
+                      />
+                    </figure>
+                  </a>
+                  <div className="card-content">
+                    <h3 className="title-4 card-title">
+                      <a href="#">Fairmont</a>
+                    </h3>
+                    <a href="#" className="btn-text hover-underline label-2">
+                      Book now
+                    </a>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div className="service-card">
+                  <a href="#" className="has-before hover:shine">
+                    <figure
+                      className="card-banner img-holder"
+                      style={{ "--width": "285", "--height": "336" }}
+                    >
+                      <img
+                        src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/68/45/8a/exterior.jpg?w=1100&h=-1&s=1"
+                        width={285}
+                        height={336}
+                        loading="lazy"
+                        alt="Drinks"
+                        className="img-cover"
+                      />
+                    </figure>
+                  </a>
+                  <div className="card-content">
+                    <h3 className="title-4 card-title">
+                      <a href="#">Helton</a>
+                    </h3>
+                    <a href="#" className="btn-text hover-underline label-2">
+                      Book now
+                    </a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            {/* <img
+              src={shape1}
+              width={246}
+              height={412}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-1 move-anim"
+            />
+            <img
+              src={shape2}
+              width={343}
+              height={345}
+              loading="lazy"
+              alt="shape"
+              className="shape shape-2 move-anim"
+            /> */}
+          </div>
+        </section>
+
+        </div>
+
+
+
+            
           {/* <a href="#" className="hero-btn has-after">
             <img
               className="imgg"
@@ -79,7 +207,9 @@ const Hotel = () => {
                   <div>
                     <CCard key={element.id} element={element} hotelId={element.id}/>
                     <div className="s">
-                    <ReelModal hotelId={element.id} />
+                    {/* <ReelModal hotelId={element.id} /> */}
+                    <Modal22 hotelId={element.id} />
+
                     </div>
                   </div>
                 </>

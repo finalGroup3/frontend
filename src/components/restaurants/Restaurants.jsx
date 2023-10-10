@@ -1,13 +1,13 @@
 import "./restaurants.scss";
 import { useContext, useEffect, useState } from "react";
 import service1 from "../../assets/service-1.jpg";
-import service2 from "../../assets/jubran.jpg";
 import service3 from "../../assets/service-3.jpg";
 import shape1 from "../../assets/shape-1.png";
 import shape2 from "../../assets/shape-2.png";
 import jubran from "../../assets/jubran.jpg";
 import burger from "../../assets/burger.jpg";
 import rest2 from "../../assets/rest2.png";
+import service2 from "../../assets/jubran.jpg";
 import salt from "../../assets/SALT.jpg";
 import rest4 from "../../assets/rest4.jpg";
 import mansaf2 from "../../assets/mansaf2.jpg";
@@ -17,13 +17,15 @@ import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
 import { FavoritesContext } from "../favorites/favContext";
 import CCard from "./CCard";
-import ReelModal from "../reels/Modal/ReelModal";
+import HeroRest from "./HeroRest";
+// import ReelModal from "../reels/Modal/ReelModal";
+import Modal22 from "../reels/Modal22/Modal22";
 
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-  },[])
+  }, []);
 
   const FaveState = useContext(FavoritesContext);
   // const addfave = () => {
@@ -31,11 +33,11 @@ export default function Restaurants() {
   // };
   return (
     <>
-    
       <Header />
+      <HeroRest/>
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb22">
-        <section
+      <section
           className="section service bg-black-10 text-center "
           aria-label="service"
         >
@@ -164,19 +166,17 @@ export default function Restaurants() {
         </div>
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
-            return(
+            return (
               <>
-              <CCard key={element.id} element={element} restId={element.id} />
-              <ReelModal restId={element.id} />
+                <CCard key={element.id} element={element} restId={element.id} />
+                {/* <ReelModal restId={element.id} /> */}
+                <Modal22 restId={element.id} />
               </>
-              
-              );
-
+            );
           })}
         </div>
       </div>
       <Footer />
-
     </>
   );
 }

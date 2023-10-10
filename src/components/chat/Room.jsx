@@ -2,15 +2,12 @@ import "./Room.scss";
 import { useState, useEffect, useContext } from "react";
 import Chat from "./Chat";
 import { LoginContext } from "../Auth/login/LogInContext";
-import img from '../../imgs/user (5).png'
 
 function Room() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
-  const [notifications, setNotifications] = useState([
-     
-  ]);
+  const [notifications, setNotifications] = useState([]);
 
   const state = useContext(LoginContext);
 
@@ -40,55 +37,34 @@ function Room() {
     } 
   }, [showChat]);
 
-  // console.log(notifications)
-  // console.log(notifications[0])
+  console.log(notifications)
+  console.log(notifications[0])
 
 
   return (
     <>
-    <div className="chat-contain">
- <h2>chat App</h2>
- <p className='top-starts-chat'>✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧ ✧  </p>
-
-     {/* <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate consequatur maiores est!</p> */}
+   
      <div className="ChatApp">
-    
       {
         state?.user?.role === 'user' ?
           (<Chat room = {state.user.id}  />) :
           !showChat
             ? (
               <>
-               <section className="chatRoom">
+               <section className="users-chat">
     <div className="notifications">
-      <p className="user-list-title">open Chats</p>
           {
             notifications.map((n,i) => {
               console.log(n)
               return (
-                <div key={i} className="notification-item">
-
-<li >
-  <img  className = 'user-img-chat' src={img}/>
-  <span className="span-contain">
-
-    <span className="senderName"> {n.senderName}</span>
-  <span className="roomId">joined room {n.roomId}</span>
-
-  </span>
-  
-</li>
-                
-                </div>
-
+                <p key={i}>{n.senderName} joined room {n.roomId}</p>
               )
             })
           }
         </div>
     </section>
                <div className="joinChatContainer">
-                <h3>✧✧ Join A Chat ✧✧   <p>- - - - - - - - - - - - - - - - </p></h3>
-             
+                <h3>Join A Chat</h3>
                 <input
                   type="text"
                   placeholder="Name..."
@@ -111,9 +87,6 @@ function Room() {
               <Chat room = {room}  />
             )}
     </div>
-
-    </div>
-    
     </>
    
   );
