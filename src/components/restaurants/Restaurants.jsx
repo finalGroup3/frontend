@@ -17,13 +17,14 @@ import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
 import { FavoritesContext } from "../favorites/favContext";
 import CCard from "./CCard";
-import ReelModal from "../reels/Modal/ReelModal";
+// import ReelModal from "../reels/Modal/ReelModal";
+import Modal22 from "../reels/Modal22/Modal22";
 
 export default function Restaurants() {
   const state = useContext(RestaurantsContext);
-  useEffect(()=>{
+  useEffect(() => {
     window.scrollTo(0, 0);
-  },[])
+  }, []);
 
   const FaveState = useContext(FavoritesContext);
   // const addfave = () => {
@@ -31,7 +32,6 @@ export default function Restaurants() {
   // };
   return (
     <>
-    
       <Header />
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb">
@@ -164,19 +164,17 @@ export default function Restaurants() {
         </div>
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
-            return(
+            return (
               <>
-              <CCard key={element.id} element={element} restId={element.id} />
-              <ReelModal restId={element.id} />
+                <CCard key={element.id} element={element} restId={element.id} />
+                {/* <ReelModal restId={element.id} /> */}
+                <Modal22 restId={element.id} />
               </>
-              
-              );
-
+            );
           })}
         </div>
       </div>
       <Footer />
-
     </>
   );
 }
