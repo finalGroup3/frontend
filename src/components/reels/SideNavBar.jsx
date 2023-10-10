@@ -48,27 +48,28 @@ const SideNavBar = () => {
                   <span className="text nav-text">Home</span>
                 </Link>
               </li>
-
-              <li className="nav-link">
-                <Link to={"/favorites"} className="popush">
-                  <FontAwesomeIcon
-                    className="fontAWSomeIcons"
-                    icon={faBookmark}
-                  />
-                  <span className="text nav-text">Favorite</span>
-                </Link>
-              </li>
-
-              <li className="nav-link">
-                <Link to={"/bookings"} className="popush">
-                  <FontAwesomeIcon
-                    className="fontAWSomeIcons"
-                    icon={faClipboardList}
-                  />
-                  <span className="text nav-text">Bookings</span>
-                </Link>
-              </li>
-
+              <When condition={state.user.role === "user"}>
+                <li className="nav-link">
+                  <Link to={"/favorites"} className="popush">
+                    <FontAwesomeIcon
+                      className="fontAWSomeIcons"
+                      icon={faBookmark}
+                    />
+                    <span className="text nav-text">Favorite</span>
+                  </Link>
+                </li>
+              </When>
+              <When condition={state.user.role === "user"}>
+                <li className="nav-link">
+                  <Link to={"/bookings"} className="popush">
+                    <FontAwesomeIcon
+                      className="fontAWSomeIcons"
+                      icon={faClipboardList}
+                    />
+                    <span className="text nav-text">Bookings</span>
+                  </Link>
+                </li>
+              </When>
               <li className="nav-link">
                 <Link to={"/reels"} className="popush">
                   <FontAwesomeIcon className="fontAWSomeIcons" icon={faPlay} />
@@ -94,6 +95,18 @@ const SideNavBar = () => {
                   />
                   <span className="text nav-text">About Us</span>
                 </Link>
+              </li>
+              <li className="noyesno">
+                <When condition={state.user.role === "owner"}>
+                  <Link to="/dashboard/owner" className="text nav-text">
+                    Dashboard
+                  </Link>
+                </When>
+                <When condition={state.user.role === "admin"}>
+                  <Link to="/dashboard/admin" className="text nav-text">
+                    Dashboard
+                  </Link>
+                </When>
               </li>
             </ul>
           </div>
@@ -122,16 +135,6 @@ const SideNavBar = () => {
                   </Link>
                 </When>
                 <When condition={state.loggedIn}>
-                  <When condition={state.user.role === "owner"}>
-                    <Link to="/dashboard/owner" className="popush">
-                      Dashboard
-                    </Link>
-                  </When>
-                  <When condition={state.user.role === "admin"}>
-                    <Link to="/dashboard/admin" className="popush">
-                      Dashboard
-                    </Link>
-                  </When>
                   <Link className="popush" onClick={state.logout}>
                     <span className="text nav-text">Logout</span>
                   </Link>

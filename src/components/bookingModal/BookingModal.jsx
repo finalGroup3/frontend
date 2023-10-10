@@ -1,23 +1,40 @@
 import "./BookingModal.scss";
 import { LoginContext } from "../Auth/login/LogInContext";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import superagent from "superagent";
 import cookie from "react-cookies";
 
 const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
+  const state = useContext(LoginContext);
+
   const [username, setUsername] = useState("");
   const [howmany, setHowmany] = useState("");
   const [date, setDate] = useState("");
-  const state = useContext(LoginContext);
+  const [oneUser, setOneUser] = useState("");
 
-  if (!open) return null;
+  console.log("item...............", item);
+  const getOneUser = async () => {
+    try {
+      const response = await superagent
+        .get(`${import.meta.env.VITE_DATABASE_URL}/oneuser/${item.ownerId}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+      const items = response.body;
+      if (response.ok) {
+        setOneUser(items.username);
+      }
+      console.log("username :::::::::: ", items.username);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const notifyBooking = async (e) => {
     e.preventDefault();
     state.socket?.emit("sendNotification", {
       senderName: state.user.username,
-      receiverName: "laith",
+      receiverName: oneUser,
     });
+
     console.log("restId ", restId, "hotelId ", hotelId, "activId ", activId);
 
     const object = {
@@ -27,7 +44,6 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
       howmany: howmany,
       date: date,
     };
-
 
     if (restId) {
       object["restaurantId"] = restId;
@@ -53,6 +69,12 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
 
     onClose();
   };
+
+  useEffect(() => {
+    item.ownerId && getOneUser();
+  }, []);
+
+  if (!open) return null;
 
   return (
     <div onClick={onClose} className="modalOverlay">

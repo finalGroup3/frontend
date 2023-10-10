@@ -176,9 +176,9 @@ const ReelsProvider = (props) => {
   // console.log(restReels,"afterrespons")
 
 
-  useEffect(() => {
-    getAllReels();
-  }, []);
+  // useEffect(() => {
+  //   getAllReels();
+  // }, []);
 
   const state = {
     allReels: allReels,

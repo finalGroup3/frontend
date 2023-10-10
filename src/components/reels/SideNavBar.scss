@@ -335,4 +335,13 @@
   .nobodyyy.dark .home .text {
     color: var(--text-color);
   }
+  .nav-text{
+    text-decoration: none;
+  }
+  .noyesno{
+    a{
+      padding-left: 68px;
+    }
+    transform: translateY(140px);
+  }
 }

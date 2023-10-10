@@ -6,8 +6,6 @@ import { LoginContext } from "../Auth/login/LogInContext";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
 import "./Map.scss";
-import SideNavBar from "./SideNavBar";
-
 import Map, {
   NavigationControl,
   Layer,
@@ -16,6 +14,7 @@ import Map, {
   Marker,
   Popup,
 } from "react-map-gl";
+import SideNavBar from "../reels/SideNavBar";
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
   enableHighAccuracy: true,
@@ -37,6 +36,7 @@ function setupMap(center) {
 }
 
 function MApp() {
+  const loginState = useContext(LoginContext);
   const [locationType, setLocationType] = useState("resturant");
   const [resturant, setResturant] = useState([]);
   const [hotel, setHotel] = useState([]);
@@ -72,7 +72,7 @@ function MApp() {
       setCoords(coords);
     };
 
-    getRoute(); 
+    getRoute();
   }, [end, start]);
   const geojson = {
     type: "FeatureCollection",
@@ -97,23 +97,23 @@ function MApp() {
       price: restPrice,
       long: newPlace.lng,
       lat: newPlace.lat,
+      ownerId: loginState.user.id,
     };
 
     try {
-      if (locationType == "resturant"){
-      const res = await axios.post(
-        `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
-        newPin,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-          },
-        }
-      );
-      setResturant([...resturant, res.data]);
-      setNewPlace(null);
-    }else if 
-      (locationType == "hotel"){
+      if (locationType === "resturant") {
+        const res = await axios.post(
+          `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
+          newPin,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
+        );
+        setResturant([...resturant, res.data]);
+        setNewPlace(null);
+      } else if (locationType === "hotel") {
         const res = await axios.post(
           `${import.meta.env.VITE_DATABASE_URL}/hotel`,
           newPin,
@@ -125,20 +125,20 @@ function MApp() {
         );
         setHotel([...hotel, res.data]);
         setNewPlace(null);
-         } else  
-        {
-          const res = await axios.post(
-            `${import.meta.env.VITE_DATABASE_URL}/activity`,
-            newPin,
-            {
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("userToken")}`,
-              },
-            }
-          );
-          setActivity([...activity, res.data]);
-          setNewPlace(null);
-   }}catch (err) {
+      } else {
+        const res = await axios.post(
+          `${import.meta.env.VITE_DATABASE_URL}/activity`,
+          newPin,
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+            },
+          }
+        );
+        setActivity([...activity, res.data]);
+        setNewPlace(null);
+      }
+    } catch (err) {
       console.log(err);
     }
   };
@@ -250,6 +250,7 @@ function MApp() {
           <div id="earth"></div>
           <SideNavBar />
         </div> */}
+        <SideNavBar/>
         <div className="map-container">
           {coords && (
             <Map
@@ -265,16 +266,17 @@ function MApp() {
               onDblClick={addNewPlace}
             >
               {resturant.map((p) => (
-                <><Marker latitude={p.lat} longitude={p.long}>
-                <RoomIcon
-                  style={{
-                    fontSize: 7 * 6,
-                    color: "red",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
-                />
-              </Marker>
+                <>
+                  <Marker latitude={p.lat} longitude={p.long}>
+                    <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                    />
+                  </Marker>
 
                   {p.id === currentPlaceId && (
                     <section className="pppp">
@@ -314,17 +316,19 @@ function MApp() {
                     </section>
                   )}
                 </>
-              ))} {hotel.map((p) => (
-                <><Marker latitude={p.lat} longitude={p.long}>
-                <RoomIcon
-                  style={{
-                    fontSize: 7 * 6,
-                    color: "#FCA41C",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
-                />
-              </Marker>
+              ))}{" "}
+              {hotel.map((p) => (
+                <>
+                  <Marker latitude={p.lat} longitude={p.long}>
+                    <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "#FCA41C",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                    />
+                  </Marker>
 
                   {p.id === currentPlaceId && (
                     <section className="pppp">
@@ -364,17 +368,19 @@ function MApp() {
                     </section>
                   )}
                 </>
-              ))} {activity.map((p) => (
-                <><Marker latitude={p.lat} longitude={p.long}>
-                <RoomIcon
-                  style={{
-                    fontSize: 7 * 6,
-                    color: "#0C7592",
-                    cursor: "pointer",
-                  }}
-                  onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
-                />
-              </Marker>
+              ))}{" "}
+              {activity.map((p) => (
+                <>
+                  <Marker latitude={p.lat} longitude={p.long}>
+                    <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "#0C7592",
+                        cursor: "pointer",
+                      }}
+                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                    />
+                  </Marker>
 
                   {p.id === currentPlaceId && (
                     <section className="pppp">
@@ -415,7 +421,6 @@ function MApp() {
                   )}
                 </>
               ))}
-
               <div style={{ position: "absolute", top: 10, right: 10 }}>
                 <NavigationControl />
               </div>
@@ -423,7 +428,6 @@ function MApp() {
               <Source id="routeSource" type="geojson" data={geojson}>
                 <Layer {...lineStyle} />
               </Source>
-
               {newPlace && (
                 <>
                   <Marker latitude={newPlace.lat} longitude={newPlace.lng}>
@@ -475,9 +479,15 @@ function MApp() {
                         <select
                           onChange={(e) => setLocationType(e.target.value)}
                         >
-                          <option value="resturant" name= "resturant">restaurant</option>
-                          <option value="hotel"name= "hotel">hotel</option>
-                          <option value="activities"name= "activities">activities</option>
+                          <option value="resturant" name="resturant">
+                            restaurant
+                          </option>
+                          <option value="hotel" name="hotel">
+                            hotel
+                          </option>
+                          <option value="activities" name="activities">
+                            activities
+                          </option>
                         </select>
 
                         <label>Address</label>
