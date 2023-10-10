@@ -6,7 +6,8 @@ import { ReelContext } from "../../components/reels/ReelsContext";
 import vieww from "../../assets/golddd.png";
 import favv from "../../assets/ggoolldd.png";
 import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
-const CCard = ({ element, type }) => {
+
+const CCard = ({ element, type, restId, hotelId, activId }) => {
   const favstate = useContext(FavoritesContext);
   const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -15,13 +16,13 @@ const CCard = ({ element, type }) => {
   useEffect(() => {
     async function fetchData() {
       if (type === "restaurant") {
-        console.log(element.id, "iddddddeeeeeeeeeeeeeeeddddd");
+        // console.log(element.id, "iddddddeeeeeeeeeeeeeeeddddd");
 
         await reelState.getSpecificRestReel(element.id);
 
         setReeels(reelState.restReels);
 
-        console.log(Reeels, "reeeelsxxxxxxxxxxxxxxx");
+        // console.log(Reeels, "reeeelsxxxxxxxxxxxxxxx");
       }
     }
 
@@ -107,6 +108,9 @@ const CCard = ({ element, type }) => {
           open={openModal}
           onClose={() => setOpenModal(false)}
           item={element}
+          restId={restId}
+          activId={activId}
+          hotelId={hotelId}
         />
       </div>
     </>

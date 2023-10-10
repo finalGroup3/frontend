@@ -1,3 +1,5 @@
+
+
 .modal-content {
   /* background-color: #02293a!important; */
   color: white !important;
@@ -14,12 +16,27 @@
 }
 
 .modalbutn {
-  color: rgb(31, 31, 31);
-  // position: absolute;
-  right: 0;
+  position: absolute;
+  border-radius: 20px 0px 0px 0px;
+  width: 400px;
+  height: 50px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* From https://css.glass */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  font-size: 50px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover{
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 
-input[type="radio"] {
+.hehe[type="radio"] {
   display: none;
 }
 
@@ -36,13 +53,13 @@ input[type="radio"] {
   position: relative;
   padding: 10px 20px;
   border-radius: 7px;
-  border: 2px solid #83E3EC   !important;
+  border: 2px solid #83e3ec !important;
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 600;
   letter-spacing: 2px;
   background: transparent !important;
-  color: #83E3EC   !important;
+  color: #83e3ec !important;
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: all 0.2s ease-in;
@@ -53,9 +70,9 @@ input[type="radio"] {
 
 .bottanoo:hover {
   color: white !important;
-  background: #0C7592  !important;
-  box-shadow: 0 0 30px 5px rgba(#0C7592 , 0.815) !important;
-  border: 2px solid #0C7592   !important;
+  background: #0c7592 !important;
+  box-shadow: 0 0 30px 5px rgba(#0c7592, 0.815) !important;
+  border: 2px solid #0c7592 !important;
 
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
@@ -115,10 +132,20 @@ input[type="radio"] {
 .modal-content {
   /* background-color: #02293a!important; */
   color: white !important;
-  background: rgba(5, 48, 83, 0.477) !important;
+  background: rgba(#00222c, 0.477) !important;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.8px);
   -webkit-backdrop-filter: blur(4.8px);
   border: 1px solid rgba(4, 41, 68, 0.07);
+}
+.cateGGGGGory{
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+#dropdown-basic{
+  background-color: white ;
+  border-color: white ;
+  color: #212529;
 }

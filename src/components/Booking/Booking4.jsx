@@ -16,19 +16,41 @@ export default function Booking() {
 
   const [restaurantsBookings, setRestaurantsBookings] = useState([]);
 
-  console.log(restaurantsBookings);
+  const [AllBookings, setAllBookings] = useState([]);
+
+  // console.log(AllBookings);
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
+
   const getRestaurantsBookingsFromDb = async () => {
-    const userId = LoginState.user.id;
-    try {
-      const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      setRestaurantsBookings(items.bookings);
-    } catch (error) {
-      console.error(error);
+    if (LoginState.user.role === "user") {
+      const userId = LoginState.user.id;
+      try {
+        const response = await superagent
+          .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        setRestaurantsBookings(items.bookings);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
+
+  const getAllBookingsFromDb = async () => {
+    if (LoginState.user.role === "admin") {
+      const userId = LoginState.user.role;
+      // console.log(userId, "adminId");
+      try {
+        const response = await superagent
+          .get(`${import.meta.env.VITE_DATABASE_URL}/booking`)
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        setAllBookings(items);
+        // console.log(AllBookings, "allbooking");
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
@@ -45,7 +67,7 @@ export default function Booking() {
         setRestaurantsBookings((prevBookings) =>
           prevBookings.filter((booking) => booking.id !== id)
         );
-        console.log(response.body);
+        // console.log(response.body);
       }
     } catch (error) {
       console.error(error);
@@ -54,6 +76,7 @@ export default function Booking() {
 
   useEffect(() => {
     getRestaurantsBookingsFromDb();
+    getAllBookingsFromDb();
   }, []);
 
   return (
@@ -66,52 +89,100 @@ export default function Booking() {
         <div className="ddd">
           <section class="dark">
             <div class="container py-4">
-              {restaurantsBookings.map((element) => (
-            <div key={element.id}>
-
-                <article  class="postcard dark blue">
-                  <a class="postcard__img_link" href="#">
-                    <img
-                      class="postcard__img"
-                      src={element.img}
-                      alt="Image Title"
+              {restaurantsBookings?.map((element) => (
+                <div key={element.id}>
+                  <article class="postcard dark blue">
+                    <a class="postcard__img_link" href="#">
+                      <img
+                        class="postcard__img"
+                        src={element.img}
+                        alt="Image Title"
                       />
-                  </a>
-                  <div class="postcard__text">
-                    <h1 class="postcard__title blue">
-                      <a href="#">{element.name}</a>
-                    </h1>
-                    <div class="postcard__subtitle small">
-                      <time datetime="2020-05-25 12:00:00">
-                        <i class="fas fa-calendar-alt mr-2"></i>⭐⭐⭐⭐⭐
-                      </time>
-                    </div>
-                    <div class="postcard__bar"></div>
-                    <div class="postcard__preview-txt">{element.date}</div>
-                    <ul class="postcard__tagbox">
-                      <li class="tag__item">
-                        <img src={MyIcon} alt="My Icon" />
-                        <div className="text">{element.howmany}</div>
-                      </li>
-                      <li class="tag__item">
-                        <img src={Time} alt="My Icon" />
-                        <div className="text">{element.date}</div>
-                      </li>
-                      {/* <li class="tag__item play blue">
-                  <a href="#"><i class="fas fa-play mr-2"></i>Play Episode</a>
-                </li> */}
-                      <button class="tag__item">
-                        <div
-                          className="text"
-                          onClick={() => deleteRestaurantsBookings(element.id)}
+                    </a>
+                    <div class="postcard__text">
+                      <h1 class="postcard__title blue">
+                        <a href="#">{element.name}</a>
+                      </h1>
+                      <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
+                          <i class="fas fa-calendar-alt mr-2"></i>⭐⭐⭐⭐⭐
+                        </time>
+                      </div>
+                      <div class="postcard__bar"></div>
+                      <div class="postcard__preview-txt">{element.date}</div>
+                      <ul class="postcard__tagbox">
+                        <li class="tag__item">
+                          <img src={MyIcon} alt="My Icon" />
+                          <div className="text">{element.howmany}</div>
+                        </li>
+                        <li class="tag__item">
+                          <img src={Time} alt="My Icon" />
+                          <div className="text">{element.date}</div>
+                        </li>
+
+                        <button class="tag__item">
+                          <div
+                            className="text"
+                            onClick={() =>
+                              deleteRestaurantsBookings(element.id)
+                            }
                           >
-                          Cancel
-                        </div>
-                      </button>
-                    </ul>
-                  </div>
-                </article>
+                            Cancel
                           </div>
+                        </button>
+                      </ul>
+                    </div>
+                  </article>
+                </div>
+              ))}
+            </div>
+
+            <div class="container py-4">
+              {AllBookings?.map((element) => (
+                <div key={element.id}>
+                  <article class="postcard dark blue">
+                    <a class="postcard__img_link" href="#">
+                      <img
+                        class="postcard__img"
+                        src={element.img}
+                        alt="Image Title"
+                      />
+                    </a>
+                    <div class="postcard__text">
+                      <h1 class="postcard__title blue">
+                        <a href="#">{element.name}</a>
+                      </h1>
+                      <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
+                          <i class="fas fa-calendar-alt mr-2"></i>⭐⭐⭐⭐⭐
+                        </time>
+                      </div>
+                      <div class="postcard__bar"></div>
+                      <div class="postcard__preview-txt">{element.date}</div>
+                      <ul class="postcard__tagbox">
+                        <li class="tag__item">
+                          <img src={MyIcon} alt="My Icon" />
+                          <div className="text">{element.howmany}</div>
+                        </li>
+                        <li class="tag__item">
+                          <img src={Time} alt="My Icon" />
+                          <div className="text">{element.date}</div>
+                        </li>
+
+                        <button class="tag__item">
+                          <div
+                            className="text"
+                            onClick={() =>
+                              deleteRestaurantsBookings(element.id)
+                            }
+                          >
+                            Cancel
+                          </div>
+                        </button>
+                      </ul>
+                    </div>
+                  </article>
+                </div>
               ))}
             </div>
           </section>

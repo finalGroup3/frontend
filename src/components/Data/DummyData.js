@@ -118,7 +118,7 @@ export const Hotels = [
       "Experience luxury and elegance at our 5-star hotel in The St. Regis Amman.",
     location: "Amman",
     rating: 5.0,
-    price: "$$$",
+    price: "123$$$",
     ownerId: 6,
   },
 
@@ -487,7 +487,7 @@ export const activities = [
     img: "https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/pictuers%2Ftheforestpark.jpg?alt=media&token=1c004014-3a77-4397-98fa-12a048c51577&_gl=1*4k1ktt*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQxMzI0NS40My4wLjA.",
     description:
       "the forest park is located within a natural environment on an area of 280 acres, with more than 25 interactive activities in the environment.",
-    location: "Petra",
+    location: "Amman",
     rating: 4.9,
     price: "$60",
     ownerId: 1,

@@ -11,9 +11,9 @@ export default function ReviewsModal(props) {
   //     console.log(props.Id,"iddddddddddd")
   //     // reelState.getSpecificRestReel(props.Id);
   //     // setReeels(reelState.restReels)
-  console.log(props.restId, "props.id");
+  // console.log(props.restId, "props.id");
   const allreel = reelState.allReels;
-  console.log(allreel);
+  // console.log(allreel);
   // setReeels(allreel)
   // }
   // if (props.type=="hotel") {
@@ -42,7 +42,7 @@ export default function ReviewsModal(props) {
   if (props.restId) {
     for (let i = 0; i < filteredResturant.length; i++) {
       filteredreel.push(filteredResturant[i]);
-      console.log(filteredreel, "filteredResturant from modal");
+      // console.log(filteredreel, "filteredResturant from modal");
     }
   }
   if (props.hotelId) {
