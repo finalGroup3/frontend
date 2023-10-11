@@ -60,12 +60,15 @@ const Services = () => {
                 beautiful places in Jordan. It is absolutely a viper lover’s
                 hotel
               </h3>
-              <div className="services-bttnnss">
+              <Link to='/hotels'>
+                 <div className="services-bttnnss">
                 <button className="services-bttnn">
                   {" "}
                   see more &#10095;&#10095;{" "}
                 </button>
               </div>
+              </Link>
+             
             </div>
           </div>
         </article>
@@ -84,12 +87,14 @@ const Services = () => {
                 you can visit in Jordan. From the truly wonderful world wonder
                 of Petra, to the lowest point of earth in Dead sea
               </h3>
-              <div className="services-bttnnss">
+              <Link to='/avtivities'>
+                <div className="services-bttnnss">
                 <button className="services-bttnn">
-                  {" "}
                   see more &#10095;&#10095;
                 </button>
               </div>
+              </Link>
+              
             </div>
           </div>
         </article>

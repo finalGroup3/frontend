@@ -36,7 +36,7 @@ export default function Restaurants() {
         >
           <div className="container-top-three-resturants">
             <br />
-            <h2 className="headline-1 section-title">Top Resturants</h2>
+            <h2 className="headline-1 section-title">✧✧ Top Resturants ✧✧</h2>
 
             {/* <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
             <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
@@ -152,8 +152,11 @@ export default function Restaurants() {
 
         <div className="header">
           <h2 className="headline-1 section-title">
-            <p className="steak"></p>
-            Our Resturants<p className="steak"></p>
+            {/* <p className="steak"></p> */}
+            {/* Our Resturants<p className="steak"></p> */}
+            <p>
+            ✧✧ All Resturants ✧✧
+            </p>
           </h2>
           <p className="section-subtitle"></p>
           <br />

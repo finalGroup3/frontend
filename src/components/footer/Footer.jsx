@@ -7,6 +7,7 @@ import {
   faWhatsapp,
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,12 +29,25 @@ const Footer = () => {
           <div className="phone">+0987654321</div>
         </div>
         <div className="links">
-          <div className="linkslinks">Links</div>
-          <div className="home">Home</div>
+          <Link to='/home'>
+             <div className="home">Home</div>
+          </Link>
+         
+         <Link to='/map'>
+          <div className="home">Map</div>
+          </Link>
+          <Link to='/reels'>
+           <div className="home">Reels</div>
+          </Link>
+          <Link to='/restaurants'>
+
           <div className="services">Services</div>
-          <div className="aboutUs">About Us</div>
-          <div className="features">Features</div>
-          <div className="contacts">Contacts</div>
+         </Link>
+         <Link to='/aboutus'>
+                 
+          <div className="features">About Us</div>
+          </Link>
+  
         </div>
         <div className="newsletter">
           <div className="newsletternewsletter">Newsletter</div>

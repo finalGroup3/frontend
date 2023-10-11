@@ -7,7 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import{faBars} from "@fortawesome/free-solid-svg-icons";
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-
+import superagent from "superagent";
+import cookie from "react-cookies";
 import Tooltip from '@mui/material/Tooltip';
 import "../table/Table.scss"
 import { Delete } from '@mui/icons-material';
@@ -29,11 +30,33 @@ export default function OptionsMenu(props) {
     setAnchorEl(null);
   };
 
+  const deleteBooking = async (id) => {
+    try {
+      const response = await superagent
+        .delete(`${import.meta.env.VITE_DATABASE_URL}/booking/${id}`)
+        .set("authorization", `Bearer ${cookie.load("auth")}`);
+
+      if (response.ok) {
+        props.bookingsFromDB()
+        console.log('*************************************')
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+ 
+ 
+
+  
+
+
 
   const deleteFun =()=>{
     if(props.type == 'Restaurants') state.deleteRestaurantsInDb(props.id);
     if(props.type == 'Hotels') state.deleteHotelInDb(props.id);
     if(props.type == 'Activties') state.deleteActivitysInDb(props.id);
+    if(props.type == 'Bookings') deleteBooking(props.id);
   }
   return (
     <div className='options-bttnn'>

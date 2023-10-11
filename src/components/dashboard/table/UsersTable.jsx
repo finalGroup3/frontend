@@ -27,7 +27,7 @@ export default function UsersTable(props) {
  <div className="table-data">{element.username}</div>
  <div className="table-data">{element.id}</div>
  
- <OptionsMenu className='OptionsMenu' type={props.type} id ={element.id}/>
+ <OptionsMenu className='OptionsMenu' type={props.type} id ={element.id} />
 </div>
 	
               </>
