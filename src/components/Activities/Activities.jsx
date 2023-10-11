@@ -18,7 +18,9 @@ export default function Activities() {
   $(".hover").mouseleave(function () {
     $(this).removeClass("hover");
   });
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -74,7 +76,7 @@ export default function Activities() {
         >
           <div className="container-top-three-resturants">
             <br />
-            <h2 className="headline-1 section-title">Top Activities</h2>
+            <h2 className="headline-1 section-title">✧✧ Top Activities ✧✧</h2>
             <p className="section-subtitle2 label-2">
               Your Dream Vacation Destinations
             </p>
@@ -337,7 +339,8 @@ export default function Activities() {
         <div className="header">
           <h2 className="headline-1 section-title">
             {/* <p className="steak"></p> */}
-            Our Activities
+            ✧✧ All Activities ✧✧
+            {/* <p className="steak"></p> */}
           </h2>
           <p className="section-subtitle"></p>
         <br />

@@ -8,11 +8,11 @@
   align-items: center;
   width: 100%;
   // border-radius: 150px 0px 0px 0px;
-  padding: 50px;
+  padding: 30px;
   // position: fixed;
   // bottom: 0;
   gap: 30px;
-  background: linear-gradient(180deg, black, #001319);
+  background: linear-gradient(180deg, rgb(0, 7, 10), #001319);
   border-top: 1px solid white;
   font-family: "Jost", sans-serif;
   font-family: "Merriweather Sans", sans-serif;
@@ -64,6 +64,8 @@
       .aboutt {
         width: 350px;
         line-height: 25px;
+        font-family: "Unna", serif;
+        font-family: "Playfair", serif;
       }
     }
     .office {
@@ -95,11 +97,17 @@
       .features,
       .contacts {
         cursor: pointer;
+        font-weight: 700;
+        font-family: "Playfair", serif;
+        font-size: 20px;
+        color: #fff;
+        
       }
       .linkslinks {
         max-width: 48px;
         border-bottom: 2px solid white;
         margin-bottom: 30px;
+        
       }
     }
     .newsletter {
@@ -109,7 +117,7 @@
       .newsletternewsletter {
         max-width: 103px;
         border-bottom: 2px solid white;
-        margin-bottom: 30px;
+        margin-bottom: 26px;
       }
       .socials {
         display: flex;

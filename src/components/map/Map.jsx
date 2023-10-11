@@ -55,7 +55,10 @@ function MApp() {
   const [restAddress, setRestAddress] = useState("");
   const [restRating, setRestRating] = useState(0);
   const [restPrice, setRestPrice] = useState("");
-  
+  const [currentPlaceIdResturant, setCurrentPlaceIdResturant] = useState(null);
+  const [currentPlaceIdHotel, setCurrentPlaceIdHotel] = useState(null);
+const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
+
   const [initialViewState, setInitialViewState] = useState({
     longitude: 35.9106,
     latitude: 31.9539,
@@ -168,8 +171,25 @@ function MApp() {
     }
   }, [geoControlRef.current]);
 
-  const handleMarkerClick = (id, lat, long) => {
-    setCurrentPlaceId(id);
+
+  const handleMarkerClickResturant = (id, lat, long) => {
+    setCurrentPlaceIdResturant(id);
+    setInitialViewState({
+      ...initialViewState,
+      longitude: long,
+      latitude: lat,
+    });
+  };
+  const handleMarkerClickHotel = (id, lat, long) => {
+    setCurrentPlaceIdHotel(id);
+    setInitialViewState({
+      ...initialViewState,
+      longitude: long,
+      latitude: lat,
+    });
+  };
+  const handleMarkerClickActivity = (id, lat, long) => {
+    setCurrentPlaceIdActivity(id);
     setInitialViewState({
       ...initialViewState,
       longitude: long,
@@ -275,11 +295,11 @@ function MApp() {
                         color: "red",
                         cursor: "pointer",
                       }}
-                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                      onClick={() => handleMarkerClickResturant(p.id, p.lat, p.long)}
                     />
                   </Marker>
 
-                  {p.id === currentPlaceId && (
+                  {p.id === currentPlaceIdResturant && (
                     <section className='pppp'>
                       <Popup
                         className='popup'
@@ -288,7 +308,7 @@ function MApp() {
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
-                        onClose={() => setCurrentPlaceId(null)}
+                        onClose={() => setCurrentPlaceIdResturant(null)}
                         anchor='left'>
                         <div className='mapcard'>
                           {/* <span
@@ -308,8 +328,11 @@ function MApp() {
                             {/* <label>Description</label> */}
                             <p className='desc'>{p.description}</p>
                             {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
+                            <section className="pr">
+                               <p className='desc'>{p.price}JD</p>
                             <Rating name="read-only" value={p.rating} readOnly />
+                            </section>
+                           
                           </section>
                         </div>
                       </Popup>
@@ -326,11 +349,11 @@ function MApp() {
                         color: "#FCA41C",
                         cursor: "pointer",
                       }}
-                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                      onClick={() => handleMarkerClickHotel(p.id, p.lat, p.long)}
                     />
                   </Marker>
 
-                  {p.id === currentPlaceId && (
+                  {p.id === currentPlaceIdHotel && (
                     <section className='pppp'>
                       <Popup
                         className='popup'
@@ -339,7 +362,7 @@ function MApp() {
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
-                        onClose={() => setCurrentPlaceId(null)}
+                        onClose={() => setCurrentPlaceIdHotel(null)}
                         anchor='left'>
                         <div className='mapcard'>
                           {/* <span
@@ -359,7 +382,10 @@ function MApp() {
                             {/* <label>Description</label> */}
                             <p className='desc'>{p.description}</p>
                             {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
+                            <section className="pr">
+                               <p className='desc'>{p.price}JD</p>
+                            <Rating name="read-only" value={p.rating} readOnly />
+                            </section>
                           </section>
                         </div>
                       </Popup>
@@ -376,11 +402,11 @@ function MApp() {
                         color: "#0C7592",
                         cursor: "pointer",
                       }}
-                      onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                      onClick={() => handleMarkerClickActivity(p.id, p.lat, p.long)}
                     />
                   </Marker>
 
-                  {p.id === currentPlaceId && (
+                  {p.id === currentPlaceIdActivity && (
                     <section className='pppp'>
                       <Popup
                         className='popup'
@@ -389,7 +415,7 @@ function MApp() {
                         longitude={p.long}
                         closeButton={true}
                         closeOnClick={false}
-                        onClose={() => setCurrentPlaceId(null)}
+                        onClose={() => setCurrentPlaceIdActivity(null)}
                         anchor='left'>
                         <div className='mapcard'>
                           {/* <span
@@ -409,7 +435,10 @@ function MApp() {
                             {/* <label>Description</label> */}
                             <p className='desc'>{p.description}</p>
                             {/* <label>Price</label> */}
-                            <p className='desc'>{p.price}JD</p>
+                            <section className="pr">
+                               <p className='desc'>{p.price}JD</p>
+                            <Rating name="read-only" value={p.rating} readOnly />
+                            </section>
                           </section>
                         </div>
                       </Popup>

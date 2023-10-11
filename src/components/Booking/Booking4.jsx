@@ -1,5 +1,5 @@
 import "./booking4.scss";
-import { useState, useEffect, useContext } from "react";
+import  { useState, useEffect, useContext } from "react";
 
 import Time from "../../assets/clock.svg";
 
@@ -23,17 +23,15 @@ export default function Booking() {
 
   const getRestaurantsBookingsFromDb = async () => {
     if (LoginState.user.role === "user") {
-      if (LoginState.user.id) {
-        const userId = LoginState.user.id;
-        try {
-          const response = await superagent
-            .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
-            .set("authorization", `Bearer ${cookie.load("auth")}`);
-          const items = response.body;
-          setRestaurantsBookings(items.bookings);
-        } catch (error) {
-          console.error(error);
-        }
+      const userId = LoginState.user.id;
+      try {
+        const response = await superagent
+          .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
+        const items = response.body;
+        setRestaurantsBookings(items.bookings);
+      } catch (error) {
+        console.error(error);
       }
     }
   };
@@ -83,63 +81,62 @@ export default function Booking() {
   return (
     <>
       <Header />
-      <div className="overlay">
+      <div className='overlay'>
         <h1>My Booking List</h1>
       </div>
-      <div className="center-container">
-        <div className="ddd">
-          <section className="dark">
-            <div className="container py-4">
+      <div className='center-container'>
+        <div className='ddd'>
+          <section className='dark'>
+            <div className='container py-4'>
               {restaurantsBookings.map((element, i) => (
                 <div key={element.id}>
                   {i % 2 == 0 ? (
-                    <article className="postcard dark blue">
-                      <a className="postcard__img_link" href="#">
+                    <article className='postcard dark blue'>
+                      <a className='postcard__img_link' href='#'>
                         <img
-                          className="postcard__img"
+                          className='postcard__img'
                           src={element.img}
-                          alt="Image Title"
+                          alt='Image Title'
                         />
                       </a>
-                      <div className="postcard__text">
-                        <h1 className="postcard__title blue">
+                      <div className='postcard__text'>
+                        <h1 className='postcard__title blue'>
                           <p>{element.name}</p>
                         </h1>
-                        <div className="postcard__bar"></div>
-                        <div className="postcard__subtitle small">
-                          <time dateTime="2020-05-25 12:00:00">
-                            <i className="fas fa-calendar-alt mr-2"></i>
+                        <div className='postcard__bar'></div>
+                        <div className='postcard__subtitle small'>
+                          <time dateTime='2020-05-25 12:00:00'>
+                            <i className='fas fa-calendar-alt mr-2'></i>
                             ⭐⭐⭐⭐⭐
                           </time>
                         </div>
 
-                        <div className="postcard__preview-txt">
+                        <div className='postcard__preview-txt'>
                           {element.date.toString().split("T")[0]}
                         </div>
-                        <ul className="postcard__tagbox">
+                        <ul className='postcard__tagbox'>
                           <li>
-                            <div className="postcard__preview-name">
+                            <div className='postcard__preview-name'>
                               {element.username.toUpperCase()}
                             </div>
                           </li>
-                          <li className="tag__item">
+                          <li className='tag__item'>
                             <PeopleAltIcon />
-                            <div className="text">{element.howmany}</div>
+                            <div className='text'>{element.howmany}</div>
                           </li>
-                          <li className="tag__item">
-                            <img src={Time} alt="My Icon" />
-                            <div className="text">
+                          <li className='tag__item'>
+                            <img src={Time} alt='My Icon' />
+                            <div className='text'>
                               {element.date.toString().split("T")[0]}{" "}
                             </div>
                           </li>
 
-                          <button className="tag__item">
+                          <button className='tag__item'>
                             <div
-                              className="text"
+                              className='text'
                               onClick={() =>
                                 deleteRestaurantsBookings(element.id)
-                              }
-                            >
+                              }>
                               Cancel
                             </div>
                           </button>
@@ -147,54 +144,53 @@ export default function Booking() {
                       </div>
                     </article>
                   ) : (
-                    <article className="postcard dark red">
-                      <a className="postcard__img_link" href="#">
+                    <article className='postcard dark red'>
+                      <a className='postcard__img_link' href='#'>
                         <img
-                          className="postcard__img"
+                          className='postcard__img'
                           src={element.img}
-                          alt="Image Title"
+                          alt='Image Title'
                         />
                       </a>
-                      <div className="postcard__text">
-                        <h1 className="postcard__title red">
+                      <div className='postcard__text'>
+                        <h1 className='postcard__title red'>
                           <p>{element.name}</p>
                         </h1>
-                        <div className="postcard__bar" />
-                        <div className="postcard__subtitle small">
-                          <time dateTime="2020-05-25 12:00:00">
-                            <i className="fas fa-calendar-alt mr-2" />
+                        <div className='postcard__bar' />
+                        <div className='postcard__subtitle small'>
+                          <time dateTime='2020-05-25 12:00:00'>
+                            <i className='fas fa-calendar-alt mr-2' />
                             ⭐⭐⭐⭐
                           </time>
                         </div>
 
-                        <div className="postcard__preview-txt">
+                        <div className='postcard__preview-txt'>
                           {element.date.toString().split("T")[0]}
                         </div>
 
-                        <ul className="postcard__tagbox">
+                        <ul className='postcard__tagbox'>
                           <li>
-                            <div className="postcard__preview-name">
+                            <div className='postcard__preview-name'>
                               {element.username.toUpperCase()}
                             </div>
                           </li>
-                          <li className="tag__item">
+                          <li className='tag__item'>
                             <PeopleAltIcon />
-                            <div className="text">{element.howmany}</div>
+                            <div className='text'>{element.howmany}</div>
                           </li>
-                          <li className="tag__item">
-                            <img src={Time} alt="My Icon" />
-                            <div className="text">
+                          <li className='tag__item'>
+                            <img src={Time} alt='My Icon' />
+                            <div className='text'>
                               {element.date.toString().split("T")[0]}
                             </div>
                           </li>
 
-                          <button className="tag__item">
+                          <button className='tag__item'>
                             <div
-                              className="text"
+                              className='text'
                               onClick={() =>
                                 deleteRestaurantsBookings(element.id)
-                              }
-                            >
+                              }>
                               Cancel
                             </div>
                           </button>

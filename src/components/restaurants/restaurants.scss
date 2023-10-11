@@ -158,7 +158,8 @@
   .title-2,
   .title-3,
   .title-4 {
-    font-family: var(--fontFamily-forum);
+    // font-family: var(--fontFamily-forum);
+    font-family: "Unna", serif;
     font-weight: var(--weight-regular);
     line-height: var(--lineHeight-2);
   }
@@ -170,6 +171,7 @@
 
   .headline-1 {
     font-size: var(--fontSize-headline-1);
+    font-size: 62px;
     color: #fca41c;
     display: flex;
     justify-content: center;
@@ -220,7 +222,7 @@
     font-size: var(--fontSize-body-4);
   }
   .label-1 {
-    font-size: var(--fontSize-label-1);
+    font-size: 18px;
   }
   .label-2 {
     font-size: var(--fontSize-label-2);
@@ -726,13 +728,14 @@
   }
 
   @media (min-width: 1200px) {
-    :root {
-      --fontSize-title-2: 2.5rem;
-    }
+    // :root {
+    //   --fontSize-title-2: 2.5rem;
+    // }
 
     .container-top-three-resturants,
     :is(.service, .event) .container-top-three-resturants {
-      width: 100%;
+      width: 80% !important;
+      margin: auto;
     }
 
     .topbar .container-top-three-resturants {
@@ -847,7 +850,7 @@
   .section-subtitle::after {
     content: url("../../assets/separator.svg");
     display: block;
-    width: 250px;
+    width: 175px;
     margin-inline: auto;
     margin-block-start: 10px;
   }
