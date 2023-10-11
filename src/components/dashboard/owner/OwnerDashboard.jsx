@@ -344,7 +344,7 @@ const OwnerDashboard = () => {
                   console.log(n);
                   return <p key={i}>{n.senderName} has made a reservation</p>;
                 })}
-                {missing.map((n, i) => {
+                {/* {missing.map((n, i) => {
                   console.log(n);
                   return (
                     <p key={i}>
@@ -353,7 +353,7 @@ const OwnerDashboard = () => {
                       <span className="offlineffff">offline</span>
                     </p>
                   );
-                })}
+                })} */}
               </div>
             </aside>
           </When>

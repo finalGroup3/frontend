@@ -72,13 +72,13 @@ video {
 .commentBTN {
   z-index: 6;
   position: absolute;
-  bottom: 75px;
+  bottom: 113px;
   left: 360px;
   border: none;
   font-size: 30px;
   cursor: pointer;
   transition: 0.2s ease-out;
-  &:hover{
+  &:hover {
     color: #fca41c;
   }
 }
@@ -98,7 +98,7 @@ video {
   background-color: rgba(0, 0, 0, 0.3);
   width: 400px;
   padding-left: 15px;
-  padding-bottom: 50px;
+  padding-bottom: 90px;
 
   .nameANDimage {
     display: flex;
@@ -159,7 +159,6 @@ video {
   margin: auto;
   height: 100%;
   padding: 10px;
-  background-color: white;
 }
 
 .commentsContainer form {
@@ -337,14 +336,14 @@ video {
     font-weight: 500;
     font-family: "Jost", sans-serif;
   }
-  .commentDATE{
+  .commentDATE {
     color: #fca41c;
     font-size: 12px;
     margin-left: 5px;
   }
-  .deleteBTNon{
+  .deleteBTNon {
     font-size: 10px;
-    color: #FF3C5A ;
+    color: #ff3c5a;
     margin-bottom: 15px;
     margin-left: 5px;
     cursor: pointer;
