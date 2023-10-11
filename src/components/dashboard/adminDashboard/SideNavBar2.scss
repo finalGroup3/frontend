@@ -7,14 +7,14 @@
 
 .nnn-admin {
   position: fixed;
-.admin-img{
+  .admin-img {
     width: 120px;
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px dotted #fff;
     padding: 10px;
-}
+  }
   .aside-admin {
     button {
       cursor: pointer;
@@ -46,7 +46,7 @@
     border-right: 1px solid #ffffff;
     // background: var(--c-sidebar);
     .admin-logo {
-    font-size: 34px !important;
+      font-size: 34px !important;
       font-family: "Dancing Script", cursive;
       font-weight: 900;
       color: #ffffff;
@@ -55,7 +55,7 @@
     nav {
       display: grid;
       grid-gap: 36px;
-    //   margin-top: 200px;
+      //   margin-top: 200px;
       button {
         --c-color: var(--c-default);
         --c-background: var(--c-sidebar);
@@ -98,7 +98,7 @@
           padding: 10px 20px 10px 12px;
           margin: -10px -20px -10px -12px;
           border-radius: 21px;
-        //   background: var(--c-background);
+          //   background: var(--c-background);
         }
         &.homeadmin {
           --icon-fill-size: 0px;
