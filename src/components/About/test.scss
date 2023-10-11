@@ -1,25 +1,20 @@
 
 
 :root {
-	/* dark shades of primary color*/
 	--clr-primary-1: hsl(205, 86%, 17%);
 	--clr-primary-2: hsl(205, 77%, 27%);
 	--clr-primary-3: hsl(205, 72%, 37%);
 	--clr-primary-4: hsl(205, 63%, 48%);
-	/* primary/main color */
 	--clr-primary-5: hsl(205, 78%, 60%);
-	/* lighter shades of primary color */
 	--clr-primary-6: hsl(205, 89%, 70%);
 	--clr-primary-7: hsl(205, 90%, 76%);
 	--clr-primary-8: hsl(205, 86%, 81%);
 	--clr-primary-9: hsl(205, 90%, 88%);
 	--clr-primary-10: hsl(205, 100%, 96%);
-	/* darkest grey - used for headings */
 	--clr-grey-1: hsl(209, 61%, 16%);
 	--clr-grey-2: hsl(211, 39%, 23%);
 	--clr-grey-3: hsl(209, 34%, 30%);
 	--clr-grey-4: hsl(209, 28%, 39%);
-	/* grey used for paragraphs */
 	--clr-grey-5: hsl(210, 22%, 49%);
 	--clr-grey-6: hsl(209, 23%, 60%);
 	--clr-grey-7: hsl(211, 27%, 70%);
@@ -42,17 +37,11 @@
 	--max-width: 1170px;
 	--fixed-width: 620px;
 }
-/*
-=============== 
-Global Styles
-===============
-*/
+
 .shihabrev{
 margin-top: -200px;
 
 .revvv{
-// padding-top: -100px;;
-// width: 500px;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -120,9 +109,7 @@ p {
 		line-height: 1;
 	}
 }
-/*  global classes */
 
-/* section */
 .section {
 	padding: 5rem 0;
 	
@@ -145,11 +132,7 @@ main {
 
 }
 
-/*
-=============== 
-Reviews
-===============
-*/
+
 main {
 	min-height: 100vh;
 	display: grid;
@@ -161,10 +144,7 @@ main {
 }
 .underline {
 	height: 0.25rem;
-	// width: 5rem;
 	background: var(--clr-primary-5);
-	// margin-left: auto;
-	// margin-right: auto;
 }
 .review {
 	
@@ -225,7 +205,6 @@ main {
 	border-color: transparent;
 	margin: 0 0.5rem;
 	transition: var(--transition);
-	// cursor: pointer;
 }
 .prev-btn:hover,
 .next-btn:hover {
@@ -240,7 +219,6 @@ main {
 	border-radius: var(--radius);
 	transition: var(--transition);
 	border-color: var(--clr-primary-5);
-	// cursor: pointer;
 }
 .random-btn:hover {
 	background: var(--clr-primary-5);
@@ -249,9 +227,7 @@ main {
 }
 
 
-// q { quotes: '\201c' '\201d'; }
-// q:before { content: open-quote; }
-// q:after  { content: close-quote; }
+
 @media all and (max-width: 850px) {
   p { 
     font-size: 2rem; 

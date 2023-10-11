@@ -1,9 +1,4 @@
 import React from "react";
-import savana from "./savanna.png";
-import laith from "./laith.png";
-import nour from "./nour.jpeg";
-import alaa from "./ALA.jpg";
-import amro from "./amroo.jpg";
 import "./test1.scss";
 import Test from "./Test";
 import Team from "./Team";
@@ -62,7 +57,6 @@ function About() {
             <img src="https://images.squarespace-cdn.com/content/v1/5a87961cbe42d637c54cab93/1586276629190-51W7B0FE6667179WEW0B/amman-best-things-to-do.jpg" />
           </div>
         </div>
-        {/* <div className='act-tit'>We've Chosen <br/>The Best Places <br/>For Your Dream Vacation</div> */}
 
       </div>
       <div className="allcom">
@@ -139,7 +133,6 @@ function About() {
         <div class="container">
           <div class="row">
             <div class="col-sm-6 module-pic">
-              {/* <img alt="Image" class="img-responsive" src="https://via.placeholder.com/500x400C/343a40/" /> */}
               <p>
                 <img
                   alt="Image"
@@ -201,97 +194,7 @@ function About() {
           </h1>
         </div>
       </div>
-      {/* <div id="aaapp">
-        <div id="profiles">
-          <div class="profile">
-            <div class="profile-content">
-              <div class="profile-pic">
-                <img class="profile-pic-image" src={savana} />
-              </div>
-              <h3 class="profile-name">Savana</h3>
-            </div>
-            <div class="box">
-              <div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
-                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-          <div class="profile">
-            <div class="profile-content">
-              <div class="profile-pic">
-                <img class="profile-pic-image" src={alaa} />
-              </div>
-              <h3 class="profile-name" > A LA' </h3>
-
-            </div>
-            <div class="box">
-              <div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
-                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-          <div class="profile">
-            <div class="profile-content">
-              <div class="profile-pic">
-                <img class="profile-pic-image" src={laith} />
-              </div>
-              <h3 class="profile-name">Laith</h3>
-            </div>
-            <div class="box">
-              <div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
-                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-          <div class="profile">
-            <div class="profile-content">
-              <div class="profile-pic">
-                <img class="profile-pic-image" src={nour} />
-              </div>
-              <h3 class="profile-name">Nour</h3>
-            </div>
-            <div class="box">
-              <div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
-                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-          <div class="profile">
-            <div class="profile-content">
-              <div class="profile-pic">
-                <img class="profile-pic-image" src={amro} />
-              </div>
-              <h3 class="profile-name">Amro</h3>
-            </div>
-            <div class="box">
-              <div>
-                <ul class="list-inline">
-                  <li class="list-inline-item"><i class="fab fa-github"></i></li>
-                  <li class="list-inline-item"><i class="fab fa-linkedin-in"></i></li>
-                </ul>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* </div > */}
+      
 
       <Team />
 
@@ -306,6 +209,3 @@ function About() {
   );
 }
 export default About;
-{
-  /* <span class="underlined underline-clip">Sell</span> */
-}
