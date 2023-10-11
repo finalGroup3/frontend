@@ -18,7 +18,9 @@ export default function Activities() {
   $(".hover").mouseleave(function () {
     $(this).removeClass("hover");
   });
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -27,24 +29,24 @@ export default function Activities() {
 
 
      
-<div class="portfolioact">
-  <div class="item" data-aos="fade-up">
-    <div class="inner">
+<div className="portfolioact">
+  <div className="item" data-aos="fade-up">
+    <div className="inner">
       <img src="https://files.samvdhwebdev.nl/images/1.jpg" alt="" />
     </div>
   </div>
-  <div class="item" data-aos="fade-up">
-    <div class="inner">
+  <div className="item" data-aos="fade-up">
+    <div className="inner">
       <img src="https://files.samvdhwebdev.nl/images/2.jpg" alt="" />
     </div>
   </div>
-  <div class="item" data-aos="fade-up">
-    <div class="inner">
+  <div className="item" data-aos="fade-up">
+    <div className="inner">
       <img src="https://files.samvdhwebdev.nl/images/6.jpg" alt="" />
     </div>
   </div>
-  <div class="item" data-aos="fade-up">
-    <div class="inner">
+  <div className="item" data-aos="fade-up">
+    <div className="inner">
       <img src="https://files.samvdhwebdev.nl/images/4.jpg" alt="" />
     </div>
   </div>
@@ -89,7 +91,7 @@ export default function Activities() {
         >
           <div className="container-top-three-resturants">
             <br />
-            <h2 className="headline-1 section-title">Top Activities</h2>
+            <h2 className="headline-1 section-title">✧✧ Top Activities ✧✧</h2>
             <p className="section-subtitle2 label-2">
               Your Dream Vacation Destinations
             </p>
@@ -367,7 +369,7 @@ export default function Activities() {
         <div className="header">
           <h2 className="headline-1 section-title">
             {/* <p className="steak"></p> */}
-            Our Activities
+            ✧✧ All Activities ✧✧
             {/* <p className="steak"></p> */}
           </h2>
           <p className="section-subtitle"></p>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import "./Hotel.scss";
 import movinpick from "../../assets/movinpick.jpg";
 import hotel2 from "../../assets/hotel2.avif";
@@ -16,7 +16,9 @@ import Modal22 from "../reels/Modal22/Modal22";
 
 const Hotel = () => {
   const state = useContext(RestaurantsContext);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
@@ -51,7 +53,7 @@ const Hotel = () => {
           </section>
           <br />
           <br />
-          <h2 className="headline-1 section-title">Top Hotels</h2>
+          <h2 className="headline-1 section-title">✧✧ Top Hotels ✧✧</h2>
             <p className="section-subtitle"></p>
 <div className="TopTop">
             <section

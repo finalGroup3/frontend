@@ -5,7 +5,7 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faChartPie } from "@fortawesome/free-solid-svg-icons";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
-import { faMugSaucer } from "@fortawesome/free-solid-svg-icons";
+import { faMugSaucer,faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import profile from '../../../imgs/user (4).png'
@@ -80,6 +80,16 @@ const SideNavBar = (props) => {
                       <FontAwesomeIcon icon={faPersonSwimming} />
                     </div>
                     Activties
+                  </div>
+                </button>
+                <button
+                  className='Bookingsadmin'
+                  onClick={() => props.currComponent("Bookings")}>
+                  <div>
+                    <div className='icon'>
+                    <FontAwesomeIcon icon={faCalendarDays} />
+                    </div>
+                    Bookings
                   </div>
                 </button>
                 <button
