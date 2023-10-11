@@ -937,9 +937,7 @@
   .item-meal-type {
     font-style: italic;
     display: flex;
-    justify-content: left;
-    align-items: flex-end;
-    
+    justify-content: space-between;
     padding-top: 7px;
     font-size: 1rem; /* Set your desired font size */
     overflow: hidden;
@@ -968,15 +966,15 @@
     font-size: 1rem; /* Set your desired font size */
     overflow: hidden;
     max-width: 50ch;
-    min-height: 4.5rem; /* 3 lines multiplied by the line-height (1.5rem) */
+    min-height: 5.9rem; /* 3 lines multiplied by the line-height (1.5rem) */
     line-height: 1.5;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
 .item-price2{
     color: #FCA41C;
-    margin-top: -52px;
+    margin-top: -50px;
     margin-left: 153px;
     margin-right: 5px;
     font-size: 2rem;
@@ -1021,7 +1019,7 @@ display: flex;
  .go4268192979 {
   width: 66px;
   height: 65px;
-  // margin-left:244px !important;
-  // margin-Top: -73px !important;
+  margin-left:130px !important;
+  margin-Top: -30px !important;
  }
 }

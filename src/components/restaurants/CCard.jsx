@@ -57,7 +57,10 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
             <img src={element.img} alt="Délicieux Bénédicte" />
           </div>
           <div className="item-text">
-            <p className="item-meal-type">{[...Array(element.rating)].map((star, idx) => {
+              
+            
+            <p className="item-meal-type"><div>{[...Array(element.rating)].map((star, idx) => {
+              
                 const currentRating = idx + 1;
                 return (
                   <label key={idx}>
@@ -75,6 +78,7 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                   </label>
                 );
               })}
+                  </div>
               <Heart isClick={favstate.isClick[element.id]} onClick={()=>favstate.AddToFavsDb(element)}/>
               </p>
             {/* <button onClick={()=>favstate.AddToFavsDb(element)}>
