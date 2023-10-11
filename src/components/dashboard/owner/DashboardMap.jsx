@@ -529,6 +529,51 @@ function MApp() {
                   </Popup>
                 </>
               )}
+              <div className="colorssssss">
+             
+             <div className="colorssss-item">  <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "red",
+                        cursor: "pointer",
+                      }}
+                    />
+                    
+                    <span>
+                      Restaurant
+              </span>
+              
+              </div>
+              <div  className="colorssss-item">  <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "#FCA41C",
+                        cursor: "pointer",
+                      }}
+                      
+                    />
+                    
+                    <span>
+                      Hotel
+              </span>
+              
+              </div>
+              <div  className="colorssss-item"> <RoomIcon
+                      style={{
+                        fontSize: 7 * 6,
+                        color: "#0C7592",
+                        cursor: "pointer",
+                      }}
+                      
+                    />
+                    
+                    <span>
+                      Activity
+              </span>
+              
+              </div>
+              
+              </div>
             </Map>
           )}
         </div>
