@@ -16,6 +16,7 @@ import Map, {
   Popup,
 } from "react-map-gl";
 // import SideNavBar from "../reels/SideNavBar";
+// import SideNavBar from "../reels/SideNavBar";
 import { Rating } from "@mui/material";
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
