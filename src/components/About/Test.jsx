@@ -84,8 +84,6 @@ function About() {
 
         <div className="conntainer">
             <div className="title">
-                {/* <h2>our reviews</h2> */}
-                {/* <div className="underline"></div> */}
             </div>
 
             <article className="review">
@@ -103,9 +101,7 @@ function About() {
                         <FontAwesomeIcon icon={faSortUp} rotation={90} />
                     </button>
                 </div>
-                {/* <button className="random-btn" onClick={randomPerson}>
-          surprise me
-        </button> */}
+            
             </article>
         </div>
         </div>
