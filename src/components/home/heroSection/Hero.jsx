@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 // import petra from './petra2.jpg'
 import mask from './grunge2.jpg'
 // import img from './img.png'
-import video from './intro.mp4'
+// import video from './intro.mp4'
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +44,7 @@ export default function Hero() {
   <source src={video} type='video/mp4' />
 </video> */}
 
-      <video
+      {/* <video
 
         ref={videoRef}
         muted
@@ -54,7 +54,7 @@ export default function Hero() {
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
-      ></video>
+      ></video> */}
 
       
       <div className="mask-contain"><img className='mask' src={mask}/></div>

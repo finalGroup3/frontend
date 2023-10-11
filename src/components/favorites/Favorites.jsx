@@ -11,6 +11,8 @@ import { FavoritesContext } from "./favContext";
 
 const Favorites = () => {
   const [favList, setFavList] = useState([]);
+  const [deleted, setDeleted] = useState(true);
+
 
   const LoginState = useContext(LoginContext);
   const favstate = useContext(FavoritesContext);
@@ -19,7 +21,8 @@ const Favorites = () => {
 
   // console.log(favstate.favList, "favs from compoonent");
   const getFromFavsDb = async () => {
-      // if (LoginState.user.id) {
+    // Check if userId is defined
+    if (LoginState.user.id) {
       const userId = LoginState.user.id;
       console.log(userId, "u+++++++++++++");
       try {
@@ -28,23 +31,26 @@ const Favorites = () => {
           .set("authorization", `Bearer ${cookie.load("auth")}`);
         if (response.ok) {
           const items = response.body;
-          // console.log(items.favs,"items++++++++")
-          // console.log(response.body);
-          // console.log(favList,"favList");
-
           setFavList(items.favs);
         }
       } catch (error) {
         console.error(error);
       }
+    } else {
+      console.log("LoginState.user.id is undefined");
+      // Handle the case where userId is undefined, for example, display an error message.
+    }
+  };
+ 
+  const handelDelete=()=>{
+     setDeleted(!deleted)
+  }
+
+  useEffect(() => {
+    // if (LoginState.user.id) {
+    getFromFavsDb();
     // }
-    };
-
-    useEffect(() => {
-      getFromFavsDb();
-    }, [LoginState.user.id]);
-
-
+  }, [deleted]);
 
   return (
     <>
@@ -63,7 +69,7 @@ const Favorites = () => {
         </button> */}
         <div className="favs-items">
           {favList.map((element) => {
-            return <Card key={element.id} element={element} />;
+            return <Card key={element.id} element={element} handelDelete={handelDelete}/>;
           })}
         </div>
       </div>

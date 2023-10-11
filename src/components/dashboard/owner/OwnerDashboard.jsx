@@ -25,17 +25,18 @@ const OwnerDashboard = () => {
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
   const FaveState = useContext(RestaurantsContext);
+
   const userId = state.user.id;
   console.log(userId, "userId");
 
   //////============get user services==================///////////
-  const userRestaurants = FaveState.restaurantsList.filter((restaurant) => {
+  const userRestaurants = FaveState.restaurantsList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
-  const userHotels = FaveState.hotelsList.filter((restaurant) => {
+  const userHotels = FaveState.hotelsList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
-  const userActivities = FaveState.activitiesList.filter((restaurant) => {
+  const userActivities = FaveState.activitiesList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
 
@@ -54,7 +55,7 @@ const OwnerDashboard = () => {
   // console.log(userRestaurants, "userRestaurants", userHotels, userActivities);
 
   const getrestBookingsFromDb = () => {
-    userRestaurantsIds.map(async (restaurant) => {
+    userRestaurantsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${restaurant}`)
@@ -68,7 +69,7 @@ const OwnerDashboard = () => {
   };
 
   const getActivityBookingsFromDb = () => {
-    userActivitiesIds.map(async (restaurant) => {
+    userActivitiesIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(
@@ -84,7 +85,7 @@ const OwnerDashboard = () => {
   };
 
   const gethotelBookingsFromDb = () => {
-    userHotelsIds.map(async (restaurant) => {
+    userHotelsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(
@@ -146,9 +147,12 @@ const OwnerDashboard = () => {
     };
   }, [state.socket]);
 
-  console.log(restBookings, "restBookings");
-  console.log(activityBookings, "activityBookings");
-  console.log(hotelBookings, "hotelBookings");
+  const getbookingconsole=()=>{
+
+    console.log(restBookings, "restBookings");
+    console.log(activityBookings, "activityBookings");
+    console.log(hotelBookings, "hotelBookings");
+  }
 
 
   return (
@@ -201,7 +205,7 @@ const OwnerDashboard = () => {
                 </div>
                 <div
                   className="box--content"
-                  onClick={() => getrestBookingsFromDb()}
+                  onClick={() => getbookingconsole()}
                 >
                   <p className="box--title">Bookings</p>
                 </div>
