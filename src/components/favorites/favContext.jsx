@@ -7,9 +7,10 @@ export const FavoritesContext = React.createContext();
 
 export default function FavoritesProvider(props) {
   const LoginState = useContext(LoginContext);
-
+  
   // console.log(LoginState.user.id, "/////////////");
-
+  
+  const [isClick, setClick] = useState(false);
   const [favList, setFavList] = useState([]);
 
   // console.log(favList,"favs from context");
@@ -39,6 +40,10 @@ export default function FavoritesProvider(props) {
   //////===================================post=========================================/////
 
   const AddToFavsDb = (item) => {
+    setClick((prevState)=>({
+      ...prevState,
+      [item.id]: !prevState[item.id]
+    }));
     const oneFave = {
       name: item.name,
       img: item.img,
@@ -97,6 +102,7 @@ export default function FavoritesProvider(props) {
     getFromFavsDb,
     deleteFromFavsDb,
     AddToFavsDb,
+    isClick:isClick,
   };
 
   return (
