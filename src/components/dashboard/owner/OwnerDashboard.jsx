@@ -203,7 +203,7 @@ const OwnerDashboard = () => {
                 </div>
                 <div
                   className="box--content"
-                  // onClick={() => getbookingconsole()}
+                  // onClick={() => getrestBookingsFromDb()}
                 >
                   <p className="box--title">Bookings</p>
                 </div>
