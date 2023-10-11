@@ -232,6 +232,7 @@ export default function RestaurantsList(props) {
 
       if (response.ok) {
         console.log(response.body);
+        getFromRestaurantsDb()
       }
     } catch (error) {
       console.error(error);
@@ -245,6 +246,7 @@ export default function RestaurantsList(props) {
 
       if (response.ok) {
         console.log(response.body);
+        getFromActivitesDb()
       }
     } catch (error) {
       console.error(error);
@@ -258,6 +260,7 @@ export default function RestaurantsList(props) {
 
       if (response.ok) {
         console.log(response.body);
+        getFromHotelsDb()
       }
     } catch (error) {
       console.error(error);
