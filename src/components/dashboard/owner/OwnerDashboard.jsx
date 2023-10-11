@@ -1,10 +1,19 @@
 import { LoginContext } from "../../Auth/login/LogInContext";
 import { useState, useContext, useEffect } from "react";
-import Map from "../../map/Map";
 import "./OwnerDashboard.scss";
 import superagent from "superagent";
 import cookie from "react-cookies";
 import { RestaurantsContext } from "../../restaurants/RestaurantContext";
+import DashboardMap from "./DashboardMap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleCheck,
+  faCalendarXmark,
+} from "@fortawesome/free-regular-svg-icons";
+import { faHourglassEnd, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
+import OwnerSideNav from "./OwnerSideNav";
+import { When } from "react-if";
 
 const OwnerDashboard = () => {
   const [notifications, setNotifications] = useState([]);
@@ -18,6 +27,7 @@ const OwnerDashboard = () => {
   const [activityBookings, setactivityBookings] = useState([]);
   const [hotelBookings, sethotelBookings] = useState([]);
   // const [AllBookings, setAlllBookings] = useState([]);
+  const [component, setComponent] = useState("Dashboard");
 
   const AllBookings = [];
   const state = useContext(LoginContext);
@@ -54,7 +64,8 @@ const OwnerDashboard = () => {
 
   // console.log(userRestaurants, "userRestaurants", userHotels, userActivities);
 
-  const getrestBookingsFromDb = () => {
+  const getrestBookingsFromDb = (item) => {
+    setComponent(item);
     userRestaurantsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
@@ -68,7 +79,8 @@ const OwnerDashboard = () => {
     });
   };
 
-  const getActivityBookingsFromDb = () => {
+  const getActivityBookingsFromDb = (item) => {
+    setComponent(item);
     userActivitiesIds?.map(async (restaurant) => {
       try {
         const response = await superagent
@@ -84,7 +96,8 @@ const OwnerDashboard = () => {
     });
   };
 
-  const gethotelBookingsFromDb = () => {
+  const gethotelBookingsFromDb = (item) => {
+    setComponent(item);
     userHotelsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
@@ -106,9 +119,6 @@ const OwnerDashboard = () => {
     getActivityBookingsFromDb();
     gethotelBookingsFromDb();
   }, []);
-
-
-  
 
   //////////////////////////////////========================================//////////////////////////////////////////////
 
@@ -147,13 +157,14 @@ const OwnerDashboard = () => {
     };
   }, [state.socket]);
 
-  const getbookingconsole=()=>{
 
     console.log(restBookings, "restBookings");
     console.log(activityBookings, "activityBookings");
     console.log(hotelBookings, "hotelBookings");
-  }
 
+  const currComponent = (component) => {
+    setComponent(component);
+  };
 
   return (
     <>
@@ -161,171 +172,349 @@ const OwnerDashboard = () => {
         <div className="map-section"></div>
         <div className="inner">
           <nav id="sidebar">
-            <div className="sidebar__container--logo">
-              <div className="logo">W</div>
-              <h1>Wanderlust</h1>
-            </div>
-            <div className="sidebar-links">
-              <button className="sidebar-btn">Home</button>
-              <button
-                className="sidebar-btn"
-                onClick={() => {
-                  setShowMap(!showMap);
-                  handleCreateRestaurant();
-                }}
-              >
-                Create Service
-              </button>
-              {showMap && <Map />}
-
-              <button className="sidebar-btn">Category</button>
-              <button className="sidebar-btn">Raport</button>
-              <button className="sidebar-btn">Stock</button>
-              <button className="sidebar-btn">Financial</button>
-              <button className="sidebar-btn">About us</button>
-            </div>
+            <OwnerSideNav
+              currComponent={currComponent}
+              getrestBookingsFromDb={getrestBookingsFromDb}
+              getActivityBookingsFromDb={getActivityBookingsFromDb}
+              gethotelBookingsFromDb={gethotelBookingsFromDb}
+            />
           </nav>
+          <When condition={component === "Dashboard"}>
+            <main>
+              <div className="main__col--1">
+                <h2>Owner dashboard</h2>
+              </div>
+              <div className="main__col--2">
+                <div className="box box--1">
+                  <div className="box--logo">
+                    <FontAwesomeIcon
+                      icon={faHourglassEnd}
+                      className="iconify"
+                    />
+                  </div>
+                  <div
+                    className="box--content"
+                    onClick={() => getrestBookingsFromDb()}
+                  >
+                    <p className="box--title">Active</p>
+                  </div>
+                </div>
+                <div className="box box--2">
+                  <div className="box--logo">
+                    <FontAwesomeIcon
+                      icon={faCalendarXmark}
+                      className="iconify"
+                    />
+                  </div>
+                  <div className="box--content">
+                    <p className="box--title">Canceled</p>
+                  </div>
+                </div>
+                <div className="box box--3">
+                  <div className="box--logo">
+                    <FontAwesomeIcon icon={faCircleCheck} className="iconify" />
+                  </div>
+                  <div className="box--content">
+                    <p className="box--title">Past</p>
+                  </div>
+                </div>
+              </div>
+              <div className="main__col--3">
+                <div className="flex-wrapper">
+                  <div className="single-chart">
+                    <svg viewBox="0 0 36 36" className="circular-chart orange">
+                      <path
+                        className="circle-bg"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="circle"
+                        strokeDasharray="25 , 100"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <text x={18} y="20.35" className="percentage">
+                        25%
+                      </text>
+                    </svg>
+                  </div>
+                  <div className="single-chart">
+                    <svg viewBox="0 0 36 36" className="circular-chart green">
+                      <path
+                        className="circle-bg"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="circle"
+                        strokeDasharray="10, 100"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <text x={18} y="20.35" className="percentage">
+                        10%
+                      </text>
+                    </svg>
+                  </div>
+                  <div className="single-chart">
+                    <svg viewBox="0 0 36 36" className="circular-chart blue">
+                      <path
+                        className="circle-bg"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        className="circle"
+                        strokeDasharray="60, 100"
+                        d="M18 2.0845
+      a 15.9155 15.9155 0 0 1 0 31.831
+      a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <text x={18} y="20.35" className="percentage">
+                        60%
+                      </text>
+                    </svg>
+                  </div>
+                </div>
+                {/* ------------------------------------- booking details------------------------------------------ */}
+              </div>
+              <div className="main__col--4">
+                <h1>Reservations</h1>
+                <div className="simple-bar-chart">
+                  <div
+                    className="item"
+                    style={{ "--clr": "#5EB344", "--val": "45" }}
+                  >
+                    <div className="label">2018</div>
+                    <div className="value">167</div>
+                  </div>
 
-          <div className="menu">
-            <div className="line" />
-          </div>
-          <main>
-            <div className="main__col--1">
-              <h2>Owner dashboard</h2>
-            </div>
-            <div className="main__col--2">
-              <div className="box box--1">
-                <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="fluent:people-32-filled"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
-                </div>
-                <div
-                  className="box--content"
-                  onClick={() => getbookingconsole()}
-                >
-                  <p className="box--title">Bookings</p>
-                </div>
-              </div>
-              <div className="box box--2">
-                <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="clarity:group-line"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
-                </div>
-                <div className="box--content">
-                  <p className="box--title">Cancellations</p>
-                </div>
-              </div>
-              <div className="box box--3">
-                <div className="box--logo">
-                  <span
-                    className="iconify"
-                    data-inline="false"
-                    data-icon="ant-design:cloud-download-outlined"
-                    style={{ color: "#ffffff", "font-size": "40px" }}
-                  />
-                </div>
-                <div className="box--content">
-                  <p className="box--title">Views</p>
+                  <div
+                    className="item"
+                    style={{ "--clr": "#FCB72A", "--val": "59" }}
+                  >
+                    <div className="label">2019</div>
+                    <div className="value">298</div>
+                  </div>
+
+                  <div
+                    className="item"
+                    style={{ "--clr": "#F8821A", "--val": "62" }}
+                  >
+                    <div className="label">2020</div>
+                    <div className="value">306</div>
+                  </div>
+
+                  <div
+                    className="item"
+                    style={{ "--clr": "#E0393E", "--val": "78" }}
+                  >
+                    <div className="label">2021</div>
+                    <div className="value">420</div>
+                  </div>
+
+                  <div
+                    className="item"
+                    style={{ "--clr": "#963D97", "--val": "90" }}
+                  >
+                    <div className="label">2022</div>
+                    <div className="value">531</div>
+                  </div>
+
+                  <div
+                    className="item"
+                    style={{ "--clr": "#069CDB", "--val": "73" }}
+                  >
+                    <div className="label">2023</div>
+                    <div className="value">350</div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="main__col--3">
-              <div className="flex-wrapper">
-                <div className="single-chart">
-                  <svg viewBox="0 0 36 36" className="circular-chart orange">
-                    <path
-                      className="circle-bg"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="circle"
-                      strokeDasharray="25 , 100"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <text x={18} y="20.35" className="percentage">
-                      25%
-                    </text>
-                  </svg>
-                </div>
-                <div className="single-chart">
-                  <svg viewBox="0 0 36 36" className="circular-chart green">
-                    <path
-                      className="circle-bg"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="circle"
-                      strokeDasharray="15, 100"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <text x={18} y="20.35" className="percentage">
-                      15%
-                    </text>
-                  </svg>
-                </div>
-                <div className="single-chart">
-                  <svg viewBox="0 0 36 36" className="circular-chart blue">
-                    <path
-                      className="circle-bg"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="circle"
-                      strokeDasharray="60, 100"
-                      d="M18 2.0845
-      a 15.9155 15.9155 0 0 1 0 31.831
-      a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <text x={18} y="20.35" className="percentage">
-                      60%
-                    </text>
-                  </svg>
-                </div>
+            </main>
+            <aside>
+              <p className="notifTitlE">Notifications</p>
+              <div className="notifications">
+                {notifications.map((n, i) => {
+                  console.log(n);
+                  return <p key={i}>{n.senderName} has made a reservation</p>;
+                })}
+                {missing.map((n, i) => {
+                  console.log(n);
+                  return (
+                    <p key={i}>
+                      {" "}
+                      {n} has made a reservation while you are{" "}
+                      <span className="offlineffff">offline</span>
+                    </p>
+                  );
+                })}
               </div>
-              {/* ------------------------------------- booking details------------------------------------------ */}
+            </aside>
+          </When>
+          <When condition={component === "Map"}>
+            <div className="mappplaithttttt">
+              <DashboardMap />
             </div>
-          </main>
-          <aside>
-            <div className="notifications">
-              <p>Notifications</p>
-              {notifications.map((n, i) => {
-                console.log(n);
-                return (
-                  <p key={i}>
-                    {n.senderName} made a reservation in your restaurant{" "}
-                    {n.roomId}
-                  </p>
-                );
-              })}
-              {missing.map((n, i) => {
-                console.log(n);
-                return (
-                  <p key={i}>
-                    {" "}
-                    {n} has made a reservation while you are offline
-                  </p>
-                );
-              })}
+          </When>
+          <When condition={component === "Restaurants"}>
+            <div className="contacenti">
+              <h2 className="titleListLLL">Restaurant reservations</h2>
+              <div className="bookingListOwner">
+                {restBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </aside>
+            <aside>
+              <p className="notifTitlE">Notifications</p>
+              <div className="notifications">
+                {notifications.map((n, i) => {
+                  console.log(n);
+                  return <p key={i}>{n.senderName} has made a reservation</p>;
+                })}
+                {missing.map((n, i) => {
+                  console.log(n);
+                  return (
+                    <p key={i}>
+                      {" "}
+                      {n} has made a reservation while you are{" "}
+                      <span className="offlineffff">offline</span>
+                    </p>
+                  );
+                })}
+              </div>
+            </aside>
+          </When>
+          <When condition={component === "Activties"}>
+            <div className="contacenti">
+              <h2 className="titleListLLL">Activites reservations</h2>
+              <div className="bookingListOwner">
+                {activityBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <aside>
+              <p className="notifTitlE">Notifications</p>
+              <div className="notifications">
+                {notifications.map((n, i) => {
+                  console.log(n);
+                  return <p key={i}>{n.senderName} has made a reservation</p>;
+                })}
+                {missing.map((n, i) => {
+                  console.log(n);
+                  return (
+                    <p key={i}>
+                      {" "}
+                      {n} has made a reservation while you are{" "}
+                      <span className="offlineffff">offline</span>
+                    </p>
+                  );
+                })}
+              </div>
+            </aside>
+          </When>
+          <When condition={component === "Hotels"}>
+            <div className="contacenti">
+              <h2 className="titleListLLL">Hotels reservations</h2>
+              <div className="bookingListOwner">
+                {hotelBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <aside>
+              <p className="notifTitlE">Notifications</p>
+              <div className="notifications">
+                {notifications.map((n, i) => {
+                  console.log(n);
+                  return <p key={i}>{n.senderName} has made a reservation</p>;
+                })}
+                {missing.map((n, i) => {
+                  console.log(n);
+                  return (
+                    <p key={i}>
+                      {" "}
+                      {n} has made a reservation while you are{" "}
+                      <span className="offlineffff">offline</span>
+                    </p>
+                  );
+                })}
+              </div>
+            </aside>
+          </When>
         </div>
       </div>
     </>

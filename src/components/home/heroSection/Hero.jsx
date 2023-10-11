@@ -48,7 +48,7 @@ export default function Hero() {
         muted
         loop
         autoPlay
-        src={video}
+        // src={video}
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
