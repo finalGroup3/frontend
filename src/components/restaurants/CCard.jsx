@@ -11,6 +11,7 @@ import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 import { FaStar } from "react-icons/fa";
 
 const CCard = ({ element, type, restId, hotelId, activId }) => {
+  
   const favstate = useContext(FavoritesContext);
   const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -44,7 +45,7 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
   //     console.log(Reeels)
 
   // }
-
+  
   return (
     <>
       <div>

@@ -14,8 +14,7 @@ import LoginProvider from "./components/Auth/login/LogInContext";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
-import Room from "./components/chat/Room";
-
+import Room from "./src/components/chat/Chat";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import RestaurantsContext from "./components/restaurants/RestaurantContext";
 import FavoritesProvider from "./components/favorites/favContext";

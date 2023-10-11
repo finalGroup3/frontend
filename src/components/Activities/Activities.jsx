@@ -89,13 +89,13 @@ export default function Activities() {
         >
           <div className="container-top-three-resturants">
             <br />
-            <h2 className="headline-1 section-title">Top Resturants</h2>
+            <h2 className="headline-1 section-title">Top Activities</h2>
 
             {/* <button onClick={() => state.deleteRestaurantsInDb("send the id")}>delete</button>
             <button onClick={() => state.AddToRestaurantsDb("send the item")}>add</button>
             <button onClick={() => state.updateRestaurantsInDb("send the id")}>update</button> */}
 
-            <p className="section-subtitle2 label-2">Flavors For Royalty</p>
+            <p className="section-subtitle2 label-2">Places For Royalty</p>
             <p className="section-subtitle"></p>
             <br />
             <br />

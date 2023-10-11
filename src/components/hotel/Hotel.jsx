@@ -1,11 +1,5 @@
 import React, { useContext } from "react";
 import "./Hotel.scss";
-import movinpick from "../../assets/movinpick.jpg";
-import hotel2 from "../../assets/hotel2.avif";
-import hotel3 from "../../assets/crown-hotel.webp";
-import hotel4 from "../../assets/hotel5.jpg";
-import hotel5 from "../../assets/hotel6.jpg";
-import hilton from "../../assets/hilton.webp";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CCard from "../restaurants/CCard";
