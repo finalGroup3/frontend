@@ -938,16 +938,17 @@
     font-style: italic;
     display: flex;
     justify-content: left;
-    align-items: left;
+    align-items: flex-end;
+    
     padding-top: 7px;
     font-size: 1rem; /* Set your desired font size */
     overflow: hidden;
     max-width: 50ch;
     min-height: 2rem; /* 3 lines multiplied by the line-height (1.5rem) */
     line-height: 1.5;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 3;
+    // -webkit-box-orient: vertical;
 
   }
 
@@ -1016,5 +1017,11 @@
  .dessss{
 display: flex;
 // flex-direction: column;
+ }
+ .go4268192979 {
+  width: 66px;
+  height: 65px;
+  // margin-left:244px !important;
+  // margin-Top: -73px !important;
  }
 }

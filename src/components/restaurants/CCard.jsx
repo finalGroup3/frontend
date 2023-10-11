@@ -9,11 +9,12 @@ import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 import { FaStar } from "react-icons/fa";
+import Heart from "react-animated-heart";
 
 const CCard = ({ element, type, restId, hotelId, activId }) => {
   
   const favstate = useContext(FavoritesContext);
-
+ 
   const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const reelState = useContext(ReelContext);
@@ -46,7 +47,8 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
   //     console.log(Reeels)
 
   // }
-  
+
+ 
   return (
     <>
       <div>
@@ -72,8 +74,10 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                     />
                   </label>
                 );
-              })}</p>
-            <button onClick={()=>favstate.AddToFavsDb(element)}>
+              })}
+              <Heart isClick={favstate.isClick[element.id]} onClick={()=>favstate.AddToFavsDb(element)}/>
+              </p>
+            {/* <button onClick={()=>favstate.AddToFavsDb(element)}>
               <img
                 src={favv}
                 alt="Review"
@@ -84,7 +88,7 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                   marginTop: "-44px",
                 }}
               />
-            </button>
+            </button> */}
             
             <h4 className="item-title" style={{
   fontFamily: "'Georgia', serif",
