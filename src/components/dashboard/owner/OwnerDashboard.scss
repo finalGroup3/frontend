@@ -1,20 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Encode+Sans+Condensed:wght@500&family=Inclusive+Sans&family=Jost:wght@200&family=Merriweather+Sans:wght@300&family=Montserrat:wght@300&family=Noto+Serif:ital@1&family=Oswald&family=Poppins:wght@100;300;400;800&display=swap");
 .ooooo {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    height: 100vh;
-    font-family: "Roboto", sans-serif;
+  font-family: "Merriweather Sans", sans-serif;
+  .nav-adminLaith {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
   }
 
   .inner {
     display: grid;
     grid-template-columns: 250px 1fr 355px;
-    height: 100%;
+    height: 100vh;
   }
 
   li {
@@ -128,8 +127,8 @@
 
   .main__col--1 h2 {
     font-weight: bold;
-    font-size: 23px;
-    color: #fff;
+    font-size: 30px;
+    color: #fca41c;
   }
 
   /* Main col 2 */
@@ -154,10 +153,14 @@
   }
   .flex-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     position: relative;
+    gap: 162px;
     z-index: 0;
+  }
+  .iconify {
+    font-size: 20px;
   }
 
   .single-chart {
@@ -232,10 +235,13 @@
     flex-direction: column;
     justify-content: space-evenly;
     padding-left: 10px;
+    p {
+      margin-bottom: 0;
+    }
   }
 
   .box--title {
-    color: #5b607e;
+    color: white;
     font-size: 20px;
     font-weight: bold;
   }
@@ -248,10 +254,20 @@
 
   .main__col--3 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
-    margin: 50px 0;
+    margin: 30px 0;
     height: auto;
+  }
+  .main__col--4 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    margin: 20px 0;
+    height: auto;
+    h1 {
+      color: #fca41c;
+    }
   }
 
   .graphic--container {
@@ -303,10 +319,10 @@
   /* ASIDE */
   aside {
     padding: 20px 20px;
-    background: #052630c2;
+    overflow: hidden;
   }
   #sidebar {
-    background-color: #052630c2;
+    // background-color: #052630c2;
     color: #fff;
     padding: 20px;
     height: 88vh;
@@ -480,27 +496,185 @@
   }
 
   .notifications {
+    overflow-y: auto;
+    height: 90%;
     background-color: #0f0909;
     border: 1px solid #ddd;
     padding: 20px;
     margin-top: 20px;
     border-radius: 8px;
   }
-  
+
   .notifications p {
     margin: 0 0 10px;
     padding: 10px;
-    background-color: #0f7224;
+    background-color: #165769;
     border: 1px solid #ddd;
     border-radius: 4px;
   }
-  
+  .notifTitlE {
+    font-size: 25px;
+    color: #fca41c;
+  }
+
   /* Optional: Add some additional styles for better readability */
   .notifications p:nth-child(even) {
-    background-color: #0f7224;
+    background-color: #165769;
   }
-  
+
   .notifications p:hover {
     background-color: #1e83b3;
   }
+  .offlineffff {
+    color: #fca41c;
+    font-weight: 500;
+  }
+
+  //==========================================================================
+
+  .simple-bar-chart {
+    --line-count: 10;
+    --line-color: currentcolor;
+    --line-opacity: 0.25;
+    --item-gap: 2%;
+    --item-default-color: #060606;
+
+    height: 14rem;
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--item-gap);
+    align-items: end;
+    padding-inline: var(--item-gap);
+    --padding-block: 1.5rem; /*space for labels*/
+    padding-block: var(--padding-block);
+    position: relative;
+    isolation: isolate;
+  }
+
+  .simple-bar-chart::after {
+    content: "";
+    position: absolute;
+    inset: var(--padding-block) 0;
+    z-index: -1;
+    --line-width: 1px;
+    --line-spacing: calc(100% / var(--line-count));
+    background-image: repeating-linear-gradient(
+      to top,
+      transparent 0 calc(var(--line-spacing) - var(--line-width)),
+      var(--line-color) 0 var(--line-spacing)
+    );
+    box-shadow: 0 var(--line-width) 0 var(--line-color);
+    opacity: var(--line-opacity);
+  }
+  .simple-bar-chart > .item {
+    width: 80%;
+    height: calc(1% * var(--val));
+    background-color: var(--clr, var(--item-default-color));
+    position: relative;
+    animation: item-height 1s ease forwards;
+  }
+  @keyframes item-height {
+    from {
+      height: 0;
+    }
+  }
+
+  .simple-bar-chart > .item > * {
+    position: absolute;
+    text-align: center;
+  }
+  .simple-bar-chart > .item > .label {
+    inset: 100% 0 auto 0;
+  }
+  .simple-bar-chart > .item > .value {
+    inset: auto 0 100% 0;
+  }
+
+  .contacenti {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    h2 {
+      font-size: 40px;
+      color: #fca41c;
+      margin-top: 20px;
+    }
+    .bookingListOwner {
+      padding: 10px 0px;
+      width: 100%;
+      height: 85%;
+      border: 1px solid white;
+      margin: auto;
+      border-radius: 10px 0px 0px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background-color: black;
+      overflow: auto;
+      
+      .listELEmenTT {
+        padding-bottom: 20px;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 98%;
+        // height: 15rem;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        transition: 0.2s ease;
+        background-color: #1657696b;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        &:hover {
+          background-color: #165769;
+        }
+        .titleELE {
+          font-size: 35px;
+          color: #fca41c;
+        }
+        .usernameeeee {
+          .hihello {
+            color: #fca41c;
+          }
+        }
+        .howmanyyyyyy {
+          background-color: #1e84b35c;
+          width: fit-content;
+          height: fit-content;
+          border-radius: 20px;
+          padding: 5px;
+          position: absolute;
+          right: 10px;
+          bottom: 50px;
+        }
+        .iconlaith {
+          margin-right: 10px;
+          padding: 0px 5px;
+        }
+        .daaaatttteeee {
+          margin-top: 3px;
+          background-color: #1e84b35c;
+          width: fit-content;
+          height: fit-content;
+          padding: 5px;
+          border-radius: 20px;
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+        }
+        .imglistOwner {
+          width: 200px;
+          height: 150px;
+          border: 1px solid white;
+          border-radius: 10px;
+        }
+      }
+    }
+  }
+  // .mappplaithttttt{
+  //   width: 10px;
+  //   overflow: hidden;
+  // }
 }
