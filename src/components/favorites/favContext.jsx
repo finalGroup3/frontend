@@ -80,8 +80,8 @@ export default function FavoritesProvider(props) {
 
       if (response.ok) {
         console.log(response.body);
-          getFromFavsDb();
       }
+      getFromFavsDb();
     } catch (error) {
       console.error(error);
     }
