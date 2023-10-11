@@ -13,6 +13,7 @@ import { FaStar } from "react-icons/fa";
 const CCard = ({ element, type, restId, hotelId, activId }) => {
   
   const favstate = useContext(FavoritesContext);
+
   const [modalShow, setModalShow] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const reelState = useContext(ReelContext);
@@ -72,7 +73,7 @@ const CCard = ({ element, type, restId, hotelId, activId }) => {
                   </label>
                 );
               })}</p>
-            <button onClick={favstate.AddToFavsDb(element)}>
+            <button onClick={()=>favstate.AddToFavsDb(element)}>
               <img
                 src={favv}
                 alt="Review"
