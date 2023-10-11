@@ -29,21 +29,21 @@ const Footer = () => {
           <div className="phone">+0987654321</div>
         </div>
         <div className="links">
-          <Link to='/home'>
+          <Link className="Linkff" to='/home'>
              <div className="home">Home</div>
           </Link>
          
-         <Link to='/map'>
+         <Link className="Linkff" to='/map'>
           <div className="home">Map</div>
           </Link>
-          <Link to='/reels'>
+          <Link className="Linkff" to='/reels'>
            <div className="home">Reels</div>
           </Link>
-          <Link to='/restaurants'>
+          <Link className="Linkff" to='/restaurants'>
 
           <div className="services">Services</div>
          </Link>
-         <Link to='/aboutus'>
+         <Link  className="Linkff" to='/aboutus'>
                  
           <div className="features">About Us</div>
           </Link>
