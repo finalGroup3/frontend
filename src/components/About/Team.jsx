@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./team.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -7,8 +7,21 @@ import laith from "./laith.png";
 import nour from "./nour.jpeg";
 import alaa from "./ALA.jpg";
 import amro from "./amroo.jpg";
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 function Team() {
+  const [isModelOpen, setIsModelOpen] = useState(false);
+
+  const handleModelOpen = () => {
+    setIsModelOpen(true);
+  };
+
+  const handleModelClose = () => {
+    setIsModelOpen(false);
+  };
+
+
+
   return (
     <section className="Teamteam">
       <div className="Teamcontainer">
@@ -21,7 +34,7 @@ function Team() {
             <div className="contentBx">
               <h3>
                 Nour<br />
-                
+
               </h3>
               <span className="ss">Web Developer</span>
             </div>
@@ -29,22 +42,38 @@ function Team() {
 
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href="#">
-              <FontAwesomeIcon icon={faGithub} />
+              <a href="https://github.com/Nour-Alahmad">
+                <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
 
             <li style={{ "--i": 2 }}>
-              <a href="#">
-              <FontAwesomeIcon icon={faLinkedin} />              </a>
+              <a href="https://www.linkedin.com/in/nour-alahmad1/">
+                <FontAwesomeIcon icon={faLinkedin} />              </a>
             </li>
 
             <li style={{ "--i": 3 }}>
-              <a href="#">
-              <FontAwesomeIcon icon={faWhatsapp} />              </a>
+              <a onClick={handleModelOpen}>
+                <FontAwesomeIcon icon={faWhatsapp} />
+              </a>
+              {isModelOpen && (
+                <div className="numberTeam">
+                <div className="custom-model-main model-open">
+                  <div className="custom-model-inner">
+                    <div className="close-btn" onClick={handleModelClose}>
+                    <FontAwesomeIcon icon={faXmark} />                                                     </div>
+                    <div className="custom-model-wrap">
+                      <div className="pop-up-content-wrap">
+                        0788579812
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              )}
             </li>
-            <li style={{ "--i": 4}}>
-                         
+            <li style={{ "--i": 4 }}>
+
             </li>
           </ul>
         </div>
@@ -58,7 +87,6 @@ function Team() {
             <div className="contentBx">
               <h3>
                 Ala'<br />
-                {/* <span>Web Developer</span> */}
               </h3>
               <span className="ss">Web Developer</span>
             </div>
@@ -66,24 +94,39 @@ function Team() {
 
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href="#">
+              <a href="https://github.com/AlaEmadIbrahim">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
 
             <li style={{ "--i": 2 }}>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/ala-ibrahim/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </li>
 
             <li style={{ "--i": 3 }}>
-              <a href="#">
+              <a onClick={handleModelOpen}>
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
+              {isModelOpen && (
+                <div className="numberTeam">
+                <div className="custom-model-main model-open">
+                  <div className="custom-model-inner">
+                    <div className="close-btn" onClick={handleModelClose}>
+                    <FontAwesomeIcon icon={faXmark} />                                                     </div>
+                    <div className="custom-model-wrap">
+                      <div className="pop-up-content-wrap">
+                        0772362349
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              )}
             </li>
-            <li style={{ "--i": 4}}>
-                         
+            <li style={{ "--i": 4 }}>
+
             </li>
           </ul>
         </div>
@@ -96,7 +139,6 @@ function Team() {
             <div className="contentBx">
               <h3>
                 Savana<br />
-                {/* <span>Web Developer</span> */}
               </h3>
               <span className="ss">Web Developer</span>
             </div>
@@ -104,24 +146,39 @@ function Team() {
 
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href="#">
+              <a href="https://github.com/savanahamood">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
 
             <li style={{ "--i": 2 }}>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/savana-hamood/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </li>
 
             <li style={{ "--i": 3 }}>
-              <a href="#">
+              <a onClick={handleModelOpen}>
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
+              {isModelOpen && (
+                <div className="numberTeam">
+                <div className="custom-model-main model-open">
+                  <div className="custom-model-inner">
+                    <div className="close-btn" onClick={handleModelClose}>
+                    <FontAwesomeIcon icon={faXmark} />                                                     </div>
+                    <div className="custom-model-wrap">
+                      <div className="pop-up-content-wrap">
+                        0778765082
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              )}
             </li>
-            <li style={{ "--i": 4}}>
-                         
+            <li style={{ "--i": 4 }}>
+
             </li>
           </ul>
         </div>
@@ -134,7 +191,6 @@ function Team() {
             <div className="contentBx">
               <h3>
                 Laith<br />
-                {/* <span>Web Developer</span> */}
               </h3>
               <span className="ss">Web Developer</span>
             </div>
@@ -142,24 +198,39 @@ function Team() {
 
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href="#">
+              <a href="https://github.com/LaithShatnawi">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
 
             <li style={{ "--i": 2 }}>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/laith-shatnawi-556630146/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </li>
 
             <li style={{ "--i": 3 }}>
-              <a href="#">
+              <a onClick={handleModelOpen}>
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
+              {isModelOpen && (
+                <div className="numberTeam">
+                <div className="custom-model-main model-open">
+                  <div className="custom-model-inner">
+                    <div className="close-btn" onClick={handleModelClose}>
+                    <FontAwesomeIcon icon={faXmark} />                                                     </div>
+                    <div className="custom-model-wrap">
+                      <div className="pop-up-content-wrap">
+                        0797801900
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              )}
             </li>
-            <li style={{ "--i": 4}}>
-                         
+            <li style={{ "--i": 4 }}>
+
             </li>
           </ul>
         </div>
@@ -172,7 +243,6 @@ function Team() {
             <div className="contentBx">
               <h3>
                 Amro<br />
-                {/* <span>Web Developer</span> */}
               </h3>
               <span className="ss">Web Developer</span>
             </div>
@@ -180,24 +250,39 @@ function Team() {
 
           <ul className="sci">
             <li style={{ "--i": 1 }}>
-              <a href="#">
+              <a href="https://github.com/AmroBaniIssa">
                 <FontAwesomeIcon icon={faGithub} />
               </a>
             </li>
 
             <li style={{ "--i": 2 }}>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/amro-bani-issa/">
                 <FontAwesomeIcon icon={faLinkedin} />
               </a>
             </li>
 
             <li style={{ "--i": 3 }}>
-              <a href="#">
+              <a onClick={handleModelOpen}>
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
+              {isModelOpen && (
+                <div className="numberTeam">
+                <div className="custom-model-main model-open">
+                  <div className="custom-model-inner">
+                    <div className="close-btn" onClick={handleModelClose}>
+                    <FontAwesomeIcon icon={faXmark} />                                                     </div>
+                    <div className="custom-model-wrap">
+                      <div className="pop-up-content-wrap">
+                        0785550017
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              )}
             </li>
-            <li style={{ "--i": 4}}>
-                         
+            <li style={{ "--i": 4 }}>
+
             </li>
           </ul>
         </div>
