@@ -28,7 +28,7 @@ export default function Activities() {
 
 
 
-     
+   <div className="ssss">
 <div className="portfolioact">
   <div className="item" data-aos="fade-up">
     <div className="inner">
@@ -54,6 +54,7 @@ export default function Activities() {
  
 </div>
 
+</div>
 
 
 
@@ -64,23 +65,7 @@ export default function Activities() {
 
 
 
-
-      {/* <div>
-        <div className="glassss-overlay">
-
-
-        </div>
-        <section id="seeection-a">
-          <div className="about">
-            <p className="text-white scroll-page about-p-one">Give yourself the gift<br />of Good Food</p>
-            <p className="text-white scroll-page about-p-two">Enjoy a wonderful dining experience</p>
-          </div>
-        </section>
-
-      </div> */}
-
-      {/* <a class="Me" href="https://bit.ly/m/JordanDey" target="_top">CodePen by Jordan Dey</a> */}
-
+      
       <div className="bbb">
 
         {/* --------------------------------- cards resturants------------------------------------- */}
@@ -198,22 +183,7 @@ export default function Activities() {
                 </div>
               </li>
             </ul>
-            {/* <img
-              src={shape1}
-              width={246}
-              height={412}
-              loading="lazy"
-              alt="shape"
-              className="shape shape-1 move-anim"
-            />
-            <img
-              src={shape2}
-              width={343}
-              height={345}
-              loading="lazy"
-              alt="shape"
-              className="shape shape-2 move-anim"
-            /> */}
+          
           </div>
         </section>
 
@@ -373,17 +343,16 @@ export default function Activities() {
             {/* <p className="steak"></p> */}
           </h2>
           <p className="section-subtitle"></p>
+        <br />
+        <br />
         </div>
-        <div className="container">
+        <div className="ccontainerr">
           {state.activitiesList.map((element) => {
             return (
               <>
-                <div>
-                  <CCard key={element.id} element={element} activId={element.id} />
-                  {/* <ReelModal activId={element.id} /> */}
-                  <Modal22 activId={element.id} />
-
-                </div>
+                <CCard key={element.id} element={element} activId={element.id} />
+                {/* <ReelModal restId={element.id} /> */}
+                <Modal22 activId={element.id} />
               </>
             );
           })}

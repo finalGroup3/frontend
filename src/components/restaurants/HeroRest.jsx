@@ -3,7 +3,7 @@ import './heroRest.scss'; // Make sure to import your CSS file here
 
 function HeroRest() {
   return (
-    <div>
+    <div className="herooo">
      <div className="glass-overlay">
 
 

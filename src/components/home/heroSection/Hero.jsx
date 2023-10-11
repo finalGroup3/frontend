@@ -7,7 +7,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import mask from './grunge2.jpg'
-
+// import img from './img.png'
+// import video from './intro.mp4'
 
 
 gsap.registerPlugin(ScrollTrigger);

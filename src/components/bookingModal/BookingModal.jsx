@@ -13,13 +13,12 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
   const [oneUser, setOneUser] = useState("");
 
   // console.log("item...............", item);
-  if(open){
-
+  if (open) {
     const getOneUser = async () => {
       try {
         const response = await superagent
-        .get(`${import.meta.env.VITE_DATABASE_URL}/oneuser/${item.ownerId}`)
-        .set("authorization", `Bearer ${cookie.load("auth")}`);
+          .get(`${import.meta.env.VITE_DATABASE_URL}/oneuser/${item.ownerId}`)
+          .set("authorization", `Bearer ${cookie.load("auth")}`);
         const items = response.body;
         if (response.ok) {
           setOneUser(items.username);
@@ -29,7 +28,7 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
         console.error(error);
       }
     };
-    getOneUser()
+    getOneUser();
   }
   const notifyBooking = async (e) => {
     e.preventDefault();

@@ -9,7 +9,7 @@ import heart from './bookmark (1).png'
 import { useState ,useContext} from "react";
 import { Rating } from "@mui/material";
 
-const Card = ({element}) => {
+const Card = ({element,handelDelete}) => {
   const [openModal, setOpenModal] = useState(false);
 
   const LoginState = useContext(LoginContext);
@@ -43,6 +43,12 @@ const Card = ({element}) => {
   //     console.log(error);
   //   }
   // };
+  const handelDeleteed=()=>{
+    FaveState.deleteFromFavsDb(element.id)
+    FaveState.getFromFavsDb()
+    handelDelete()
+
+  }
 
   return (
     <div className="favsssss">
@@ -69,7 +75,7 @@ const Card = ({element}) => {
               <p className="card__description">{element.description}</p>
               <div className="containBtNn">
                 <button onClick={() => setOpenModal(true)}>Book Now!</button>
-                <button className="removeBTnnn" onClick={()=>FaveState.deleteFromFavsDb(element.id)}>Remove</button>
+                <button className="removeBTnnn" onClick={handelDeleteed}>Remove</button>
               </div>
             </div>
           </div>

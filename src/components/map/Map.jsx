@@ -5,6 +5,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import { LoginContext } from "../Auth/login/LogInContext";
 import StarIcon from "@mui/icons-material/Star";
 import axios from "axios";
+import cookie from "react-cookies";
 import "./Map.scss";
 import Map, {
   NavigationControl,
@@ -113,7 +114,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -125,7 +126,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -137,7 +138,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           newPin,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -203,7 +204,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           `${import.meta.env.VITE_DATABASE_URL}/restaurants`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -218,7 +219,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           `${import.meta.env.VITE_DATABASE_URL}/activity`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );
@@ -233,7 +234,7 @@ const [currentPlaceIdActivity, setCurrentPlaceIdActivity] = useState(null);
           `${import.meta.env.VITE_DATABASE_URL}/hotel`,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem("userToken")}`,
+              Authorization: `Bearer ${cookie.load("auth")}`,
             },
           }
         );

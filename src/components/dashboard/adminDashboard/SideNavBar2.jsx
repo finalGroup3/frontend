@@ -5,7 +5,7 @@ import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { faChartPie } from "@fortawesome/free-solid-svg-icons";
 import { faMessage } from "@fortawesome/free-solid-svg-icons";
 import { faPersonSwimming } from "@fortawesome/free-solid-svg-icons";
-import { faMugSaucer,faCalendarDays } from "@fortawesome/free-solid-svg-icons";
+import { faMugSaucer,faCalendarDays,faHotel } from "@fortawesome/free-solid-svg-icons";
 import { faAddressBook } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import profile from '../../../imgs/user (4).png'
@@ -97,7 +97,7 @@ const SideNavBar = (props) => {
                   onClick={() => props.currComponent("Hotels")}>
                   <div>
                     <div className='icon'>
-                      <FontAwesomeIcon icon={faPersonSwimming} />
+                    <FontAwesomeIcon icon={faHotel} />
                     </div>
                     Hotels
                   </div>
