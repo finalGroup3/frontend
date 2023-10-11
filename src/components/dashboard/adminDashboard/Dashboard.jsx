@@ -103,9 +103,9 @@ const Dashboard = () => {
 
           : component == "Bookings" ? (
             <div>
-              <h3 className='dashboard-page-title'>Activties</h3>
+              <h3 className='dashboard-page-title'>Bookings</h3>
 
-              <BookingsTable data={bookings} type={"Bookings"} bookingsFromDB={bookingsFromDB}  />
+              <BookingsTable data={bookings} type={"Bookings"} bookingsFromDB={()=>bookingsFromDB}  />
             </div>
           )
           

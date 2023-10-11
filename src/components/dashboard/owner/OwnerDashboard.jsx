@@ -147,12 +147,10 @@ const OwnerDashboard = () => {
     };
   }, [state.socket]);
 
-  const getbookingconsole=()=>{
 
     console.log(restBookings, "restBookings");
     console.log(activityBookings, "activityBookings");
     console.log(hotelBookings, "hotelBookings");
-  }
 
 
   return (
@@ -205,7 +203,7 @@ const OwnerDashboard = () => {
                 </div>
                 <div
                   className="box--content"
-                  onClick={() => getbookingconsole()}
+                  // onClick={() => getrestBookingsFromDb()}
                 >
                   <p className="box--title">Bookings</p>
                 </div>

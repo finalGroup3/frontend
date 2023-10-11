@@ -22,23 +22,26 @@ export default function Booking() {
   //////===================================get=========================================/////
 
   const getRestaurantsBookingsFromDb = async () => {
+    
     if (LoginState.user.role === "user") {
-      const userId = LoginState.user.id;
-      try {
-        const response = await superagent
+      if (LoginState.user.id) {
+        const userId = LoginState.user.id;
+        try {
+          const response = await superagent
           .get(`${import.meta.env.VITE_DATABASE_URL}/bookings/${userId}`)
           .set("authorization", `Bearer ${cookie.load("auth")}`);
-        const items = response.body;
-        setRestaurantsBookings(items.bookings);
-      } catch (error) {
-        console.error(error);
+          const items = response.body;
+          setRestaurantsBookings(items.bookings);
+        } catch (error) {
+          console.error(error);
+        }
       }
     }
   };
 
   const getAllBookingsFromDb = async () => {
     if (LoginState.user.role === "admin") {
-      const userId = LoginState.user.role;
+      // const userId = LoginState.user.role;
       // console.log(userId, "adminId");
       try {
         const response = await superagent
