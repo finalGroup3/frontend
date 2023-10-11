@@ -44,7 +44,7 @@ export default function Hero() {
   <source src={video} type='video/mp4' />
 </video> */}
 
-      <video
+      {/* <video
 
         ref={videoRef}
         muted
@@ -54,7 +54,7 @@ export default function Hero() {
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
-      ></video>
+      ></video> */}
 
       
       <div className="mask-contain"><img className='mask' src={mask}/></div>

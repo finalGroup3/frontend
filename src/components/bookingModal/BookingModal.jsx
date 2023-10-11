@@ -12,7 +12,7 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
   const [date, setDate] = useState("");
   const [oneUser, setOneUser] = useState("");
 
-  console.log("item...............", item);
+  // console.log("item...............", item);
   if (open) {
     const getOneUser = async () => {
       try {
@@ -28,7 +28,7 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
         console.error(error);
       }
     };
-    getOneUser()
+    getOneUser();
   }
   const notifyBooking = async (e) => {
     e.preventDefault();

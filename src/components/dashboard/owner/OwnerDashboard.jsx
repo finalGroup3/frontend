@@ -10,7 +10,8 @@ import {
   faCircleCheck,
   faCalendarXmark,
 } from "@fortawesome/free-regular-svg-icons";
-import { faHourglassEnd } from "@fortawesome/free-solid-svg-icons";
+import { faHourglassEnd, faUsers } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import OwnerSideNav from "./OwnerSideNav";
 import { When } from "react-if";
 
@@ -34,17 +35,18 @@ const OwnerDashboard = () => {
   //////////////////////////////////////////////////////////////////////////////////////
   //////===================================get=========================================/////
   const FaveState = useContext(RestaurantsContext);
+
   const userId = state.user.id;
   console.log(userId, "userId");
 
   //////============get user services==================///////////
-  const userRestaurants = FaveState.restaurantsList.filter((restaurant) => {
+  const userRestaurants = FaveState.restaurantsList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
-  const userHotels = FaveState.hotelsList.filter((restaurant) => {
+  const userHotels = FaveState.hotelsList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
-  const userActivities = FaveState.activitiesList.filter((restaurant) => {
+  const userActivities = FaveState.activitiesList?.filter((restaurant) => {
     return restaurant.ownerId === userId;
   });
 
@@ -62,8 +64,9 @@ const OwnerDashboard = () => {
 
   // console.log(userRestaurants, "userRestaurants", userHotels, userActivities);
 
-  const getrestBookingsFromDb = () => {
-    userRestaurantsIds.map(async (restaurant) => {
+  const getrestBookingsFromDb = (item) => {
+    setComponent(item);
+    userRestaurantsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(`${import.meta.env.VITE_DATABASE_URL}/bookingRest/${restaurant}`)
@@ -76,8 +79,9 @@ const OwnerDashboard = () => {
     });
   };
 
-  const getActivityBookingsFromDb = () => {
-    userActivitiesIds.map(async (restaurant) => {
+  const getActivityBookingsFromDb = (item) => {
+    setComponent(item);
+    userActivitiesIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(
@@ -92,8 +96,9 @@ const OwnerDashboard = () => {
     });
   };
 
-  const gethotelBookingsFromDb = () => {
-    userHotelsIds.map(async (restaurant) => {
+  const gethotelBookingsFromDb = (item) => {
+    setComponent(item);
+    userHotelsIds?.map(async (restaurant) => {
       try {
         const response = await superagent
           .get(
@@ -152,9 +157,11 @@ const OwnerDashboard = () => {
     };
   }, [state.socket]);
 
+  // const getbookingconsole = () => {
   console.log(restBookings, "restBookings");
   console.log(activityBookings, "activityBookings");
   console.log(hotelBookings, "hotelBookings");
+  // };
 
   const currComponent = (component) => {
     setComponent(component);
@@ -166,7 +173,12 @@ const OwnerDashboard = () => {
         <div className="map-section"></div>
         <div className="inner">
           <nav id="sidebar">
-            <OwnerSideNav currComponent={currComponent} />
+            <OwnerSideNav
+              currComponent={currComponent}
+              getrestBookingsFromDb={getrestBookingsFromDb}
+              getActivityBookingsFromDb={getActivityBookingsFromDb}
+              gethotelBookingsFromDb={gethotelBookingsFromDb}
+            />
           </nav>
           <When condition={component === "Dashboard"}>
             <main>
@@ -347,18 +359,40 @@ const OwnerDashboard = () => {
             </aside>
           </When>
           <When condition={component === "Map"}>
-            <DashboardMap />
+            <div className="mappplaithttttt">
+              <DashboardMap />
+            </div>
           </When>
           <When condition={component === "Restaurants"}>
-            <div className="bookingListOwner">
+            <div className="contacenti">
               <h2 className="titleListLLL">Restaurant reservations</h2>
-              {restBookings.map((item, idx) => {
-                return (
-                  <div key={idx} className="listELEmenTT">
-                    <div className="titleELE">{item}</div>
-                  </div>
-                );
-              })}
+              <div className="bookingListOwner">
+                {restBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <aside>
               <p className="notifTitlE">Notifications</p>
@@ -381,8 +415,35 @@ const OwnerDashboard = () => {
             </aside>
           </When>
           <When condition={component === "Activties"}>
-            <div className="bookingListOwner">
+            <div className="contacenti">
               <h2 className="titleListLLL">Activites reservations</h2>
+              <div className="bookingListOwner">
+                {activityBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <aside>
               <p className="notifTitlE">Notifications</p>
@@ -405,8 +466,35 @@ const OwnerDashboard = () => {
             </aside>
           </When>
           <When condition={component === "Hotels"}>
-            <div className="bookingListOwner">
+            <div className="contacenti">
               <h2 className="titleListLLL">Hotels reservations</h2>
+              <div className="bookingListOwner">
+                {hotelBookings.map((item, idx) => {
+                  return (
+                    <div key={idx} className="listELEmenTT">
+                      <img src={item.img} alt="" className="imglistOwner" />
+                      <div>
+                        <div className="titleELE">{item.name}</div>
+                        <div className="usernameeeee">
+                          Reservation for:{" "}
+                          <span className="hihello">{item.username}</span>
+                        </div>
+                      </div>
+                      <div className="howmanyyyyyy">
+                        <FontAwesomeIcon icon={faUsers} className="iconlaith" />
+                        {item.howmany}
+                      </div>
+                      <div className="daaaatttteeee">
+                        <FontAwesomeIcon
+                          icon={faCalendarDays}
+                          className="iconlaith"
+                        />
+                        {item.date.slice(0, 10)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             <aside>
               <p className="notifTitlE">Notifications</p>

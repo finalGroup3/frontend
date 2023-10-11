@@ -57,7 +57,7 @@ const OwnerSideNav = (props) => {
                 </button>
                 <button
                   className="restaurantsadmin"
-                  onClick={() => props.currComponent("Restaurants")}
+                  onClick={() => props.getrestBookingsFromDb("Restaurants")}
                 >
                   <div>
                     <div className="icon">
@@ -68,7 +68,7 @@ const OwnerSideNav = (props) => {
                 </button>
                 <button
                   className="avtivitieseadmin"
-                  onClick={() => props.currComponent("Activties")}
+                  onClick={() => props.getActivityBookingsFromDb("Activties")}
                 >
                   <div>
                     <div className="icon">
@@ -79,7 +79,7 @@ const OwnerSideNav = (props) => {
                 </button>
                 <button
                   className="hotelseadmin"
-                  onClick={() => props.currComponent("Hotels")}
+                  onClick={() => props.gethotelBookingsFromDb("Hotels")}
                 >
                   <div>
                     <div className="icon">
