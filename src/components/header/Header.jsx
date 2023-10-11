@@ -32,7 +32,7 @@ export default function Header() {
   }, []);
 
   return (
-    <section>
+    <section className="navbar1">
       <Navbar
         id={"navbar1"}
         className={isScrolled ? className : ""}

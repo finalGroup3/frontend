@@ -1,6 +1,6 @@
 import "./BookingModal.scss";
 import { LoginContext } from "../Auth/login/LogInContext";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState} from "react";
 import superagent from "superagent";
 import cookie from "react-cookies";
 
@@ -30,7 +30,6 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
     };
     getOneUser()
   }
-
   const notifyBooking = async (e) => {
     e.preventDefault();
     state.socket?.emit("sendNotification", {

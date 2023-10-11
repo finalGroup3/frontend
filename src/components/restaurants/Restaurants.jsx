@@ -17,6 +17,7 @@ import dominos from "../../assets/dominos.jpg";
 import { RestaurantsContext } from "./RestaurantContext";
 import { FavoritesContext } from "../favorites/favContext";
 import CCard from "./CCard";
+import HeroRest from "./HeroRest";
 // import ReelModal from "../reels/Modal/ReelModal";
 import Modal22 from "../reels/Modal22/Modal22";
 
@@ -33,12 +34,14 @@ export default function Restaurants() {
   return (
     <>
       <Header />
+      <HeroRest/>
       {/* --------------------------------- TOP resturants------------------------------------- */}
       <div className="bbb">
         <section
           className="section service bg-black-10 text-center "
           aria-label="service"
         >
+          <div>nour*****************</div>
           <div className="container-top-three-resturants">
             <br />
             <h2 className="headline-1 section-title">Top Resturants</h2>
