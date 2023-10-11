@@ -1,11 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
 import "./Hotel.scss";
-import movinpick from "../../assets/movinpick.jpg";
-import hotel2 from "../../assets/hotel2.avif";
-import hotel3 from "../../assets/crown-hotel.webp";
-import hotel4 from "../../assets/hotel5.jpg";
-import hotel5 from "../../assets/hotel6.jpg";
-import hilton from "../../assets/hilton.webp";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import CCard from "../restaurants/CCard";
@@ -16,7 +10,9 @@ import Modal22 from "../reels/Modal22/Modal22";
 
 const Hotel = () => {
   const state = useContext(RestaurantsContext);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Header />
@@ -51,7 +47,7 @@ const Hotel = () => {
           </section>
           <br />
           <br />
-          <h2 className="headline-1 section-title">Top Hotels</h2>
+          <h2 className="headline-1 section-title">✧✧ Top Hotels ✧✧</h2>
             <p className="section-subtitle"></p>
 <div className="TopTop">
             <section
@@ -174,7 +170,7 @@ const Hotel = () => {
 
         </div>
 
-
+        </div>
 
             
           {/* <a href="#" className="hero-btn has-after">
@@ -187,8 +183,9 @@ const Hotel = () => {
             />
             <span className="label-2 text-center span">Book A Table</span>
           </a> */}
-          <div></div>
+          <div className="hhhhh">
           {/* ------------------------------------ cards ----------------------------------------------- */}
+
           <div className="header">
             <div className="parallax-container">
               <h2 className="headline-1 section-title ">
@@ -200,24 +197,25 @@ const Hotel = () => {
           </div>
           <br />
           <br />
-          <div className="container">
+          <div className="containerr">
             {state.hotelsList.map((element) => {
               return (
                 <>
-                  <div>
+                  
                     <CCard key={element.id} element={element} hotelId={element.id}/>
-                    <div className="s">
+                    
                     {/* <ReelModal hotelId={element.id} /> */}
                     <Modal22 hotelId={element.id} />
 
-                    </div>
-                  </div>
+                   
                 </>
               );
             })}
+                  
           </div>
         </div>
       </div>
+      
       <Footer />
     </>
   );

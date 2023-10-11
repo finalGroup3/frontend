@@ -33,7 +33,7 @@ export default function DashboardTable(props) {
             
  <div className="table-data"><img style={{width:'200px', borderRadius:"10px", height:'150px' ,objectFit:"cover"}} src={element.img||'https://cf.bstatic.com/xdata/images/hotel/max1024x768/402218530.jpg?k=40fd168fdee2a8f48350437166269eea86f296e01b43e8bbb49df5f821b685e4&o=&hp=1'}/></div>
  <div className="table-data">{element.name}</div>
- <div className="table-data">{element.description}</div>
+ <div className="table-data description">{element.description}</div>
  <div className="table-data"> {element.location}</div>
  <div className="table-data"><Rating name="read-only" value={element.rating} readOnly /></div>
  <div className="table-data"> {element.price||'30JD - 90JD'}</div>

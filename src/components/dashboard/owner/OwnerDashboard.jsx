@@ -157,11 +157,10 @@ const OwnerDashboard = () => {
     };
   }, [state.socket]);
 
-  // const getbookingconsole = () => {
-  console.log(restBookings, "restBookings");
-  console.log(activityBookings, "activityBookings");
-  console.log(hotelBookings, "hotelBookings");
-  // };
+
+    console.log(restBookings, "restBookings");
+    console.log(activityBookings, "activityBookings");
+    console.log(hotelBookings, "hotelBookings");
 
   const currComponent = (component) => {
     setComponent(component);
