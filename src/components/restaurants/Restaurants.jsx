@@ -1,16 +1,9 @@
 import "./restaurants.scss";
 import { useContext, useEffect, useState } from "react";
-import service1 from "../../assets/service-1.jpg";
+
 import service2 from "../../assets/jubran.jpg";
-import service3 from "../../assets/service-3.jpg";
-import shape1 from "../../assets/shape-1.png";
-import shape2 from "../../assets/shape-2.png";
-import jubran from "../../assets/jubran.jpg";
-import burger from "../../assets/burger.jpg";
-import rest2 from "../../assets/rest2.png";
 import salt from "../../assets/SALT.jpg";
-import rest4 from "../../assets/rest4.jpg";
-import mansaf2 from "../../assets/mansaf2.jpg";
+
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import dominos from "../../assets/dominos.jpg";
@@ -36,12 +29,11 @@ export default function Restaurants() {
       <Header />
       <HeroRest/>
       {/* --------------------------------- TOP resturants------------------------------------- */}
-      <div className="bbb">
-        <section
+      <div className="bbb22">
+      <section
           className="section service bg-black-10 text-center "
           aria-label="service"
         >
-          <div>nour*****************</div>
           <div className="container-top-three-resturants">
             <br />
             <h2 className="headline-1 section-title">Top Resturants</h2>
@@ -164,6 +156,8 @@ export default function Restaurants() {
             Our Resturants<p className="steak"></p>
           </h2>
           <p className="section-subtitle"></p>
+          <br />
+          <br />
         </div>
         <div className="ccontainerr">
           {state.restaurantsList.map((element) => {
