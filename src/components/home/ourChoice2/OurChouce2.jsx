@@ -97,8 +97,8 @@ export default function App() {
               open={openRestModal}
               onClose={() => setOpenRestModal(false)}
               item={{
-                image:
-                  "https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/restaurantsPic%2FSolayaRestaurant.jpg?alt=media&token=c4d5b7fa-322d-44e3-85ba-beb49fc60e02&_gl=1*u88d39*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQxMjU5Ni42MC4wLjA.",
+                ownerId: 6,
+                img: "https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/restaurantsPic%2FSolayaRestaurant.jpg?alt=media&token=c4d5b7fa-322d-44e3-85ba-beb49fc60e02&_gl=1*u88d39*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5NjQwOTYxOS43LjEuMTY5NjQxMjU5Ni42MC4wLjA.",
                 name: "Solaya Restaurant",
                 description:
                   "Solaya Lounge, a few steps above the restaurant, guarantees and treats you to a matchless feel with upbeat tunes bringing together a simple menu, with the finest ingredients inspired by Solaya Restaurant specials.",
@@ -124,8 +124,8 @@ export default function App() {
               open={openHotelModal}
               onClose={() => setOpenHotelModal(false)}
               item={{
-                image:
-                  "https://s7d1.scene7.com/is/image/marriotts7prod/rz-ammrz-hotel-exterior-26652:Classic-Hor?wid=2880&fit=constrain",
+                ownerId: 6,
+                img: "https://s7d1.scene7.com/is/image/marriotts7prod/rz-ammrz-hotel-exterior-26652:Classic-Hor?wid=2880&fit=constrain",
                 name: "The Ritz-Carlton",
                 description:
                   "The Ritz-Carlton sets the standard in elegance for business and leisure travelers worldwide. We have been perfecting the art of hospitality and have developed an approach to luxury that has never been duplicated.",
@@ -150,6 +150,7 @@ export default function App() {
               open={openActivModal}
               onClose={() => setOpenActivModal(false)}
               item={{
+                ownerId: 6,
                 img: "https://amusementlogic.com/wp-content/uploads/2021/06/SARAYA-AQABA-WP_03_2.jpg",
                 name: "saraya aqaba Waterpark",
                 description:
