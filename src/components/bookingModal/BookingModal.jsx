@@ -12,22 +12,25 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
   const [date, setDate] = useState("");
   const [oneUser, setOneUser] = useState("");
 
-  console.log("item...............", item);
-  const getOneUser = async () => {
-    try {
-      const response = await superagent
+  // console.log("item...............", item);
+  if(open){
+
+    const getOneUser = async () => {
+      try {
+        const response = await superagent
         .get(`${import.meta.env.VITE_DATABASE_URL}/oneuser/${item.ownerId}`)
         .set("authorization", `Bearer ${cookie.load("auth")}`);
-      const items = response.body;
-      if (response.ok) {
-        setOneUser(items.username);
+        const items = response.body;
+        if (response.ok) {
+          setOneUser(items.username);
+        }
+        console.log("username :::::::::: ", items.username);
+      } catch (error) {
+        console.error(error);
       }
-      console.log("username :::::::::: ", items.username);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+    };
+    getOneUser()
+  }
   const notifyBooking = async (e) => {
     e.preventDefault();
     state.socket?.emit("sendNotification", {
@@ -70,9 +73,9 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
     onClose();
   };
 
-  useEffect(() => {
-    item.ownerId && getOneUser();
-  }, []);
+  // useEffect(() => {
+  //   item.ownerId && getOneUser();
+  // }, []);
 
   if (!open) return null;
 
