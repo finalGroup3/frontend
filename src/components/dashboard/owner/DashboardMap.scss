@@ -29,6 +29,23 @@
   .date {
     font-size: 12px;
   }
+  .colorssssss{
+    position: absolute;
+    top: 75%;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+    background-color: #ffffff8c;
+    border-radius: 20px;
+    padding: 15px;
+    .colorssss-item{
+      display: flex;
+      flex-direction: column;
+      color: #001319;
+      align-items: center;
+      font-weight: 600;
+    }
+  }
 
   form {
     // width: 450px;
