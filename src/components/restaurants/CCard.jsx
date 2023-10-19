@@ -3,7 +3,6 @@ import { useState, useContext, useEffect } from "react";
 import { FavoritesContext } from "../favorites/favContext";
 // import Button from 'react-bootstrap/Button';
 import { ReelContext } from "../../components/reels/ReelsContext";
-import vieww from "../../assets/golddd.png";
 import favv from "../../assets/ggoolldd.png";
 import ReviewsModal from "../reels/reviewsmodal/Reviewsmodal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
