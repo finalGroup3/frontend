@@ -81,7 +81,7 @@ const BookingModal = ({ open, onClose, item, restId, hotelId, activId }) => {
   return (
     <div onClick={onClose} className="modalOverlay">
       <div onClick={(e) => e.stopPropagation()} className="containerr">
-        <img src={item.image} alt="" />
+        <img src={item.img} alt="" />
         <div className="modalRight">
           <div className="closeContain" onClick={onClose}>
             <div className="closeBtn">X</div>

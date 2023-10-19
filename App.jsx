@@ -1,23 +1,23 @@
 import "./App.css";
 
-import Restaurants from "./components/restaurants/Restaurants";
-import MApp from "./components/map/Map";
-import Booking from "./components/Booking/Booking4";
-import Favorites from "./components/favorites/Favorites";
-import Hotel from "./components/hotel/Hotel";
-import About from "./components/About/Test1";
-import Dashboard from "./components/dashboard/adminDashboard/Dashboard";
-import Reelspage from "./components/reels/ReelsPage";
-import LogIn from "./components/Auth/login/LogIn";
-import Activities from "./components/Activities/Activities";
-import LoginProvider from "./components/Auth/login/LogInContext";
+import Restaurants from "./src/components/restaurants/Restaurants";
+import MApp from "./src/components/map/Map";
+import Booking from "./src/components/Booking/Booking4";
+import Favorites from "./src/components/favorites/Favorites";
+import Hotel from "./src/components/hotel/Hotel";
+import About from "./src/components/About/Test1";
+import Dashboard from "./src/components/dashboard/adminDashboard/Dashboard";
+import Reelspage from "./src/components/reels/ReelsPage";
+import LogIn from "./src/components/Auth/login/LogIn";
+import Activities from "./src/components/Activities/Activities";
+import LoginProvider from "./src/components/Auth/login/LogInContext";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/home/Home";
-import OwnerDashboard from "./components/dashboard/owner/OwnerDashboard";
+import Home from "./src/components/home/Home";
+import OwnerDashboard from "./src/components/dashboard/owner/OwnerDashboard";
 import Room from "./src/components/chat/Chat";
-import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
-import RestaurantsContext from "./components/restaurants/RestaurantContext";
-import FavoritesProvider from "./components/favorites/favContext";
+import LoadingScreen from "./src/components/LoadingScreen/LoadingScreen";
+import RestaurantsContext from "./src/components/restaurants/RestaurantContext";
+import FavoritesProvider from "./src/components/favorites/favContext";
 function App() {
 
 
@@ -41,6 +41,7 @@ function App() {
               <Route path="/dashboard/admin" element={<Dashboard />} />
               <Route path="/dashboard/owner" element={<OwnerDashboard />} />
               <Route path="/" element={<LoadingScreen />} />
+              <Route path="/chatRoom" element={<Room />} />
             </Routes>
           </FavoritesProvider>
         </RestaurantsContext>
