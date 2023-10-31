@@ -6,6 +6,7 @@ export default defineConfig({
   base: './', // Set the base path to root for relative paths
   build: {
     outDir: 'build', // Specify the output directory for the build
+    chunkSizeWarningLimit: 1000, 
   },
 })
 

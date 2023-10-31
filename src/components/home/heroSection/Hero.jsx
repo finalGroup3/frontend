@@ -42,17 +42,17 @@ export default function Hero() {
 
     
 
-      {/* <video
+      <video
 
         ref={videoRef}
         muted
         loop
         autoPlay
-        // src={video}
+        src="https://firebasestorage.googleapis.com/v0/b/laith-5d196.appspot.com/o/intro.mp4?alt=media&token=61ed277c-5031-40d3-b974-aa6098f55d6b&_gl=1*n7i6l8*_ga*MzIzNDg5NTc3LjE2ODYxNTk2MzI.*_ga_CW55HF8NVT*MTY5ODc4MDgwOC4xOS4xLjE2OTg3ODEwNzcuMjguMC4w"
         title="Embedded Video"
         frameBorder="0"
         allowFullScreen
-      ></video> */}
+      ></video>
 
       
       <div className="mask-contain"><img className='mask' src={mask}/></div>
